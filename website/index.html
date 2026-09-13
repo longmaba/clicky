@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f3eb" />
+    <meta
+      name="description"
+      content="A little more joy in every keystroke. Clicky is an open-source Mac app that gives your keyboard a sound of its own. Ten profiles, thoughtful controls, completely offline."
+    />
+    <meta
+      property="og:title"
+      content="Clicky — Make every keystroke feel good."
+    />
+    <meta
+      property="og:description"
+      content="Your keyboard. A whole new feeling. An open-source sound companion for your Mac."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://longmaba.github.io/clicky/" />
+    <meta property="og:image" content="https://longmaba.github.io/clicky/social.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://longmaba.github.io/clicky/" />
+    <title>Clicky — Make every keystroke feel good.</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./config.js" defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header page-width">
+      <a class="wordmark" href="./" aria-label="Clicky home"
+        ><span class="brand-key" aria-hidden="true">c</span>clicky<span
+          class="brand-period"
+          >.</span
+        ></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#craft">The details</a>
+        <a href="#open-source" data-repository
+          >GitHub <span aria-hidden="true">↗</span></a
+        >
+        <button class="nav-donate" type="button" data-donate>
+          <span aria-hidden="true">♡</span> Donate
+        </button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero page-width" aria-labelledby="hero-title">
+        <div class="hero-topline">
+          <span class="availability"
+            ><span class="status-dot" aria-hidden="true"></span> A small app. A
+            satisfying sound.</span
+          ><span class="hero-edition">MADE FOR YOUR MAC</span>
+        </div>
+        <div class="hero-copy">
+          <div>
+            <h1 id="hero-title">
+              Make every<br />keystroke <span>feel good.</span>
+            </h1>
+          </div>
+          <div class="hero-aside">
+            <p>
+              That perfect keyboard sound.<br />Without buying another keyboard.
+            </p>
+            <p class="hero-description">
+              Meet Clicky, a little sound companion that makes everyday typing a
+              little more you.
+              <a
+                class="hero-source"
+                href="https://github.com/longmaba/clicky"
+                data-repository
+                >View source <span aria-hidden="true">↗</span></a
+              >
+            </p>
+            <a
+              class="button button-dark download-link"
+              href="https://github.com/longmaba/clicky#build-and-open"
+              ><svg
+                aria-hidden="true"
+                width="19"
+                height="19"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+              ><span data-download-label>Build for Mac</span
+              ><span aria-hidden="true">↗</span></a
+            >
+            <span class="download-detail"
+              >macOS 13+ · Apple Silicon ·
+              <span data-version>v0.1.4</span></span
+            >
+            <a class="installation-link" href="#install"
+              >First time opening Clicky? <span aria-hidden="true">↘</span></a
+            >
+          </div>
+        </div>
+
+        <div class="keyboard-stage" id="keyboard-stage">
+          <div class="stage-grid" aria-hidden="true"></div>
+          <div class="stage-note">
+            <span class="annotation-line" aria-hidden="true"></span>Good things
+            come<br />to those who type.
+          </div>
+          <div class="floating-profile" aria-hidden="true">
+            <span class="profile-swatch active-swatch"></span>
+            <div>
+              <span class="tiny-label">CURRENT MOOD</span
+              ><strong class="active-profile-name">Thocky</strong>
+            </div>
+            <span class="mini-wave"><i></i><i></i><i></i><i></i><i></i></span>
+          </div>
+          <div class="keyboard-orbit" id="keyboard-orbit">
+            <div
+              class="keyboard"
+              id="keyboard"
+              role="group"
+              aria-label="Interactive keyboard. Press a key to preview its sound."
+            ></div>
+          </div>
+          <div class="stage-bottom">
+            <span
+              ><span class="small-spark" aria-hidden="true">✳</span> A familiar
+              tool. A fresh feeling.</span
+            ><button
+              type="button"
+              class="rotation-reset"
+              id="rotation-reset"
+              aria-label="Reset keyboard rotation"
+            >
+              Drag to turn <span aria-hidden="true">↔</span>
+            </button>
+          </div>
+        </div>
+        <div class="hero-footnote">
+          <span>Native to Mac. Open by nature.</span
+          ><a href="#playground"
+            >Find your sound <span aria-hidden="true">↓</span></a
+          ><span>No account. No subscription.</span>
+        </div>
+      </section>
+
+      <section
+        class="sound-section page-width"
+        id="playground"
+        aria-labelledby="sound-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow"><span>01</span> THE SOUND OF YOU</p>
+          <div class="heading-row">
+            <h2 id="sound-title">Find your happy <em>click.</em></h2>
+            <p>
+              Deep and mellow. Bright and playful.<br />Ten personalities. One
+              keyboard.
+            </p>
+          </div>
+        </div>
+        <div class="playground-layout">
+          <div
+            class="profile-list"
+            id="profile-list"
+            role="group"
+            aria-label="Sound profiles"
+          ></div>
+          <div class="sound-workbench">
+            <div class="workbench-top">
+              <span class="tiny-label">YOUR LISTENING ROOM</span
+              ><span class="offline-badge"
+                ><span aria-hidden="true">◌</span> Just in this page</span
+              >
+            </div>
+            <div class="sound-display">
+              <div class="sound-orb" aria-hidden="true">
+                <div class="orb-key">a</div>
+                <div class="orb-ripple"></div>
+                <div class="orb-ripple ripple-two"></div>
+              </div>
+              <div class="sound-title">
+                <span class="sound-number"
+                  >PROFILE <span id="profile-number">01</span> / 10</span
+                >
+                <h3 class="active-profile-name">Thocky</h3>
+                <p id="profile-subtitle">Warm, rounded knocks</p>
+              </div>
+              <button
+                type="button"
+                class="play-button"
+                id="preview-button"
+                aria-label="Preview Thocky sound"
+              >
+                <svg
+                  width="21"
+                  height="23"
+                  viewBox="0 0 21 23"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path d="M5 3.5 18 11.5 5 19.5V3.5Z" fill="currentColor" />
+                </svg>
+              </button>
+            </div>
+            <div class="volume-row">
+              <label for="volume">Volume</label
+              ><input
+                id="volume"
+                type="range"
+                min="0"
+                max="100"
+                value="40"
+              /><output for="volume" id="volume-value">40%</output>
+            </div>
+            <div class="typing-control">
+              <label class="switch-label" for="typing-enabled"
+                ><input type="checkbox" id="typing-enabled" /><span
+                  class="toggle-switch"
+                  aria-hidden="true"
+                ></span
+                ><span>Try it with your keyboard</span></label
+              ><span class="typing-light" id="typing-light">OFF</span>
+            </div>
+            <label class="visually-hidden" for="typing-field"
+              >Type here to try the selected keyboard sound</label
+            >
+            <textarea
+              id="typing-field"
+              rows="3"
+              spellcheck="false"
+              autocomplete="off"
+              autocapitalize="off"
+              placeholder="Enable the playground, then type something good…"
+              disabled
+            ></textarea>
+            <p class="playground-note" id="audio-status" role="status">
+              Press play for a preview. Sound starts only when you choose.
+            </p>
+            <p class="privacy-note">
+              <svg
+                width="13"
+                height="14"
+                viewBox="0 0 13 14"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 6V4a3.5 3.5 0 0 1 7 0v2M2 6h9v7H2V6Z"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                />
+              </svg>
+              Playground typing stays in this field. Nothing is sent or saved.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="craft-section" id="craft" aria-labelledby="craft-title">
+        <div class="page-width craft-inner">
+          <div class="craft-intro">
+            <p class="eyebrow"><span>02</span> LITTLE DETAILS. BIG FEELING.</p>
+            <h2 id="craft-title">
+              Tuned to your<br /><em>kind of typing.</em>
+            </h2>
+            <p>
+              A good companion knows when to make a little noise, and when to
+              stay out of the way.
+            </p>
+          </div>
+          <div class="craft-stories">
+            <article class="craft-story">
+              <span class="story-index">01 /</span>
+              <div>
+                <h3>Your sound, down to the key.</h3>
+                <p>
+                  Dial in tone, pitch, volume, and stereo position. Give
+                  individual keys their own character, then save your favorite
+                  combinations.
+                </p>
+              </div>
+              <div class="tone-art" aria-hidden="true">
+                <div class="tone-cross"></div>
+                <span></span><small>your sweet spot</small>
+              </div>
+            </article>
+            <article class="craft-story">
+              <span class="story-index">02 /</span>
+              <div>
+                <h3>Shortcuts with a softer touch.</h3>
+                <p>
+                  Keep Command, Shift, and friends subtle. Soft modifiers play
+                  at a quarter of normal volume, so your main keystroke gets the
+                  moment.
+                </p>
+              </div>
+              <div class="shortcut-art" aria-hidden="true">
+                <span>⌘</span><span class="accent-key">K</span>
+              </div>
+            </article>
+            <article class="craft-story">
+              <span class="story-index">03 /</span>
+              <div>
+                <h3>A tiny place on your Mac.</h3>
+                <p>
+                  Reach for Clicky in the menu bar. Pop open the notch panel to
+                  turn a 3D keyboard, explore switches, or pick your next sound.
+                </p>
+              </div>
+              <div class="notch-art" aria-hidden="true">
+                <span class="notch-camera"></span><span class="notch-dot"></span
+                ><span class="notch-title">Clicky</span
+                ><span class="notch-bars">▂▅▃▆▂</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="quiet-section page-width" aria-labelledby="quiet-title">
+        <div class="quiet-mark" aria-hidden="true">⌘</div>
+        <div>
+          <p class="eyebrow">FEELS RIGHT AT HOME</p>
+          <h2 id="quiet-title">Made for Mac.<br />Made to stay yours.</h2>
+        </div>
+        <div class="quiet-copy">
+          <p>
+            Built natively with Swift. Clicky runs offline and listens for
+            physical key presses to play your sounds. It never reconstructs or
+            stores what you type.
+          </p>
+          <div class="platform-line">
+            <span class="status-dot" aria-hidden="true"></span
+            ><span>Mac app available from source</span>
+          </div>
+          <div class="platform-line planned">
+            <span class="hollow-dot" aria-hidden="true"></span
+            ><span>Windows is on the roadmap</span>
+          </div>
+        </div>
+        <details class="installation-details" id="install">
+          <summary>
+            Opening Clicky for the first time <span aria-hidden="true">+</span>
+          </summary>
+          <div>
+            <p>
+              The current release is locally signed and has not been notarized
+              by Apple. After downloading and opening Clicky, macOS may ask you
+              to allow it in
+              <strong
+                >System Settings → Privacy &amp; Security → Open Anyway</strong
+              >.
+            </p>
+            <p>
+              Enable <strong>Input Monitoring</strong> for Clicky, then quit and
+              reopen the app. This lets Clicky hear physical key presses while
+              you work in other apps.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section
+        class="open-section page-width"
+        id="open-source"
+        aria-labelledby="open-title"
+      >
+        <div class="open-heading">
+          <p class="eyebrow"><span>03</span> BUILT IN THE OPEN</p>
+          <h2 id="open-title">Small app.<br /><em>Open possibilities.</em></h2>
+          <p>
+            Clicky’s code is open source. Take a look around, make it your own,
+            or help make the next version better.
+          </p>
+          <a
+            class="text-link"
+            href="https://github.com/longmaba/clicky"
+            data-repository
+            >Explore the code on GitHub <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="support-note">
+          <span class="support-heart" aria-hidden="true">♡</span>
+          <p class="tiny-label">A LITTLE SUPPORT GOES A LONG WAY</p>
+          <h3>Like the sound of this?</h3>
+          <p>
+            If Clicky brings a bit of joy to your day, you can help keep it
+            going.
+          </p>
+          <button class="button button-dark" type="button" data-donate>
+            <span aria-hidden="true">♡</span> Support Clicky
+            <span aria-hidden="true">↗</span></button
+          ><span class="support-caption"
+            >Always optional. Always appreciated.</span
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer page-width">
+      <a class="wordmark" href="./" aria-label="Clicky home"
+        ><span class="brand-key" aria-hidden="true">c</span>clicky<span
+          class="brand-period"
+          >.</span
+        ></a
+      >
+      <p>A little more joy in every keystroke.</p>
+      <div>
+        <a href="https://github.com/longmaba/clicky" data-repository
+          >Source <span aria-hidden="true">↗</span></a
+        ><a
+          href="https://github.com/longmaba/clicky/blob/main/LICENSE"
+          data-license
+          >MIT code license</a
+        ><a
+          href="https://github.com/longmaba/clicky/blob/main/THIRD_PARTY_NOTICES.md"
+          data-attribution
+          >Sound credits</a
+        ><button type="button" data-donate>
+          Donate <span aria-hidden="true">♡</span>
+        </button>
+      </div>
+    </footer>
+    <dialog
+      id="donate-dialog"
+      aria-labelledby="donate-title"
+      aria-describedby="donate-description"
+    >
+      <button
+        type="button"
+        class="dialog-close"
+        id="dialog-close"
+        aria-label="Close donation information"
+      >
+        ×</button
+      ><span class="support-heart" aria-hidden="true">♡</span>
+      <h2 id="donate-title">Thanks for the good vibes.</h2>
+      <p id="donate-description">
+        GitHub Sponsors is getting ready. You can support Clicky by starring the
+        project or contributing.
+      </p>
+      <a
+        class="button button-dark"
+        href="https://github.com/longmaba/clicky"
+        data-repository
+        >View on GitHub <span aria-hidden="true">↗</span></a
+      >
+    </dialog>
+  </body>
+</html>

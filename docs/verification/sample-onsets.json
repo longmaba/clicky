@@ -1,0 +1,607 @@
+{
+  "metric": "First frame at 20% of sample peak; excludes render, hardware and Bluetooth latency",
+  "sampleCount": 60,
+  "failures": [],
+  "samples": [
+    {
+      "profile": "thocky",
+      "path": "Sounds/thocky/01.wav",
+      "frames": 5147,
+      "peak": 0.453186,
+      "rms": 0.0635348,
+      "first20PercentPeakMilliseconds": 0.625,
+      "beforeFirst20PercentPeakMilliseconds": 7.395833,
+      "removedLeadingMilliseconds": 6.770833
+    },
+    {
+      "profile": "thocky",
+      "path": "Sounds/thocky/02.wav",
+      "frames": 5476,
+      "peak": 0.4598389,
+      "rms": 0.0570114,
+      "first20PercentPeakMilliseconds": 0.5625,
+      "beforeFirst20PercentPeakMilliseconds": 6.479167,
+      "removedLeadingMilliseconds": 5.916667
+    },
+    {
+      "profile": "thocky",
+      "path": "Sounds/thocky/03.wav",
+      "frames": 5317,
+      "peak": 0.3708496,
+      "rms": 0.0424644,
+      "first20PercentPeakMilliseconds": 0.395833,
+      "beforeFirst20PercentPeakMilliseconds": 5.625,
+      "removedLeadingMilliseconds": 5.229167
+    },
+    {
+      "profile": "thocky",
+      "path": "Sounds/thocky/04.wav",
+      "frames": 4354,
+      "peak": 0.4611816,
+      "rms": 0.0533669,
+      "first20PercentPeakMilliseconds": 0.458333,
+      "beforeFirst20PercentPeakMilliseconds": 6.770833,
+      "removedLeadingMilliseconds": 6.291667
+    },
+    {
+      "profile": "thocky",
+      "path": "Sounds/thocky/05.wav",
+      "frames": 3874,
+      "peak": 0.4554749,
+      "rms": 0.0569631,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 6.791667,
+      "removedLeadingMilliseconds": 6.291667
+    },
+    {
+      "profile": "thocky",
+      "path": "Sounds/thocky/06.wav",
+      "frames": 5434,
+      "peak": 0.4635315,
+      "rms": 0.0593485,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "beforeFirst20PercentPeakMilliseconds": 6.3125,
+      "removedLeadingMilliseconds": 5.791667
+    },
+    {
+      "profile": "marbly",
+      "path": "Sounds/marbly/01.wav",
+      "frames": 5075,
+      "peak": 0.2979736,
+      "rms": 0.0319438,
+      "first20PercentPeakMilliseconds": 0.270833,
+      "beforeFirst20PercentPeakMilliseconds": 4.979167,
+      "removedLeadingMilliseconds": 6.270833
+    },
+    {
+      "profile": "marbly",
+      "path": "Sounds/marbly/02.wav",
+      "frames": 6033,
+      "peak": 0.455658,
+      "rms": 0.0290859,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "beforeFirst20PercentPeakMilliseconds": 5.833333,
+      "removedLeadingMilliseconds": 5.3125
+    },
+    {
+      "profile": "marbly",
+      "path": "Sounds/marbly/03.wav",
+      "frames": 5650,
+      "peak": 0.4469299,
+      "rms": 0.0267541,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "beforeFirst20PercentPeakMilliseconds": 6.8125,
+      "removedLeadingMilliseconds": 6.291667
+    },
+    {
+      "profile": "marbly",
+      "path": "Sounds/marbly/04.wav",
+      "frames": 6109,
+      "peak": 0.4317932,
+      "rms": 0.032325,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 6.229167,
+      "removedLeadingMilliseconds": 5.729167
+    },
+    {
+      "profile": "marbly",
+      "path": "Sounds/marbly/05.wav",
+      "frames": 5117,
+      "peak": 0.3325806,
+      "rms": 0.0267582,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 5.895833,
+      "removedLeadingMilliseconds": 5.395833
+    },
+    {
+      "profile": "marbly",
+      "path": "Sounds/marbly/06.wav",
+      "frames": 5637,
+      "peak": 0.4007568,
+      "rms": 0.0523642,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 6.0625,
+      "removedLeadingMilliseconds": 5.5625
+    },
+    {
+      "profile": "silent",
+      "path": "Sounds/silent/01.wav",
+      "frames": 4416,
+      "peak": 0.0407715,
+      "rms": 0.0120869,
+      "first20PercentPeakMilliseconds": 1.833333,
+      "beforeFirst20PercentPeakMilliseconds": 1.833333,
+      "removedLeadingMilliseconds": 0.0
+    },
+    {
+      "profile": "silent",
+      "path": "Sounds/silent/02.wav",
+      "frames": 4272,
+      "peak": 0.046936,
+      "rms": 0.0141308,
+      "first20PercentPeakMilliseconds": 0.229167,
+      "beforeFirst20PercentPeakMilliseconds": 0.229167,
+      "removedLeadingMilliseconds": 0.0
+    },
+    {
+      "profile": "silent",
+      "path": "Sounds/silent/03.wav",
+      "frames": 2783,
+      "peak": 0.0400085,
+      "rms": 0.0147501,
+      "first20PercentPeakMilliseconds": 0.3125,
+      "beforeFirst20PercentPeakMilliseconds": 0.25,
+      "removedLeadingMilliseconds": 8.020833
+    },
+    {
+      "profile": "silent",
+      "path": "Sounds/silent/04.wav",
+      "frames": 4224,
+      "peak": 0.0492554,
+      "rms": 0.0121285,
+      "first20PercentPeakMilliseconds": 0.229167,
+      "beforeFirst20PercentPeakMilliseconds": 0.229167,
+      "removedLeadingMilliseconds": 0.0
+    },
+    {
+      "profile": "silent",
+      "path": "Sounds/silent/05.wav",
+      "frames": 2534,
+      "peak": 0.0408936,
+      "rms": 0.0097252,
+      "first20PercentPeakMilliseconds": 0.75,
+      "beforeFirst20PercentPeakMilliseconds": 0.25,
+      "removedLeadingMilliseconds": 7.208333
+    },
+    {
+      "profile": "silent",
+      "path": "Sounds/silent/06.wav",
+      "frames": 3450,
+      "peak": 0.0731812,
+      "rms": 0.021252,
+      "first20PercentPeakMilliseconds": 0.75,
+      "beforeFirst20PercentPeakMilliseconds": 0.25,
+      "removedLeadingMilliseconds": 10.125
+    },
+    {
+      "profile": "poppy",
+      "path": "Sounds/poppy/01.wav",
+      "frames": 4082,
+      "peak": 0.4416504,
+      "rms": 0.0545148,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "beforeFirst20PercentPeakMilliseconds": 5.479167,
+      "removedLeadingMilliseconds": 4.958333
+    },
+    {
+      "profile": "poppy",
+      "path": "Sounds/poppy/02.wav",
+      "frames": 3923,
+      "peak": 0.4613647,
+      "rms": 0.0512001,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 5.770833,
+      "removedLeadingMilliseconds": 5.270833
+    },
+    {
+      "profile": "poppy",
+      "path": "Sounds/poppy/03.wav",
+      "frames": 4567,
+      "peak": 0.3595276,
+      "rms": 0.0329136,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "beforeFirst20PercentPeakMilliseconds": 5.375,
+      "removedLeadingMilliseconds": 4.854167
+    },
+    {
+      "profile": "poppy",
+      "path": "Sounds/poppy/04.wav",
+      "frames": 4158,
+      "peak": 0.4560852,
+      "rms": 0.0363668,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "beforeFirst20PercentPeakMilliseconds": 4.895833,
+      "removedLeadingMilliseconds": 4.375
+    },
+    {
+      "profile": "poppy",
+      "path": "Sounds/poppy/05.wav",
+      "frames": 4354,
+      "peak": 0.2969666,
+      "rms": 0.0343366,
+      "first20PercentPeakMilliseconds": 0.5625,
+      "beforeFirst20PercentPeakMilliseconds": 5.854167,
+      "removedLeadingMilliseconds": 5.291667
+    },
+    {
+      "profile": "poppy",
+      "path": "Sounds/poppy/06.wav",
+      "frames": 3999,
+      "peak": 0.458252,
+      "rms": 0.0387976,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "beforeFirst20PercentPeakMilliseconds": 5.208333,
+      "removedLeadingMilliseconds": 4.6875
+    },
+    {
+      "profile": "clicky",
+      "path": "Sounds/clicky/01.wav",
+      "frames": 4289,
+      "peak": 0.4187012,
+      "rms": 0.0667089,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 6.145833,
+      "removedLeadingMilliseconds": 5.645833
+    },
+    {
+      "profile": "clicky",
+      "path": "Sounds/clicky/02.wav",
+      "frames": 2498,
+      "peak": 0.4456787,
+      "rms": 0.044593,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 5.458333,
+      "removedLeadingMilliseconds": 4.958333
+    },
+    {
+      "profile": "clicky",
+      "path": "Sounds/clicky/03.wav",
+      "frames": 4178,
+      "peak": 0.4532166,
+      "rms": 0.0448516,
+      "first20PercentPeakMilliseconds": 0.375,
+      "beforeFirst20PercentPeakMilliseconds": 0.375,
+      "removedLeadingMilliseconds": 3.958333
+    },
+    {
+      "profile": "clicky",
+      "path": "Sounds/clicky/04.wav",
+      "frames": 3199,
+      "peak": 0.3730774,
+      "rms": 0.0468585,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "beforeFirst20PercentPeakMilliseconds": 3.875,
+      "removedLeadingMilliseconds": 3.354167
+    },
+    {
+      "profile": "clicky",
+      "path": "Sounds/clicky/05.wav",
+      "frames": 3082,
+      "peak": 0.4553223,
+      "rms": 0.0453673,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "beforeFirst20PercentPeakMilliseconds": 1.3125,
+      "removedLeadingMilliseconds": 0.791667
+    },
+    {
+      "profile": "clicky",
+      "path": "Sounds/clicky/06.wav",
+      "frames": 3237,
+      "peak": 0.3655396,
+      "rms": 0.0368905,
+      "first20PercentPeakMilliseconds": 0.979167,
+      "beforeFirst20PercentPeakMilliseconds": 0.3125,
+      "removedLeadingMilliseconds": -1.4375
+    },
+    {
+      "profile": "bubble-wrap",
+      "path": "Sounds/bubble-wrap/01.wav",
+      "frames": 5384,
+      "peak": 0.462677,
+      "rms": 0.0635298,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 7.333333,
+      "removedLeadingMilliseconds": 6.833333
+    },
+    {
+      "profile": "bubble-wrap",
+      "path": "Sounds/bubble-wrap/02.wav",
+      "frames": 4223,
+      "peak": 0.3752136,
+      "rms": 0.0537043,
+      "first20PercentPeakMilliseconds": 0.583333,
+      "beforeFirst20PercentPeakMilliseconds": 6.604167,
+      "removedLeadingMilliseconds": 6.020833
+    },
+    {
+      "profile": "bubble-wrap",
+      "path": "Sounds/bubble-wrap/03.wav",
+      "frames": 4418,
+      "peak": 0.3903503,
+      "rms": 0.0896395,
+      "first20PercentPeakMilliseconds": 0.229167,
+      "beforeFirst20PercentPeakMilliseconds": 0.4375,
+      "removedLeadingMilliseconds": -2.041667
+    },
+    {
+      "profile": "bubble-wrap",
+      "path": "Sounds/bubble-wrap/04.wav",
+      "frames": 4279,
+      "peak": 0.3699646,
+      "rms": 0.0579476,
+      "first20PercentPeakMilliseconds": 0.583333,
+      "beforeFirst20PercentPeakMilliseconds": 5.4375,
+      "removedLeadingMilliseconds": 4.854167
+    },
+    {
+      "profile": "bubble-wrap",
+      "path": "Sounds/bubble-wrap/05.wav",
+      "frames": 4393,
+      "peak": 0.2814941,
+      "rms": 0.0648288,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 4.979167,
+      "removedLeadingMilliseconds": 4.479167
+    },
+    {
+      "profile": "bubble-wrap",
+      "path": "Sounds/bubble-wrap/06.wav",
+      "frames": 5336,
+      "peak": 0.4421692,
+      "rms": 0.0775927,
+      "first20PercentPeakMilliseconds": 0.333333,
+      "beforeFirst20PercentPeakMilliseconds": 0.895833,
+      "removedLeadingMilliseconds": 5.833333
+    },
+    {
+      "profile": "clacky",
+      "path": "Sounds/clacky/01.wav",
+      "frames": 4896,
+      "peak": 0.4579468,
+      "rms": 0.0427419,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 6.5,
+      "removedLeadingMilliseconds": 6.0
+    },
+    {
+      "profile": "clacky",
+      "path": "Sounds/clacky/02.wav",
+      "frames": 4373,
+      "peak": 0.4399414,
+      "rms": 0.032029,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 6.395833,
+      "removedLeadingMilliseconds": 5.895833
+    },
+    {
+      "profile": "clacky",
+      "path": "Sounds/clacky/03.wav",
+      "frames": 4040,
+      "peak": 0.4607849,
+      "rms": 0.0373439,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 6.333333,
+      "removedLeadingMilliseconds": 5.833333
+    },
+    {
+      "profile": "clacky",
+      "path": "Sounds/clacky/04.wav",
+      "frames": 5693,
+      "peak": 0.4625244,
+      "rms": 0.0421184,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "beforeFirst20PercentPeakMilliseconds": 5.916667,
+      "removedLeadingMilliseconds": 5.395833
+    },
+    {
+      "profile": "clacky",
+      "path": "Sounds/clacky/05.wav",
+      "frames": 3904,
+      "peak": 0.4450073,
+      "rms": 0.0332162,
+      "first20PercentPeakMilliseconds": 0.541667,
+      "beforeFirst20PercentPeakMilliseconds": 6.208333,
+      "removedLeadingMilliseconds": 5.666667
+    },
+    {
+      "profile": "clacky",
+      "path": "Sounds/clacky/06.wav",
+      "frames": 3898,
+      "peak": 0.432312,
+      "rms": 0.040673,
+      "first20PercentPeakMilliseconds": 0.541667,
+      "beforeFirst20PercentPeakMilliseconds": 6.333333,
+      "removedLeadingMilliseconds": 5.791667
+    },
+    {
+      "profile": "creamy",
+      "path": "Sounds/creamy/01.wav",
+      "frames": 4592,
+      "peak": 0.4599304,
+      "rms": 0.0521533,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "beforeFirst20PercentPeakMilliseconds": 6.854167,
+      "removedLeadingMilliseconds": 6.333333
+    },
+    {
+      "profile": "creamy",
+      "path": "Sounds/creamy/02.wav",
+      "frames": 3927,
+      "peak": 0.4606323,
+      "rms": 0.072014,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "beforeFirst20PercentPeakMilliseconds": 5.708333,
+      "removedLeadingMilliseconds": 5.1875
+    },
+    {
+      "profile": "creamy",
+      "path": "Sounds/creamy/03.wav",
+      "frames": 5398,
+      "peak": 0.4576111,
+      "rms": 0.0389809,
+      "first20PercentPeakMilliseconds": 0.708333,
+      "beforeFirst20PercentPeakMilliseconds": 10.0625,
+      "removedLeadingMilliseconds": -1.458333
+    },
+    {
+      "profile": "creamy",
+      "path": "Sounds/creamy/04.wav",
+      "frames": 4090,
+      "peak": 0.4515686,
+      "rms": 0.0505397,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 6.291667,
+      "removedLeadingMilliseconds": 5.791667
+    },
+    {
+      "profile": "creamy",
+      "path": "Sounds/creamy/05.wav",
+      "frames": 4659,
+      "peak": 0.4536743,
+      "rms": 0.0444695,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 6.4375,
+      "removedLeadingMilliseconds": 5.9375
+    },
+    {
+      "profile": "creamy",
+      "path": "Sounds/creamy/06.wav",
+      "frames": 5553,
+      "peak": 0.4675598,
+      "rms": 0.0424624,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 6.8125,
+      "removedLeadingMilliseconds": 6.3125
+    },
+    {
+      "profile": "deep-thock",
+      "path": "Sounds/deep-thock/01.wav",
+      "frames": 5912,
+      "peak": 0.3259583,
+      "rms": 0.0195236,
+      "first20PercentPeakMilliseconds": 0.625,
+      "beforeFirst20PercentPeakMilliseconds": 6.458333,
+      "removedLeadingMilliseconds": 5.833333
+    },
+    {
+      "profile": "deep-thock",
+      "path": "Sounds/deep-thock/02.wav",
+      "frames": 6610,
+      "peak": 0.454071,
+      "rms": 0.0273528,
+      "first20PercentPeakMilliseconds": 0.75,
+      "beforeFirst20PercentPeakMilliseconds": 6.041667,
+      "removedLeadingMilliseconds": 5.291667
+    },
+    {
+      "profile": "deep-thock",
+      "path": "Sounds/deep-thock/03.wav",
+      "frames": 6932,
+      "peak": 0.4562988,
+      "rms": 0.0288603,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 6.083333,
+      "removedLeadingMilliseconds": 5.583333
+    },
+    {
+      "profile": "deep-thock",
+      "path": "Sounds/deep-thock/04.wav",
+      "frames": 7369,
+      "peak": 0.4576416,
+      "rms": 0.0240266,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "beforeFirst20PercentPeakMilliseconds": 7.0,
+      "removedLeadingMilliseconds": 6.479167
+    },
+    {
+      "profile": "deep-thock",
+      "path": "Sounds/deep-thock/05.wav",
+      "frames": 7831,
+      "peak": 0.4606323,
+      "rms": 0.0322896,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 7.354167,
+      "removedLeadingMilliseconds": 6.854167
+    },
+    {
+      "profile": "deep-thock",
+      "path": "Sounds/deep-thock/06.wav",
+      "frames": 7765,
+      "peak": 0.453186,
+      "rms": 0.0297168,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "beforeFirst20PercentPeakMilliseconds": 6.75,
+      "removedLeadingMilliseconds": 6.229167
+    },
+    {
+      "profile": "office",
+      "path": "Sounds/office/01.wav",
+      "frames": 3984,
+      "peak": 0.2278748,
+      "rms": 0.0986239,
+      "first20PercentPeakMilliseconds": 0.166667,
+      "beforeFirst20PercentPeakMilliseconds": 0.166667,
+      "removedLeadingMilliseconds": 0.0
+    },
+    {
+      "profile": "office",
+      "path": "Sounds/office/02.wav",
+      "frames": 3360,
+      "peak": 0.2085266,
+      "rms": 0.1193833,
+      "first20PercentPeakMilliseconds": 2.875,
+      "beforeFirst20PercentPeakMilliseconds": 2.875,
+      "removedLeadingMilliseconds": 0.0
+    },
+    {
+      "profile": "office",
+      "path": "Sounds/office/03.wav",
+      "frames": 2680,
+      "peak": 0.275238,
+      "rms": 0.0654602,
+      "first20PercentPeakMilliseconds": 0.5,
+      "beforeFirst20PercentPeakMilliseconds": 3.666667,
+      "removedLeadingMilliseconds": 3.166667
+    },
+    {
+      "profile": "office",
+      "path": "Sounds/office/04.wav",
+      "frames": 3293,
+      "peak": 0.2843018,
+      "rms": 0.0712193,
+      "first20PercentPeakMilliseconds": 0.1875,
+      "beforeFirst20PercentPeakMilliseconds": 1.291667,
+      "removedLeadingMilliseconds": 5.395833
+    },
+    {
+      "profile": "office",
+      "path": "Sounds/office/05.wav",
+      "frames": 3696,
+      "peak": 0.2484131,
+      "rms": 0.0844535,
+      "first20PercentPeakMilliseconds": 0.1875,
+      "beforeFirst20PercentPeakMilliseconds": 0.1875,
+      "removedLeadingMilliseconds": 0.0
+    },
+    {
+      "profile": "office",
+      "path": "Sounds/office/06.wav",
+      "frames": 4479,
+      "peak": 0.276947,
+      "rms": 0.0391306,
+      "first20PercentPeakMilliseconds": 0.583333,
+      "beforeFirst20PercentPeakMilliseconds": 5.270833,
+      "removedLeadingMilliseconds": 4.6875
+    }
+  ]
+}

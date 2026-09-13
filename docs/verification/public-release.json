@@ -1,0 +1,207 @@
+{
+  "version": "0.1.4",
+  "nativeCoreTests": 31,
+  "nativeReleaseBuild": "passed",
+  "soundAssets": "60 recorded variants and 5 original effects passed",
+  "browserChecks": {
+    "chromium": {
+      "profiles": [
+        "thocky",
+        "marbly",
+        "silent",
+        "poppy",
+        "clicky",
+        "bubble-wrap",
+        "clacky",
+        "creamy",
+        "deep-thock",
+        "office"
+      ],
+      "layouts": [
+        {
+          "width": 320,
+          "page": 320,
+          "stage": {
+            "left": 18,
+            "right": 302
+          },
+          "keyboard": {
+            "left": 27.067075729370117,
+            "right": 293.1600933074951
+          }
+        },
+        {
+          "width": 390,
+          "page": 390,
+          "stage": {
+            "left": 18,
+            "right": 372
+          },
+          "keyboard": {
+            "left": 33.23844909667969,
+            "right": 358.5044403076172
+          }
+        },
+        {
+          "width": 768,
+          "page": 768,
+          "stage": {
+            "left": 24,
+            "right": 744
+          },
+          "keyboard": {
+            "left": 108.98297119140625,
+            "right": 686.8472290039062
+          }
+        },
+        {
+          "width": 1024,
+          "page": 1024,
+          "stage": {
+            "left": 36,
+            "right": 988
+          },
+          "keyboard": {
+            "left": 200.6199493408203,
+            "right": 855.9046173095703
+          }
+        },
+        {
+          "width": 1440,
+          "page": 1440,
+          "stage": {
+            "left": 112,
+            "right": 1328
+          },
+          "keyboard": {
+            "left": 363.48675537109375,
+            "right": 1113.8868408203125
+          }
+        },
+        {
+          "width": 1600,
+          "page": 1600,
+          "stage": {
+            "left": 192,
+            "right": 1408
+          },
+          "keyboard": {
+            "left": 413.017333984375,
+            "right": 1227.649169921875
+          }
+        }
+      ],
+      "noAutoplay": true,
+      "repeatSuppression": true,
+      "softModifierSeparateStroke": true,
+      "outsideFieldSilent": true,
+      "textCleared": true,
+      "donateDialogFocusReturn": true,
+      "dragRotatesWithoutSound": true,
+      "errors": [],
+      "badResponses": [],
+      "accessibilityViolations": []
+    },
+    "webkit": {
+      "profiles": [
+        "thocky",
+        "marbly",
+        "silent",
+        "poppy",
+        "clicky",
+        "bubble-wrap",
+        "clacky",
+        "creamy",
+        "deep-thock",
+        "office"
+      ],
+      "layouts": [
+        {
+          "width": 320,
+          "page": 320,
+          "stage": {
+            "left": 18,
+            "right": 302
+          },
+          "keyboard": {
+            "left": 27.067079544067383,
+            "right": 293.1600971221924
+          }
+        },
+        {
+          "width": 390,
+          "page": 390,
+          "stage": {
+            "left": 18,
+            "right": 372
+          },
+          "keyboard": {
+            "left": 33.23844909667969,
+            "right": 358.5044403076172
+          }
+        },
+        {
+          "width": 768,
+          "page": 768,
+          "stage": {
+            "left": 24,
+            "right": 744
+          },
+          "keyboard": {
+            "left": 108.98296356201172,
+            "right": 686.8472213745117
+          }
+        },
+        {
+          "width": 1024,
+          "page": 1024,
+          "stage": {
+            "left": 36,
+            "right": 988
+          },
+          "keyboard": {
+            "left": 200.61993408203125,
+            "right": 855.9046020507812
+          }
+        },
+        {
+          "width": 1440,
+          "page": 1440,
+          "stage": {
+            "left": 112,
+            "right": 1328
+          },
+          "keyboard": {
+            "left": 363.4867858886719,
+            "right": 1113.8868103027344
+          }
+        },
+        {
+          "width": 1600,
+          "page": 1600,
+          "stage": {
+            "left": 192,
+            "right": 1408
+          },
+          "keyboard": {
+            "left": 413.0173645019531,
+            "right": 1227.6492004394531
+          }
+        }
+      ],
+      "noAutoplay": true,
+      "repeatSuppression": true,
+      "softModifierSeparateStroke": true,
+      "outsideFieldSilent": true,
+      "textCleared": true,
+      "donateDialogFocusReturn": true,
+      "dragRotatesWithoutSound": true,
+      "errors": [],
+      "badResponses": [],
+      "accessibilityViolations": []
+    }
+  },
+  "releaseZipSHA256": "c38e8474e20aa819f2ca5e3af2b59c6f9d14ace4dae725acea6005a1983bf382",
+  "releaseSigning": "Local certificate; strict verification passed after ZIP extraction; not notarized",
+  "sponsors": "Configured for longmaba; receiving sponsorships requires account activation"
+}

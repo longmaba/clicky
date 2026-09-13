@@ -1,0 +1,1718 @@
+{
+  "metric": "First frame at 20% of sample peak; excludes render, hardware and Bluetooth latency",
+  "creamySingleImpactMetric": {
+    "highPassHz": 250,
+    "filter": "One-pole RC high-pass, analysis only",
+    "rmsWindowMilliseconds": 1,
+    "hopMilliseconds": 0.5,
+    "primaryWindowStartRangeMilliseconds": [
+      0,
+      6
+    ],
+    "laterWindowStartMinimumMilliseconds": 8,
+    "maximumLateToPrimaryRMSRatio": 0.18
+  },
+  "impactReview": "Profile-aware renewed-attack detection plus source waveform review; not a substitute for listening.",
+  "sampleCount": 60,
+  "failures": [
+    "Sounds/thocky/01.wav: renewed impact at 13.5 ms (1.045 of initial impact)",
+    "Sounds/thocky/01.wav: renewed impact at 98.0 ms (0.122 of initial impact)",
+    "Sounds/thocky/03.wav: renewed impact at 36.5 ms (0.164 of initial impact)",
+    "Sounds/thocky/04.wav: renewed impact at 28.5 ms (0.358 of initial impact)",
+    "Sounds/thocky/05.wav: renewed impact at 48.5 ms (0.191 of initial impact)",
+    "Sounds/marbly/02.wav: renewed impact at 28.5 ms (0.204 of initial impact)",
+    "Sounds/marbly/02.wav: renewed impact at 79.0 ms (0.141 of initial impact)",
+    "Sounds/marbly/04.wav: renewed impact at 118.0 ms (0.121 of initial impact)",
+    "Sounds/poppy/01.wav: renewed impact at 14.5 ms (0.265 of initial impact)",
+    "Sounds/poppy/01.wav: renewed impact at 48.0 ms (0.145 of initial impact)",
+    "Sounds/poppy/01.wav: renewed impact at 74.5 ms (0.294 of initial impact)",
+    "Sounds/poppy/02.wav: renewed impact at 40.5 ms (0.267 of initial impact)",
+    "Sounds/poppy/06.wav: renewed impact at 21.0 ms (0.224 of initial impact)",
+    "Sounds/clicky/01.wav: renewed impact at 9.0 ms (1.157 of initial impact)",
+    "Sounds/clicky/01.wav: renewed impact at 16.0 ms (0.432 of initial impact)",
+    "Sounds/clicky/01.wav: renewed impact at 51.0 ms (0.569 of initial impact)",
+    "Sounds/clicky/01.wav: renewed impact at 67.5 ms (0.445 of initial impact)",
+    "Sounds/clicky/03.wav: renewed impact at 40.0 ms (0.386 of initial impact)",
+    "Sounds/clicky/03.wav: renewed impact at 72.0 ms (0.135 of initial impact)",
+    "Sounds/clicky/03.wav: renewed impact at 76.5 ms (0.323 of initial impact)",
+    "Sounds/clicky/04.wav: renewed impact at 8.5 ms (1.416 of initial impact)",
+    "Sounds/bubble-wrap/01.wav: renewed impact at 21.0 ms (0.296 of initial impact)",
+    "Sounds/bubble-wrap/01.wav: renewed impact at 36.0 ms (0.203 of initial impact)",
+    "Sounds/bubble-wrap/01.wav: renewed impact at 106.5 ms (0.197 of initial impact)",
+    "Sounds/bubble-wrap/02.wav: renewed impact at 10.0 ms (0.291 of initial impact)",
+    "Sounds/bubble-wrap/02.wav: renewed impact at 73.0 ms (0.230 of initial impact)",
+    "Sounds/bubble-wrap/03.wav: renewed impact at 10.0 ms (1.511 of initial impact)",
+    "Sounds/bubble-wrap/05.wav: renewed impact at 82.0 ms (0.342 of initial impact)",
+    "Sounds/bubble-wrap/06.wav: renewed impact at 13.0 ms (0.269 of initial impact)",
+    "Sounds/bubble-wrap/06.wav: renewed impact at 32.5 ms (0.403 of initial impact)",
+    "Sounds/clacky/02.wav: renewed impact at 40.0 ms (0.392 of initial impact)",
+    "Sounds/clacky/04.wav: renewed impact at 11.0 ms (0.311 of initial impact)",
+    "Sounds/clacky/04.wav: renewed impact at 39.5 ms (0.222 of initial impact)",
+    "Sounds/clacky/04.wav: renewed impact at 109.0 ms (0.304 of initial impact)",
+    "Sounds/creamy/01.wav: Creamy secondary impact ratio 0.4655 exceeds 0.18 at 31.0 ms",
+    "Sounds/creamy/01.wav: renewed impact at 18.0 ms (0.317 of initial impact)",
+    "Sounds/creamy/01.wav: renewed impact at 31.0 ms (0.465 of initial impact)",
+    "Sounds/creamy/01.wav: renewed impact at 60.5 ms (0.187 of initial impact)",
+    "Sounds/creamy/02.wav: Creamy secondary impact ratio 0.8702 exceeds 0.18 at 15.0 ms",
+    "Sounds/creamy/02.wav: renewed impact at 15.0 ms (0.870 of initial impact)",
+    "Sounds/creamy/02.wav: renewed impact at 31.0 ms (0.781 of initial impact)",
+    "Sounds/creamy/03.wav: Creamy secondary impact ratio 2.4943 exceeds 0.18 at 13.5 ms",
+    "Sounds/creamy/03.wav: renewed impact at 13.5 ms (2.494 of initial impact)",
+    "Sounds/creamy/05.wav: Creamy secondary impact ratio 0.4737 exceeds 0.18 at 13.5 ms",
+    "Sounds/creamy/05.wav: renewed impact at 13.5 ms (0.474 of initial impact)",
+    "Sounds/deep-thock/01.wav: renewed impact at 67.5 ms (0.123 of initial impact)",
+    "Sounds/deep-thock/03.wav: renewed impact at 131.0 ms (0.202 of initial impact)",
+    "Sounds/deep-thock/04.wav: renewed impact at 112.5 ms (0.167 of initial impact)",
+    "Sounds/deep-thock/04.wav: renewed impact at 116.5 ms (0.204 of initial impact)",
+    "Sounds/deep-thock/06.wav: renewed impact at 144.5 ms (0.182 of initial impact)",
+    "Sounds/office/01.wav: main key texture delayed to 30.0 ms",
+    "Sounds/office/02.wav: renewed impact at 48.0 ms (2.391 of initial impact)",
+    "Sounds/office/02.wav: main key texture delayed to 48.0 ms",
+    "Sounds/office/05.wav: renewed impact at 12.5 ms (7.491 of initial impact)",
+    "Sounds/office/05.wav: main key texture delayed to 12.5 ms"
+  ],
+  "samples": [
+    {
+      "profile": "thocky",
+      "path": "Sounds/thocky/01.wav",
+      "frames": 5147,
+      "peak": 0.453186,
+      "rms": 0.0635348,
+      "first20PercentPeakMilliseconds": 0.625,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 13.5,
+          "relativeRMS": 1.0447908,
+          "riseFromValley": 57.4647,
+          "riseWithinTwoMilliseconds": 23.9214
+        },
+        {
+          "milliseconds": 98.0,
+          "relativeRMS": 0.1219006,
+          "riseFromValley": 6.1693,
+          "riseWithinTwoMilliseconds": 5.324
+        }
+      ],
+      "impactBandPeakMilliseconds": 13.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "thocky",
+      "path": "Sounds/thocky/02.wav",
+      "frames": 5476,
+      "peak": 0.4598389,
+      "rms": 0.0570114,
+      "first20PercentPeakMilliseconds": 0.5625,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "thocky",
+      "path": "Sounds/thocky/03.wav",
+      "frames": 5317,
+      "peak": 0.3708496,
+      "rms": 0.0424644,
+      "first20PercentPeakMilliseconds": 0.395833,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 36.5,
+          "relativeRMS": 0.1637211,
+          "riseFromValley": 4.7716,
+          "riseWithinTwoMilliseconds": 4.2427
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "thocky",
+      "path": "Sounds/thocky/04.wav",
+      "frames": 4354,
+      "peak": 0.4611816,
+      "rms": 0.0533669,
+      "first20PercentPeakMilliseconds": 0.458333,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 28.5,
+          "relativeRMS": 0.3583376,
+          "riseFromValley": 32.75,
+          "riseWithinTwoMilliseconds": 29.554
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "thocky",
+      "path": "Sounds/thocky/05.wav",
+      "frames": 3874,
+      "peak": 0.4554749,
+      "rms": 0.0569631,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 48.5,
+          "relativeRMS": 0.1913025,
+          "riseFromValley": 8.7002,
+          "riseWithinTwoMilliseconds": 7.9635
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "thocky",
+      "path": "Sounds/thocky/06.wav",
+      "frames": 5434,
+      "peak": 0.4635315,
+      "rms": 0.0593485,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "marbly",
+      "path": "Sounds/marbly/01.wav",
+      "frames": 5075,
+      "peak": 0.2979736,
+      "rms": 0.0319438,
+      "first20PercentPeakMilliseconds": 0.270833,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "marbly",
+      "path": "Sounds/marbly/02.wav",
+      "frames": 6033,
+      "peak": 0.455658,
+      "rms": 0.0290859,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 28.5,
+          "relativeRMS": 0.2040863,
+          "riseFromValley": 12.0813,
+          "riseWithinTwoMilliseconds": 6.8282
+        },
+        {
+          "milliseconds": 79.0,
+          "relativeRMS": 0.140994,
+          "riseFromValley": 24.6988,
+          "riseWithinTwoMilliseconds": 17.2072
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "marbly",
+      "path": "Sounds/marbly/03.wav",
+      "frames": 5650,
+      "peak": 0.4469299,
+      "rms": 0.0267541,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "marbly",
+      "path": "Sounds/marbly/04.wav",
+      "frames": 6109,
+      "peak": 0.4317932,
+      "rms": 0.032325,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 118.0,
+          "relativeRMS": 0.1212204,
+          "riseFromValley": 13.8752,
+          "riseWithinTwoMilliseconds": 7.2725
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "marbly",
+      "path": "Sounds/marbly/05.wav",
+      "frames": 5117,
+      "peak": 0.3325806,
+      "rms": 0.0267582,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "marbly",
+      "path": "Sounds/marbly/06.wav",
+      "frames": 5637,
+      "peak": 0.4007568,
+      "rms": 0.0523642,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "silent",
+      "path": "Sounds/silent/01.wav",
+      "frames": 4416,
+      "peak": 0.0407715,
+      "rms": 0.0120869,
+      "first20PercentPeakMilliseconds": 1.833333,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 2.5,
+      "impactAnalysis": {
+        "highPassHz": 1800,
+        "filterPasses": 2,
+        "rmsWindowMilliseconds": 2.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.18,
+        "minimumRiseFromValley": 4,
+        "minimumRiseWithinTwoMilliseconds": 3
+      }
+    },
+    {
+      "profile": "silent",
+      "path": "Sounds/silent/02.wav",
+      "frames": 4272,
+      "peak": 0.046936,
+      "rms": 0.0141308,
+      "first20PercentPeakMilliseconds": 0.229167,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 5.0,
+      "impactAnalysis": {
+        "highPassHz": 1800,
+        "filterPasses": 2,
+        "rmsWindowMilliseconds": 2.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.18,
+        "minimumRiseFromValley": 4,
+        "minimumRiseWithinTwoMilliseconds": 3
+      }
+    },
+    {
+      "profile": "silent",
+      "path": "Sounds/silent/03.wav",
+      "frames": 2783,
+      "peak": 0.0400085,
+      "rms": 0.0147501,
+      "first20PercentPeakMilliseconds": 0.3125,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 50.5,
+      "impactAnalysis": {
+        "highPassHz": 1800,
+        "filterPasses": 2,
+        "rmsWindowMilliseconds": 2.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.18,
+        "minimumRiseFromValley": 4,
+        "minimumRiseWithinTwoMilliseconds": 3
+      }
+    },
+    {
+      "profile": "silent",
+      "path": "Sounds/silent/04.wav",
+      "frames": 4224,
+      "peak": 0.0492554,
+      "rms": 0.0121285,
+      "first20PercentPeakMilliseconds": 0.229167,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.0,
+      "impactAnalysis": {
+        "highPassHz": 1800,
+        "filterPasses": 2,
+        "rmsWindowMilliseconds": 2.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.18,
+        "minimumRiseFromValley": 4,
+        "minimumRiseWithinTwoMilliseconds": 3
+      }
+    },
+    {
+      "profile": "silent",
+      "path": "Sounds/silent/05.wav",
+      "frames": 2534,
+      "peak": 0.0408936,
+      "rms": 0.0097252,
+      "first20PercentPeakMilliseconds": 0.75,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 1800,
+        "filterPasses": 2,
+        "rmsWindowMilliseconds": 2.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.18,
+        "minimumRiseFromValley": 4,
+        "minimumRiseWithinTwoMilliseconds": 3
+      }
+    },
+    {
+      "profile": "silent",
+      "path": "Sounds/silent/06.wav",
+      "frames": 3450,
+      "peak": 0.0731812,
+      "rms": 0.021252,
+      "first20PercentPeakMilliseconds": 0.75,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 1800,
+        "filterPasses": 2,
+        "rmsWindowMilliseconds": 2.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.18,
+        "minimumRiseFromValley": 4,
+        "minimumRiseWithinTwoMilliseconds": 3
+      }
+    },
+    {
+      "profile": "poppy",
+      "path": "Sounds/poppy/01.wav",
+      "frames": 4082,
+      "peak": 0.4416504,
+      "rms": 0.0545148,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 14.5,
+          "relativeRMS": 0.2648751,
+          "riseFromValley": 18.7207,
+          "riseWithinTwoMilliseconds": 20.6017
+        },
+        {
+          "milliseconds": 48.0,
+          "relativeRMS": 0.1448277,
+          "riseFromValley": 19.1191,
+          "riseWithinTwoMilliseconds": 5.9204
+        },
+        {
+          "milliseconds": 74.5,
+          "relativeRMS": 0.2936017,
+          "riseFromValley": 12.8377,
+          "riseWithinTwoMilliseconds": 10.1621
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "poppy",
+      "path": "Sounds/poppy/02.wav",
+      "frames": 3923,
+      "peak": 0.4613647,
+      "rms": 0.0512001,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 40.5,
+          "relativeRMS": 0.2669104,
+          "riseFromValley": 53.3821,
+          "riseWithinTwoMilliseconds": 24.6383
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "poppy",
+      "path": "Sounds/poppy/03.wav",
+      "frames": 4567,
+      "peak": 0.3595276,
+      "rms": 0.0329136,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "poppy",
+      "path": "Sounds/poppy/04.wav",
+      "frames": 4158,
+      "peak": 0.4560852,
+      "rms": 0.0363668,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "poppy",
+      "path": "Sounds/poppy/05.wav",
+      "frames": 4354,
+      "peak": 0.2969666,
+      "rms": 0.0343366,
+      "first20PercentPeakMilliseconds": 0.5625,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "poppy",
+      "path": "Sounds/poppy/06.wav",
+      "frames": 3999,
+      "peak": 0.458252,
+      "rms": 0.0387976,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 21.0,
+          "relativeRMS": 0.2240245,
+          "riseFromValley": 16.2244,
+          "riseWithinTwoMilliseconds": 11.2967
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "clicky",
+      "path": "Sounds/clicky/01.wav",
+      "frames": 4289,
+      "peak": 0.4187012,
+      "rms": 0.0667089,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 9.0,
+          "relativeRMS": 1.1565419,
+          "riseFromValley": 23.3964,
+          "riseWithinTwoMilliseconds": 24.2879
+        },
+        {
+          "milliseconds": 16.0,
+          "relativeRMS": 0.4315632,
+          "riseFromValley": 7.0272,
+          "riseWithinTwoMilliseconds": 8.5689
+        },
+        {
+          "milliseconds": 51.0,
+          "relativeRMS": 0.5690415,
+          "riseFromValley": 35.9996,
+          "riseWithinTwoMilliseconds": 12.9594
+        },
+        {
+          "milliseconds": 67.5,
+          "relativeRMS": 0.4447694,
+          "riseFromValley": 20.7384,
+          "riseWithinTwoMilliseconds": 20.7449
+        }
+      ],
+      "impactBandPeakMilliseconds": 9.0,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "clicky",
+      "path": "Sounds/clicky/02.wav",
+      "frames": 2498,
+      "peak": 0.4456787,
+      "rms": 0.044593,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "clicky",
+      "path": "Sounds/clicky/03.wav",
+      "frames": 4178,
+      "peak": 0.4532166,
+      "rms": 0.0448516,
+      "first20PercentPeakMilliseconds": 0.375,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 40.0,
+          "relativeRMS": 0.3860481,
+          "riseFromValley": 34.7597,
+          "riseWithinTwoMilliseconds": 27.5456
+        },
+        {
+          "milliseconds": 72.0,
+          "relativeRMS": 0.1348636,
+          "riseFromValley": 9.9143,
+          "riseWithinTwoMilliseconds": 7.7339
+        },
+        {
+          "milliseconds": 76.5,
+          "relativeRMS": 0.3228404,
+          "riseFromValley": 19.4914,
+          "riseWithinTwoMilliseconds": 13.9127
+        }
+      ],
+      "impactBandPeakMilliseconds": 2.0,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "clicky",
+      "path": "Sounds/clicky/04.wav",
+      "frames": 3199,
+      "peak": 0.3730774,
+      "rms": 0.0468585,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 8.5,
+          "relativeRMS": 1.4162609,
+          "riseFromValley": 23.883,
+          "riseWithinTwoMilliseconds": 22.6043
+        }
+      ],
+      "impactBandPeakMilliseconds": 8.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "clicky",
+      "path": "Sounds/clicky/05.wav",
+      "frames": 3082,
+      "peak": 0.4553223,
+      "rms": 0.0453673,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 6.0,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "clicky",
+      "path": "Sounds/clicky/06.wav",
+      "frames": 3237,
+      "peak": 0.3655396,
+      "rms": 0.0368905,
+      "first20PercentPeakMilliseconds": 0.979167,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 6.0,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "bubble-wrap",
+      "path": "Sounds/bubble-wrap/01.wav",
+      "frames": 5384,
+      "peak": 0.462677,
+      "rms": 0.0635298,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 21.0,
+          "relativeRMS": 0.2961838,
+          "riseFromValley": 23.636,
+          "riseWithinTwoMilliseconds": 13.6726
+        },
+        {
+          "milliseconds": 36.0,
+          "relativeRMS": 0.2029267,
+          "riseFromValley": 17.0037,
+          "riseWithinTwoMilliseconds": 8.983
+        },
+        {
+          "milliseconds": 106.5,
+          "relativeRMS": 0.1965588,
+          "riseFromValley": 24.3833,
+          "riseWithinTwoMilliseconds": 9.4104
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "bubble-wrap",
+      "path": "Sounds/bubble-wrap/02.wav",
+      "frames": 4223,
+      "peak": 0.3752136,
+      "rms": 0.0537043,
+      "first20PercentPeakMilliseconds": 0.583333,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 10.0,
+          "relativeRMS": 0.2909648,
+          "riseFromValley": 10.9042,
+          "riseWithinTwoMilliseconds": 4.5855
+        },
+        {
+          "milliseconds": 73.0,
+          "relativeRMS": 0.2299923,
+          "riseFromValley": 38.1493,
+          "riseWithinTwoMilliseconds": 18.0485
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "bubble-wrap",
+      "path": "Sounds/bubble-wrap/03.wav",
+      "frames": 4418,
+      "peak": 0.3903503,
+      "rms": 0.0896395,
+      "first20PercentPeakMilliseconds": 0.229167,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 10.0,
+          "relativeRMS": 1.5109072,
+          "riseFromValley": 13.502,
+          "riseWithinTwoMilliseconds": 12.1562
+        }
+      ],
+      "impactBandPeakMilliseconds": 10.0,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "bubble-wrap",
+      "path": "Sounds/bubble-wrap/04.wav",
+      "frames": 4279,
+      "peak": 0.3699646,
+      "rms": 0.0579476,
+      "first20PercentPeakMilliseconds": 0.583333,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "bubble-wrap",
+      "path": "Sounds/bubble-wrap/05.wav",
+      "frames": 4393,
+      "peak": 0.2814941,
+      "rms": 0.0648288,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 82.0,
+          "relativeRMS": 0.3418608,
+          "riseFromValley": 20.8985,
+          "riseWithinTwoMilliseconds": 22.287
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "bubble-wrap",
+      "path": "Sounds/bubble-wrap/06.wav",
+      "frames": 5336,
+      "peak": 0.4421692,
+      "rms": 0.0775927,
+      "first20PercentPeakMilliseconds": 0.333333,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 13.0,
+          "relativeRMS": 0.2686355,
+          "riseFromValley": 4.8914,
+          "riseWithinTwoMilliseconds": 4.6294
+        },
+        {
+          "milliseconds": 32.5,
+          "relativeRMS": 0.4030969,
+          "riseFromValley": 30.498,
+          "riseWithinTwoMilliseconds": 10.1421
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "clacky",
+      "path": "Sounds/clacky/01.wav",
+      "frames": 4896,
+      "peak": 0.4579468,
+      "rms": 0.0427419,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "clacky",
+      "path": "Sounds/clacky/02.wav",
+      "frames": 4373,
+      "peak": 0.4399414,
+      "rms": 0.032029,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 40.0,
+          "relativeRMS": 0.3924712,
+          "riseFromValley": 34.5149,
+          "riseWithinTwoMilliseconds": 30.7457
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "clacky",
+      "path": "Sounds/clacky/03.wav",
+      "frames": 4040,
+      "peak": 0.4607849,
+      "rms": 0.0373439,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "clacky",
+      "path": "Sounds/clacky/04.wav",
+      "frames": 5693,
+      "peak": 0.4625244,
+      "rms": 0.0421184,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 11.0,
+          "relativeRMS": 0.3106161,
+          "riseFromValley": 6.2428,
+          "riseWithinTwoMilliseconds": 4.8979
+        },
+        {
+          "milliseconds": 39.5,
+          "relativeRMS": 0.2222072,
+          "riseFromValley": 30.8414,
+          "riseWithinTwoMilliseconds": 27.5728
+        },
+        {
+          "milliseconds": 109.0,
+          "relativeRMS": 0.3037875,
+          "riseFromValley": 60.7575,
+          "riseWithinTwoMilliseconds": 36.3636
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "clacky",
+      "path": "Sounds/clacky/05.wav",
+      "frames": 3904,
+      "peak": 0.4450073,
+      "rms": 0.0332162,
+      "first20PercentPeakMilliseconds": 0.541667,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "clacky",
+      "path": "Sounds/clacky/06.wav",
+      "frames": 3898,
+      "peak": 0.432312,
+      "rms": 0.040673,
+      "first20PercentPeakMilliseconds": 0.541667,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "creamy",
+      "path": "Sounds/creamy/01.wav",
+      "frames": 4592,
+      "peak": 0.4599304,
+      "rms": 0.0521533,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "creamyLateToPrimaryRMSRatio": 0.4654865,
+      "creamyLaterPeakMilliseconds": 31.0,
+      "creamyPrimaryRMS": 0.3005895,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 18.0,
+          "relativeRMS": 0.3173216,
+          "riseFromValley": 10.434,
+          "riseWithinTwoMilliseconds": 8.3395
+        },
+        {
+          "milliseconds": 31.0,
+          "relativeRMS": 0.4654865,
+          "riseFromValley": 23.8768,
+          "riseWithinTwoMilliseconds": 19.2898
+        },
+        {
+          "milliseconds": 60.5,
+          "relativeRMS": 0.1865091,
+          "riseFromValley": 13.5848,
+          "riseWithinTwoMilliseconds": 12.3668
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "creamy",
+      "path": "Sounds/creamy/02.wav",
+      "frames": 3927,
+      "peak": 0.4606323,
+      "rms": 0.072014,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "creamyLateToPrimaryRMSRatio": 0.8702037,
+      "creamyLaterPeakMilliseconds": 15.0,
+      "creamyPrimaryRMS": 0.2654387,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 15.0,
+          "relativeRMS": 0.8702037,
+          "riseFromValley": 23.5089,
+          "riseWithinTwoMilliseconds": 15.9359
+        },
+        {
+          "milliseconds": 31.0,
+          "relativeRMS": 0.780615,
+          "riseFromValley": 24.1503,
+          "riseWithinTwoMilliseconds": 21.8657
+        }
+      ],
+      "impactBandPeakMilliseconds": 1.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "creamy",
+      "path": "Sounds/creamy/03.wav",
+      "frames": 5398,
+      "peak": 0.4576111,
+      "rms": 0.0389809,
+      "first20PercentPeakMilliseconds": 0.708333,
+      "creamyLateToPrimaryRMSRatio": 2.4942537,
+      "creamyLaterPeakMilliseconds": 13.5,
+      "creamyPrimaryRMS": 0.107925,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 13.5,
+          "relativeRMS": 2.4942537,
+          "riseFromValley": 51.4711,
+          "riseWithinTwoMilliseconds": 2.8486
+        }
+      ],
+      "impactBandPeakMilliseconds": 13.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "creamy",
+      "path": "Sounds/creamy/04.wav",
+      "frames": 4090,
+      "peak": 0.4515686,
+      "rms": 0.0505397,
+      "first20PercentPeakMilliseconds": 0.5,
+      "creamyLateToPrimaryRMSRatio": 0.0561257,
+      "creamyLaterPeakMilliseconds": 10.5,
+      "creamyPrimaryRMS": 0.3220628,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "creamy",
+      "path": "Sounds/creamy/05.wav",
+      "frames": 4659,
+      "peak": 0.4536743,
+      "rms": 0.0444695,
+      "first20PercentPeakMilliseconds": 0.5,
+      "creamyLateToPrimaryRMSRatio": 0.4737369,
+      "creamyLaterPeakMilliseconds": 13.5,
+      "creamyPrimaryRMS": 0.2595027,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 13.5,
+          "relativeRMS": 0.4737369,
+          "riseFromValley": 15.3706,
+          "riseWithinTwoMilliseconds": 7.9242
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "creamy",
+      "path": "Sounds/creamy/06.wav",
+      "frames": 5553,
+      "peak": 0.4675598,
+      "rms": 0.0424624,
+      "first20PercentPeakMilliseconds": 0.5,
+      "creamyLateToPrimaryRMSRatio": 0.0710847,
+      "creamyLaterPeakMilliseconds": 10.0,
+      "creamyPrimaryRMS": 0.2981589,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "deep-thock",
+      "path": "Sounds/deep-thock/01.wav",
+      "frames": 5912,
+      "peak": 0.3259583,
+      "rms": 0.0195236,
+      "first20PercentPeakMilliseconds": 0.625,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 67.5,
+          "relativeRMS": 0.1230421,
+          "riseFromValley": 23.3631,
+          "riseWithinTwoMilliseconds": 11.0877
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "deep-thock",
+      "path": "Sounds/deep-thock/02.wav",
+      "frames": 6610,
+      "peak": 0.454071,
+      "rms": 0.0273528,
+      "first20PercentPeakMilliseconds": 0.75,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "deep-thock",
+      "path": "Sounds/deep-thock/03.wav",
+      "frames": 6932,
+      "peak": 0.4562988,
+      "rms": 0.0288603,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 131.0,
+          "relativeRMS": 0.2021743,
+          "riseFromValley": 40.4349,
+          "riseWithinTwoMilliseconds": 40.4349
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "deep-thock",
+      "path": "Sounds/deep-thock/04.wav",
+      "frames": 7369,
+      "peak": 0.4576416,
+      "rms": 0.0240266,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 112.5,
+          "relativeRMS": 0.1668202,
+          "riseFromValley": 33.364,
+          "riseWithinTwoMilliseconds": 23.5375
+        },
+        {
+          "milliseconds": 116.5,
+          "relativeRMS": 0.2042509,
+          "riseFromValley": 32.783,
+          "riseWithinTwoMilliseconds": 2.756
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "deep-thock",
+      "path": "Sounds/deep-thock/05.wav",
+      "frames": 7831,
+      "peak": 0.4606323,
+      "rms": 0.0322896,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "deep-thock",
+      "path": "Sounds/deep-thock/06.wav",
+      "frames": 7765,
+      "peak": 0.453186,
+      "rms": 0.0297168,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 144.5,
+          "relativeRMS": 0.1820574,
+          "riseFromValley": 36.4115,
+          "riseWithinTwoMilliseconds": 36.4115
+        }
+      ],
+      "impactBandPeakMilliseconds": 0.5,
+      "impactAnalysis": {
+        "highPassHz": 250,
+        "filterPasses": 1,
+        "rmsWindowMilliseconds": 1.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 8,
+        "minimumRelativeRMS": 0.12,
+        "minimumRiseFromValley": 3,
+        "minimumRiseWithinTwoMilliseconds": 2.5
+      }
+    },
+    {
+      "profile": "office",
+      "path": "Sounds/office/01.wav",
+      "frames": 3984,
+      "peak": 0.2278748,
+      "rms": 0.0986239,
+      "first20PercentPeakMilliseconds": 0.166667,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 30.0,
+      "impactAnalysis": {
+        "highPassHz": 1800,
+        "filterPasses": 2,
+        "rmsWindowMilliseconds": 2.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 12,
+        "minimumRelativeRMS": 0.18,
+        "minimumRiseFromValley": 4,
+        "minimumRiseWithinTwoMilliseconds": 3
+      }
+    },
+    {
+      "profile": "office",
+      "path": "Sounds/office/02.wav",
+      "frames": 3360,
+      "peak": 0.2085266,
+      "rms": 0.1193833,
+      "first20PercentPeakMilliseconds": 2.875,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 48.0,
+          "relativeRMS": 2.3911982,
+          "riseFromValley": 20.6321,
+          "riseWithinTwoMilliseconds": 3.379
+        }
+      ],
+      "impactBandPeakMilliseconds": 48.0,
+      "impactAnalysis": {
+        "highPassHz": 1800,
+        "filterPasses": 2,
+        "rmsWindowMilliseconds": 2.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 12,
+        "minimumRelativeRMS": 0.18,
+        "minimumRiseFromValley": 4,
+        "minimumRiseWithinTwoMilliseconds": 3
+      }
+    },
+    {
+      "profile": "office",
+      "path": "Sounds/office/03.wav",
+      "frames": 2680,
+      "peak": 0.275238,
+      "rms": 0.0654602,
+      "first20PercentPeakMilliseconds": 0.5,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 1.0,
+      "impactAnalysis": {
+        "highPassHz": 1800,
+        "filterPasses": 2,
+        "rmsWindowMilliseconds": 2.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 12,
+        "minimumRelativeRMS": 0.18,
+        "minimumRiseFromValley": 4,
+        "minimumRiseWithinTwoMilliseconds": 3
+      }
+    },
+    {
+      "profile": "office",
+      "path": "Sounds/office/04.wav",
+      "frames": 3293,
+      "peak": 0.2843018,
+      "rms": 0.0712193,
+      "first20PercentPeakMilliseconds": 0.1875,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 1.0,
+      "impactAnalysis": {
+        "highPassHz": 1800,
+        "filterPasses": 2,
+        "rmsWindowMilliseconds": 2.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 12,
+        "minimumRelativeRMS": 0.18,
+        "minimumRiseFromValley": 4,
+        "minimumRiseWithinTwoMilliseconds": 3
+      }
+    },
+    {
+      "profile": "office",
+      "path": "Sounds/office/05.wav",
+      "frames": 3696,
+      "peak": 0.2484131,
+      "rms": 0.0844535,
+      "first20PercentPeakMilliseconds": 0.1875,
+      "unexpectedSecondaryImpacts": [
+        {
+          "milliseconds": 12.5,
+          "relativeRMS": 7.4909561,
+          "riseFromValley": 52.1898,
+          "riseWithinTwoMilliseconds": 15.4643
+        }
+      ],
+      "impactBandPeakMilliseconds": 12.5,
+      "impactAnalysis": {
+        "highPassHz": 1800,
+        "filterPasses": 2,
+        "rmsWindowMilliseconds": 2.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 12,
+        "minimumRelativeRMS": 0.18,
+        "minimumRiseFromValley": 4,
+        "minimumRiseWithinTwoMilliseconds": 3
+      }
+    },
+    {
+      "profile": "office",
+      "path": "Sounds/office/06.wav",
+      "frames": 4479,
+      "peak": 0.276947,
+      "rms": 0.0391306,
+      "first20PercentPeakMilliseconds": 0.583333,
+      "unexpectedSecondaryImpacts": [],
+      "impactBandPeakMilliseconds": 1.0,
+      "impactAnalysis": {
+        "highPassHz": 1800,
+        "filterPasses": 2,
+        "rmsWindowMilliseconds": 2.0,
+        "hopMilliseconds": 0.5,
+        "initialWindowStartMaximumMilliseconds": 6,
+        "secondaryStartMinimumMilliseconds": 12,
+        "minimumRelativeRMS": 0.18,
+        "minimumRiseFromValley": 4,
+        "minimumRiseWithinTwoMilliseconds": 3
+      }
+    }
+  ],
+  "originalEffects": [
+    {
+      "path": "Sounds/Extras/crisp.wav",
+      "frames": 3120,
+      "peak": 0.4199829,
+      "rms": 0.0454728,
+      "first20PercentPeakMilliseconds": 0.25,
+      "sourceKind": "Original procedural effect, verified by extraction reproducibility",
+      "intentionalReturnClickMilliseconds": null
+    },
+    {
+      "path": "Sounds/Extras/ding.wav",
+      "frames": 31200,
+      "peak": 0.3599854,
+      "rms": 0.072327,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "sourceKind": "Original procedural effect, verified by extraction reproducibility",
+      "intentionalReturnClickMilliseconds": null
+    },
+    {
+      "path": "Sounds/Extras/hard.wav",
+      "frames": 5520,
+      "peak": 0.4199829,
+      "rms": 0.0522287,
+      "first20PercentPeakMilliseconds": 0.229167,
+      "sourceKind": "Original procedural effect, verified by extraction reproducibility",
+      "intentionalReturnClickMilliseconds": null
+    },
+    {
+      "path": "Sounds/Extras/soft.wav",
+      "frames": 3840,
+      "peak": 0.4199829,
+      "rms": 0.072779,
+      "first20PercentPeakMilliseconds": 0.354167,
+      "sourceKind": "Original procedural effect, verified by extraction reproducibility",
+      "intentionalReturnClickMilliseconds": null
+    },
+    {
+      "path": "Sounds/Extras/typewriter.wav",
+      "frames": 8640,
+      "peak": 0.4199829,
+      "rms": 0.0438256,
+      "first20PercentPeakMilliseconds": 0.25,
+      "sourceKind": "Original procedural effect, verified by extraction reproducibility",
+      "intentionalReturnClickMilliseconds": 46
+    }
+  ]
+}

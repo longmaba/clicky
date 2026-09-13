@@ -1,0 +1,50 @@
+Clicky {{VERSION}} (build {{BUILD}}) for Mac
+=========================================
+
+Requirements: Apple Silicon Mac, macOS 13 or later.
+This download does not include a Windows or Intel Mac build.
+
+Install and open
+----------------
+1. Expand Clicky-macOS-arm64.zip and move Clicky.app to Applications.
+2. Open Clicky.app from Applications.
+3. This build uses a local self-signed code-signing certificate. It is not
+   signed with an Apple Developer ID and has not been notarized by Apple.
+   If macOS blocks opening it because the developer cannot be verified,
+   open System Settings > Privacy & Security after the blocked attempt,
+   scroll to the security message for Clicky, and choose Open Anyway.
+   Confirm the macOS prompt to open this app.
+
+Apple's instructions for opening an app from an unknown developer:
+https://support.apple.com/guide/mac-help/mh40616/mac
+
+Enable keyboard sounds
+----------------------
+1. Open Clicky's settings from its menu-bar icon and request Input Monitoring
+   permission, or open System Settings > Privacy & Security > Input Monitoring.
+2. Enable Clicky. If it is missing, use the + button to add the Clicky.app you
+   placed in Applications. Clicky's Show Clicky in Finder button can help locate
+   the exact running copy.
+3. Quit and reopen Clicky if macOS requests it, then try typing in another app.
+
+Input Monitoring lets Clicky receive physical keyboard and mouse transitions
+to play sounds. Clicky runs offline and does not reconstruct or store your
+typed text. Closing Settings leaves the menu-bar app running. Quit Clicky from
+its menu-bar menu when you want to stop it completely.
+
+Updates and help
+----------------
+Quit Clicky before replacing it with a newer copy in Applications. Reopen it
+afterward. Existing preferences are kept in your Application Support folder.
+If input permission is disabled after an update, re-enable the installed copy
+in Input Monitoring and reopen the app.
+
+Releases: https://github.com/longmaba/clicky/releases
+Source and build instructions: https://github.com/longmaba/clicky
+Issues: https://github.com/longmaba/clicky/issues
+
+Licensing
+---------
+LICENSE covers the original Clicky code, icon, and generated extra effects.
+The recorded keyboard sounds have separate rights and attribution described
+in THIRD_PARTY_NOTICES.md. Both notices are included with this download.

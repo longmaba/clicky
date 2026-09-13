@@ -1,0 +1,33 @@
+{
+  "audioContinuesAfterSettingsClose": true,
+  "audioReady": true,
+  "audioReplay": {
+    "accepted": 500,
+    "bufferFrames": 128,
+    "bufferMilliseconds": 2.6666666666666665,
+    "dropped": 0,
+    "renderedFrames": 274560,
+    "sampleRate": 48000,
+    "submitted": 500
+  },
+  "audioStatus": "ready",
+  "hardwareInputTests": "Require physical typing and permission grant; not simulated by diagnostics.",
+  "inputMonitoringGranted": false,
+  "missingSamples": [],
+  "os": "Version 26.6.2 (Build 25G83)",
+  "outputs": [
+    {
+      "headphones": false,
+      "id": "BuiltInSpeakerDevice",
+      "name": "MacBook Pro Speakers"
+    },
+    {
+      "headphones": false,
+      "id": "MSLoopbackDriverDevice_UID",
+      "name": "Microsoft Teams Audio"
+    }
+  ],
+  "profileCount": 10,
+  "recordedSampleCount": 60,
+  "secureInputActive": false
+}

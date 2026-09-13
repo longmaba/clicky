@@ -1,0 +1,212 @@
+[
+  {
+    "id": "thocky",
+    "name": "Thocky",
+    "subtitle": "Warm, rounded knocks",
+    "color": "C68B54",
+    "samples": [
+      "Sounds/thocky/01.wav",
+      "Sounds/thocky/02.wav",
+      "Sounds/thocky/03.wav",
+      "Sounds/thocky/04.wav",
+      "Sounds/thocky/05.wav",
+      "Sounds/thocky/06.wav"
+    ],
+    "releaseSamples": null,
+    "gain": 1.0,
+    "provenance": {
+      "source": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f251.webm",
+      "sectionStart": 0.0,
+      "sectionEnd": 6.073
+    }
+  },
+  {
+    "id": "marbly",
+    "name": "Marbly",
+    "subtitle": "Smooth, glassy resonance",
+    "color": "AD9ACE",
+    "samples": [
+      "Sounds/marbly/01.wav",
+      "Sounds/marbly/02.wav",
+      "Sounds/marbly/03.wav",
+      "Sounds/marbly/04.wav",
+      "Sounds/marbly/05.wav",
+      "Sounds/marbly/06.wav"
+    ],
+    "releaseSamples": null,
+    "gain": 1.0,
+    "provenance": {
+      "source": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f251.webm",
+      "sectionStart": 6.073,
+      "sectionEnd": 12.079
+    }
+  },
+  {
+    "id": "silent",
+    "name": "Silent",
+    "subtitle": "A soft, quiet touch",
+    "color": "94A7AD",
+    "samples": [
+      "Sounds/silent/01.wav",
+      "Sounds/silent/02.wav",
+      "Sounds/silent/03.wav",
+      "Sounds/silent/04.wav",
+      "Sounds/silent/05.wav",
+      "Sounds/silent/06.wav"
+    ],
+    "releaseSamples": null,
+    "gain": 1.0,
+    "provenance": {
+      "source": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f251.webm",
+      "sectionStart": 12.079,
+      "sectionEnd": 16.4
+    }
+  },
+  {
+    "id": "poppy",
+    "name": "Poppy",
+    "subtitle": "Bright little pops",
+    "color": "E8A05B",
+    "samples": [
+      "Sounds/poppy/01.wav",
+      "Sounds/poppy/02.wav",
+      "Sounds/poppy/03.wav",
+      "Sounds/poppy/04.wav",
+      "Sounds/poppy/05.wav",
+      "Sounds/poppy/06.wav"
+    ],
+    "releaseSamples": null,
+    "gain": 1.0,
+    "provenance": {
+      "source": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f251.webm",
+      "sectionStart": 16.4,
+      "sectionEnd": 21.555
+    }
+  },
+  {
+    "id": "clicky",
+    "name": "Clicky",
+    "subtitle": "Crisp, tactile clicks",
+    "color": "D3BB6F",
+    "samples": [
+      "Sounds/clicky/01.wav",
+      "Sounds/clicky/02.wav",
+      "Sounds/clicky/03.wav",
+      "Sounds/clicky/04.wav",
+      "Sounds/clicky/05.wav",
+      "Sounds/clicky/06.wav"
+    ],
+    "releaseSamples": null,
+    "gain": 1.0,
+    "provenance": {
+      "source": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f251.webm",
+      "sectionStart": 21.555,
+      "sectionEnd": 27.06
+    }
+  },
+  {
+    "id": "bubble-wrap",
+    "name": "Bubble Wrap",
+    "subtitle": "Playful, hollow pops",
+    "color": "C493B5",
+    "samples": [
+      "Sounds/bubble-wrap/01.wav",
+      "Sounds/bubble-wrap/02.wav",
+      "Sounds/bubble-wrap/03.wav",
+      "Sounds/bubble-wrap/04.wav",
+      "Sounds/bubble-wrap/05.wav",
+      "Sounds/bubble-wrap/06.wav"
+    ],
+    "releaseSamples": null,
+    "gain": 1.0,
+    "provenance": {
+      "source": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f251.webm",
+      "sectionStart": 27.06,
+      "sectionEnd": 32.466
+    }
+  },
+  {
+    "id": "clacky",
+    "name": "Clacky",
+    "subtitle": "Sharp, lively taps",
+    "color": "DA8276",
+    "samples": [
+      "Sounds/clacky/01.wav",
+      "Sounds/clacky/02.wav",
+      "Sounds/clacky/03.wav",
+      "Sounds/clacky/04.wav",
+      "Sounds/clacky/05.wav",
+      "Sounds/clacky/06.wav"
+    ],
+    "releaseSamples": null,
+    "gain": 1.0,
+    "provenance": {
+      "source": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f251.webm",
+      "sectionStart": 32.466,
+      "sectionEnd": 38.205
+    }
+  },
+  {
+    "id": "creamy",
+    "name": "Creamy",
+    "subtitle": "Soft, buttery texture",
+    "color": "DCCCA0",
+    "samples": [
+      "Sounds/creamy/01.wav",
+      "Sounds/creamy/02.wav",
+      "Sounds/creamy/03.wav",
+      "Sounds/creamy/04.wav",
+      "Sounds/creamy/05.wav",
+      "Sounds/creamy/06.wav"
+    ],
+    "releaseSamples": null,
+    "gain": 1.0,
+    "provenance": {
+      "source": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f251.webm",
+      "sectionStart": 38.205,
+      "sectionEnd": 44.628
+    }
+  },
+  {
+    "id": "deep-thock",
+    "name": "Deep Thock",
+    "subtitle": "Low, resonant knocks",
+    "color": "82A799",
+    "samples": [
+      "Sounds/deep-thock/01.wav",
+      "Sounds/deep-thock/02.wav",
+      "Sounds/deep-thock/03.wav",
+      "Sounds/deep-thock/04.wav",
+      "Sounds/deep-thock/05.wav",
+      "Sounds/deep-thock/06.wav"
+    ],
+    "releaseSamples": null,
+    "gain": 1.0,
+    "provenance": {
+      "source": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f251.webm",
+      "sectionStart": 44.628,
+      "sectionEnd": 49.816
+    }
+  },
+  {
+    "id": "office",
+    "name": "Office",
+    "subtitle": "Familiar everyday typing",
+    "color": "7FA1C3",
+    "samples": [
+      "Sounds/office/01.wav",
+      "Sounds/office/02.wav",
+      "Sounds/office/03.wav",
+      "Sounds/office/04.wav",
+      "Sounds/office/05.wav",
+      "Sounds/office/06.wav"
+    ],
+    "releaseSamples": null,
+    "gain": 1.0,
+    "provenance": {
+      "source": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f251.webm",
+      "sectionStart": 49.816,
+      "sectionEnd": 55.055
+    }
+  }
+]

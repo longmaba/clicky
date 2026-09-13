@@ -1,0 +1,202 @@
+[
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 54528,
+    "sampleRate" : 48000,
+    "second" : 1,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 104704,
+    "sampleRate" : 48000,
+    "second" : 2,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 153600,
+    "sampleRate" : 48000,
+    "second" : 3,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 203904,
+    "sampleRate" : 48000,
+    "second" : 4,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 254336,
+    "sampleRate" : 48000,
+    "second" : 5,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 304768,
+    "sampleRate" : 48000,
+    "second" : 6,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 355072,
+    "sampleRate" : 48000,
+    "second" : 7,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 405120,
+    "sampleRate" : 48000,
+    "second" : 8,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 453504,
+    "sampleRate" : 48000,
+    "second" : 9,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 503936,
+    "sampleRate" : 48000,
+    "second" : 10,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 554368,
+    "sampleRate" : 48000,
+    "second" : 11,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 604288,
+    "sampleRate" : 48000,
+    "second" : 12,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 654464,
+    "sampleRate" : 48000,
+    "second" : 13,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 704000,
+    "sampleRate" : 48000,
+    "second" : 14,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 754304,
+    "sampleRate" : 48000,
+    "second" : 15,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 804736,
+    "sampleRate" : 48000,
+    "second" : 16,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 854144,
+    "sampleRate" : 48000,
+    "second" : 17,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 904448,
+    "sampleRate" : 48000,
+    "second" : 18,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 954880,
+    "sampleRate" : 48000,
+    "second" : 19,
+    "status" : "ready"
+  },
+  {
+    "audioReady" : true,
+    "deviceBufferFrames" : 128,
+    "inputMonitoringGranted" : false,
+    "renderBlockFrames" : 128,
+    "renderedFrames" : 1005312,
+    "sampleRate" : 48000,
+    "second" : 20,
+    "status" : "ready"
+  }
+]

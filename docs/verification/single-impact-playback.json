@@ -1,0 +1,116 @@
+{
+  "audioContinuesAfterSettingsClose" : true,
+  "audioReady" : true,
+  "audioReplay" : {
+    "accepted" : 500,
+    "bufferFrames" : 128,
+    "bufferMilliseconds" : 2.6666666666666665,
+    "dropped" : 0,
+    "renderBlockFrames" : 128,
+    "renderBlockMilliseconds" : 2.6666666666666665,
+    "renderedFrames" : 273408,
+    "sampleRate" : 48000,
+    "submitted" : 500
+  },
+  "audioStatus" : "ready",
+  "hardwareInputTests" : "Require physical typing and permission grant; not simulated by diagnostics.",
+  "inputMonitoringGranted" : false,
+  "missingSamples" : [
+
+  ],
+  "modifierReplay" : {
+    "full" : {
+      "accepted" : 13,
+      "dropped" : 0,
+      "expected" : 13
+    },
+    "silent" : {
+      "accepted" : 4,
+      "dropped" : 0,
+      "expected" : 4
+    },
+    "soft" : {
+      "accepted" : 13,
+      "dropped" : 0,
+      "expected" : 13
+    }
+  },
+  "os" : "Version 26.6.2 (Build 25G83)",
+  "outputs" : [
+    {
+      "headphones" : false,
+      "id" : "BuiltInSpeakerDevice",
+      "name" : "MacBook Pro Speakers"
+    },
+    {
+      "headphones" : false,
+      "id" : "MSLoopbackDriverDevice_UID",
+      "name" : "Microsoft Teams Audio"
+    }
+  ],
+  "profileCount" : 10,
+  "profileReplay" : {
+    "bubble-wrap" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "clacky" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "clicky" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "creamy" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "deep-thock" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "marbly" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "office" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "poppy" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "silent" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "thocky" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    }
+  },
+  "recordedSampleCount" : 60,
+  "secureInputActive" : false
+}

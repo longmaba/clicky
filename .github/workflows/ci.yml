@@ -1,0 +1,40 @@
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  mac:
+    name: Native Mac app and sounds
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Test portable core
+        run: swift test --package-path Packages/ClickyCore
+      - name: Compile release app
+        run: swift build -c release
+      - name: Check prepared sound assets
+        run: python3 scripts/check_sound_assets.py
+      - name: Check generated Xcode project
+        run: |
+          python3 scripts/generate_xcode_project.py
+          git diff --exit-code -- Clicky.xcodeproj
+
+  website:
+    name: Static website
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Prepare website and sound previews
+        run: python3 scripts/prepare_website.py
+      - name: Check JavaScript syntax
+        run: node --check website/app.js

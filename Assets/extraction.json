@@ -1,0 +1,2381 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "file": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f251.webm",
+    "sha256": "e0dd06e9997f3a87aa527e6c2c215a8d8319508f1059437f54407540a9e3656a",
+    "videoTitle": "Thock vs Creamy vs Marbly vs Clack | Best Sound Profile? Ultimate Keyboard Sound Test",
+    "videoID": "Gzko0BoULdw",
+    "durationSeconds": 55.082667,
+    "decodedPeak": 1.5177555
+  },
+  "processing": {
+    "decode": "FFmpeg: first audio stream -> mono 48000 Hz float32 little-endian PCM",
+    "encode": "mono 48000 Hz signed 16-bit little-endian PCM WAV",
+    "commonGain": 0.32,
+    "commonGainDb": -9.897,
+    "removeExcerptDC": true,
+    "fadeInSeconds": 0.0004,
+    "fadeOutSeconds": 0.008,
+    "fadeCurve": "half cosine",
+    "attackAlignment": "Frame-reviewed first impact with at most 0.5 ms pre-roll; naturally immediate attacks retained",
+    "attackPrerollFrames": 24,
+    "peakNormalization": false,
+    "compression": false,
+    "noiseGate": false,
+    "note": "Common gain preserves source profile differences and Silent's lower volume. Float decoding avoids clipping Opus peaks before attenuation."
+  },
+  "review": {
+    "waveformReview": "Selected intervals inspected against source transient envelopes; boundaries avoid the next distinct major attack.",
+    "listeningReview": "Pending human audition. Audio input was unavailable in the authoring tool session.",
+    "sampleSemantics": "Recorded stroke excerpts; may include the natural release/room tail. Not independently recorded key-down/key-up samples.",
+    "sourceLimitations": "Continuous typing recording: subtle overlapping room sound or neighboring release tails may remain. No isolated original key stems are available."
+  },
+  "profiles": [
+    {
+      "id": "thocky",
+      "sectionStart": 0.0,
+      "sectionEnd": 6.073,
+      "sourceSectionMetrics": {
+        "frames": 291504,
+        "durationSeconds": 6.073,
+        "peak": 1.4872006,
+        "peakDbFS": 3.4474,
+        "rms": 0.1914664,
+        "rmsDbFS": -14.3581
+      },
+      "selections": [
+        {
+          "path": "Sounds/thocky/01.wav",
+          "selectionStartSeconds": 5.899,
+          "startSeconds": 5.905020833,
+          "endSeconds": 6.015,
+          "startFrame": 283441,
+          "endFrameExclusive": 288720,
+          "attackAlignment": {
+            "sourceAttackFrame": 283465,
+            "removedLeadingFrames": 289,
+            "removedLeadingMilliseconds": 6.020833,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5279,
+            "durationSeconds": 0.109979,
+            "peak": 1.449478,
+            "peakDbFS": 3.2242,
+            "rms": 0.1469526,
+            "rmsDbFS": -16.6565
+          },
+          "removedDCOffset": -0.010974727,
+          "outputMetrics": {
+            "frames": 5279,
+            "durationSeconds": 0.109979,
+            "peak": 0.4603211,
+            "peakDbFS": -6.7388,
+            "rms": 0.045547,
+            "rmsDbFS": -26.8308
+          },
+          "sha256": "d3340f8d6a765165ca55f28245db50a76ca32291b7ada23b0a4e31b6deabca45"
+        },
+        {
+          "path": "Sounds/thocky/02.wav",
+          "selectionStartSeconds": 1.354,
+          "startSeconds": 1.359916667,
+          "endSeconds": 1.474,
+          "startFrame": 65276,
+          "endFrameExclusive": 70752,
+          "attackAlignment": {
+            "sourceAttackFrame": 65300,
+            "removedLeadingFrames": 284,
+            "removedLeadingMilliseconds": 5.916667,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5476,
+            "durationSeconds": 0.114083,
+            "peak": 1.4380316,
+            "peakDbFS": 3.1554,
+            "rms": 0.1789576,
+            "rmsDbFS": -14.945
+          },
+          "removedDCOffset": 0.000946248,
+          "outputMetrics": {
+            "frames": 5476,
+            "durationSeconds": 0.114083,
+            "peak": 0.4598673,
+            "peakDbFS": -6.7473,
+            "rms": 0.0570132,
+            "rmsDbFS": -24.8805
+          },
+          "sha256": "14c620d069f5040002f6a4ae93565872b8756e968ba6ac78cd4ed274d98d5397"
+        },
+        {
+          "path": "Sounds/thocky/03.wav",
+          "selectionStartSeconds": 4.506,
+          "startSeconds": 4.512,
+          "endSeconds": 4.622,
+          "startFrame": 216576,
+          "endFrameExclusive": 221856,
+          "attackAlignment": {
+            "sourceAttackFrame": 216600,
+            "removedLeadingFrames": 288,
+            "removedLeadingMilliseconds": 6.0,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5280,
+            "durationSeconds": 0.11,
+            "peak": 1.2326589,
+            "peakDbFS": 1.8169,
+            "rms": 0.2675613,
+            "rmsDbFS": -11.4515
+          },
+          "removedDCOffset": -0.04551748,
+          "outputMetrics": {
+            "frames": 5280,
+            "durationSeconds": 0.11,
+            "peak": 0.3798852,
+            "peakDbFS": -8.407,
+            "rms": 0.0839079,
+            "rmsDbFS": -21.5239
+          },
+          "sha256": "ea5d4aebf79bfa1fd067e573846811631aee4834721fe34d80ca6727ffb3c32c"
+        },
+        {
+          "path": "Sounds/thocky/04.wav",
+          "selectionStartSeconds": 2.905,
+          "startSeconds": 2.911229167,
+          "endSeconds": 3.021,
+          "startFrame": 139739,
+          "endFrameExclusive": 145008,
+          "attackAlignment": {
+            "sourceAttackFrame": 139763,
+            "removedLeadingFrames": 299,
+            "removedLeadingMilliseconds": 6.229167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5269,
+            "durationSeconds": 0.109771,
+            "peak": 1.4599706,
+            "peakDbFS": 3.2869,
+            "rms": 0.2015468,
+            "rmsDbFS": -13.9125
+          },
+          "removedDCOffset": -0.045544178,
+          "outputMetrics": {
+            "frames": 5269,
+            "durationSeconds": 0.109771,
+            "peak": 0.4548005,
+            "peakDbFS": -6.8436,
+            "rms": 0.0622811,
+            "rmsDbFS": -24.1129
+          },
+          "sha256": "b15332933ae442d548b1f9971ceb9a0e55cf149f6cb9ed15ec507f8934acdeaa"
+        },
+        {
+          "path": "Sounds/thocky/05.wav",
+          "selectionStartSeconds": 5.722,
+          "startSeconds": 5.727979167,
+          "endSeconds": 5.838,
+          "startFrame": 274943,
+          "endFrameExclusive": 280224,
+          "attackAlignment": {
+            "sourceAttackFrame": 274967,
+            "removedLeadingFrames": 287,
+            "removedLeadingMilliseconds": 5.979167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5281,
+            "durationSeconds": 0.110021,
+            "peak": 1.4306217,
+            "peakDbFS": 3.1105,
+            "rms": 0.1266049,
+            "rmsDbFS": -17.951
+          },
+          "removedDCOffset": 0.005713063,
+          "outputMetrics": {
+            "frames": 5281,
+            "durationSeconds": 0.110021,
+            "peak": 0.4559708,
+            "peakDbFS": -6.8213,
+            "rms": 0.0404456,
+            "rmsDbFS": -27.8626
+          },
+          "sha256": "1b34df444b183e2051cc002ff51fb53faa7b0dd60ba3c41b19e2e65ca79905f3"
+        },
+        {
+          "path": "Sounds/thocky/06.wav",
+          "selectionStartSeconds": 5.548,
+          "startSeconds": 5.553791667,
+          "endSeconds": 5.667,
+          "startFrame": 266582,
+          "endFrameExclusive": 272016,
+          "attackAlignment": {
+            "sourceAttackFrame": 266606,
+            "removedLeadingFrames": 278,
+            "removedLeadingMilliseconds": 5.791667,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5434,
+            "durationSeconds": 0.113208,
+            "peak": 1.4740472,
+            "peakDbFS": 3.3702,
+            "rms": 0.1884474,
+            "rmsDbFS": -14.4962
+          },
+          "removedDCOffset": 0.025427095,
+          "outputMetrics": {
+            "frames": 5434,
+            "durationSeconds": 0.113208,
+            "peak": 0.4635584,
+            "peakDbFS": -6.6779,
+            "rms": 0.0593506,
+            "rmsDbFS": -24.5315
+          },
+          "sha256": "637a8c6499427b0824ec547023fb6f02ffa49c46e2f83fed437e999f24ee740e"
+        }
+      ],
+      "selectionReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "01",
+          "03",
+          "04",
+          "05"
+        ],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank."
+      }
+    },
+    {
+      "id": "marbly",
+      "sectionStart": 6.073,
+      "sectionEnd": 12.079,
+      "sourceSectionMetrics": {
+        "frames": 288288,
+        "durationSeconds": 6.006,
+        "peak": 1.5167543,
+        "peakDbFS": 3.6183,
+        "rms": 0.1491606,
+        "rmsDbFS": -16.5269
+      },
+      "selections": [
+        {
+          "path": "Sounds/marbly/01.wav",
+          "selectionStartSeconds": 6.471,
+          "startSeconds": 6.477270833,
+          "endSeconds": 6.583,
+          "startFrame": 310909,
+          "endFrameExclusive": 315984,
+          "attackAlignment": {
+            "sourceAttackFrame": 310933,
+            "removedLeadingFrames": 301,
+            "removedLeadingMilliseconds": 6.270833,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5075,
+            "durationSeconds": 0.105729,
+            "peak": 0.9245746,
+            "peakDbFS": -0.6812,
+            "rms": 0.1021866,
+            "rmsDbFS": -19.8121
+          },
+          "removedDCOffset": 0.006630581,
+          "outputMetrics": {
+            "frames": 5075,
+            "durationSeconds": 0.105729,
+            "peak": 0.2979857,
+            "peakDbFS": -10.5161,
+            "rms": 0.0319449,
+            "rmsDbFS": -29.912
+          },
+          "sha256": "30de863f82f5317843325e2d37fce7e7265ae8435328f24977c0e2bd8f9fbf98"
+        },
+        {
+          "path": "Sounds/marbly/02.wav",
+          "selectionStartSeconds": 10.445,
+          "startSeconds": 10.451479167,
+          "endSeconds": 10.562,
+          "startFrame": 501671,
+          "endFrameExclusive": 506976,
+          "attackAlignment": {
+            "sourceAttackFrame": 501695,
+            "removedLeadingFrames": 311,
+            "removedLeadingMilliseconds": 6.479167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5305,
+            "durationSeconds": 0.110521,
+            "peak": 1.4402032,
+            "peakDbFS": 3.1685,
+            "rms": 0.163972,
+            "rmsDbFS": -15.7046
+          },
+          "removedDCOffset": 0.007409089,
+          "outputMetrics": {
+            "frames": 5305,
+            "durationSeconds": 0.110521,
+            "peak": 0.4632359,
+            "peakDbFS": -6.684,
+            "rms": 0.0519316,
+            "rmsDbFS": -25.6914
+          },
+          "sha256": "070b4bd9ab403446fdbe4cf40ad10585bf086ea093d54b5c5222fa0977048c72"
+        },
+        {
+          "path": "Sounds/marbly/03.wav",
+          "selectionStartSeconds": 7.073,
+          "startSeconds": 7.079291667,
+          "endSeconds": 7.197,
+          "startFrame": 339806,
+          "endFrameExclusive": 345456,
+          "attackAlignment": {
+            "sourceAttackFrame": 339830,
+            "removedLeadingFrames": 302,
+            "removedLeadingMilliseconds": 6.291667,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5650,
+            "durationSeconds": 0.117708,
+            "peak": 1.3910651,
+            "peakDbFS": 2.8669,
+            "rms": 0.0850745,
+            "rmsDbFS": -21.404
+          },
+          "removedDCOffset": 0.005661035,
+          "outputMetrics": {
+            "frames": 5650,
+            "durationSeconds": 0.117708,
+            "peak": 0.4469524,
+            "peakDbFS": -6.9948,
+            "rms": 0.026755,
+            "rmsDbFS": -31.4519
+          },
+          "sha256": "b3b0fcc8d2f63aa4b3d0d83bf0d3408c62fceca44407537665fb86067215d2db"
+        },
+        {
+          "path": "Sounds/marbly/04.wav",
+          "selectionStartSeconds": 11.863,
+          "startSeconds": 11.868958333,
+          "endSeconds": 11.979,
+          "startFrame": 569710,
+          "endFrameExclusive": 574992,
+          "attackAlignment": {
+            "sourceAttackFrame": 569734,
+            "removedLeadingFrames": 286,
+            "removedLeadingMilliseconds": 5.958333,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5282,
+            "durationSeconds": 0.110042,
+            "peak": 1.3802781,
+            "peakDbFS": 2.7993,
+            "rms": 0.1269682,
+            "rmsDbFS": -17.9261
+          },
+          "removedDCOffset": 0.024112876,
+          "outputMetrics": {
+            "frames": 5282,
+            "durationSeconds": 0.110042,
+            "peak": 0.4494051,
+            "peakDbFS": -6.9472,
+            "rms": 0.0384817,
+            "rmsDbFS": -28.2949
+          },
+          "sha256": "66f6b3a3a67b0c9af607205f1154892e8f97460f1e985f9583a2efc3211d16a4"
+        },
+        {
+          "path": "Sounds/marbly/05.wav",
+          "selectionStartSeconds": 7.959,
+          "startSeconds": 7.964395833,
+          "endSeconds": 8.071,
+          "startFrame": 382291,
+          "endFrameExclusive": 387408,
+          "attackAlignment": {
+            "sourceAttackFrame": 382315,
+            "removedLeadingFrames": 259,
+            "removedLeadingMilliseconds": 5.395833,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5117,
+            "durationSeconds": 0.106604,
+            "peak": 1.044318,
+            "peakDbFS": 0.3767,
+            "rms": 0.0839411,
+            "rmsDbFS": -21.5205
+          },
+          "removedDCOffset": -0.004993872,
+          "outputMetrics": {
+            "frames": 5117,
+            "durationSeconds": 0.106604,
+            "peak": 0.3325837,
+            "peakDbFS": -9.562,
+            "rms": 0.0267589,
+            "rmsDbFS": -31.4506
+          },
+          "sha256": "31626a3726d0189d1c59d24a87598e90003d0133d024a73eb9025021959ff27c"
+        },
+        {
+          "path": "Sounds/marbly/06.wav",
+          "selectionStartSeconds": 11.509,
+          "startSeconds": 11.5145625,
+          "endSeconds": 11.632,
+          "startFrame": 552699,
+          "endFrameExclusive": 558336,
+          "attackAlignment": {
+            "sourceAttackFrame": 552723,
+            "removedLeadingFrames": 267,
+            "removedLeadingMilliseconds": 5.5625,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5637,
+            "durationSeconds": 0.117438,
+            "peak": 1.2477311,
+            "peakDbFS": 1.9224,
+            "rms": 0.1663572,
+            "rmsDbFS": -15.5792
+          },
+          "removedDCOffset": 0.004703409,
+          "outputMetrics": {
+            "frames": 5637,
+            "durationSeconds": 0.117438,
+            "peak": 0.400779,
+            "peakDbFS": -7.9419,
+            "rms": 0.0523658,
+            "rmsDbFS": -25.619
+          },
+          "sha256": "2d9fee6baa679b9bc6527f773f7a33ef7f36e23db36a498b7251b44c172bc7e7"
+        }
+      ],
+      "selectionReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "02",
+          "04"
+        ],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank."
+      }
+    },
+    {
+      "id": "silent",
+      "sectionStart": 12.079,
+      "sectionEnd": 16.4,
+      "sourceSectionMetrics": {
+        "frames": 207408,
+        "durationSeconds": 4.321,
+        "peak": 0.3351623,
+        "peakDbFS": -9.4949,
+        "rms": 0.0421904,
+        "rmsDbFS": -27.4957
+      },
+      "selections": [
+        {
+          "path": "Sounds/silent/01.wav",
+          "selectionStartSeconds": 12.559,
+          "startSeconds": 12.559,
+          "endSeconds": 12.651,
+          "startFrame": 602832,
+          "endFrameExclusive": 607248,
+          "attackAlignment": {
+            "sourceAttackFrame": 602832,
+            "removedLeadingFrames": 0,
+            "removedLeadingMilliseconds": 0.0,
+            "outputAttackFrame": 0
+          },
+          "sourceMetrics": {
+            "frames": 4416,
+            "durationSeconds": 0.092,
+            "peak": 0.1316885,
+            "peakDbFS": -17.609,
+            "rms": 0.038586,
+            "rmsDbFS": -28.2714
+          },
+          "removedDCOffset": 0.004319053,
+          "outputMetrics": {
+            "frames": 4416,
+            "durationSeconds": 0.092,
+            "peak": 0.0407582,
+            "peakDbFS": -27.7957,
+            "rms": 0.0120871,
+            "rmsDbFS": -38.3535
+          },
+          "sha256": "3ed8fc7fc6867d279b73792a31c3fe7390b8dc533973245ba53c2746e09cfc61"
+        },
+        {
+          "path": "Sounds/silent/02.wav",
+          "selectionStartSeconds": 12.747,
+          "startSeconds": 12.747,
+          "endSeconds": 12.836,
+          "startFrame": 611856,
+          "endFrameExclusive": 616128,
+          "attackAlignment": {
+            "sourceAttackFrame": 611856,
+            "removedLeadingFrames": 0,
+            "removedLeadingMilliseconds": 0.0,
+            "outputAttackFrame": 0
+          },
+          "sourceMetrics": {
+            "frames": 4272,
+            "durationSeconds": 0.089,
+            "peak": 0.1358022,
+            "peakDbFS": -17.3419,
+            "rms": 0.0455866,
+            "rmsDbFS": -26.8233
+          },
+          "removedDCOffset": -0.010844024,
+          "outputMetrics": {
+            "frames": 4272,
+            "durationSeconds": 0.089,
+            "peak": 0.0469268,
+            "peakDbFS": -26.5716,
+            "rms": 0.0141311,
+            "rmsDbFS": -36.9965
+          },
+          "sha256": "4246fde715c9d63755486827ce824790e6d6d8d3f8e9db5e942ea17032738f35"
+        },
+        {
+          "path": "Sounds/silent/03.wav",
+          "selectionStartSeconds": 13.374,
+          "startSeconds": 13.382020833,
+          "endSeconds": 13.44,
+          "startFrame": 642337,
+          "endFrameExclusive": 645120,
+          "attackAlignment": {
+            "sourceAttackFrame": 642361,
+            "removedLeadingFrames": 385,
+            "removedLeadingMilliseconds": 8.020833,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 2783,
+            "durationSeconds": 0.057979,
+            "peak": 0.1428151,
+            "peakDbFS": -16.9045,
+            "rms": 0.0496863,
+            "rmsDbFS": -26.0753
+          },
+          "removedDCOffset": -0.01782487,
+          "outputMetrics": {
+            "frames": 2783,
+            "durationSeconds": 0.057979,
+            "peak": 0.0399969,
+            "peakDbFS": -27.9595,
+            "rms": 0.0147505,
+            "rmsDbFS": -36.6239
+          },
+          "sha256": "e9049c095f538a7223c858d3aea4fab14b4337d2d2aecb7f7746cb58717abfb4"
+        },
+        {
+          "path": "Sounds/silent/04.wav",
+          "selectionStartSeconds": 14.374,
+          "startSeconds": 14.374,
+          "endSeconds": 14.462,
+          "startFrame": 689952,
+          "endFrameExclusive": 694176,
+          "attackAlignment": {
+            "sourceAttackFrame": 689952,
+            "removedLeadingFrames": 0,
+            "removedLeadingMilliseconds": 0.0,
+            "outputAttackFrame": 0
+          },
+          "sourceMetrics": {
+            "frames": 4224,
+            "durationSeconds": 0.088,
+            "peak": 0.1463633,
+            "peakDbFS": -16.6914,
+            "rms": 0.0387811,
+            "rmsDbFS": -28.2276
+          },
+          "removedDCOffset": -0.007599409,
+          "outputMetrics": {
+            "frames": 4224,
+            "durationSeconds": 0.088,
+            "peak": 0.0492681,
+            "peakDbFS": -26.1487,
+            "rms": 0.0121287,
+            "rmsDbFS": -38.3237
+          },
+          "sha256": "eb4943de7081694480c1dfd2c0dfd60d6660a9e643edcfb78127efb19947dc0f"
+        },
+        {
+          "path": "Sounds/silent/05.wav",
+          "selectionStartSeconds": 14.655,
+          "startSeconds": 14.662208333,
+          "endSeconds": 14.715,
+          "startFrame": 703786,
+          "endFrameExclusive": 706320,
+          "attackAlignment": {
+            "sourceAttackFrame": 703810,
+            "removedLeadingFrames": 346,
+            "removedLeadingMilliseconds": 7.208333,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 2534,
+            "durationSeconds": 0.052792,
+            "peak": 0.1318194,
+            "peakDbFS": -17.6004,
+            "rms": 0.0308064,
+            "rmsDbFS": -30.2272
+          },
+          "removedDCOffset": -0.004030215,
+          "outputMetrics": {
+            "frames": 2534,
+            "durationSeconds": 0.052792,
+            "peak": 0.0408925,
+            "peakDbFS": -27.7671,
+            "rms": 0.0097254,
+            "rmsDbFS": -40.2419
+          },
+          "sha256": "e56456422f6bfbf5b5b7b4794d6dbf8e1dacfe1a07a5bd75a8f0b0a160fd874f"
+        },
+        {
+          "path": "Sounds/silent/06.wav",
+          "selectionStartSeconds": 14.791,
+          "startSeconds": 14.801125,
+          "endSeconds": 14.873,
+          "startFrame": 710454,
+          "endFrameExclusive": 713904,
+          "attackAlignment": {
+            "sourceAttackFrame": 710478,
+            "removedLeadingFrames": 486,
+            "removedLeadingMilliseconds": 10.125,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 3450,
+            "durationSeconds": 0.071875,
+            "peak": 0.238912,
+            "peakDbFS": -12.4352,
+            "rms": 0.0673829,
+            "rmsDbFS": -23.429
+          },
+          "removedDCOffset": 0.010215364,
+          "outputMetrics": {
+            "frames": 3450,
+            "durationSeconds": 0.071875,
+            "peak": 0.0731829,
+            "peakDbFS": -22.7118,
+            "rms": 0.0212527,
+            "rmsDbFS": -33.4517
+          },
+          "sha256": "e641fe9e623da2a1c62405c21dd9701d6558244df01c329cb930ddda6e52a595"
+        }
+      ],
+      "selectionReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank.",
+        "retainedCharacter": "All six original excerpts retained: rounded quiet bodies, without a distinct sharp second strike."
+      }
+    },
+    {
+      "id": "poppy",
+      "sectionStart": 16.4,
+      "sectionEnd": 21.555,
+      "sourceSectionMetrics": {
+        "frames": 247440,
+        "durationSeconds": 5.155,
+        "peak": 1.5049934,
+        "peakDbFS": 3.5507,
+        "rms": 0.1740647,
+        "rmsDbFS": -15.1858
+      },
+      "selections": [
+        {
+          "path": "Sounds/poppy/01.wav",
+          "selectionStartSeconds": 17.605,
+          "startSeconds": 17.610854167,
+          "endSeconds": 17.711,
+          "startFrame": 845321,
+          "endFrameExclusive": 850128,
+          "attackAlignment": {
+            "sourceAttackFrame": 845345,
+            "removedLeadingFrames": 281,
+            "removedLeadingMilliseconds": 5.854167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4807,
+            "durationSeconds": 0.100146,
+            "peak": 1.5049934,
+            "peakDbFS": 3.5507,
+            "rms": 0.2141588,
+            "rmsDbFS": -13.3853
+          },
+          "removedDCOffset": 0.036064181,
+          "outputMetrics": {
+            "frames": 4807,
+            "durationSeconds": 0.100146,
+            "peak": 0.4700574,
+            "peakDbFS": -6.557,
+            "rms": 0.065691,
+            "rmsDbFS": -23.6499
+          },
+          "sha256": "c3c61369c9f01c7114bb055e98f5c8a1752c2e8a11bebdbb7a88cd7f1e88d516"
+        },
+        {
+          "path": "Sounds/poppy/02.wav",
+          "selectionStartSeconds": 17.755,
+          "startSeconds": 17.760604167,
+          "endSeconds": 17.861,
+          "startFrame": 852509,
+          "endFrameExclusive": 857328,
+          "attackAlignment": {
+            "sourceAttackFrame": 852533,
+            "removedLeadingFrames": 269,
+            "removedLeadingMilliseconds": 5.604167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4819,
+            "durationSeconds": 0.100396,
+            "peak": 1.4257145,
+            "peakDbFS": 3.0807,
+            "rms": 0.1217269,
+            "rmsDbFS": -18.2923
+          },
+          "removedDCOffset": 0.034829391,
+          "outputMetrics": {
+            "frames": 4819,
+            "durationSeconds": 0.100396,
+            "peak": 0.4450832,
+            "peakDbFS": -7.0312,
+            "rms": 0.0363044,
+            "rmsDbFS": -28.8008
+          },
+          "sha256": "5dc723004a95880b50c9148f05ab7a7f6b9bcf83966853d112756b252596cc0f"
+        },
+        {
+          "path": "Sounds/poppy/03.wav",
+          "selectionStartSeconds": 18.729,
+          "startSeconds": 18.733854167,
+          "endSeconds": 18.829,
+          "startFrame": 899225,
+          "endFrameExclusive": 903792,
+          "attackAlignment": {
+            "sourceAttackFrame": 899249,
+            "removedLeadingFrames": 233,
+            "removedLeadingMilliseconds": 4.854167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4567,
+            "durationSeconds": 0.095146,
+            "peak": 1.1052048,
+            "peakDbFS": 0.8689,
+            "rms": 0.1102885,
+            "rmsDbFS": -19.1494
+          },
+          "removedDCOffset": -0.035766842,
+          "outputMetrics": {
+            "frames": 4567,
+            "durationSeconds": 0.095146,
+            "peak": 0.3595324,
+            "peakDbFS": -8.8852,
+            "rms": 0.0329144,
+            "rmsDbFS": -29.6523
+          },
+          "sha256": "81c243c25efd1f6f8b9abfd03d8b51c2cf6e17aa558bc2e5e8f290768e18e966"
+        },
+        {
+          "path": "Sounds/poppy/04.wav",
+          "selectionStartSeconds": 19.179,
+          "startSeconds": 19.183375,
+          "endSeconds": 19.27,
+          "startFrame": 920802,
+          "endFrameExclusive": 924960,
+          "attackAlignment": {
+            "sourceAttackFrame": 920826,
+            "removedLeadingFrames": 210,
+            "removedLeadingMilliseconds": 4.375,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4158,
+            "durationSeconds": 0.086625,
+            "peak": 1.420758,
+            "peakDbFS": 3.0504,
+            "rms": 0.1206182,
+            "rmsDbFS": -18.3717
+          },
+          "removedDCOffset": 0.035371486,
+          "outputMetrics": {
+            "frames": 4158,
+            "durationSeconds": 0.086625,
+            "peak": 0.4561035,
+            "peakDbFS": -6.8187,
+            "rms": 0.0363679,
+            "rmsDbFS": -28.7856
+          },
+          "sha256": "a4fb57f6856ca47409df873886f621494df6fb9aa23be57b216eea261affad96"
+        },
+        {
+          "path": "Sounds/poppy/05.wav",
+          "selectionStartSeconds": 20.219,
+          "startSeconds": 20.224291667,
+          "endSeconds": 20.315,
+          "startFrame": 970766,
+          "endFrameExclusive": 975120,
+          "attackAlignment": {
+            "sourceAttackFrame": 970790,
+            "removedLeadingFrames": 254,
+            "removedLeadingMilliseconds": 5.291667,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4354,
+            "durationSeconds": 0.090708,
+            "peak": 0.9465832,
+            "peakDbFS": -0.4768,
+            "rms": 0.1119656,
+            "rmsDbFS": -19.0183
+          },
+          "removedDCOffset": -0.018533159,
+          "outputMetrics": {
+            "frames": 4354,
+            "durationSeconds": 0.090708,
+            "peak": 0.296976,
+            "peakDbFS": -10.5456,
+            "rms": 0.0343376,
+            "rmsDbFS": -29.2846
+          },
+          "sha256": "56d8392c8bcd1ecde21fb0eadcbec25a0a6a2ebae57d99903cb02621d0d03be0"
+        },
+        {
+          "path": "Sounds/poppy/06.wav",
+          "selectionStartSeconds": 18.955,
+          "startSeconds": 18.960395833,
+          "endSeconds": 19.06,
+          "startFrame": 910099,
+          "endFrameExclusive": 914880,
+          "attackAlignment": {
+            "sourceAttackFrame": 910123,
+            "removedLeadingFrames": 259,
+            "removedLeadingMilliseconds": 5.395833,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4781,
+            "durationSeconds": 0.099604,
+            "peak": 1.1340722,
+            "peakDbFS": 1.0928,
+            "rms": 0.1792489,
+            "rmsDbFS": -14.9309
+          },
+          "removedDCOffset": 0.012175005,
+          "outputMetrics": {
+            "frames": 4781,
+            "durationSeconds": 0.099604,
+            "peak": 0.3590071,
+            "peakDbFS": -8.8979,
+            "rms": 0.0557122,
+            "rmsDbFS": -25.081
+          },
+          "sha256": "7d353a88ca0f1128a77756707469f1a41aefe75982e6dcdd69c70c1bb5db3733"
+        }
+      ],
+      "selectionReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "01",
+          "02",
+          "06"
+        ],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank."
+      }
+    },
+    {
+      "id": "clicky",
+      "sectionStart": 21.555,
+      "sectionEnd": 27.06,
+      "sourceSectionMetrics": {
+        "frames": 264240,
+        "durationSeconds": 5.505,
+        "peak": 1.5177555,
+        "peakDbFS": 3.624,
+        "rms": 0.1636548,
+        "rmsDbFS": -15.7214
+      },
+      "selections": [
+        {
+          "path": "Sounds/clicky/01.wav",
+          "selectionStartSeconds": 21.934,
+          "startSeconds": 21.940041667,
+          "endSeconds": 21.987,
+          "startFrame": 1053122,
+          "endFrameExclusive": 1055376,
+          "attackAlignment": {
+            "sourceAttackFrame": 1053146,
+            "removedLeadingFrames": 290,
+            "removedLeadingMilliseconds": 6.041667,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 2254,
+            "durationSeconds": 0.046958,
+            "peak": 1.3785539,
+            "peakDbFS": 2.7885,
+            "rms": 0.193572,
+            "rmsDbFS": -14.2631
+          },
+          "removedDCOffset": 0.084002925,
+          "outputMetrics": {
+            "frames": 2254,
+            "durationSeconds": 0.046958,
+            "peak": 0.4680182,
+            "peakDbFS": -6.5947,
+            "rms": 0.0543888,
+            "rmsDbFS": -25.2898
+          },
+          "sha256": "8938664a4468ea15dd2311279985be77e14971e751e0884309af3af96d793f37"
+        },
+        {
+          "path": "Sounds/clicky/02.wav",
+          "selectionStartSeconds": 22.665,
+          "startSeconds": 22.669958333,
+          "endSeconds": 22.722,
+          "startFrame": 1088158,
+          "endFrameExclusive": 1090656,
+          "attackAlignment": {
+            "sourceAttackFrame": 1088182,
+            "removedLeadingFrames": 238,
+            "removedLeadingMilliseconds": 4.958333,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 2498,
+            "durationSeconds": 0.052042,
+            "peak": 1.41057,
+            "peakDbFS": 2.9879,
+            "rms": 0.1454351,
+            "rmsDbFS": -16.7466
+          },
+          "removedDCOffset": -0.017766494,
+          "outputMetrics": {
+            "frames": 2498,
+            "durationSeconds": 0.052042,
+            "peak": 0.4456971,
+            "peakDbFS": -7.0192,
+            "rms": 0.0445944,
+            "rmsDbFS": -27.0144
+          },
+          "sha256": "6608e9b09c2646412a806905715703c63d2a97fd58716b2ccdc8d45031379c1c"
+        },
+        {
+          "path": "Sounds/clicky/03.wav",
+          "selectionStartSeconds": 23.094,
+          "startSeconds": 23.100083333,
+          "endSeconds": 23.166,
+          "startFrame": 1108804,
+          "endFrameExclusive": 1111968,
+          "attackAlignment": {
+            "sourceAttackFrame": 1108828,
+            "removedLeadingFrames": 292,
+            "removedLeadingMilliseconds": 6.083333,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 3164,
+            "durationSeconds": 0.065917,
+            "peak": 1.4025292,
+            "peakDbFS": 2.9382,
+            "rms": 0.1278587,
+            "rmsDbFS": -17.8654
+          },
+          "removedDCOffset": -0.055525351,
+          "outputMetrics": {
+            "frames": 3164,
+            "durationSeconds": 0.065917,
+            "peak": 0.4665775,
+            "peakDbFS": -6.6215,
+            "rms": 0.0367092,
+            "rmsDbFS": -28.7045
+          },
+          "sha256": "33517960ab38bb14944ab3924f57049a7a0bc2d84c03c9253e7bbb00817eb9c6"
+        },
+        {
+          "path": "Sounds/clicky/04.wav",
+          "selectionStartSeconds": 26.131,
+          "startSeconds": 26.136395833,
+          "endSeconds": 26.236,
+          "startFrame": 1254547,
+          "endFrameExclusive": 1259328,
+          "attackAlignment": {
+            "sourceAttackFrame": 1254571,
+            "removedLeadingFrames": 259,
+            "removedLeadingMilliseconds": 5.395833,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4781,
+            "durationSeconds": 0.099604,
+            "peak": 1.4330821,
+            "peakDbFS": 3.1254,
+            "rms": 0.1229016,
+            "rmsDbFS": -18.2088
+          },
+          "removedDCOffset": 0.021138112,
+          "outputMetrics": {
+            "frames": 4781,
+            "durationSeconds": 0.099604,
+            "peak": 0.4653505,
+            "peakDbFS": -6.6444,
+            "rms": 0.0386523,
+            "rmsDbFS": -28.2565
+          },
+          "sha256": "a7a42e682e0b0e14d93dfee5e66f60039c2f03524c75a9e8e3fa03c00cb4aa4d"
+        },
+        {
+          "path": "Sounds/clicky/05.wav",
+          "selectionStartSeconds": 24.749,
+          "startSeconds": 24.749791667,
+          "endSeconds": 24.814,
+          "startFrame": 1187990,
+          "endFrameExclusive": 1191072,
+          "attackAlignment": {
+            "sourceAttackFrame": 1188014,
+            "removedLeadingFrames": 38,
+            "removedLeadingMilliseconds": 0.791667,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 3082,
+            "durationSeconds": 0.064208,
+            "peak": 1.4014218,
+            "peakDbFS": 2.9314,
+            "rms": 0.1474119,
+            "rmsDbFS": -16.6294
+          },
+          "removedDCOffset": 0.0215245,
+          "outputMetrics": {
+            "frames": 3082,
+            "durationSeconds": 0.064208,
+            "peak": 0.4553428,
+            "peakDbFS": -6.8332,
+            "rms": 0.0453686,
+            "rmsDbFS": -26.8649
+          },
+          "sha256": "a887c4909ddb1016b1b68a80318f0c2da453dab5af3dad2c9c58e2acf61021a2"
+        },
+        {
+          "path": "Sounds/clicky/06.wav",
+          "selectionStartSeconds": 26.243,
+          "startSeconds": 26.2435625,
+          "endSeconds": 26.311,
+          "startFrame": 1259691,
+          "endFrameExclusive": 1262928,
+          "attackAlignment": {
+            "sourceAttackFrame": 1259715,
+            "removedLeadingFrames": 27,
+            "removedLeadingMilliseconds": 0.5625,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 3237,
+            "durationSeconds": 0.067437,
+            "peak": 1.0785301,
+            "peakDbFS": 0.6566,
+            "rms": 0.1406596,
+            "rmsDbFS": -17.0366
+          },
+          "removedDCOffset": -0.063844284,
+          "outputMetrics": {
+            "frames": 3237,
+            "durationSeconds": 0.067437,
+            "peak": 0.3655598,
+            "peakDbFS": -8.7408,
+            "rms": 0.0368918,
+            "rmsDbFS": -28.6614
+          },
+          "sha256": "a8619ccd04a4d5489e7f97b3e1711b3f6eaf4b2d632240b6c5dc4ad0665f30e2"
+        }
+      ],
+      "selectionReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "01",
+          "03",
+          "04"
+        ],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank.",
+        "retainedCharacter": "Variants 05/06 retain their short continuous initial mechanism cluster; separated later impacts are rejected."
+      }
+    },
+    {
+      "id": "bubble-wrap",
+      "sectionStart": 27.06,
+      "sectionEnd": 32.466,
+      "sourceSectionMetrics": {
+        "frames": 259488,
+        "durationSeconds": 5.406,
+        "peak": 1.4851863,
+        "peakDbFS": 3.4356,
+        "rms": 0.243828,
+        "rmsDbFS": -12.2583
+      },
+      "selections": [
+        {
+          "path": "Sounds/bubble-wrap/01.wav",
+          "selectionStartSeconds": 27.114,
+          "startSeconds": 27.1199375,
+          "endSeconds": 27.2,
+          "startFrame": 1301757,
+          "endFrameExclusive": 1305600,
+          "attackAlignment": {
+            "sourceAttackFrame": 1301781,
+            "removedLeadingFrames": 285,
+            "removedLeadingMilliseconds": 5.9375,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 3843,
+            "durationSeconds": 0.080062,
+            "peak": 0.9868367,
+            "peakDbFS": -0.1151,
+            "rms": 0.1189835,
+            "rmsDbFS": -18.4903
+          },
+          "removedDCOffset": 0.009831897,
+          "outputMetrics": {
+            "frames": 3843,
+            "durationSeconds": 0.080062,
+            "peak": 0.3189339,
+            "peakDbFS": -9.926,
+            "rms": 0.0365587,
+            "rmsDbFS": -28.7402
+          },
+          "sha256": "c5f074beb2fa23374565d1a4e83edb94328234fd9364b19cd8c4aaea5fb8f002"
+        },
+        {
+          "path": "Sounds/bubble-wrap/02.wav",
+          "selectionStartSeconds": 28.379,
+          "startSeconds": 28.384833333,
+          "endSeconds": 28.485,
+          "startFrame": 1362472,
+          "endFrameExclusive": 1367280,
+          "attackAlignment": {
+            "sourceAttackFrame": 1362496,
+            "removedLeadingFrames": 280,
+            "removedLeadingMilliseconds": 5.833333,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4808,
+            "durationSeconds": 0.100167,
+            "peak": 1.4605744,
+            "peakDbFS": 3.2905,
+            "rms": 0.1838163,
+            "rmsDbFS": -14.7123
+          },
+          "removedDCOffset": -0.022440517,
+          "outputMetrics": {
+            "frames": 4808,
+            "durationSeconds": 0.100167,
+            "peak": 0.4602028,
+            "peakDbFS": -6.741,
+            "rms": 0.0580466,
+            "rmsDbFS": -24.7245
+          },
+          "sha256": "3568370a001020d16030bb078eecd6975bf730647354672abb5f4990065426fb"
+        },
+        {
+          "path": "Sounds/bubble-wrap/03.wav",
+          "selectionStartSeconds": 28.822,
+          "startSeconds": 28.827520833,
+          "endSeconds": 28.928,
+          "startFrame": 1383721,
+          "endFrameExclusive": 1388544,
+          "attackAlignment": {
+            "sourceAttackFrame": 1383745,
+            "removedLeadingFrames": 265,
+            "removedLeadingMilliseconds": 5.520833,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4823,
+            "durationSeconds": 0.100479,
+            "peak": 1.4023786,
+            "peakDbFS": 2.9373,
+            "rms": 0.2586444,
+            "rmsDbFS": -11.7459
+          },
+          "removedDCOffset": -0.014434326,
+          "outputMetrics": {
+            "frames": 4823,
+            "durationSeconds": 0.100479,
+            "peak": 0.4441422,
+            "peakDbFS": -7.0496,
+            "rms": 0.0805556,
+            "rmsDbFS": -21.8781
+          },
+          "sha256": "7b07cc4ffb2644c8b45e5c053d746a8af2dcfcf3148ccac2a2129b4700f09ec4"
+        },
+        {
+          "path": "Sounds/bubble-wrap/04.wav",
+          "selectionStartSeconds": 30.143,
+          "startSeconds": 30.147854167,
+          "endSeconds": 30.237,
+          "startFrame": 1447097,
+          "endFrameExclusive": 1451376,
+          "attackAlignment": {
+            "sourceAttackFrame": 1447121,
+            "removedLeadingFrames": 233,
+            "removedLeadingMilliseconds": 4.854167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4279,
+            "durationSeconds": 0.089146,
+            "peak": 1.1794661,
+            "peakDbFS": 1.4337,
+            "rms": 0.1833001,
+            "rmsDbFS": -14.7367
+          },
+          "removedDCOffset": -0.023333384,
+          "outputMetrics": {
+            "frames": 4279,
+            "durationSeconds": 0.089146,
+            "peak": 0.3699625,
+            "peakDbFS": -8.6368,
+            "rms": 0.0579494,
+            "rmsDbFS": -24.739
+          },
+          "sha256": "4ef7718f085f4a7dfec959199f30d4094c489f9260cedc733ec0775ba022a965"
+        },
+        {
+          "path": "Sounds/bubble-wrap/05.wav",
+          "selectionStartSeconds": 30.254,
+          "startSeconds": 30.258479167,
+          "endSeconds": 30.338,
+          "startFrame": 1452407,
+          "endFrameExclusive": 1456224,
+          "attackAlignment": {
+            "sourceAttackFrame": 1452431,
+            "removedLeadingFrames": 215,
+            "removedLeadingMilliseconds": 4.479167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 3817,
+            "durationSeconds": 0.079521,
+            "peak": 0.8512405,
+            "peakDbFS": -1.399,
+            "rms": 0.2114697,
+            "rmsDbFS": -13.495
+          },
+          "removedDCOffset": 0.066289099,
+          "outputMetrics": {
+            "frames": 3817,
+            "durationSeconds": 0.079521,
+            "peak": 0.2936095,
+            "peakDbFS": -10.6446,
+            "rms": 0.0619193,
+            "rmsDbFS": -24.1635
+          },
+          "sha256": "b73ec213628e26b6eda3fc3a3f85641a9d527a6d506f682a24a490c5ce6d6f04"
+        },
+        {
+          "path": "Sounds/bubble-wrap/06.wav",
+          "selectionStartSeconds": 32.103,
+          "startSeconds": 32.1086875,
+          "endSeconds": 32.209,
+          "startFrame": 1541217,
+          "endFrameExclusive": 1546032,
+          "attackAlignment": {
+            "sourceAttackFrame": 1541241,
+            "removedLeadingFrames": 273,
+            "removedLeadingMilliseconds": 5.6875,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4815,
+            "durationSeconds": 0.100312,
+            "peak": 0.944069,
+            "peakDbFS": -0.4999,
+            "rms": 0.283344,
+            "rmsDbFS": -10.9537
+          },
+          "removedDCOffset": -0.012448317,
+          "outputMetrics": {
+            "frames": 4815,
+            "durationSeconds": 0.100312,
+            "peak": 0.2981186,
+            "peakDbFS": -10.5122,
+            "rms": 0.0894403,
+            "rmsDbFS": -20.9693
+          },
+          "sha256": "c58ed36d3787d5802ef299f996a245c2ae34a4fa5bf06b0304f7e3bc15291b14"
+        }
+      ],
+      "selectionReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "01",
+          "02",
+          "03",
+          "06"
+        ],
+        "trimmedTailVariants": [
+          "05"
+        ],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank."
+      }
+    },
+    {
+      "id": "clacky",
+      "sectionStart": 32.466,
+      "sectionEnd": 38.205,
+      "sourceSectionMetrics": {
+        "frames": 275472,
+        "durationSeconds": 5.739,
+        "peak": 1.4883372,
+        "peakDbFS": 3.454,
+        "rms": 0.1277045,
+        "rmsDbFS": -17.8759
+      },
+      "selections": [
+        {
+          "path": "Sounds/clacky/01.wav",
+          "selectionStartSeconds": 32.554,
+          "startSeconds": 32.56,
+          "endSeconds": 32.662,
+          "startFrame": 1562880,
+          "endFrameExclusive": 1567776,
+          "attackAlignment": {
+            "sourceAttackFrame": 1562904,
+            "removedLeadingFrames": 288,
+            "removedLeadingMilliseconds": 6.0,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4896,
+            "durationSeconds": 0.102,
+            "peak": 1.4363592,
+            "peakDbFS": 3.1453,
+            "rms": 0.1337033,
+            "rmsDbFS": -17.4772
+          },
+          "removedDCOffset": 0.005244238,
+          "outputMetrics": {
+            "frames": 4896,
+            "durationSeconds": 0.102,
+            "peak": 0.4579568,
+            "peakDbFS": -6.7835,
+            "rms": 0.0427431,
+            "rmsDbFS": -27.3827
+          },
+          "sha256": "b3e2a5fc1151e8549419a831edaebec2136bb690ed6749a2bfae65233d4037cd"
+        },
+        {
+          "path": "Sounds/clacky/02.wav",
+          "selectionStartSeconds": 32.708,
+          "startSeconds": 32.713395833,
+          "endSeconds": 32.813,
+          "startFrame": 1570243,
+          "endFrameExclusive": 1575024,
+          "attackAlignment": {
+            "sourceAttackFrame": 1570267,
+            "removedLeadingFrames": 259,
+            "removedLeadingMilliseconds": 5.395833,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4781,
+            "durationSeconds": 0.099604,
+            "peak": 1.3929927,
+            "peakDbFS": 2.879,
+            "rms": 0.1059764,
+            "rmsDbFS": -19.4958
+          },
+          "removedDCOffset": -0.016269084,
+          "outputMetrics": {
+            "frames": 4781,
+            "durationSeconds": 0.099604,
+            "peak": 0.4455139,
+            "peakDbFS": -7.0228,
+            "rms": 0.0329441,
+            "rmsDbFS": -29.6445
+          },
+          "sha256": "8f4e1cbd4d1269b892ffc7d80320e0876f9d7fcbfdbabd2ee8a9b3e32d8eaeeb"
+        },
+        {
+          "path": "Sounds/clacky/03.wav",
+          "selectionStartSeconds": 34.773,
+          "startSeconds": 34.778833333,
+          "endSeconds": 34.863,
+          "startFrame": 1669384,
+          "endFrameExclusive": 1673424,
+          "attackAlignment": {
+            "sourceAttackFrame": 1669408,
+            "removedLeadingFrames": 280,
+            "removedLeadingMilliseconds": 5.833333,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4040,
+            "durationSeconds": 0.084167,
+            "peak": 1.4190476,
+            "peakDbFS": 3.0399,
+            "rms": 0.1201567,
+            "rmsDbFS": -18.405
+          },
+          "removedDCOffset": -0.020995721,
+          "outputMetrics": {
+            "frames": 4040,
+            "durationSeconds": 0.084167,
+            "peak": 0.4608139,
+            "peakDbFS": -6.7295,
+            "rms": 0.0373451,
+            "rmsDbFS": -28.5553
+          },
+          "sha256": "0e0aa23291dcb56a60f9a2b8ac94a2b8d58469db67572624d5f2b609accd3c3b"
+        },
+        {
+          "path": "Sounds/clacky/04.wav",
+          "selectionStartSeconds": 33.799,
+          "startSeconds": 33.8046875,
+          "endSeconds": 33.905,
+          "startFrame": 1622625,
+          "endFrameExclusive": 1627440,
+          "attackAlignment": {
+            "sourceAttackFrame": 1622649,
+            "removedLeadingFrames": 273,
+            "removedLeadingMilliseconds": 5.6875,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4815,
+            "durationSeconds": 0.100312,
+            "peak": 1.4608495,
+            "peakDbFS": 3.2921,
+            "rms": 0.139974,
+            "rmsDbFS": -17.0791
+          },
+          "removedDCOffset": 0.001700272,
+          "outputMetrics": {
+            "frames": 4815,
+            "durationSeconds": 0.100312,
+            "peak": 0.4680159,
+            "peakDbFS": -6.5948,
+            "rms": 0.0447586,
+            "rmsDbFS": -26.9825
+          },
+          "sha256": "5cf16a6c1ad5038872c8e8dda416fba09041fa71deed72715889273f350f7675"
+        },
+        {
+          "path": "Sounds/clacky/05.wav",
+          "selectionStartSeconds": 36.474,
+          "startSeconds": 36.479666667,
+          "endSeconds": 36.561,
+          "startFrame": 1751024,
+          "endFrameExclusive": 1754928,
+          "attackAlignment": {
+            "sourceAttackFrame": 1751048,
+            "removedLeadingFrames": 272,
+            "removedLeadingMilliseconds": 5.666667,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 3904,
+            "durationSeconds": 0.081333,
+            "peak": 1.4024768,
+            "peakDbFS": 2.9379,
+            "rms": 0.1052612,
+            "rmsDbFS": -19.5546
+          },
+          "removedDCOffset": 0.011781653,
+          "outputMetrics": {
+            "frames": 3904,
+            "durationSeconds": 0.081333,
+            "peak": 0.4450224,
+            "peakDbFS": -7.0324,
+            "rms": 0.0332173,
+            "rmsDbFS": -29.5727
+          },
+          "sha256": "a017ae42fbaa11a1f1dbeb89bb1a4166b7cdef05f03758c4cc2cbd20a4f27adf"
+        },
+        {
+          "path": "Sounds/clacky/06.wav",
+          "selectionStartSeconds": 36.59,
+          "startSeconds": 36.595791667,
+          "endSeconds": 36.677,
+          "startFrame": 1756598,
+          "endFrameExclusive": 1760496,
+          "attackAlignment": {
+            "sourceAttackFrame": 1756622,
+            "removedLeadingFrames": 278,
+            "removedLeadingMilliseconds": 5.791667,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 3898,
+            "durationSeconds": 0.081208,
+            "peak": 1.3388786,
+            "peakDbFS": 2.5348,
+            "rms": 0.1306641,
+            "rmsDbFS": -17.6769
+          },
+          "removedDCOffset": 0.012184476,
+          "outputMetrics": {
+            "frames": 3898,
+            "durationSeconds": 0.081208,
+            "peak": 0.4323402,
+            "peakDbFS": -7.2835,
+            "rms": 0.0406743,
+            "rmsDbFS": -27.8136
+          },
+          "sha256": "264b79df532479308d0a8841103cfd0077614c893c1fbcd2609fef75ad276252"
+        }
+      ],
+      "selectionReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "02",
+          "04"
+        ],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank."
+      }
+    },
+    {
+      "id": "creamy",
+      "sectionStart": 38.205,
+      "sectionEnd": 44.628,
+      "sourceSectionMetrics": {
+        "frames": 308304,
+        "durationSeconds": 6.423,
+        "peak": 1.471894,
+        "peakDbFS": 3.3575,
+        "rms": 0.1313684,
+        "rmsDbFS": -17.6302
+      },
+      "selections": [
+        {
+          "path": "Sounds/creamy/01.wav",
+          "selectionStartSeconds": 38.383,
+          "startSeconds": 38.389,
+          "endSeconds": 38.475,
+          "startFrame": 1842672,
+          "endFrameExclusive": 1846800,
+          "attackAlignment": {
+            "sourceAttackFrame": 1842696,
+            "removedLeadingFrames": 288,
+            "removedLeadingMilliseconds": 6.0,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4128,
+            "durationSeconds": 0.086,
+            "peak": 1.4407268,
+            "peakDbFS": 3.1716,
+            "rms": 0.1695313,
+            "rmsDbFS": -15.415
+          },
+          "removedDCOffset": 0.027050391,
+          "outputMetrics": {
+            "frames": 4128,
+            "durationSeconds": 0.086,
+            "peak": 0.4558215,
+            "peakDbFS": -6.8241,
+            "rms": 0.0524014,
+            "rmsDbFS": -25.6131
+          },
+          "sha256": "86f3e31a0b0005573715f0c47eb8446b67ee16e41d66459e611837a8ce8924d7"
+        },
+        {
+          "path": "Sounds/creamy/02.wav",
+          "selectionStartSeconds": 40.45,
+          "startSeconds": 40.455604167,
+          "endSeconds": 40.548,
+          "startFrame": 1941869,
+          "endFrameExclusive": 1946304,
+          "attackAlignment": {
+            "sourceAttackFrame": 1941893,
+            "removedLeadingFrames": 269,
+            "removedLeadingMilliseconds": 5.604167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4435,
+            "durationSeconds": 0.092396,
+            "peak": 1.4437771,
+            "peakDbFS": 3.19,
+            "rms": 0.1718028,
+            "rmsDbFS": -15.2994
+          },
+          "removedDCOffset": 0.012090229,
+          "outputMetrics": {
+            "frames": 4435,
+            "durationSeconds": 0.092396,
+            "peak": 0.4631072,
+            "peakDbFS": -6.6864,
+            "rms": 0.0541143,
+            "rmsDbFS": -25.3338
+          },
+          "sha256": "97a75e226ac1e537be15b205c0b5ac1157e4e600b7b72fef9de7321dc7953caf"
+        },
+        {
+          "path": "Sounds/creamy/03.wav",
+          "selectionStartSeconds": 42.19,
+          "startSeconds": 42.195854167,
+          "endSeconds": 42.289,
+          "startFrame": 2025401,
+          "endFrameExclusive": 2029872,
+          "attackAlignment": {
+            "sourceAttackFrame": 2025425,
+            "removedLeadingFrames": 281,
+            "removedLeadingMilliseconds": 5.854167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4471,
+            "durationSeconds": 0.093146,
+            "peak": 1.448379,
+            "peakDbFS": 3.2176,
+            "rms": 0.1343259,
+            "rmsDbFS": -17.4368
+          },
+          "removedDCOffset": 0.009629464,
+          "outputMetrics": {
+            "frames": 4471,
+            "durationSeconds": 0.093146,
+            "peak": 0.4603999,
+            "peakDbFS": -6.7373,
+            "rms": 0.0428287,
+            "rmsDbFS": -27.3653
+          },
+          "sha256": "ade4f9bc9714362d6c737b730075bb88c8e61d0359f93fe3d727ee4b35bfd819"
+        },
+        {
+          "path": "Sounds/creamy/04.wav",
+          "selectionStartSeconds": 41.178,
+          "startSeconds": 41.183791667,
+          "endSeconds": 41.269,
+          "startFrame": 1976822,
+          "endFrameExclusive": 1980912,
+          "attackAlignment": {
+            "sourceAttackFrame": 1976846,
+            "removedLeadingFrames": 278,
+            "removedLeadingMilliseconds": 5.791667,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4090,
+            "durationSeconds": 0.085208,
+            "peak": 1.4382308,
+            "peakDbFS": 3.1566,
+            "rms": 0.160397,
+            "rmsDbFS": -15.8961
+          },
+          "removedDCOffset": -0.02703375,
+          "outputMetrics": {
+            "frames": 4090,
+            "durationSeconds": 0.085208,
+            "peak": 0.451583,
+            "peakDbFS": -6.9052,
+            "rms": 0.0505412,
+            "rmsDbFS": -25.9271
+          },
+          "sha256": "2088427aedba0a71470ffca7e6372e687702583e3d7e8e2d9405cee6859878ca"
+        },
+        {
+          "path": "Sounds/creamy/05.wav",
+          "selectionStartSeconds": 44.294,
+          "startSeconds": 44.300020833,
+          "endSeconds": 44.393,
+          "startFrame": 2126401,
+          "endFrameExclusive": 2130864,
+          "attackAlignment": {
+            "sourceAttackFrame": 2126425,
+            "removedLeadingFrames": 289,
+            "removedLeadingMilliseconds": 6.020833,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4463,
+            "durationSeconds": 0.092979,
+            "peak": 1.4452212,
+            "peakDbFS": 3.1987,
+            "rms": 0.1399541,
+            "rmsDbFS": -17.0803
+          },
+          "removedDCOffset": 0.018672987,
+          "outputMetrics": {
+            "frames": 4463,
+            "durationSeconds": 0.092979,
+            "peak": 0.4568942,
+            "peakDbFS": -6.8037,
+            "rms": 0.0428898,
+            "rmsDbFS": -27.3529
+          },
+          "sha256": "184aa13bbb8bd247f898f5faa067f801fc03863f5c15239631a1a6e3f4e2d839"
+        },
+        {
+          "path": "Sounds/creamy/06.wav",
+          "selectionStartSeconds": 43.868,
+          "startSeconds": 43.8743125,
+          "endSeconds": 43.99,
+          "startFrame": 2105967,
+          "endFrameExclusive": 2111520,
+          "attackAlignment": {
+            "sourceAttackFrame": 2105991,
+            "removedLeadingFrames": 303,
+            "removedLeadingMilliseconds": 6.3125,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5553,
+            "durationSeconds": 0.115687,
+            "peak": 1.4581916,
+            "peakDbFS": 3.2763,
+            "rms": 0.1332748,
+            "rmsDbFS": -17.505
+          },
+          "removedDCOffset": 0.003014885,
+          "outputMetrics": {
+            "frames": 5553,
+            "durationSeconds": 0.115687,
+            "peak": 0.4675861,
+            "peakDbFS": -6.6028,
+            "rms": 0.0424636,
+            "rmsDbFS": -27.4397
+          },
+          "sha256": "58f8c1c7e1258a471e11ea730d69fdb1168c92187a901b41f0a75df80f03e96a"
+        }
+      ],
+      "selectionReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "01",
+          "02",
+          "03",
+          "05"
+        ],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank."
+      }
+    },
+    {
+      "id": "deep-thock",
+      "sectionStart": 44.628,
+      "sectionEnd": 49.816,
+      "sourceSectionMetrics": {
+        "frames": 249024,
+        "durationSeconds": 5.188,
+        "peak": 1.441901,
+        "peakDbFS": 3.1787,
+        "rms": 0.07181,
+        "rmsDbFS": -22.8763
+      },
+      "selections": [
+        {
+          "path": "Sounds/deep-thock/01.wav",
+          "selectionStartSeconds": 48.658,
+          "startSeconds": 48.664270833,
+          "endSeconds": 48.774,
+          "startFrame": 2335885,
+          "endFrameExclusive": 2341152,
+          "attackAlignment": {
+            "sourceAttackFrame": 2335909,
+            "removedLeadingFrames": 301,
+            "removedLeadingMilliseconds": 6.270833,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5267,
+            "durationSeconds": 0.109729,
+            "peak": 1.3752596,
+            "peakDbFS": 2.7677,
+            "rms": 0.0908098,
+            "rmsDbFS": -20.8373
+          },
+          "removedDCOffset": -0.00374168,
+          "outputMetrics": {
+            "frames": 5267,
+            "durationSeconds": 0.109729,
+            "peak": 0.4412804,
+            "peakDbFS": -7.1057,
+            "rms": 0.0289891,
+            "rmsDbFS": -30.7553
+          },
+          "sha256": "be50cf4a6ed1bde6ef242a00ca7b68544d5627ccb855af50ba47b7aace2bf4ea"
+        },
+        {
+          "path": "Sounds/deep-thock/02.wav",
+          "selectionStartSeconds": 45.762,
+          "startSeconds": 45.767291667,
+          "endSeconds": 45.905,
+          "startFrame": 2196830,
+          "endFrameExclusive": 2203440,
+          "attackAlignment": {
+            "sourceAttackFrame": 2196854,
+            "removedLeadingFrames": 254,
+            "removedLeadingMilliseconds": 5.291667,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 6610,
+            "durationSeconds": 0.137708,
+            "peak": 1.4226346,
+            "peakDbFS": 3.0619,
+            "rms": 0.0855863,
+            "rmsDbFS": -21.3519
+          },
+          "removedDCOffset": -0.003660842,
+          "outputMetrics": {
+            "frames": 6610,
+            "durationSeconds": 0.137708,
+            "peak": 0.4540716,
+            "peakDbFS": -6.8575,
+            "rms": 0.0273535,
+            "rmsDbFS": -31.2597
+          },
+          "sha256": "f0019f1565906b19e0d2a3d50c0c245a46b2d15c3169bbac1ac5eefb2552593c"
+        },
+        {
+          "path": "Sounds/deep-thock/03.wav",
+          "selectionStartSeconds": 46.914,
+          "startSeconds": 46.919583333,
+          "endSeconds": 47.045,
+          "startFrame": 2252140,
+          "endFrameExclusive": 2258160,
+          "attackAlignment": {
+            "sourceAttackFrame": 2252164,
+            "removedLeadingFrames": 268,
+            "removedLeadingMilliseconds": 5.583333,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 6020,
+            "durationSeconds": 0.125417,
+            "peak": 1.4387279,
+            "peakDbFS": 3.1596,
+            "rms": 0.0941275,
+            "rmsDbFS": -20.5257
+          },
+          "removedDCOffset": 0.007438752,
+          "outputMetrics": {
+            "frames": 6020,
+            "durationSeconds": 0.125417,
+            "peak": 0.4580125,
+            "peakDbFS": -6.7825,
+            "rms": 0.0298198,
+            "rmsDbFS": -30.5099
+          },
+          "sha256": "3f703a7f2187e0ef7786410c2bba358011e56f8ea90110d9ef29fd6d641421af"
+        },
+        {
+          "path": "Sounds/deep-thock/04.wav",
+          "selectionStartSeconds": 47.289,
+          "startSeconds": 47.295479167,
+          "endSeconds": 47.4,
+          "startFrame": 2270183,
+          "endFrameExclusive": 2275200,
+          "attackAlignment": {
+            "sourceAttackFrame": 2270207,
+            "removedLeadingFrames": 311,
+            "removedLeadingMilliseconds": 6.479167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 5017,
+            "durationSeconds": 0.104521,
+            "peak": 1.4234281,
+            "peakDbFS": 3.0667,
+            "rms": 0.0827417,
+            "rmsDbFS": -21.6455
+          },
+          "removedDCOffset": -0.004482143,
+          "outputMetrics": {
+            "frames": 5017,
+            "durationSeconds": 0.104521,
+            "peak": 0.4540627,
+            "peakDbFS": -6.8577,
+            "rms": 0.0259845,
+            "rmsDbFS": -31.7057
+          },
+          "sha256": "e5ba2f4bc89578f21d3294891e6551ee899e22b666a3d5f17437a3197f9a64ed"
+        },
+        {
+          "path": "Sounds/deep-thock/05.wav",
+          "selectionStartSeconds": 47.659,
+          "startSeconds": 47.665854167,
+          "endSeconds": 47.829,
+          "startFrame": 2287961,
+          "endFrameExclusive": 2295792,
+          "attackAlignment": {
+            "sourceAttackFrame": 2287985,
+            "removedLeadingFrames": 329,
+            "removedLeadingMilliseconds": 6.854167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 7831,
+            "durationSeconds": 0.163146,
+            "peak": 1.441901,
+            "peakDbFS": 3.1787,
+            "rms": 0.1014188,
+            "rmsDbFS": -19.8776
+          },
+          "removedDCOffset": -0.00237329,
+          "outputMetrics": {
+            "frames": 7831,
+            "durationSeconds": 0.163146,
+            "peak": 0.4606489,
+            "peakDbFS": -6.7326,
+            "rms": 0.0322905,
+            "rmsDbFS": -29.8185
+          },
+          "sha256": "88920a6de2962dea11f261b58244e5bc8c07a4e8c9ffc0489ab46018a589f545"
+        },
+        {
+          "path": "Sounds/deep-thock/06.wav",
+          "selectionStartSeconds": 49.574,
+          "startSeconds": 49.580229167,
+          "endSeconds": 49.71,
+          "startFrame": 2379851,
+          "endFrameExclusive": 2386080,
+          "attackAlignment": {
+            "sourceAttackFrame": 2379875,
+            "removedLeadingFrames": 299,
+            "removedLeadingMilliseconds": 6.229167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 6229,
+            "durationSeconds": 0.129771,
+            "peak": 1.4216888,
+            "peakDbFS": 3.0561,
+            "rms": 0.1009567,
+            "rmsDbFS": -19.9173
+          },
+          "removedDCOffset": -0.00610367,
+          "outputMetrics": {
+            "frames": 6229,
+            "durationSeconds": 0.129771,
+            "peak": 0.4529872,
+            "peakDbFS": -6.8783,
+            "rms": 0.0322303,
+            "rmsDbFS": -29.8347
+          },
+          "sha256": "b45b7766dc4b19f17b5a04c1ff46648b2bdbbd975cbdb8bdb924b125c327dcb4"
+        }
+      ],
+      "selectionReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "01"
+        ],
+        "trimmedTailVariants": [
+          "03",
+          "04",
+          "06"
+        ],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank."
+      }
+    },
+    {
+      "id": "office",
+      "sectionStart": 49.816,
+      "sectionEnd": 55.055,
+      "sourceSectionMetrics": {
+        "frames": 251472,
+        "durationSeconds": 5.239,
+        "peak": 1.4219947,
+        "peakDbFS": 3.058,
+        "rms": 0.2726984,
+        "rmsDbFS": -11.2863
+      },
+      "selections": [
+        {
+          "path": "Sounds/office/01.wav",
+          "selectionStartSeconds": 49.889,
+          "startSeconds": 49.891791667,
+          "endSeconds": 49.985,
+          "startFrame": 2394806,
+          "endFrameExclusive": 2399280,
+          "attackAlignment": {
+            "sourceAttackFrame": 2394830,
+            "removedLeadingFrames": 134,
+            "removedLeadingMilliseconds": 2.791667,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4474,
+            "durationSeconds": 0.093208,
+            "peak": 0.5709601,
+            "peakDbFS": -4.8679,
+            "rms": 0.173503,
+            "rmsDbFS": -15.2139
+          },
+          "removedDCOffset": 0.042128836,
+          "outputMetrics": {
+            "frames": 4474,
+            "durationSeconds": 0.093208,
+            "peak": 0.1961885,
+            "peakDbFS": -14.1465,
+            "rms": 0.0487181,
+            "rmsDbFS": -26.2462
+          },
+          "sha256": "18b1fe67a52910abe33e08b58870a48bc55bc0d38fc4f13d7b3695791851724d"
+        },
+        {
+          "path": "Sounds/office/02.wav",
+          "selectionStartSeconds": 53.288,
+          "startSeconds": 53.291604167,
+          "endSeconds": 53.382,
+          "startFrame": 2557997,
+          "endFrameExclusive": 2562336,
+          "attackAlignment": {
+            "sourceAttackFrame": 2558021,
+            "removedLeadingFrames": 173,
+            "removedLeadingMilliseconds": 3.604167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4339,
+            "durationSeconds": 0.090396,
+            "peak": 0.6242853,
+            "peakDbFS": -4.0923,
+            "rms": 0.1536895,
+            "rmsDbFS": -16.2671
+          },
+          "removedDCOffset": 0.074145801,
+          "outputMetrics": {
+            "frames": 4339,
+            "durationSeconds": 0.090396,
+            "peak": 0.2234979,
+            "peakDbFS": -13.0145,
+            "rms": 0.0422154,
+            "rmsDbFS": -27.4906
+          },
+          "sha256": "e5083024c95f0d2ead8c545a124a3cfc3c19bf28eefa5dccb42d6a4dd1788e1b"
+        },
+        {
+          "path": "Sounds/office/03.wav",
+          "selectionStartSeconds": 52.118,
+          "startSeconds": 52.121166667,
+          "endSeconds": 52.177,
+          "startFrame": 2501816,
+          "endFrameExclusive": 2504496,
+          "attackAlignment": {
+            "sourceAttackFrame": 2501840,
+            "removedLeadingFrames": 152,
+            "removedLeadingMilliseconds": 3.166667,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 2680,
+            "durationSeconds": 0.055833,
+            "peak": 0.8474292,
+            "peakDbFS": -1.4379,
+            "rms": 0.2104908,
+            "rmsDbFS": -13.5353
+          },
+          "removedDCOffset": 0.012681573,
+          "outputMetrics": {
+            "frames": 2680,
+            "durationSeconds": 0.055833,
+            "peak": 0.2752355,
+            "peakDbFS": -11.2059,
+            "rms": 0.0654621,
+            "rmsDbFS": -23.6802
+          },
+          "sha256": "5adc58841a88cf5896f831ba780ed9af1baede4253f8b1bfc929a6cf4d584b9f"
+        },
+        {
+          "path": "Sounds/office/04.wav",
+          "selectionStartSeconds": 52.854,
+          "startSeconds": 52.859395833,
+          "endSeconds": 52.928,
+          "startFrame": 2537251,
+          "endFrameExclusive": 2540544,
+          "attackAlignment": {
+            "sourceAttackFrame": 2537275,
+            "removedLeadingFrames": 259,
+            "removedLeadingMilliseconds": 5.395833,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 3293,
+            "durationSeconds": 0.068604,
+            "peak": 0.818666,
+            "peakDbFS": -1.7379,
+            "rms": 0.2405207,
+            "rmsDbFS": -12.377
+          },
+          "removedDCOffset": -0.069763193,
+          "outputMetrics": {
+            "frames": 3293,
+            "durationSeconds": 0.068604,
+            "peak": 0.2842973,
+            "peakDbFS": -10.9245,
+            "rms": 0.0712217,
+            "rmsDbFS": -22.9478
+          },
+          "sha256": "d7996b70aa30ff3e2c5eb9ba9eda00454e75d80bf8034f07522d7e0a5064e074"
+        },
+        {
+          "path": "Sounds/office/05.wav",
+          "selectionStartSeconds": 52.353,
+          "startSeconds": 52.356229167,
+          "endSeconds": 52.442,
+          "startFrame": 2513099,
+          "endFrameExclusive": 2517216,
+          "attackAlignment": {
+            "sourceAttackFrame": 2513123,
+            "removedLeadingFrames": 155,
+            "removedLeadingMilliseconds": 3.229167,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4117,
+            "durationSeconds": 0.085771,
+            "peak": 0.7795855,
+            "peakDbFS": -2.1627,
+            "rms": 0.2302947,
+            "rmsDbFS": -12.7543
+          },
+          "removedDCOffset": 0.0277525,
+          "outputMetrics": {
+            "frames": 4117,
+            "durationSeconds": 0.085771,
+            "peak": 0.2583482,
+            "peakDbFS": -11.7559,
+            "rms": 0.0692551,
+            "rmsDbFS": -23.191
+          },
+          "sha256": "8025e999604745dec2648359fab8e47bb7f0c6822190b2c6cd30eea5e37e8da9"
+        },
+        {
+          "path": "Sounds/office/06.wav",
+          "selectionStartSeconds": 54.613,
+          "startSeconds": 54.6176875,
+          "endSeconds": 54.711,
+          "startFrame": 2621649,
+          "endFrameExclusive": 2626128,
+          "attackAlignment": {
+            "sourceAttackFrame": 2621673,
+            "removedLeadingFrames": 225,
+            "removedLeadingMilliseconds": 4.6875,
+            "outputAttackFrame": 24
+          },
+          "sourceMetrics": {
+            "frames": 4479,
+            "durationSeconds": 0.093313,
+            "peak": 0.9065049,
+            "peakDbFS": -0.8526,
+            "rms": 0.1317641,
+            "rmsDbFS": -17.6041
+          },
+          "removedDCOffset": -0.04099331,
+          "outputMetrics": {
+            "frames": 4479,
+            "durationSeconds": 0.093313,
+            "peak": 0.2769637,
+            "peakDbFS": -11.1515,
+            "rms": 0.0391318,
+            "rmsDbFS": -28.1494
+          },
+          "sha256": "036c5b68a79e09793d4268bf8db2cdd3a5d3b7a7130b9bd78470d9989b694fca"
+        }
+      ],
+      "selectionReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "01",
+          "02",
+          "05"
+        ],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank.",
+        "retainedCharacter": "Broad membrane-key body retained; 01/02/05 reselected to bring key texture into the initial attack."
+      }
+    }
+  ],
+  "originalEffects": [
+    {
+      "id": "soft",
+      "path": "Sounds/Extras/soft.wav",
+      "source": "Original Clicky procedural synthesis, version 1",
+      "metrics": {
+        "frames": 3840,
+        "durationSeconds": 0.08,
+        "peak": 0.42,
+        "peakDbFS": -7.535,
+        "rms": 0.0727813,
+        "rmsDbFS": -22.7596
+      },
+      "sha256": "cfce42283ed5a273e792dc219bf7396eaf7ba839c0bc4b989a5650cbb8c8de41"
+    },
+    {
+      "id": "crisp",
+      "path": "Sounds/Extras/crisp.wav",
+      "source": "Original Clicky procedural synthesis, version 1",
+      "metrics": {
+        "frames": 3120,
+        "durationSeconds": 0.065,
+        "peak": 0.42,
+        "peakDbFS": -7.535,
+        "rms": 0.0454739,
+        "rmsDbFS": -26.8447
+      },
+      "sha256": "a0aac9e7e12e5ebab603f22ab6d56f22212f5c55d9ba994d16460df67e9e5d46"
+    },
+    {
+      "id": "hard",
+      "path": "Sounds/Extras/hard.wav",
+      "source": "Original Clicky procedural synthesis, version 1",
+      "metrics": {
+        "frames": 5520,
+        "durationSeconds": 0.115,
+        "peak": 0.42,
+        "peakDbFS": -7.535,
+        "rms": 0.0522304,
+        "rmsDbFS": -25.6415
+      },
+      "sha256": "121db3a5f5212ee696acf0f1937f89817b7b66bc0debb2694da6c95a7136f0b0"
+    },
+    {
+      "id": "ding",
+      "path": "Sounds/Extras/ding.wav",
+      "source": "Original Clicky procedural synthesis, version 1",
+      "metrics": {
+        "frames": 31200,
+        "durationSeconds": 0.65,
+        "peak": 0.36,
+        "peakDbFS": -8.8739,
+        "rms": 0.0723293,
+        "rmsDbFS": -22.8137
+      },
+      "sha256": "a3c94665ce54183d9aa47d2ce5208395776a2dc3ea8c5f048f9ecda1d6827968"
+    },
+    {
+      "id": "typewriter",
+      "path": "Sounds/Extras/typewriter.wav",
+      "source": "Original Clicky procedural synthesis, version 1",
+      "metrics": {
+        "frames": 8640,
+        "durationSeconds": 0.18,
+        "peak": 0.42,
+        "peakDbFS": -7.535,
+        "rms": 0.043827,
+        "rmsDbFS": -27.1652
+      },
+      "sha256": "42404a7984d3354ac1d3a9eb42daea92fbc4b399a6a17bd0c1118768035457a4"
+    }
+  ]
+}

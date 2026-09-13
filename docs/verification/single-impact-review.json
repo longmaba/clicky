@@ -1,0 +1,918 @@
+{
+  "version": "0.1.4",
+  "method": "Source waveform and profile-aware transient analysis; user listening review pending.",
+  "counts": {
+    "retained": 30,
+    "reselected": 26,
+    "tail trimmed": 4
+  },
+  "normalizationTarget": {
+    "before": 0.045367347398944866,
+    "after": 0.04459298102409588,
+    "changeDecibels": -0.14953762663877765
+  },
+  "profiles": [
+    {
+      "id": "thocky",
+      "waveformReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "01",
+          "03",
+          "04",
+          "05"
+        ],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank."
+      },
+      "samples": [
+        {
+          "path": "Sounds/thocky/01.wav",
+          "action": "reselected",
+          "beforeSourceStart": 0.350770833,
+          "beforeSourceEnd": 0.458,
+          "sourceStart": 5.905020833,
+          "sourceEnd": 6.015,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.416667
+        },
+        {
+          "path": "Sounds/thocky/02.wav",
+          "action": "retained",
+          "beforeSourceStart": 1.359916667,
+          "beforeSourceEnd": 1.474,
+          "sourceStart": 1.359916667,
+          "sourceEnd": 1.474,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5625
+        },
+        {
+          "path": "Sounds/thocky/03.wav",
+          "action": "reselected",
+          "beforeSourceStart": 1.570229167,
+          "beforeSourceEnd": 1.681,
+          "sourceStart": 4.512,
+          "sourceEnd": 4.622,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        },
+        {
+          "path": "Sounds/thocky/04.wav",
+          "action": "reselected",
+          "beforeSourceStart": 3.044291667,
+          "beforeSourceEnd": 3.135,
+          "sourceStart": 2.911229167,
+          "sourceEnd": 3.021,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5625
+        },
+        {
+          "path": "Sounds/thocky/05.wav",
+          "action": "reselected",
+          "beforeSourceStart": 3.317291667,
+          "beforeSourceEnd": 3.398,
+          "sourceStart": 5.727979167,
+          "sourceEnd": 5.838,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        },
+        {
+          "path": "Sounds/thocky/06.wav",
+          "action": "retained",
+          "beforeSourceStart": 5.553791667,
+          "beforeSourceEnd": 5.667,
+          "sourceStart": 5.553791667,
+          "sourceEnd": 5.667,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        }
+      ]
+    },
+    {
+      "id": "marbly",
+      "waveformReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "02",
+          "04"
+        ],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank."
+      },
+      "samples": [
+        {
+          "path": "Sounds/marbly/01.wav",
+          "action": "retained",
+          "beforeSourceStart": 6.477270833,
+          "beforeSourceEnd": 6.583,
+          "sourceStart": 6.477270833,
+          "sourceEnd": 6.583,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.270833
+        },
+        {
+          "path": "Sounds/marbly/02.wav",
+          "action": "reselected",
+          "beforeSourceStart": 6.6973125,
+          "beforeSourceEnd": 6.823,
+          "sourceStart": 10.451479167,
+          "sourceEnd": 10.562,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        },
+        {
+          "path": "Sounds/marbly/03.wav",
+          "action": "retained",
+          "beforeSourceStart": 7.079291667,
+          "beforeSourceEnd": 7.197,
+          "sourceStart": 7.079291667,
+          "sourceEnd": 7.197,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        },
+        {
+          "path": "Sounds/marbly/04.wav",
+          "action": "reselected",
+          "beforeSourceStart": 7.234729167,
+          "beforeSourceEnd": 7.362,
+          "sourceStart": 11.868958333,
+          "sourceEnd": 11.979,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        },
+        {
+          "path": "Sounds/marbly/05.wav",
+          "action": "retained",
+          "beforeSourceStart": 7.964395833,
+          "beforeSourceEnd": 8.071,
+          "sourceStart": 7.964395833,
+          "sourceEnd": 8.071,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        },
+        {
+          "path": "Sounds/marbly/06.wav",
+          "action": "retained",
+          "beforeSourceStart": 11.5145625,
+          "beforeSourceEnd": 11.632,
+          "sourceStart": 11.5145625,
+          "sourceEnd": 11.632,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        }
+      ]
+    },
+    {
+      "id": "silent",
+      "waveformReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank.",
+        "retainedCharacter": "All six original excerpts retained: rounded quiet bodies, without a distinct sharp second strike."
+      },
+      "samples": [
+        {
+          "path": "Sounds/silent/01.wav",
+          "action": "retained",
+          "beforeSourceStart": 12.559,
+          "beforeSourceEnd": 12.651,
+          "sourceStart": 12.559,
+          "sourceEnd": 12.651,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 1.833333
+        },
+        {
+          "path": "Sounds/silent/02.wav",
+          "action": "retained",
+          "beforeSourceStart": 12.747,
+          "beforeSourceEnd": 12.836,
+          "sourceStart": 12.747,
+          "sourceEnd": 12.836,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.229167
+        },
+        {
+          "path": "Sounds/silent/03.wav",
+          "action": "retained",
+          "beforeSourceStart": 13.382020833,
+          "beforeSourceEnd": 13.44,
+          "sourceStart": 13.382020833,
+          "sourceEnd": 13.44,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.3125
+        },
+        {
+          "path": "Sounds/silent/04.wav",
+          "action": "retained",
+          "beforeSourceStart": 14.374,
+          "beforeSourceEnd": 14.462,
+          "sourceStart": 14.374,
+          "sourceEnd": 14.462,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.229167
+        },
+        {
+          "path": "Sounds/silent/05.wav",
+          "action": "retained",
+          "beforeSourceStart": 14.662208333,
+          "beforeSourceEnd": 14.715,
+          "sourceStart": 14.662208333,
+          "sourceEnd": 14.715,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.75
+        },
+        {
+          "path": "Sounds/silent/06.wav",
+          "action": "retained",
+          "beforeSourceStart": 14.801125,
+          "beforeSourceEnd": 14.873,
+          "sourceStart": 14.801125,
+          "sourceEnd": 14.873,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.75
+        }
+      ]
+    },
+    {
+      "id": "poppy",
+      "waveformReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "01",
+          "02",
+          "06"
+        ],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank."
+      },
+      "samples": [
+        {
+          "path": "Sounds/poppy/01.wav",
+          "action": "reselected",
+          "beforeSourceStart": 18.371958333,
+          "beforeSourceEnd": 18.457,
+          "sourceStart": 17.610854167,
+          "sourceEnd": 17.711,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.541667
+        },
+        {
+          "path": "Sounds/poppy/02.wav",
+          "action": "reselected",
+          "beforeSourceStart": 18.558270833,
+          "beforeSourceEnd": 18.64,
+          "sourceStart": 17.760604167,
+          "sourceEnd": 17.861,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.541667
+        },
+        {
+          "path": "Sounds/poppy/03.wav",
+          "action": "retained",
+          "beforeSourceStart": 18.733854167,
+          "beforeSourceEnd": 18.829,
+          "sourceStart": 18.733854167,
+          "sourceEnd": 18.829,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        },
+        {
+          "path": "Sounds/poppy/04.wav",
+          "action": "retained",
+          "beforeSourceStart": 19.183375,
+          "beforeSourceEnd": 19.27,
+          "sourceStart": 19.183375,
+          "sourceEnd": 19.27,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        },
+        {
+          "path": "Sounds/poppy/05.wav",
+          "action": "retained",
+          "beforeSourceStart": 20.224291667,
+          "beforeSourceEnd": 20.315,
+          "sourceStart": 20.224291667,
+          "sourceEnd": 20.315,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5625
+        },
+        {
+          "path": "Sounds/poppy/06.wav",
+          "action": "reselected",
+          "beforeSourceStart": 20.5816875,
+          "beforeSourceEnd": 20.665,
+          "sourceStart": 18.960395833,
+          "sourceEnd": 19.06,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.604167
+        }
+      ]
+    },
+    {
+      "id": "clicky",
+      "waveformReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "01",
+          "03",
+          "04"
+        ],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank.",
+        "retainedCharacter": "Variants 05/06 retain their short continuous initial mechanism cluster; separated later impacts are rejected."
+      },
+      "samples": [
+        {
+          "path": "Sounds/clicky/01.wav",
+          "action": "reselected",
+          "beforeSourceStart": 21.635645833,
+          "beforeSourceEnd": 21.725,
+          "sourceStart": 21.940041667,
+          "sourceEnd": 21.987,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        },
+        {
+          "path": "Sounds/clicky/02.wav",
+          "action": "retained",
+          "beforeSourceStart": 22.669958333,
+          "beforeSourceEnd": 22.722,
+          "sourceStart": 22.669958333,
+          "sourceEnd": 22.722,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        },
+        {
+          "path": "Sounds/clicky/03.wav",
+          "action": "reselected",
+          "beforeSourceStart": 24.104958333,
+          "beforeSourceEnd": 24.192,
+          "sourceStart": 23.100083333,
+          "sourceEnd": 23.166,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.604167
+        },
+        {
+          "path": "Sounds/clicky/04.wav",
+          "action": "reselected",
+          "beforeSourceStart": 24.642354167,
+          "beforeSourceEnd": 24.709,
+          "sourceStart": 26.136395833,
+          "sourceEnd": 26.236,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        },
+        {
+          "path": "Sounds/clicky/05.wav",
+          "action": "retained",
+          "beforeSourceStart": 24.749791667,
+          "beforeSourceEnd": 24.814,
+          "sourceStart": 24.749791667,
+          "sourceEnd": 24.814,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        },
+        {
+          "path": "Sounds/clicky/06.wav",
+          "action": "retained",
+          "beforeSourceStart": 26.2435625,
+          "beforeSourceEnd": 26.311,
+          "sourceStart": 26.2435625,
+          "sourceEnd": 26.311,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.979167
+        }
+      ]
+    },
+    {
+      "id": "bubble-wrap",
+      "waveformReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "01",
+          "02",
+          "03",
+          "06"
+        ],
+        "trimmedTailVariants": [
+          "05"
+        ],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank."
+      },
+      "samples": [
+        {
+          "path": "Sounds/bubble-wrap/01.wav",
+          "action": "reselected",
+          "beforeSourceStart": 27.214833333,
+          "beforeSourceEnd": 27.327,
+          "sourceStart": 27.1199375,
+          "sourceEnd": 27.2,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5625
+        },
+        {
+          "path": "Sounds/bubble-wrap/02.wav",
+          "action": "reselected",
+          "beforeSourceStart": 27.393020833,
+          "beforeSourceEnd": 27.481,
+          "sourceStart": 28.384833333,
+          "sourceEnd": 28.485,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.541667
+        },
+        {
+          "path": "Sounds/bubble-wrap/03.wav",
+          "action": "reselected",
+          "beforeSourceStart": 27.819958333,
+          "beforeSourceEnd": 27.912,
+          "sourceStart": 28.827520833,
+          "sourceEnd": 28.928,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.604167
+        },
+        {
+          "path": "Sounds/bubble-wrap/04.wav",
+          "action": "retained",
+          "beforeSourceStart": 30.147854167,
+          "beforeSourceEnd": 30.237,
+          "sourceStart": 30.147854167,
+          "sourceEnd": 30.237,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.583333
+        },
+        {
+          "path": "Sounds/bubble-wrap/05.wav",
+          "action": "tail trimmed",
+          "beforeSourceStart": 30.258479167,
+          "beforeSourceEnd": 30.35,
+          "sourceStart": 30.258479167,
+          "sourceEnd": 30.338,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        },
+        {
+          "path": "Sounds/bubble-wrap/06.wav",
+          "action": "reselected",
+          "beforeSourceStart": 31.372833333,
+          "beforeSourceEnd": 31.484,
+          "sourceStart": 32.1086875,
+          "sourceEnd": 32.209,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        }
+      ]
+    },
+    {
+      "id": "clacky",
+      "waveformReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "02",
+          "04"
+        ],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank."
+      },
+      "samples": [
+        {
+          "path": "Sounds/clacky/01.wav",
+          "action": "retained",
+          "beforeSourceStart": 32.56,
+          "beforeSourceEnd": 32.662,
+          "sourceStart": 32.56,
+          "sourceEnd": 32.662,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        },
+        {
+          "path": "Sounds/clacky/02.wav",
+          "action": "reselected",
+          "beforeSourceStart": 33.448895833,
+          "beforeSourceEnd": 33.54,
+          "sourceStart": 32.713395833,
+          "sourceEnd": 32.813,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        },
+        {
+          "path": "Sounds/clacky/03.wav",
+          "action": "retained",
+          "beforeSourceStart": 34.778833333,
+          "beforeSourceEnd": 34.863,
+          "sourceStart": 34.778833333,
+          "sourceEnd": 34.863,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        },
+        {
+          "path": "Sounds/clacky/04.wav",
+          "action": "reselected",
+          "beforeSourceStart": 35.592395833,
+          "beforeSourceEnd": 35.711,
+          "sourceStart": 33.8046875,
+          "sourceEnd": 33.905,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.645833
+        },
+        {
+          "path": "Sounds/clacky/05.wav",
+          "action": "retained",
+          "beforeSourceStart": 36.479666667,
+          "beforeSourceEnd": 36.561,
+          "sourceStart": 36.479666667,
+          "sourceEnd": 36.561,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.541667
+        },
+        {
+          "path": "Sounds/clacky/06.wav",
+          "action": "retained",
+          "beforeSourceStart": 36.595791667,
+          "beforeSourceEnd": 36.677,
+          "sourceStart": 36.595791667,
+          "sourceEnd": 36.677,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.541667
+        }
+      ]
+    },
+    {
+      "id": "creamy",
+      "waveformReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "01",
+          "02",
+          "03",
+          "05"
+        ],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank."
+      },
+      "samples": [
+        {
+          "path": "Sounds/creamy/01.wav",
+          "action": "reselected",
+          "beforeSourceStart": 38.743333333,
+          "beforeSourceEnd": 38.839,
+          "sourceStart": 38.389,
+          "sourceEnd": 38.475,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        },
+        {
+          "path": "Sounds/creamy/02.wav",
+          "action": "reselected",
+          "beforeSourceStart": 39.9111875,
+          "beforeSourceEnd": 39.993,
+          "sourceStart": 40.455604167,
+          "sourceEnd": 40.548,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        },
+        {
+          "path": "Sounds/creamy/03.wav",
+          "action": "reselected",
+          "beforeSourceStart": 40.085541667,
+          "beforeSourceEnd": 40.198,
+          "sourceStart": 42.195854167,
+          "sourceEnd": 42.289,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        },
+        {
+          "path": "Sounds/creamy/04.wav",
+          "action": "retained",
+          "beforeSourceStart": 41.183791667,
+          "beforeSourceEnd": 41.269,
+          "sourceStart": 41.183791667,
+          "sourceEnd": 41.269,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        },
+        {
+          "path": "Sounds/creamy/05.wav",
+          "action": "reselected",
+          "beforeSourceStart": 43.4249375,
+          "beforeSourceEnd": 43.522,
+          "sourceStart": 44.300020833,
+          "sourceEnd": 44.393,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        },
+        {
+          "path": "Sounds/creamy/06.wav",
+          "action": "retained",
+          "beforeSourceStart": 43.8743125,
+          "beforeSourceEnd": 43.99,
+          "sourceStart": 43.8743125,
+          "sourceEnd": 43.99,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        }
+      ]
+    },
+    {
+      "id": "deep-thock",
+      "waveformReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "01"
+        ],
+        "trimmedTailVariants": [
+          "03",
+          "04",
+          "06"
+        ],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank."
+      },
+      "samples": [
+        {
+          "path": "Sounds/deep-thock/01.wav",
+          "action": "reselected",
+          "beforeSourceStart": 45.357833333,
+          "beforeSourceEnd": 45.481,
+          "sourceStart": 48.664270833,
+          "sourceEnd": 48.774,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        },
+        {
+          "path": "Sounds/deep-thock/02.wav",
+          "action": "retained",
+          "beforeSourceStart": 45.767291667,
+          "beforeSourceEnd": 45.905,
+          "sourceStart": 45.767291667,
+          "sourceEnd": 45.905,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.75
+        },
+        {
+          "path": "Sounds/deep-thock/03.wav",
+          "action": "tail trimmed",
+          "beforeSourceStart": 46.919583333,
+          "beforeSourceEnd": 47.064,
+          "sourceStart": 46.919583333,
+          "sourceEnd": 47.045,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        },
+        {
+          "path": "Sounds/deep-thock/04.wav",
+          "action": "tail trimmed",
+          "beforeSourceStart": 47.295479167,
+          "beforeSourceEnd": 47.449,
+          "sourceStart": 47.295479167,
+          "sourceEnd": 47.4,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        },
+        {
+          "path": "Sounds/deep-thock/05.wav",
+          "action": "retained",
+          "beforeSourceStart": 47.665854167,
+          "beforeSourceEnd": 47.829,
+          "sourceStart": 47.665854167,
+          "sourceEnd": 47.829,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        },
+        {
+          "path": "Sounds/deep-thock/06.wav",
+          "action": "tail trimmed",
+          "beforeSourceStart": 49.580229167,
+          "beforeSourceEnd": 49.742,
+          "sourceStart": 49.580229167,
+          "sourceEnd": 49.71,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.520833
+        }
+      ]
+    },
+    {
+      "id": "office",
+      "waveformReview": {
+        "revision": "0.1.4",
+        "auditedVariants": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06"
+        ],
+        "reselectedVariants": [
+          "01",
+          "02",
+          "05"
+        ],
+        "trimmedTailVariants": [],
+        "method": "Source waveform and transient-envelope review; analysis filters are not applied to assets. Reselections preserve a full isolated impact and decay; tail trims end before an unrelated late tap.",
+        "regressionCheck": "scripts/check_sound_assets.py: profile-aware sharp renewed-attack detection, onset, edges, headroom, and Silent level. Rounded Silent/Office bodies use an upper-texture-band check; Creamy also has a strict late/initial amplitude gate.",
+        "listeningReview": "Pending user audition of the updated 0.1.4 sound bank.",
+        "retainedCharacter": "Broad membrane-key body retained; 01/02/05 reselected to bring key texture into the initial attack."
+      },
+      "samples": [
+        {
+          "path": "Sounds/office/01.wav",
+          "action": "reselected",
+          "beforeSourceStart": 51.768,
+          "beforeSourceEnd": 51.851,
+          "sourceStart": 49.891791667,
+          "sourceEnd": 49.985,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.1875
+        },
+        {
+          "path": "Sounds/office/02.wav",
+          "action": "reselected",
+          "beforeSourceStart": 51.958,
+          "beforeSourceEnd": 52.028,
+          "sourceStart": 53.291604167,
+          "sourceEnd": 53.382,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.1875
+        },
+        {
+          "path": "Sounds/office/03.wav",
+          "action": "retained",
+          "beforeSourceStart": 52.121166667,
+          "beforeSourceEnd": 52.177,
+          "sourceStart": 52.121166667,
+          "sourceEnd": 52.177,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.5
+        },
+        {
+          "path": "Sounds/office/04.wav",
+          "action": "retained",
+          "beforeSourceStart": 52.859395833,
+          "beforeSourceEnd": 52.928,
+          "sourceStart": 52.859395833,
+          "sourceEnd": 52.928,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.1875
+        },
+        {
+          "path": "Sounds/office/05.wav",
+          "action": "reselected",
+          "beforeSourceStart": 53.155,
+          "beforeSourceEnd": 53.232,
+          "sourceStart": 52.356229167,
+          "sourceEnd": 52.442,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.1875
+        },
+        {
+          "path": "Sounds/office/06.wav",
+          "action": "retained",
+          "beforeSourceStart": 54.6176875,
+          "beforeSourceEnd": 54.711,
+          "sourceStart": 54.6176875,
+          "sourceEnd": 54.711,
+          "unexpectedSecondaryImpacts": [],
+          "onset20PercentPeakMilliseconds": 0.583333
+        }
+      ]
+    }
+  ],
+  "originalEffects": [
+    {
+      "path": "Sounds/Extras/crisp.wav",
+      "frames": 3120,
+      "peak": 0.4199829,
+      "rms": 0.0454728,
+      "first20PercentPeakMilliseconds": 0.25,
+      "sourceKind": "Original procedural effect, verified by extraction reproducibility",
+      "intentionalReturnClickMilliseconds": null
+    },
+    {
+      "path": "Sounds/Extras/ding.wav",
+      "frames": 31200,
+      "peak": 0.3599854,
+      "rms": 0.072327,
+      "first20PercentPeakMilliseconds": 0.520833,
+      "sourceKind": "Original procedural effect, verified by extraction reproducibility",
+      "intentionalReturnClickMilliseconds": null
+    },
+    {
+      "path": "Sounds/Extras/hard.wav",
+      "frames": 5520,
+      "peak": 0.4199829,
+      "rms": 0.0522287,
+      "first20PercentPeakMilliseconds": 0.229167,
+      "sourceKind": "Original procedural effect, verified by extraction reproducibility",
+      "intentionalReturnClickMilliseconds": null
+    },
+    {
+      "path": "Sounds/Extras/soft.wav",
+      "frames": 3840,
+      "peak": 0.4199829,
+      "rms": 0.072779,
+      "first20PercentPeakMilliseconds": 0.354167,
+      "sourceKind": "Original procedural effect, verified by extraction reproducibility",
+      "intentionalReturnClickMilliseconds": null
+    },
+    {
+      "path": "Sounds/Extras/typewriter.wav",
+      "frames": 8640,
+      "peak": 0.4199829,
+      "rms": 0.0438256,
+      "first20PercentPeakMilliseconds": 0.25,
+      "sourceKind": "Original procedural effect, verified by extraction reproducibility",
+      "intentionalReturnClickMilliseconds": 46
+    }
+  ],
+  "limitations": "No physical-key or headphone acoustic latency measurement; Typewriter intentionally includes a mechanical return at46ms."
+}

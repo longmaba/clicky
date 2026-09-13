@@ -1,0 +1,242 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+		54628DF94BA9B9CD246EDB2A = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/AppModel.swift"; sourceTree = "<group>";
+		};
+		D12177D05661A671AF409019 = {
+			isa = PBXBuildFile; fileRef = 54628DF94BA9B9CD246EDB2A;
+		};
+		1D892F16FC9B7119D4689F34 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/ClickyApplication.swift"; sourceTree = "<group>";
+		};
+		405688B4E6D7447DBD537FEF = {
+			isa = PBXBuildFile; fileRef = 1D892F16FC9B7119D4689F34;
+		};
+		C12D25C1B27E9350D6B4EEE6 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/Diagnostics/NotchDiagnostics.swift"; sourceTree = "<group>";
+		};
+		F2816F0D464AAA4B470A2C5E = {
+			isa = PBXBuildFile; fileRef = C12D25C1B27E9350D6B4EEE6;
+		};
+		0E6BD7D4FB6EFA5A35E8C7A4 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/InputService.swift"; sourceTree = "<group>";
+		};
+		711251D99EEC22E2F43B4594 = {
+			isa = PBXBuildFile; fileRef = 0E6BD7D4FB6EFA5A35E8C7A4;
+		};
+		242C37E9CE9D62490A1316E0 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/MenuBarController.swift"; sourceTree = "<group>";
+		};
+		8B5024FB9D79D5292C1E8E79 = {
+			isa = PBXBuildFile; fileRef = 242C37E9CE9D62490A1316E0;
+		};
+		93E9AD092057F6897DDD4FE9 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/Overlays/NotchPlaygroundView.swift"; sourceTree = "<group>";
+		};
+		88FD240330BF52B1FFC53510 = {
+			isa = PBXBuildFile; fileRef = 93E9AD092057F6897DDD4FE9;
+		};
+		33C1D87FE4F774C831ACE0C5 = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/Overlays/OverlayController.swift"; sourceTree = "<group>";
+		};
+		A5E968F7F2EA662BFB9DE971 = {
+			isa = PBXBuildFile; fileRef = 33C1D87FE4F774C831ACE0C5;
+		};
+		3AFD75429AA76949224E471A = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/Views/KeyboardView.swift"; sourceTree = "<group>";
+		};
+		CB1536976E6436196099B5C9 = {
+			isa = PBXBuildFile; fileRef = 3AFD75429AA76949224E471A;
+		};
+		6AD6AD6124B9F8AC97F192DD = {
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/Views/SettingsView.swift"; sourceTree = "<group>";
+		};
+		B13395DFDBA3ECABBEE2AE23 = {
+			isa = PBXBuildFile; fileRef = 6AD6AD6124B9F8AC97F192DD;
+		};
+		75B13235D681EFADD9C29A79 = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = App/Info.plist; sourceTree = "<group>";
+		};
+		3A94BB07224E6FBA2B7113D3 = {
+			isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>";
+		};
+		4ADED3E4DF10D48DC909D346 = {
+			isa = PBXFileReference; lastKnownFileType = image.icns; path = Assets/AppIcon.icns; sourceTree = "<group>";
+		};
+		38A007151ABE87CC01A5B6E9 = {
+			isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clicky.app; sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F4C3A1615EDE45C63C81219F = {
+			isa = XCLocalSwiftPackageReference; relativePath = Packages/ClickyCore;
+		};
+		AAA5FF6B9BC17AD204393E62 = {
+			isa = XCSwiftPackageProductDependency; package = F4C3A1615EDE45C63C81219F; productName = ClickyCore;
+		};
+		4505EF71EA8A24FE1684977B = {
+			isa = PBXBuildFile; productRef = AAA5FF6B9BC17AD204393E62;
+		};
+		6BAC5032611CD3FA8DADB111 = {
+			isa = PBXBuildFile; fileRef = 3A94BB07224E6FBA2B7113D3;
+		};
+		1E9201EDF5155E637CD2FCF0 = {
+			isa = PBXBuildFile; fileRef = 4ADED3E4DF10D48DC909D346;
+		};
+		1C48CE29E4E135EE62951B22 = {
+			isa = PBXGroup; children = (
+				54628DF94BA9B9CD246EDB2A,
+				1D892F16FC9B7119D4689F34,
+				C12D25C1B27E9350D6B4EEE6,
+				0E6BD7D4FB6EFA5A35E8C7A4,
+				242C37E9CE9D62490A1316E0,
+				93E9AD092057F6897DDD4FE9,
+				33C1D87FE4F774C831ACE0C5,
+				3AFD75429AA76949224E471A,
+				6AD6AD6124B9F8AC97F192DD,
+				75B13235D681EFADD9C29A79,
+			); name = App; sourceTree = "<group>";
+		};
+		5151B46607EBC8890D8DFCC2 = {
+			isa = PBXGroup; children = (
+				38A007151ABE87CC01A5B6E9,
+			); name = Products; sourceTree = "<group>";
+		};
+		931BAC40E0989DC841B8C1D2 = {
+			isa = PBXGroup; children = (
+				1C48CE29E4E135EE62951B22,
+				3A94BB07224E6FBA2B7113D3,
+				4ADED3E4DF10D48DC909D346,
+				5151B46607EBC8890D8DFCC2,
+			); sourceTree = "<group>";
+		};
+		28BE49E1E42D704C38EEA420 = {
+			isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+				D12177D05661A671AF409019,
+				405688B4E6D7447DBD537FEF,
+				F2816F0D464AAA4B470A2C5E,
+				711251D99EEC22E2F43B4594,
+				8B5024FB9D79D5292C1E8E79,
+				88FD240330BF52B1FFC53510,
+				A5E968F7F2EA662BFB9DE971,
+				CB1536976E6436196099B5C9,
+				B13395DFDBA3ECABBEE2AE23,
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26E44B743A848DED8844ED9 = {
+			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
+				6BAC5032611CD3FA8DADB111,
+				1E9201EDF5155E637CD2FCF0,
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA8003021206097066E984FF = {
+			isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (
+				4505EF71EA8A24FE1684977B,
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		D690D083FD85BBEFD2F4A1EE = {
+			isa = PBXShellScriptBuildPhase; alwaysOutOfDate = 1; buildActionMask = 2147483647; files = (); inputPaths = (); outputPaths = (); name = "Sign with persistent Clicky identity"; runOnlyForDeploymentPostprocessing = 0; shellPath = /bin/sh; shellScript = "/usr/bin/python3 \"$SRCROOT/scripts/sign_app.py\" \"$TARGET_BUILD_DIR/$WRAPPER_NAME\"";
+		};
+		A9497CE23FDDC0787512981E = {
+			isa = XCBuildConfiguration; name = Debug; buildSettings = {
+				CLANG_ENABLE_MODULES = "YES";
+				CLANG_ENABLE_OBJC_ARC = "YES";
+				SDKROOT = "macosx";
+				MACOSX_DEPLOYMENT_TARGET = "13.0";
+				SWIFT_VERSION = "5.0";
+				ARCHS = "arm64";
+				ONLY_ACTIVE_ARCH = "YES";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				GCC_OPTIMIZATION_LEVEL = "0";
+				DEBUG_INFORMATION_FORMAT = "dwarf";
+				ENABLE_TESTABILITY = "YES";
+				SWIFT_COMPILATION_MODE = "singlefile";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG";
+			};
+		};
+		1D69AE994E46541145CBB141 = {
+			isa = XCBuildConfiguration; name = Debug; buildSettings = {
+				PRODUCT_NAME = "Clicky";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.clicky.app";
+				INFOPLIST_FILE = "App/Info.plist";
+				GENERATE_INFOPLIST_FILE = "NO";
+				MARKETING_VERSION = "0.1.4";
+				CURRENT_PROJECT_VERSION = "5";
+				CODE_SIGNING_ALLOWED = "NO";
+				ENABLE_USER_SCRIPT_SANDBOXING = "NO";
+				ENABLE_APP_SANDBOX = "NO";
+				ENABLE_HARDENED_RUNTIME = "YES";
+				COMBINE_HIDPI_IMAGES = "YES";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				SWIFT_EMIT_LOC_STRINGS = "NO";
+				SUPPORTED_PLATFORMS = "macosx";
+			};
+		};
+		A9DD297AC466B8C891118663 = {
+			isa = XCBuildConfiguration; name = Release; buildSettings = {
+				CLANG_ENABLE_MODULES = "YES";
+				CLANG_ENABLE_OBJC_ARC = "YES";
+				SDKROOT = "macosx";
+				MACOSX_DEPLOYMENT_TARGET = "13.0";
+				SWIFT_VERSION = "5.0";
+				ARCHS = "arm64";
+				ONLY_ACTIVE_ARCH = "YES";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				GCC_OPTIMIZATION_LEVEL = "s";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_TESTABILITY = "NO";
+				SWIFT_COMPILATION_MODE = "wholemodule";
+			};
+		};
+		409A63BCB0B64CF6220D29A9 = {
+			isa = XCBuildConfiguration; name = Release; buildSettings = {
+				PRODUCT_NAME = "Clicky";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.clicky.app";
+				INFOPLIST_FILE = "App/Info.plist";
+				GENERATE_INFOPLIST_FILE = "NO";
+				MARKETING_VERSION = "0.1.4";
+				CURRENT_PROJECT_VERSION = "5";
+				CODE_SIGNING_ALLOWED = "NO";
+				ENABLE_USER_SCRIPT_SANDBOXING = "NO";
+				ENABLE_APP_SANDBOX = "NO";
+				ENABLE_HARDENED_RUNTIME = "YES";
+				COMBINE_HIDPI_IMAGES = "YES";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				SWIFT_EMIT_LOC_STRINGS = "NO";
+				SUPPORTED_PLATFORMS = "macosx";
+			};
+		};
+		58BC0B3212E180EF4DCCBAEC = {
+			isa = XCConfigurationList; buildConfigurations = (
+				A9497CE23FDDC0787512981E,
+				A9DD297AC466B8C891118663,
+			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;
+		};
+		7192A84B797C3971CC4FB286 = {
+			isa = XCConfigurationList; buildConfigurations = (
+				1D69AE994E46541145CBB141,
+				409A63BCB0B64CF6220D29A9,
+			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;
+		};
+		AD8DC0117EE14C9991D4EB8B = {
+			isa = PBXNativeTarget; buildConfigurationList = 7192A84B797C3971CC4FB286; buildPhases = (
+				28BE49E1E42D704C38EEA420,
+				CA8003021206097066E984FF,
+				E26E44B743A848DED8844ED9,
+				D690D083FD85BBEFD2F4A1EE,
+			); buildRules = (); dependencies = (); name = Clicky; packageProductDependencies = (
+				AAA5FF6B9BC17AD204393E62,
+			); productName = Clicky; productReference = 38A007151ABE87CC01A5B6E9; productType = "com.apple.product-type.application";
+		};
+		98F54143AB4E86B28C3AFEE0 = {
+			isa = PBXProject; attributes = { BuildIndependentTargetsInParallel = YES; LastUpgradeCheck = 2600; }; buildConfigurationList = 58BC0B3212E180EF4DCCBAEC; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = 931BAC40E0989DC841B8C1D2; packageReferences = (
+				F4C3A1615EDE45C63C81219F,
+			); productRefGroup = 5151B46607EBC8890D8DFCC2; projectDirPath = ""; projectRoot = ""; targets = (
+				AD8DC0117EE14C9991D4EB8B,
+			);
+		};
+	};
+	rootObject = 98F54143AB4E86B28C3AFEE0;
+}

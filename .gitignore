@@ -1,0 +1,31 @@
+.DS_Store
+.build/
+build/
+dist/
+*.xcuserstate
+xcuserdata/
+.swiftpm/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+node_modules/
+coverage/
+
+# Full source recordings stay local; the prepared, permitted WAVs are tracked.
+*.mp4
+*.webm
+
+# Local environment, signing identities, and credentials never belong in Git.
+.env*
+*.pem
+*.p12
+*.pfx
+*.key
+*.keychain*
+keychain-password
+identity.json
+*.mobileprovision
+*.provisionprofile
+docs/verification/signing-identity.json
