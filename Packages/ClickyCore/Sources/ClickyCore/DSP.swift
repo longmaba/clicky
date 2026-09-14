@@ -21,6 +21,27 @@ public struct DecodedAudioSample: Sendable {
     public let rms: Float
     public let peak: Float
 
+    /// A short, lighter return stroke for banks without dedicated release recordings.
+    /// Prepared once while loading; no synthesis runs on the input/render path.
+    func releaseStroke() -> DecodedAudioSample {
+        let speed = 1.2
+        let count = min(Int(Double(frames.count) / speed), Int(sampleRate * 0.045))
+        guard count > 1 else { return self }
+        let attack = max(1, Int(sampleRate * 0.0005))
+        let result: [Float] = (0..<count).map { index in
+            let position = Double(index) * speed
+            let lower = Int(position)
+            let fraction = Float(position - Double(lower))
+            let value = frames[lower] + (frames[min(lower + 1, frames.count - 1)] - frames[lower]) * fraction
+            let progress = Float(index) / Float(count - 1)
+            let envelope = powf(1 - progress, 2) * min(1, Float(index) / Float(attack))
+            return value * envelope * 0.45
+        }
+        return DecodedAudioSample(frames: result, sampleRate: sampleRate,
+            rms: Float(sqrt(result.reduce(0.0) { $0 + Double($1 * $1) } / Double(count))),
+            peak: result.map(abs).max() ?? 0)
+    }
+
     public static func read(url: URL) throws -> DecodedAudioSample {
         let file: AVAudioFile
         do { file = try AVAudioFile(forReading: url, commonFormat: .pcmFormatFloat32, interleaved: false) }
