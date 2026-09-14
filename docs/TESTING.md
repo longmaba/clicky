@@ -382,3 +382,17 @@ while retaining visual feedback.
 Desktop/mobile screenshots were inspected. Results are in
 `verification/website-pagewide.json`. These are browser/software checks, not
 manual listening or measured key-to-ear latency. The native app is unchanged.
+
+## Key-release playback — 2026-09-14
+
+Banks without dedicated release recordings now prepare softer, shortened return
+strokes at load time and play them on matched physical key-up events. All 32 core
+tests pass, including checks on all 60 derived variants for duration, amplitude,
+finite samples and clean edges. Release compilation and ad-hoc bundle signature
+verification pass; persistent local signing is unavailable on this machine.
+
+The real-engine zero-volume diagnostic accepted 120 triggers for 60 down/up pairs
+in each of ten profiles, with zero drops. Modifier modes accepted their expected
+22/4/22 triggers, and the 500-trigger stress replay had zero drops. Device and
+render callbacks report 128 frames at 48 kHz. Local report:
+`/tmp/clicky-key-release-qa/report.json`. Physical listening remains for user QA.

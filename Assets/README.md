@@ -7,7 +7,11 @@ video `Gzko0BoULdw`. The MP4 is video-only; extraction uses the `.f251.webm` fil
 
 The recordings are short stroke excerpts, sometimes including their natural
 release and room tail. They are not independent press/release recordings, so
-`releaseSamples` is deliberately null. Silent retains its lower recorded level.
+`releaseSamples` is null in the source manifest. At runtime, banks without dedicated
+release recordings derive a separate return stroke from each press: 1.2× playback
+speed, at most 45 ms, a tapered envelope, and 45% amplitude. These are synthesized
+returns, not isolated release recordings. They play only on a matching physical
+key-up and inherit the press normalization so they stay softer. Silent retains its lower recorded level.
 No peak normalization, compression, noise gate, or tone EQ is baked into banks.
 The common gain is applied to float PCM before converting to PCM16, preserving
 Opus transients that exceed unity during decoding. Excerpts have DC removal and

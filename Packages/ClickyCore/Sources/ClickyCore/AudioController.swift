@@ -113,7 +113,16 @@ public final class AudioController: @unchecked Sendable {
             do {
                 for (profile, press, release) in decodedProfiles {
                     let pressSamples = try register(press, in: replacement, silent: profile.id == "silent", targetRMS: targetRMS, calibration: profile.gain)
-                    let releaseSamples = try register(release, in: replacement, silent: profile.id == "silent", calibration: profile.gain)
+                    let releaseSamples: [Sample]
+                    if release.isEmpty {
+                        let derived = try register(press.map { $0.releaseStroke() }, in: replacement)
+                        // Inherit press correction so normalization preserves the softer release.
+                        releaseSamples = zip(derived, pressSamples).map { sample, press in
+                            Sample(id: sample.id, rms: sample.rms, normalization: press.normalization)
+                        }
+                    } else {
+                        releaseSamples = try register(release, in: replacement, silent: profile.id == "silent", calibration: profile.gain)
+                    }
                     newBanks[profile.id] = Bank(press: pressSamples, release: releaseSamples, gain: profile.gain)
                 }
                 for (extra, decoded) in decodedExtras { newExtras[extra] = try register([decoded], in: replacement).first }

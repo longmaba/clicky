@@ -4,9 +4,32 @@ import AVFoundation
 @testable import ClickyCore
 
 final class AudioTests: XCTestCase {
+    func testDerivedReleaseIsShorterSofterAndHasCleanEdges() throws {
+        let assets = URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+            .deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent("Assets")
+        let profiles = try JSONDecoder().decode([SoundProfileManifest].self,
+            from: Data(contentsOf: assets.appendingPathComponent("profiles.json")))
+        for profile in profiles {
+            for path in profile.samples {
+                let press = try DecodedAudioSample.read(url: assets.appendingPathComponent(path))
+                let release = press.releaseStroke()
+                XCTAssertLessThanOrEqual(Double(release.frames.count) / release.sampleRate, 0.045)
+                XCTAssertLessThan(release.frames.count, press.frames.count)
+                XCTAssertGreaterThan(release.rms, 0, path)
+                XCTAssertLessThan(release.rms, press.rms, path)
+                XCTAssertLessThanOrEqual(release.peak, press.peak * 0.45, path)
+                XCTAssertEqual(release.frames.first, 0)
+                XCTAssertEqual(release.frames.last, 0)
+                XCTAssertTrue(release.frames.allSatisfy(\.isFinite))
+            }
+        }
+    }
+
     private func makeMixer() -> OpaquePointer { ca_mixer_create(48000)! }
     private func sample(_ mixer: OpaquePointer, count: Int = 4800, amplitude: Float = 0.5) -> UInt32 {
-        let data = (0..<count).map { amplitude * sin(Float($0) * .pi * 2 * 440 / 48000) }
+        let angularStep: Float = .pi * 2 * 440 / 48000
+        let data = (0..<count).map { amplitude * sin(Float($0) * angularStep) }
         return data.withUnsafeBufferPointer { UInt32(ca_mixer_add_sample(mixer, $0.baseAddress, UInt32($0.count), 48000)) }
     }
     private func render(_ mixer: OpaquePointer, count: Int) -> ([Float], [Float]) {

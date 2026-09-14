@@ -178,12 +178,11 @@ import ClickyCore
                     model.audio.trigger(event)
                 }
                 let end = model.audio.diagnostics
-                modifierReplay[mode.rawValue] = ["expected":mode == .silent ? 4 : 13,
+                modifierReplay[mode.rawValue] = ["expected":mode == .silent ? 4 : 22,
                     "accepted":end.acceptedTriggers-start.acceptedTriggers,
                     "dropped":end.droppedTriggers-start.droppedTriggers]
             }
-            // Verify every recorded bank plays once per down/up pair. The
-            // recording owns its decay; key-up must not replay a whole stroke.
+            // Every bank plays a press and a separate, softer return on key-up.
             var profileReplay: [String: Any] = [:]
             for profile in model.profiles {
                 var settings = silent
@@ -197,7 +196,7 @@ import ClickyCore
                     try await Task.sleep(nanoseconds: 10_000_000)
                 }
                 let end = model.audio.diagnostics
-                profileReplay[profile.id] = ["pressReleasePairs": 60, "expected": 60,
+                profileReplay[profile.id] = ["pressReleasePairs": 60, "expected": 120,
                     "accepted": end.acceptedTriggers - start.acceptedTriggers,
                     "dropped": end.droppedTriggers - start.droppedTriggers]
             }
