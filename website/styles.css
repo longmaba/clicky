@@ -550,6 +550,25 @@ h1 span {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+.hero-typing-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.hero-typing-hint kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 17px;
+  border: 1px solid #c8beab;
+  border-radius: 4px;
+  background: #eee8dc;
+  box-shadow: 0 2px 0 #d4cbbb;
+  color: #655b49;
+  font: inherit;
+  font-size: 8px;
+}
 .sound-section {
   padding-top: 97px;
   padding-bottom: 102px;
@@ -813,53 +832,7 @@ h2 em {
   justify-content: space-between;
   align-items: center;
   padding: 20px 0 14px;
-}
-.switch-label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   font-size: 11px;
-  cursor: pointer;
-  position: relative;
-}
-.switch-label input {
-  position: absolute;
-  opacity: 0;
-  width: 29px;
-  height: 18px;
-  left: 0;
-  margin: 0;
-}
-.toggle-switch {
-  width: 28px;
-  height: 17px;
-  border-radius: 20px;
-  background: #c9c2b4;
-  display: block;
-  transition: background 0.15s;
-}
-.toggle-switch:after {
-  content: "";
-  display: block;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: #f8f5ee;
-  box-shadow: 0 1px 2px #0002;
-  position: relative;
-  top: 2px;
-  left: 2px;
-  transition: transform 0.15s;
-}
-.switch-label input:checked + .toggle-switch {
-  background: #687955;
-}
-.switch-label input:checked + .toggle-switch:after {
-  transform: translateX(11px);
-}
-.switch-label input:focus-visible + .toggle-switch {
-  outline: 3px solid #aa592e;
-  outline-offset: 5px;
 }
 .typing-light {
   font-size: 8px;
@@ -1888,10 +1861,7 @@ dialog .button {
   }
   .typing-control {
     padding-top: 18px;
-  }
-  .switch-label {
     font-size: 10px;
-    gap: 8px;
   }
   .typing-light {
     font-size: 7px;
@@ -2293,4 +2263,81 @@ dialog .button {
 }
 .hero-source:hover {
   color: var(--accent-ink);
+}
+
+#keystroke-feedback {
+  position: fixed;
+  right: max(26px, env(safe-area-inset-right));
+  bottom: max(28px, env(safe-area-inset-bottom));
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 62px;
+  max-width: 148px;
+  height: 60px;
+  padding: 0 16px;
+  border: 1px solid color-mix(in srgb, var(--accent) 66%, #9b8568);
+  border-radius: 13px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent) 36%, #fcf8ed),
+    color-mix(in srgb, var(--accent) 72%, #f4ead7)
+  );
+  box-shadow:
+    0 5px 0 color-mix(in srgb, var(--accent) 70%, #796247),
+    0 10px 25px #483a251c,
+    inset 0 2px 1px #fff8;
+  color: #332c22;
+  opacity: 0;
+  transform: translateY(10px) scale(0.96);
+  transition:
+    opacity 160ms ease-out,
+    transform 160ms ease-out;
+  pointer-events: none;
+  user-select: none;
+}
+#keystroke-feedback.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: keystroke-press 180ms ease-out;
+}
+#keystroke-label {
+  overflow: hidden;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 16px;
+  font-weight: 550;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@keyframes keystroke-press {
+  from {
+    transform: translateY(4px) scale(0.97);
+  }
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
+@media (max-width: 580px) {
+  #keystroke-feedback {
+    right: max(17px, env(safe-area-inset-right));
+    bottom: max(20px, env(safe-area-inset-bottom));
+    min-width: 52px;
+    max-width: 128px;
+    height: 50px;
+    padding: 0 13px;
+    border-radius: 11px;
+  }
+  #keystroke-label {
+    font-size: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #keystroke-feedback,
+  #keystroke-feedback.is-visible {
+    transform: none;
+    animation: none;
+    transition: none;
+  }
 }

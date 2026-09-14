@@ -356,3 +356,29 @@ profiles they tried.
   The Donate button discloses this and offers a working repository support link.
 
 Structured local results: `verification/public-release.json`.
+
+
+## Page-wide website typing (2026-09-14)
+
+The landing page now responds to physical keyboard events anywhere in its own
+document, without an enable toggle or a focused typing box. WAVs preload without
+playing; the first keypress resumes browser audio. A fixed keycap indicator makes
+feedback visible even when the hero keyboard is offscreen. Volume 0 mutes audio
+while retaining visual feedback.
+
+`scripts/check_website.cjs` passed in Chromium and WebKit:
+
+- No playback on page load; first keypress plays without a preliminary click.
+- One stroke per press, suppressed held-key repeats, and balanced modifiers.
+- Enter, Numpad Enter, and Space on preview buttons do not produce double sounds.
+- Normal text entry, select-all, and volume-slider arrow controls still work.
+- All ten profiles respond across the page without moving focus to the textarea.
+- Muting preserves visual effects; blur clears the temporary textarea and feedback.
+  The next keypress resumes audio without an enable step.
+- Donation dialog behavior remains intact, and the indicator fits 320, 390, and
+  1440 pixel viewports while scrolled to the footer. Reduced motion is respected.
+- Typing before a slow download finishes produces no delayed burst of old keys.
+
+Desktop/mobile screenshots were inspected. Results are in
+`verification/website-pagewide.json`. These are browser/software checks, not
+manual listening or measured key-to-ear latency. The native app is unchanged.

@@ -1,0 +1,32 @@
+[
+  {
+    "browser": "chromium",
+    "profiles": 10,
+    "pageWideDefault": true,
+    "noAutoplay": true,
+    "firstKeyWithoutClick": true,
+    "noRepeatedOrDoubleActivation": true,
+    "nativeTextAndSelection": true,
+    "volumeMute": true,
+    "resumesAfterBlur": true,
+    "visibleWhileScrolled": true,
+    "reducedMotion": true,
+    "noDelayedLoadingBurst": true,
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "profiles": 10,
+    "pageWideDefault": true,
+    "noAutoplay": true,
+    "firstKeyWithoutClick": true,
+    "noRepeatedOrDoubleActivation": true,
+    "nativeTextAndSelection": true,
+    "volumeMute": true,
+    "resumesAfterBlur": true,
+    "visibleWhileScrolled": true,
+    "reducedMotion": true,
+    "noDelayedLoadingBurst": true,
+    "errors": []
+  }
+]

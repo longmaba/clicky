@@ -38,6 +38,21 @@ Open <http://localhost:8080> to check layout, keyboard navigation, sound preview
 and links. Test at both narrow mobile and desktop widths. The staging script
 copies the ten prepared sound banks into the site; do not add source recordings.
 
+For changes to keyboard or audio behavior, the browser regression check runs in
+Chromium and WebKit. With the local server above still running, use a separate
+terminal (Node.js and npm are development dependencies for this check only):
+
+```sh
+npm install --prefix /tmp/clicky-browser-checks playwright@1.63.0
+/tmp/clicky-browser-checks/node_modules/.bin/playwright install chromium webkit
+NODE_PATH=/tmp/clicky-browser-checks/node_modules CLICKY_SITE_URL=http://localhost:8080/ node scripts/check_website.cjs
+```
+
+It checks first-key activation across the page, repeat and button deduplication,
+normal text selection, profile changes, muting, focus recovery, mobile key
+feedback, and slow audio loading. Screenshots and a report go to
+`build/website-checks/`. Only use a local server for this development check.
+
 ## Pull requests
 
 Describe the problem, the behavior after your change, and how you checked it.

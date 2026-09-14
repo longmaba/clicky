@@ -184,8 +184,11 @@ python3 scripts/prepare_website.py
 python3 -m http.server 8080 --directory build/website
 ```
 
-Open `http://localhost:8080`. The playground plays only after interaction, and
-typing is observed only while its input has focus. Nothing typed is saved.
+Open `http://localhost:8080`. Typing anywhere on the page plays the selected
+profile and shows a key effect by default; no toggle or input focus is required.
+Samples preload silently, and the first keypress unlocks browser audio. Volume
+0 mutes sound. The optional typing field is cleared when the page loses focus,
+and no typed text is collected or stored.
 `website/config.js` holds the repository, release, and donation links. The
 GitHub Pages workflow publishes the prepared site on changes to `main`; repository
 Pages settings must use **GitHub Actions** as the build source.

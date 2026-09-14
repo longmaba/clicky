@@ -70,21 +70,21 @@
   const $$ = (selector) => [...document.querySelectorAll(selector)];
   const status = $("#audio-status");
   const preview = $("#preview-button");
-  const typingToggle = $("#typing-enabled");
   const typingField = $("#typing-field");
   const keyboard = $("#keyboard");
-  const stage = $("#keyboard-stage");
   const orbit = $("#keyboard-orbit");
   const workbench = $(".sound-workbench");
   let activeProfile = profiles[0];
   let context;
   let gain;
-  let typingReady = false;
-  let typingSession = 0;
+  let playbackSession = 0;
+  let pendingKeyAttempt = 0;
+  let feedbackTimer;
   let sampleNumber = 0;
   let pulseTimer;
   let lastAudioAttempt = 0;
   const buffers = new Map();
+  const decodedBuffers = new Map();
   const activeVoices = new Set();
   const pressedTimers = new Map();
 
@@ -160,6 +160,8 @@
 
   async function selectProfile(profile, index) {
     activeProfile = profile;
+    playbackSession++;
+    lastAudioAttempt++;
     sampleNumber = 0;
     document.documentElement.style.setProperty("--accent", profile.color);
     $$(".active-profile-name").forEach((label) => {
@@ -173,13 +175,12 @@
       button.setAttribute("aria-pressed", String(selected));
       button.querySelector(".profile-check").textContent = selected ? "✓" : "";
     });
-    status.textContent = `${profile.name} selected. Press play to listen.`;
-    if (typingToggle.checked) await prepareTyping();
+    await prepareProfile(profile);
   }
 
-  // No audio context, sample request, or keyboard listener outside the playground
-  // is created by simply visiting this page. Text is never persisted or transmitted.
-  async function audioContext() {
+  // Decode silently ahead of typing. Only a user gesture resumes playback;
+  // creating the context and loading WAVs never starts a source.
+  async function audioContext(resume = true) {
     if (!context) {
       const AudioContextClass =
         window.AudioContext || window.webkitAudioContext;
@@ -196,7 +197,7 @@
       gain.connect(limiter);
       limiter.connect(context.destination);
     }
-    if (context.state !== "running") await context.resume();
+    if (resume && context.state !== "running") await context.resume();
     return context;
   }
 
@@ -204,13 +205,17 @@
     const key = `${profile.id}/${number}`;
     if (!buffers.has(key)) {
       const pending = (async () => {
-        const audio = await audioContext();
+        const audio = await audioContext(false);
         const response = await fetch(
           `./sounds/${profile.id}/${String(number).padStart(2, "0")}.wav`,
           { cache: "force-cache" },
         );
         if (!response.ok) throw new Error("missing-sample");
-        return audio.decodeAudioData(await response.arrayBuffer());
+        const buffer = await audio.decodeAudioData(
+          await response.arrayBuffer(),
+        );
+        decodedBuffers.set(key, buffer);
+        return buffer;
       })();
       buffers.set(key, pending);
       pending.catch(() => buffers.delete(key));
@@ -226,7 +231,7 @@
   }
 
   function playBuffer(buffer, modifier = false) {
-    if (!context || context.state !== "running") return;
+    if (!context || context.state !== "running" || document.hidden) return;
     if (activeVoices.size >= 24) {
       const oldest = activeVoices.values().next().value;
       activeVoices.delete(oldest);
@@ -248,7 +253,6 @@
     };
     activeVoices.add(source);
     source.start();
-    pulse();
   }
 
   function pulse() {
@@ -264,18 +268,25 @@
 
   async function playSample(profile = activeProfile, modifier = false) {
     const attempt = ++lastAudioAttempt;
+    const session = playbackSession;
+    if (Number($("#volume").value) === 0) {
+      status.textContent = "Sound is muted. Raise Volume to hear your keys.";
+      return;
+    }
     try {
       const audio = await audioContext();
       const buffer = await loadSample(profile, 1);
       // A slow initial fetch should never release a burst of queued keystrokes.
       if (
         attempt !== lastAudioAttempt ||
+        session !== playbackSession ||
+        document.hidden ||
         profile !== activeProfile ||
         audio.state !== "running"
       )
         return;
       playBuffer(buffer, modifier);
-      status.textContent = `${profile.name} · ${profile.subtitle.toLowerCase()}.`;
+      status.textContent = `${profile.name} · ${profile.subtitle.toLowerCase()}. Type anywhere on this page.`;
     } catch (error) {
       audioError(error);
     }
@@ -294,89 +305,108 @@
 
   $("#volume").addEventListener("input", (event) => {
     const value = Number(event.target.value);
+    if (value === 0) {
+      playbackSession++;
+      lastAudioAttempt++;
+    }
+    updateTypingStatus();
+    status.textContent =
+      value === 0
+        ? "Sound is muted. Key effects stay on."
+        : "Type anywhere on this page. Set Volume to 0 to mute.";
     $("#volume-value").textContent = `${value}%`;
     event.target.style.background = `linear-gradient(to right,var(--ink) 0%,var(--ink) ${value}%,#cfc7b8 ${value}%,#cfc7b8 100%)`;
     if (gain && context)
       gain.gain.setTargetAtTime(value / 100, context.currentTime, 0.015);
   });
 
-  async function prepareTyping() {
-    const session = ++typingSession;
-    const profile = activeProfile;
-    typingReady = false;
-    typingField.disabled = true;
-    $("#typing-light").textContent = "LOADING";
-    status.textContent = `Preparing ${profile.name} for typing…`;
+  function updateTypingStatus() {
+    const muted = Number($("#volume").value) === 0;
+    $("#typing-light").textContent = muted ? "MUTED" : "ON";
+    $("#typing-light").classList.toggle("active", !muted);
+  }
+
+  async function prepareProfile(profile = activeProfile) {
+    status.textContent = `Preparing ${profile.name}… Key effects are already on.`;
     try {
-      await audioContext();
       await Promise.all(
         Array.from({ length: 6 }, (_, index) => loadSample(profile, index + 1)),
       );
-      if (!typingToggle.checked || session !== typingSession) return;
-      typingReady = true;
-      typingField.disabled = false;
-      typingField.placeholder = "The quick brown fox found its favorite sound…";
-      $("#typing-light").textContent = "ON";
-      $("#typing-light").classList.add("active");
+      if (profile !== activeProfile) return;
+      updateTypingStatus();
       status.textContent =
-        "Type in the box below the switch. If Clicky is already running, mute the app while you try this demo.";
-      typingField.focus();
+        "Type anywhere on this page. Set Volume to 0 to mute. If Clicky is running, mute the app while trying the demo.";
     } catch (error) {
-      if (session !== typingSession) return;
-      disableTyping();
-      audioError(error);
+      if (profile === activeProfile) audioError(error);
     }
   }
 
-  function disableTyping() {
-    typingSession++;
-    typingReady = false;
-    typingToggle.checked = false;
-    typingField.disabled = true;
-    typingField.value = "";
-    typingField.placeholder =
-      "Enable the playground, then type something good…";
-    $("#typing-light").textContent = "OFF";
-    $("#typing-light").classList.remove("active");
-    clearKeys();
-  }
-
-  typingToggle.addEventListener("change", async () => {
-    if (typingToggle.checked) await prepareTyping();
-    else {
-      disableTyping();
-      status.textContent = "Playground off. Your typing has been cleared.";
-    }
-  });
-
-  typingField.addEventListener("keydown", async (event) => {
-    if (
-      !typingReady ||
-      event.repeat ||
-      ["Tab", "Dead", "Process", "Unidentified"].includes(event.key)
-    )
-      return;
-    animateKey(event.code);
+  function playTypingStroke(code) {
+    lastAudioAttempt++;
+    if (Number($("#volume").value) === 0) return;
     const profile = activeProfile;
-    const session = typingSession;
     const number = (sampleNumber++ % 6) + 1;
-    const modifier = /^(Shift|Control|Alt|Meta)/.test(event.code);
-    try {
-      // All six variants are predecoded before the field accepts keystrokes.
-      const buffer = await loadSample(profile, number);
-      if (
-        !typingReady ||
-        session !== typingSession ||
-        profile !== activeProfile
-      )
-        return;
+    const buffer =
+      decodedBuffers.get(`${profile.id}/${number}`) ||
+      decodedBuffers.get(`${profile.id}/1`);
+    const session = playbackSession;
+    const attempt = ++pendingKeyAttempt;
+    const started = performance.now();
+    const modifier = /^(Shift|Control|Alt|Meta|Fn)/.test(code);
+    // Resume in the physical event handler, including the first key on the page.
+    // Never queue keystrokes behind downloads or an autoplay permission prompt.
+    const resumed = audioContext();
+    if (context?.state === "running" && buffer) {
       playBuffer(buffer, modifier);
-    } catch (error) {
-      audioError(error);
+      return;
     }
-  });
-  typingField.addEventListener("keyup", (event) => releaseKey(event.code));
-  typingField.addEventListener("blur", clearKeys);
+    resumed
+      .then(() => {
+        if (
+          !buffer ||
+          attempt !== pendingKeyAttempt ||
+          session !== playbackSession ||
+          profile !== activeProfile ||
+          document.hidden ||
+          !document.hasFocus() ||
+          performance.now() - started > 120
+        )
+          return;
+        playBuffer(buffer, modifier);
+      })
+      .catch(audioError);
+  }
+
+  function delegatesAudioActivation(event) {
+    return (
+      ["Enter", "NumpadEnter", "Space"].includes(event.code) &&
+      !event.altKey &&
+      !event.ctrlKey &&
+      !event.metaKey &&
+      event.target instanceof Element &&
+      event.target.matches("#preview-button, .keycap")
+    );
+  }
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (!event.isTrusted || document.hidden) return;
+      // Audio preview buttons already own their native Enter/Space activation.
+      // Keep that activation to one stroke, including when Enter is held down.
+      if (delegatesAudioActivation(event)) {
+        if (event.repeat) event.preventDefault();
+        return;
+      }
+      if (event.repeat || !event.code || event.code === "Unidentified") return;
+      animateKey(event.code);
+      playTypingStroke(event.code);
+      // No preventDefault, value inspection, input/change listeners, or text history.
+      // Browser shortcuts, selection, composition, and form controls stay native.
+    },
+    true,
+  );
+  document.addEventListener("keyup", (event) => releaseKey(event.code), true);
 
   const rows = [
     [
@@ -530,6 +560,25 @@
   });
 
   function animateKey(code) {
+    const label =
+      keyMap.get(code)?.textContent ||
+      {
+        Space: "space",
+        ArrowDown: "↓",
+        Backquote: "`",
+        CapsLock: "caps",
+      }[code] ||
+      code.replace(/^(Key|Digit|Numpad)/, "").replace(/(Left|Right)$/, "");
+    $("#keystroke-label").textContent = label || "space";
+    $("#keystroke-feedback").classList.remove("is-visible");
+    void $("#keystroke-feedback").offsetWidth;
+    $("#keystroke-feedback").classList.add("is-visible");
+    clearTimeout(feedbackTimer);
+    feedbackTimer = setTimeout(() => {
+      $("#keystroke-feedback").classList.remove("is-visible");
+      $("#keystroke-label").textContent = "";
+    }, 650);
+    pulse();
     const button = keyMap.get(code);
     if (!button) return;
     clearTimeout(pressedTimers.get(code));
@@ -608,23 +657,30 @@
     applyRotation();
   });
 
-  document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) return;
-    disableTyping();
-    activeVoices.forEach((voice) => {
-      try {
-        voice.stop();
-      } catch (_) {}
-    });
+  function pausePage() {
+    playbackSession++;
+    pendingKeyAttempt++;
     lastAudioAttempt++;
-    context?.suspend();
-  });
-  window.addEventListener("pagehide", () => {
     typingField.value = "";
+    clearKeys();
+    clearTimeout(pulseTimer);
+    workbench.classList.remove("is-playing");
+    clearTimeout(feedbackTimer);
+    $("#keystroke-feedback").classList.remove("is-visible");
+    $("#keystroke-label").textContent = "";
     activeVoices.forEach((voice) => {
       try {
         voice.stop();
       } catch (_) {}
     });
+    activeVoices.clear();
+    context?.suspend().catch(() => {});
+  }
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) pausePage();
   });
+  window.addEventListener("blur", pausePage);
+  window.addEventListener("pagehide", pausePage);
+  prepareProfile();
 })();

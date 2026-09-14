@@ -18,7 +18,10 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://longmaba.github.io/clicky/" />
-    <meta property="og:image" content="https://longmaba.github.io/clicky/social.png" />
+    <meta
+      property="og:image"
+      content="https://longmaba.github.io/clicky/social.png"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -144,7 +147,8 @@
           </div>
         </div>
         <div class="hero-footnote">
-          <span>Native to Mac. Open by nature.</span
+          <span class="hero-typing-hint"
+            ><kbd aria-hidden="true">A</kbd> Type anywhere on this page.</span
           ><a href="#playground"
             >Find your sound <span aria-hidden="true">↓</span></a
           ><span>No account. No subscription.</span>
@@ -221,13 +225,8 @@
               /><output for="volume" id="volume-value">40%</output>
             </div>
             <div class="typing-control">
-              <label class="switch-label" for="typing-enabled"
-                ><input type="checkbox" id="typing-enabled" /><span
-                  class="toggle-switch"
-                  aria-hidden="true"
-                ></span
-                ><span>Try it with your keyboard</span></label
-              ><span class="typing-light" id="typing-light">OFF</span>
+              <span>Type anywhere on this page</span>
+              <span class="typing-light active" id="typing-light">ON</span>
             </div>
             <label class="visually-hidden" for="typing-field"
               >Type here to try the selected keyboard sound</label
@@ -238,11 +237,10 @@
               spellcheck="false"
               autocomplete="off"
               autocapitalize="off"
-              placeholder="Enable the playground, then type something good…"
-              disabled
+              placeholder="Type here, or anywhere on this page…"
             ></textarea>
             <p class="playground-note" id="audio-status" role="status">
-              Press play for a preview. Sound starts only when you choose.
+              Type anywhere to hear your sound. Set volume to 0% to mute.
             </p>
             <p class="privacy-note">
               <svg
@@ -258,7 +256,8 @@
                   stroke-width="1.2"
                 />
               </svg>
-              Playground typing stays in this field. Nothing is sent or saved.
+              Keys trigger sound and animation on this page. Your typing isn’t
+              collected, sent, or saved.
             </p>
           </div>
         </div>
@@ -454,5 +453,8 @@
         >View on GitHub <span aria-hidden="true">↗</span></a
       >
     </dialog>
+    <div id="keystroke-feedback" aria-hidden="true">
+      <span id="keystroke-label"></span>
+    </div>
   </body>
 </html>
