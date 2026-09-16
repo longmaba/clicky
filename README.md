@@ -4,8 +4,8 @@ Make every keystroke feel good. Clicky is a native, offline Mac app that adds
 mechanical keyboard sounds to your typing, with twenty sound profiles, soft
 modifiers, sound tuning, and an interactive 3D notch keyboard.
 
-[Website & sound playground](https://longmaba.github.io/clicky/) ·
-[Download 0.1.4](https://github.com/longmaba/clicky/releases/tag/v0.1.4) ·
+[Website & sound playground](https://clicky.longmaba.workers.dev/) ·
+[Download 0.2.0](https://github.com/longmaba/clicky/releases/tag/v0.2.0) ·
 [Contribute](CONTRIBUTING.md)
 
 Built with SwiftUI/AppKit, physical HID events, and native audio mixing for
@@ -219,8 +219,22 @@ mouse events. A physical first-drag check remains necessary.
 
 ## Landing page
 
-The site in `website/` uses plain HTML, CSS, and JavaScript. To stage it with the
-bundled sound previews and serve it locally:
+The site in `website/` uses plain HTML, CSS, and JavaScript and is hosted at
+[clicky.longmaba.workers.dev](https://clicky.longmaba.workers.dev/). Deploy it to
+Cloudflare Workers with Node.js 22 or later and Python 3 installed:
+
+```sh
+npm ci
+npx wrangler login # If not already authenticated
+npm run deploy
+```
+
+The root `wrangler.jsonc` runs `npm run build`, which uses
+`python3 scripts/prepare_website.py` to bundle the site and sound previews into
+`build/website`, then publishes that directory. Use `npm run dev` for a local
+Workers preview, or `npm run deploy:dry-run` to validate deployment packaging.
+
+To stage and serve the site locally using only Python:
 
 ```sh
 python3 scripts/prepare_website.py
@@ -235,8 +249,9 @@ Samples preload silently, and the first keypress or click unlocks browser audio.
 Volume 0 mutes both keyboard and mouse sound. The optional typing field is cleared when the page loses focus,
 and no typed text is collected or stored.
 `website/config.js` holds the repository, release, and donation links. The
-GitHub Pages workflow publishes the prepared site on changes to `main`; repository
-Pages settings must use **GitHub Actions** as the build source.
+GitHub Pages workflow remains separately available and publishes the prepared
+site on changes to `main`; repository Pages settings must use **GitHub Actions**
+as the build source.
 
 ## Contributing and support
 

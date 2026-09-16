@@ -29,9 +29,15 @@ sources and the generated Xcode project specify **0.2.0, build 6**.
   with zero drops. All 190 samples loaded, and audio continued after Settings
   closed. See [native results](verification/softer-release-native.json).
 
-The ZIP is built locally at `dist/Clicky-macOS-arm64.zip`. Public download links
-still refer to the available 0.1.4 release until a new GitHub release asset is
-uploaded. The repository's existing main-push workflow deploys GitHub Pages.
+The distribution ZIP is `dist/Clicky-macOS-arm64.zip`, with SHA-256 recorded in
+[the build report](verification/0.2.0-build.json) and the release's `SHA256SUMS`.
+Public download links now target the [0.2.0 release](https://github.com/longmaba/clicky/releases/tag/v0.2.0).
+The repository's existing main-push workflow deploys GitHub Pages.
+
+Cloudflare Workers tooling is also committed. `npm run deploy:dry-run` passed
+with the locked Wrangler 4.131.1, preparing 199 website files (186 WAVs) without
+uploading. This checks local build/configuration/packaging; remote account and
+live Workers behavior were not tested, and no Cloudflare deployment was run.
 Listening and physical hardware acceptance remain separate from automated checks.
 
 ## Recorded mouse press/release sounds — 2026-09-16

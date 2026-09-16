@@ -1,0 +1,16 @@
+{
+  "name": "clicky-website",
+  "private": true,
+  "scripts": {
+    "build": "python3 scripts/prepare_website.py",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:dry-run": "wrangler deploy --dry-run"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "4.131.1"
+  }
+}

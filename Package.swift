@@ -3,7 +3,7 @@ import PackageDescription
 import Foundation
 
 let directory = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
-let excluded = ["build", "dist"] + ["Packages", "scripts", "docs", "website", ".github", "README.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "CONTRIBUTING.md", "Clicky.xcodeproj", "App/Info.plist"].filter {
+let excluded = ["build", "dist"] + ["Packages", "scripts", "docs", "website", ".github", "node_modules", ".wrangler", "package.json", "package-lock.json", "wrangler.jsonc", "README.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "CONTRIBUTING.md", "Clicky.xcodeproj", "App/Info.plist"].filter {
     FileManager.default.fileExists(atPath: directory.appendingPathComponent($0).path)
 } + ((try? FileManager.default.contentsOfDirectory(atPath: directory.path)) ?? []).filter {
     $0.hasSuffix(".mp4") || $0.hasSuffix(".webm")

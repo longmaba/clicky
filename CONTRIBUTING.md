@@ -31,7 +31,8 @@ the resulting project changes in your pull request. The final diff check verifie
 that the checked-in project is current; it is expected to show those changes
 until you have included them in your commit.
 
-The website is plain HTML, CSS, and JavaScript. It has no package install step:
+The website is plain HTML, CSS, and JavaScript. Manual static preview requires
+no package install:
 
 ```sh
 python3 scripts/prepare_website.py
@@ -46,10 +47,12 @@ do not add source recordings. The paired packs are reproducible with
 `scripts/import_thock_sounds.py --ffmpeg /path/to/ffmpeg --check`.
 Importer resampling tests need FFmpeg on `PATH`, or
 `CLICKY_TEST_FFMPEG=/path/to/ffmpeg`; those tests report skips when it is unavailable.
+Cloudflare Workers deployment uses local npm dependencies; see the
+[README deployment instructions](README.md#landing-page).
 
 For changes to keyboard or audio behavior, the browser regression check runs in
 Chromium and WebKit. With the local server above still running, use a separate
-terminal (Node.js and npm are development dependencies for this check only):
+terminal with Node.js and npm installed:
 
 ```sh
 npm install --prefix /tmp/clicky-browser-checks playwright@1.63.0

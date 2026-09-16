@@ -54,7 +54,7 @@
     link.href = `${repository}/blob/main/LICENSE`;
   });
   $$("[data-version]").forEach((label) => {
-    label.textContent = `v${config.version || "0.1.4"}`;
+    label.textContent = `v${config.version || "0.2.0"}`;
   });
   $$(".download-link").forEach((link) => {
     link.href = config.downloadUrl || `${repository}#build-and-open`;
