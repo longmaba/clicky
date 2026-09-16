@@ -9,6 +9,12 @@ sources and the generated Xcode project specify **0.2.0, build 6**.
 
 - **66 core tests passed**, including absolute press/release gain assertions,
   keyboard normalization, mouse button routing, and preview parity.
+  Publication CI later exposed a timing assumption in the preview test: a
+  40 ms sleep resumed after the scheduled 100 ms release. The test now checks
+  observed monotonic time with a bounded completion deadline and keeps checking
+  that press-only previews remain single. See the
+  [original failed run](https://github.com/longmaba/clicky/actions/runs/35047177025).
+  This test correction does not change the published app or ZIP.
 - **27 Python tests passed** with FFmpeg available. Both pinned importers passed
   `--offline --check`; keyboard and mouse asset checks also passed.
 - **Chromium and WebKit passed** the complete regression suite, including

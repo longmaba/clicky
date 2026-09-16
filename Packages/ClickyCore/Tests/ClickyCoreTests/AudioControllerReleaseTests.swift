@@ -193,13 +193,34 @@ final class AudioControllerReleaseTests: XCTestCase {
 
     func testPreviewIsCompleteAfterHundredMillisecondsAndUnsupportedIsSingle() async throws {
         let f = try fixture(); defer { f.cleanup() }
+        let clock = ContinuousClock()
+        let requestedAt = clock.now
+        let minimumReleaseAt = requestedAt.advanced(by: .milliseconds(100))
+        let completionDeadline = requestedAt.advanced(by: .seconds(2))
         f.audio.preview(profileID: "paired")
-        XCTAssertEqual(count(f.audio), 1)
-        try await Task.sleep(nanoseconds: 40_000_000)
-        XCTAssertEqual(count(f.audio), 1)
-        try await waitForPreview(); XCTAssertEqual(count(f.audio), 2)
+        var pairedCount: UInt64 = 0
+        repeat {
+            pairedCount = count(f.audio)
+            let observedAt = clock.now
+            // A short sleep can resume after the release deadline on a busy
+            // runner. Judge the observed transition using elapsed monotonic time.
+            if pairedCount == 2 {
+                XCTAssertGreaterThanOrEqual(observedAt, minimumReleaseAt, "The release must not play before the 100 ms hold")
+                break
+            }
+            XCTAssertEqual(pairedCount, 1, "Only the press may play while waiting for its release")
+            if observedAt >= completionDeadline { break }
+            try await clock.sleep(for: .milliseconds(5))
+        } while true
+        XCTAssertEqual(pairedCount, 2, "A supported preview must complete within two seconds")
+
         f.audio.preview(profileID: "press-only")
-        try await waitForPreview(); XCTAssertEqual(count(f.audio), 3)
+        let unsupportedDeadline = clock.now.advanced(by: .milliseconds(180))
+        repeat {
+            XCTAssertEqual(count(f.audio), 3, "A press-only preview must never schedule an extra release")
+            if clock.now >= unsupportedDeadline { break }
+            try await clock.sleep(for: .milliseconds(5))
+        } while true
     }
 
     func testChangedSettingsCancelPreviewButIdenticalUpdatesPreserveIt() async throws {
