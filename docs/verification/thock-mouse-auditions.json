@@ -1,0 +1,42 @@
+{
+  "artifacts": [
+    {
+      "path": "build/auditions/thock-mouse/overlap.wav",
+      "sha256": "dd6dd22e576481495e4ccb465acae30229d3010fc70bebf0880629f2d6118ae0",
+      "durationSeconds": 2.4897708333333335,
+      "peak": 0.46405029296875,
+      "eventCount": 24,
+      "uniqueSampleCount": 4
+    },
+    {
+      "path": "build/auditions/thock-mouse/pairs.wav",
+      "sha256": "3e17c6dacd83e468a5e0d942584008a8ad78485d0abad321dd02529432b1faec",
+      "durationSeconds": 4.2893125,
+      "peak": 0.33819580078125,
+      "eventCount": 12,
+      "uniqueSampleCount": 4
+    },
+    {
+      "path": "build/auditions/thock-mouse/press.wav",
+      "sha256": "c5e12fdb5be37b07d09dd30a881be7cb5b8ea81cded5ead8c267c412b05c8a73",
+      "durationSeconds": 2.2091666666666665,
+      "peak": 0.1837158203125,
+      "eventCount": 2,
+      "uniqueSampleCount": 2
+    },
+    {
+      "path": "build/auditions/thock-mouse/release.wav",
+      "sha256": "4c8ef0b6c196d6fe09391e3082f1f3786447f69886f9c47b43b6d55e8e962cad",
+      "durationSeconds": 2.2097708333333332,
+      "peak": 0.33819580078125,
+      "eventCount": 2,
+      "uniqueSampleCount": 2
+    }
+  ],
+  "holdsSeconds": [
+    0.03,
+    0.1,
+    0.3
+  ],
+  "listeningReview": "Not performed; timing, output hashes and PCM levels verified."
+}

@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "registry": {
+    "repository": "kamillobinski/thock-soundpacks",
+    "commit": "213e1443c5005a99d5e51b46e31e17f30e4d752a",
+    "manifestSha256": "4a127fb3e4510ed832f23a0a2f6d009b283bbed25dd634605e69e02dda134a16"
+  },
+  "processing": {
+    "decode": "FFmpeg stereo 44100 Hz PCM16 source to mono 48000 Hz float32 little-endian PCM",
+    "resampler": "libswresample; filter_size=32, phase_shift=10, linear_interp=1, exact_rational=1, dither_method=none",
+    "encode": "mono 48000 Hz signed 16-bit little-endian PCM WAV",
+    "commonGain": 0.4,
+    "commonGainDb": -7.9588,
+    "leadingTrim": "Only consecutive frames whose LEFT AND RIGHT original PCM16 samples are both exactly zero; keep at least 0.5 ms preroll before first nonzero sample in either channel; convert trim to nearest output frame.",
+    "prerollSeconds": 0.0005,
+    "fadeInSeconds": 0.0004,
+    "fadeOutSeconds": 0.004,
+    "fadeCurve": "half cosine",
+    "peakNormalization": false,
+    "compression": false,
+    "noiseGate": false,
+    "equalization": false,
+    "removeDC": false,
+    "normalizationReference": false,
+    "note": "One shared gain and stereo downmix preserve source button/phase amplitude relationships. No loudness normalization or EQ; short fades soften clip boundaries.",
+    "downmix": "Arithmetic channel mean: mono = 0.5 * left + 0.5 * right; same matrix for every phase/button."
+  },
+  "preservedFiles": {
+    "Sounds/Extras/crisp.wav": "a0aac9e7e12e5ebab603f22ab6d56f22212f5c55d9ba994d16460df67e9e5d46",
+    "Sounds/Extras/ding.wav": "a3c94665ce54183d9aa47d2ce5208395776a2dc3ea8c5f048f9ecda1d6827968",
+    "Sounds/Extras/hard.wav": "121db3a5f5212ee696acf0f1937f89817b7b66bc0debb2694da6c95a7136f0b0",
+    "Sounds/Extras/soft.wav": "cfce42283ed5a273e792dc219bf7396eaf7ba839c0bc4b989a5650cbb8c8de41",
+    "Sounds/Extras/typewriter.wav": "42404a7984d3354ac1d3a9eb42daea92fbc4b399a6a17bd0c1118768035457a4",
+    "Sounds/alps-skcm-blue/backspace-press-01.wav": "0b1bdda26980e5d302114528ad2fc3fcde70a275eb0b69d23ce70d3265e61a2b",
+    "Sounds/alps-skcm-blue/backspace-release-01.wav": "9834c3933a4c85e01aac411c26db69256846baf0bc4a41082d35dcfd4d2ebef6",
+    "Sounds/alps-skcm-blue/enter-press-01.wav": "7b377255133c7a47165fce8ed3755b5356bda1fe71f97fc16eb780a533d67be0",
+    "Sounds/alps-skcm-blue/enter-release-01.wav": "c3b717ef259edbaba06f229448c50cc3a2b74590654e939a861e320cee375a59",
+    "Sounds/alps-skcm-blue/press-01.wav": "b00b3ec7266cfdaed2036ff16a3f017175e6d955d71cd9d61cbf87d5fa735285",
+    "Sounds/alps-skcm-blue/press-02.wav": "3f631cdd7b148a4a637e60252d16c1143946e26100e44932a74aa94e0f2feaf8",
+    "Sounds/alps-skcm-blue/press-03.wav": "fd4837ca20ddf71ce43ec98c26d09ae4fdb59059f8adfe6e2b1f77bc5cba8abf",
+    "Sounds/alps-skcm-blue/press-04.wav": "9be572bdd7fb4b8a658b9d9a328a7f3cf008ac386eb0dd4e1433d28ab9679a6b",
+    "Sounds/alps-skcm-blue/press-05.wav": "135a1d16be6dc0e8db41769df0a332b2a1eb62df27145369c8cfe4a1f4fd5ef5",
+    "Sounds/alps-skcm-blue/release-01.wav": "51649ef9e791b1cac116eec556a7a27fe73bbf8195082f46d8a7b8dcae2bbff7",
+    "Sounds/alps-skcm-blue/release-02.wav": "951be9fe7d0d90dac33fbb12f0d094175ecb488790711ec4084cb8ed0bf1a21b",
+    "Sounds/alps-skcm-blue/space-press-01.wav": "49cdaad73e4b0779506262b7d1f0b2648caea7ca0e7dc089ac1421ac882666d2",
+    "Sounds/alps-skcm-blue/space-release-01.wav": "55bf05b32acd6ba287b53de74f5f5a10b4bd3abb5ae85aad20992bb21da3f6c7",
+    "Sounds/bubble-wrap/01.wav": "c5f074beb2fa23374565d1a4e83edb94328234fd9364b19cd8c4aaea5fb8f002",
+    "Sounds/bubble-wrap/02.wav": "3568370a001020d16030bb078eecd6975bf730647354672abb5f4990065426fb",
+    "Sounds/bubble-wrap/03.wav": "7b07cc4ffb2644c8b45e5c053d746a8af2dcfcf3148ccac2a2129b4700f09ec4",
+    "Sounds/bubble-wrap/04.wav": "4ef7718f085f4a7dfec959199f30d4094c489f9260cedc733ec0775ba022a965",
+    "Sounds/bubble-wrap/05.wav": "b73ec213628e26b6eda3fc3a3f85641a9d527a6d506f682a24a490c5ce6d6f04",
+    "Sounds/bubble-wrap/06.wav": "c58ed36d3787d5802ef299f996a245c2ae34a4fa5bf06b0304f7e3bc15291b14",
+    "Sounds/clacky/01.wav": "b3e2a5fc1151e8549419a831edaebec2136bb690ed6749a2bfae65233d4037cd",
+    "Sounds/clacky/02.wav": "8f4e1cbd4d1269b892ffc7d80320e0876f9d7fcbfdbabd2ee8a9b3e32d8eaeeb",
+    "Sounds/clacky/03.wav": "0e0aa23291dcb56a60f9a2b8ac94a2b8d58469db67572624d5f2b609accd3c3b",
+    "Sounds/clacky/04.wav": "5cf16a6c1ad5038872c8e8dda416fba09041fa71deed72715889273f350f7675",
+    "Sounds/clacky/05.wav": "a017ae42fbaa11a1f1dbeb89bb1a4166b7cdef05f03758c4cc2cbd20a4f27adf",
+    "Sounds/clacky/06.wav": "264b79df532479308d0a8841103cfd0077614c893c1fbcd2609fef75ad276252",
+    "Sounds/clicky/01.wav": "8938664a4468ea15dd2311279985be77e14971e751e0884309af3af96d793f37",
+    "Sounds/clicky/02.wav": "6608e9b09c2646412a806905715703c63d2a97fd58716b2ccdc8d45031379c1c",
+    "Sounds/clicky/03.wav": "33517960ab38bb14944ab3924f57049a7a0bc2d84c03c9253e7bbb00817eb9c6",
+    "Sounds/clicky/04.wav": "a7a42e682e0b0e14d93dfee5e66f60039c2f03524c75a9e8e3fa03c00cb4aa4d",
+    "Sounds/clicky/05.wav": "a887c4909ddb1016b1b68a80318f0c2da453dab5af3dad2c9c58e2acf61021a2",
+    "Sounds/clicky/06.wav": "a8619ccd04a4d5489e7f97b3e1711b3f6eaf4b2d632240b6c5dc4ad0665f30e2",
+    "Sounds/creamy/01.wav": "86f3e31a0b0005573715f0c47eb8446b67ee16e41d66459e611837a8ce8924d7",
+    "Sounds/creamy/02.wav": "97a75e226ac1e537be15b205c0b5ac1157e4e600b7b72fef9de7321dc7953caf",
+    "Sounds/creamy/03.wav": "ade4f9bc9714362d6c737b730075bb88c8e61d0359f93fe3d727ee4b35bfd819",
+    "Sounds/creamy/04.wav": "2088427aedba0a71470ffca7e6372e687702583e3d7e8e2d9405cee6859878ca",
+    "Sounds/creamy/05.wav": "184aa13bbb8bd247f898f5faa067f801fc03863f5c15239631a1a6e3f4e2d839",
+    "Sounds/creamy/06.wav": "58f8c1c7e1258a471e11ea730d69fdb1168c92187a901b41f0a75df80f03e96a",
+    "Sounds/deep-thock/01.wav": "be50cf4a6ed1bde6ef242a00ca7b68544d5627ccb855af50ba47b7aace2bf4ea",
+    "Sounds/deep-thock/02.wav": "f0019f1565906b19e0d2a3d50c0c245a46b2d15c3169bbac1ac5eefb2552593c",
+    "Sounds/deep-thock/03.wav": "3f703a7f2187e0ef7786410c2bba358011e56f8ea90110d9ef29fd6d641421af",
+    "Sounds/deep-thock/04.wav": "e5ba2f4bc89578f21d3294891e6551ee899e22b666a3d5f17437a3197f9a64ed",
+    "Sounds/deep-thock/05.wav": "88920a6de2962dea11f261b58244e5bc8c07a4e8c9ffc0489ab46018a589f545",
+    "Sounds/deep-thock/06.wav": "b45b7766dc4b19f17b5a04c1ff46648b2bdbbd975cbdb8bdb924b125c327dcb4",
+    "Sounds/drop-holy-panda/backspace-press-01.wav": "64699cf665255cd7cd74d9ce7d61fc59ba92da2bd138eaaba19b16249ae81833",
+    "Sounds/drop-holy-panda/backspace-release-01.wav": "5ababf8a4d662153c5100ef600a432530c5d327756010ab5cd782f86cd7d0f8c",
+    "Sounds/drop-holy-panda/enter-press-01.wav": "2eba5452462921ba1966f3ad64e90a722835ac127cb399ce768331d44274089d",
+    "Sounds/drop-holy-panda/enter-release-01.wav": "f6a835f85c9afd590e6aaf39a70be479e60b8a79d39ff39b101f809b5cb9e5ee",
+    "Sounds/drop-holy-panda/press-01.wav": "a038a7c93cdcfaae794f5e59fcb5d2da7043ee806b2cf2cda77f9297e5d80010",
+    "Sounds/drop-holy-panda/press-02.wav": "89c3c4b21ea268016a755f8b8199bc4617ace26aa37791ccaafc82a7d13f44e2",
+    "Sounds/drop-holy-panda/press-03.wav": "c868a4c8deea854b4da34c08ced4e07ee98c2f0f1fbcf16d37ed2b67e9cc2f12",
+    "Sounds/drop-holy-panda/press-04.wav": "cb946bbb68f96b8a26e1e751149ca45f6433252364926acd12985460952e0a03",
+    "Sounds/drop-holy-panda/press-05.wav": "c3b353a7cac6189956ea896e7c3555e855344d20ea81bbeb730d85b133fdef24",
+    "Sounds/drop-holy-panda/release-01.wav": "f1213727e588598042a46cbee270ac53a5e7b61c02e8a2aecaffdefc1520f393",
+    "Sounds/drop-holy-panda/space-press-01.wav": "8dda0e1e174dceabc7830f3b2efd2c3a02a12bea630e46992ef252e92e551021",
+    "Sounds/drop-holy-panda/space-release-01.wav": "15dd09e17fb4a6946f76e7d02f6802b3b79ae0916b870e24bf603ca37ce1f00d",
+    "Sounds/durock-alpaca/backspace-press-01.wav": "1b73d6f027c9eda0d97220d62a0851d1c1cd9615e7ec77116631f608670509c8",
+    "Sounds/durock-alpaca/backspace-release-01.wav": "2fe756a6c67962e5cb7cd035794c70bacf139d7bba8701272d78a0aff532b6dc",
+    "Sounds/durock-alpaca/enter-press-01.wav": "9dc00149f837e86e513adba3ca0bad0553e9781503a59030279b356c35fcfcc7",
+    "Sounds/durock-alpaca/enter-release-01.wav": "f5c72c2d6efab1b478ba70cba43dfa94e0eeec59a77dcb54afa53eaf4124bfaf",
+    "Sounds/durock-alpaca/press-01.wav": "43cf759935fe45956e337fa0130d32791ced70f7431fa1110f5dc80e6c827fa5",
+    "Sounds/durock-alpaca/press-02.wav": "260208e7dd7175f536d81443bf2eb11d12b664ce382d0cc2d1acf9c7c27fe432",
+    "Sounds/durock-alpaca/press-03.wav": "888f34600ebf7409b97f0a07d1e2a98405679dc3bda75c4c39e1b9a28aa25b7e",
+    "Sounds/durock-alpaca/press-04.wav": "efaa67ccc26fd7f74fe3f5a8ba9b428c725a4ffbe4e4db4de74d0afe3a96ad49",
+    "Sounds/durock-alpaca/press-05.wav": "14adade9937e78df638f67828a1e1fa2a4cf2d8df1fcf6b724266015627330b9",
+    "Sounds/durock-alpaca/release-01.wav": "c3d7c8829e0731b145df0af79379f34795e0f046831c76fc758c061bc696bd6e",
+    "Sounds/durock-alpaca/space-press-01.wav": "f811ffe8da6dae5e6d63873ce5a487bba98a531968492d7e3f796fd55871d995",
+    "Sounds/durock-alpaca/space-release-01.wav": "5888cb1e0c322928909ab2bd9a801ccefd72f692296417e46d5e860d3728407b",
+    "Sounds/gateron-ink-black/backspace-press-01.wav": "2b3583dc5f15efbd61c40aca578e5aacd14ab7b1b7686a9b9fd2f0f5b9dbe90f",
+    "Sounds/gateron-ink-black/backspace-release-01.wav": "70d82ea931f98f3d9b0f4622e8a966a016347401359ea826386b8370a8019570",
+    "Sounds/gateron-ink-black/enter-press-01.wav": "32c5077873289d2fa48ee2568357ad6fdbe4019984ac3babbd812daa6591029d",
+    "Sounds/gateron-ink-black/enter-release-01.wav": "004e235681e1510d5a7a1242b3651e8ffbd86c51bd4545d3042a91ba2956b16d",
+    "Sounds/gateron-ink-black/press-01.wav": "29251d0413f26628d02a9161bb86c845c547c7c91320a3c2b11498fb9ee88739",
+    "Sounds/gateron-ink-black/press-02.wav": "bb28d636a4f5c36b1a73eeee23337f8bd23cee666da40857bba9afa0ce283346",
+    "Sounds/gateron-ink-black/press-03.wav": "a70dc059d219827dab894681532397cd8b6b14aaf1c95c681125516f0fd72210",
+    "Sounds/gateron-ink-black/press-04.wav": "a70dc059d219827dab894681532397cd8b6b14aaf1c95c681125516f0fd72210",
+    "Sounds/gateron-ink-black/press-05.wav": "f986184928d1a3feb8db52fc7c20731e08d12fdaea889f347bc4e89aa0571fa5",
+    "Sounds/gateron-ink-black/release-01.wav": "21881a16de3be06ec520197d1d2e4f93a124dc1ee3b45a9026cab3f639860027",
+    "Sounds/gateron-ink-black/space-press-01.wav": "03fc38deea596d3769924b14679abbcc07c6547a2202aa3281c064421b947c71",
+    "Sounds/gateron-ink-black/space-release-01.wav": "25e93d6c64b1eb052700cc16cd81c49673af0974812247507ea0f8eaaee2838d",
+    "Sounds/gateron-ink-red/backspace-press-01.wav": "cc0c7e00ccfa2118b229b00ae1305a35891d000fa3493d796d3f8162a40bc042",
+    "Sounds/gateron-ink-red/backspace-release-01.wav": "3823d4a624a72c61892fb1c4e8ca7b95009f088deb13f902cd137ab2f0d2b718",
+    "Sounds/gateron-ink-red/enter-press-01.wav": "6570419357a430499d423c43c035e76f7d846be170b61e894749a8bacd67cda6",
+    "Sounds/gateron-ink-red/enter-release-01.wav": "599d3b1291ef157992d289f352064886abd70ccc515f6b4bb8512ecfb6ebb6d7",
+    "Sounds/gateron-ink-red/press-01.wav": "bbadfcd15acb12a6a733114e9b0c2cb497f744de74c436dca509a73dd6ec8917",
+    "Sounds/gateron-ink-red/press-02.wav": "b7446197e63fe4753ed435b07ed96c4fd39e95b2e35c0a1039c4a1fef640ca52",
+    "Sounds/gateron-ink-red/press-03.wav": "0c206015da86764608e2a05d034a2ea99e34dccf5943e2348100441f0f104c7f",
+    "Sounds/gateron-ink-red/press-04.wav": "8015637c208a993cb99e5a9fc1eb26d60fe4d6181e6ce5d1dc238a92fd7cdff6",
+    "Sounds/gateron-ink-red/press-05.wav": "06759b53a9328af5d07f154bb458f2a4d7377063f2d211329e2a13273b6ac725",
+    "Sounds/gateron-ink-red/release-01.wav": "e758ee9b800461208bb2f94049092a3b69e216af1058234b8b5a9a19260d30ec",
+    "Sounds/gateron-ink-red/space-press-01.wav": "bbe13429454a82a48ee2ff54d87f826635e9b7faa56535de1f46e213b865df8b",
+    "Sounds/gateron-ink-red/space-release-01.wav": "cb224108185844b285a001760ea05792657ebc15be731f250e245f5e91ea1e55",
+    "Sounds/gateron-turquoise-tealios/backspace-press-01.wav": "b89ba8e14daff544a971052b62f1f567f663f5ecdb79613eb1e3c7734ba15b14",
+    "Sounds/gateron-turquoise-tealios/backspace-release-01.wav": "26ecdad0da3eab14daeb1b5cf3f16850b6068975947507ce6133effe7b537946",
+    "Sounds/gateron-turquoise-tealios/enter-press-01.wav": "2bf16d93cae04a21566d98a6589c1eb6a70fa512b33464a887c3b98725090948",
+    "Sounds/gateron-turquoise-tealios/enter-release-01.wav": "641bd18673c1a1427bc27537d14cf3d860e5209c93617063bace642a2a5f1440",
+    "Sounds/gateron-turquoise-tealios/press-01.wav": "561dc96d86fd13133387aa5614887d49541ba0be4d5589612628fdf4302ccd5c",
+    "Sounds/gateron-turquoise-tealios/press-02.wav": "38da4fd16addf3267ab7cd9b7ebe9915975eae4f62d494b104b925c248c34b9a",
+    "Sounds/gateron-turquoise-tealios/press-03.wav": "0be4708d50b66dc59a9a199ff90b70ec5ec399ecdc29c9ccf9baf6ef30f3a64d",
+    "Sounds/gateron-turquoise-tealios/press-04.wav": "4e6aad93c3ff1843337ddbd74f6d1013cc32ed25c785b7722fe5de824a3b48c5",
+    "Sounds/gateron-turquoise-tealios/press-05.wav": "bb4d0e40845591e90ed2df3e9390b695fbe496231be9b21cb199f5a9a80ce5bd",
+    "Sounds/gateron-turquoise-tealios/release-01.wav": "feea3d96450d0726afaed9903dce529e5898012096f684df8a175d442931192c",
+    "Sounds/gateron-turquoise-tealios/space-press-01.wav": "89a9d24ff25439450a916ebd0676b84d028daa3c1f62983e9271151c9f2259e5",
+    "Sounds/gateron-turquoise-tealios/space-release-01.wav": "b5b85dcf4b628095cf11f3d6761401dc14f6cf5002a3b41ec1a82a537636020b",
+    "Sounds/ibm-buckling-spring/backspace-press-01.wav": "5ec786404b4f9c7f820a0dc51ae78afaee88a3f0f507963538f43a16787fc11e",
+    "Sounds/ibm-buckling-spring/backspace-release-01.wav": "e5a39dedbb64434e52b4141ca37675f5c5abcc6352ac5f363da653ea3de483c8",
+    "Sounds/ibm-buckling-spring/enter-press-01.wav": "fd194a343d9ae44c9419e991ae545e7ecac3ade039d5ca6e420e337c72c2483f",
+    "Sounds/ibm-buckling-spring/enter-release-01.wav": "798ff24e4ef0dcaa833f3bc60a920f468ee811335d9f1134b6163138987813cb",
+    "Sounds/ibm-buckling-spring/press-01.wav": "908e886e1df606dcd8f61b150c7cc3b9c336fa209c68b9b78341ac447bdb2709",
+    "Sounds/ibm-buckling-spring/press-02.wav": "94cc308c60c23a87e2d4c38805507bce72a02156f30f9773e2540ed233bf2dc7",
+    "Sounds/ibm-buckling-spring/press-03.wav": "655e404c65471ca0a6116161a98ce961cfb47b13531bf6fb533e0cd880955d87",
+    "Sounds/ibm-buckling-spring/press-04.wav": "04628efa3c8d21767bfe8e84512a80c5ee9e89f3bba4084f282d98ded474075e",
+    "Sounds/ibm-buckling-spring/press-05.wav": "3d805cf28cd51b3da94e4ef4378856cb21d827592d0775ed0ecf1c8af754d299",
+    "Sounds/ibm-buckling-spring/release-01.wav": "aa4682aae4b40b30deb7158d59d12c7ddc4790969ffa9d3eed1dfe1eba4c6664",
+    "Sounds/ibm-buckling-spring/space-press-01.wav": "0ac7b7f8c48927980de4629abb35567d09d966199be6f49399d6568311b8ce40",
+    "Sounds/ibm-buckling-spring/space-release-01.wav": "c15ae72283f24dfe0722f4781d22423819de40de149991cc7c96e226fd113313",
+    "Sounds/kailh-box-navy/backspace-press-01.wav": "e5846d52d4fb63f571856b8bf3544d991f95e4aacf659852196f191aa0472ae2",
+    "Sounds/kailh-box-navy/backspace-release-01.wav": "b7c2b96cbce6b631a75b4346b608a542dd703b4ff808e16d1a48dfff6d6f933a",
+    "Sounds/kailh-box-navy/enter-press-01.wav": "66f43c97c7df498d8f4c418b42855ace991e85e58948c75221faa115109af326",
+    "Sounds/kailh-box-navy/enter-release-01.wav": "50087cc4659dd9a0c2e138c8165a6854f303fc969d1aab564f61cc3e0064e59a",
+    "Sounds/kailh-box-navy/press-01.wav": "1fa361653e3fab9f5a7326fafd1daba93eb8eae47f5f9d230d79e5e25f1a5188",
+    "Sounds/kailh-box-navy/press-02.wav": "5ce7b1972b2c6d2e1a33bc000ae8741b12508bff2a889ace7adf26be5c54d24c",
+    "Sounds/kailh-box-navy/press-03.wav": "2d6bcbd58c18fae28331857354c20ea3aa604cb1c436c1cf97198a22b14da429",
+    "Sounds/kailh-box-navy/press-04.wav": "dfc545762d7872083009bd3e100e4f5db059d2a279673b380664b86d46bfef7e",
+    "Sounds/kailh-box-navy/press-05.wav": "dc73104a010b0989958fd634fa7f8f1701a13e831cb0f13cadeff3a5779c1fb5",
+    "Sounds/kailh-box-navy/release-01.wav": "5e2e57f370a65fd4c466701e7812749ac304f0a258d41e6addb3fb5271d633e1",
+    "Sounds/kailh-box-navy/space-press-01.wav": "4733da49e19a26851d1757fa657c1f732079192c4381695e1bfb24b4f9bc935c",
+    "Sounds/kailh-box-navy/space-release-01.wav": "9282a8d4fbec0374004f1259a82ce2162bcaf35844fd2c68e352908479bb0f8d",
+    "Sounds/marbly/01.wav": "30de863f82f5317843325e2d37fce7e7265ae8435328f24977c0e2bd8f9fbf98",
+    "Sounds/marbly/02.wav": "070b4bd9ab403446fdbe4cf40ad10585bf086ea093d54b5c5222fa0977048c72",
+    "Sounds/marbly/03.wav": "b3b0fcc8d2f63aa4b3d0d83bf0d3408c62fceca44407537665fb86067215d2db",
+    "Sounds/marbly/04.wav": "66f6b3a3a67b0c9af607205f1154892e8f97460f1e985f9583a2efc3211d16a4",
+    "Sounds/marbly/05.wav": "31626a3726d0189d1c59d24a87598e90003d0133d024a73eb9025021959ff27c",
+    "Sounds/marbly/06.wav": "2d9fee6baa679b9bc6527f773f7a33ef7f36e23db36a498b7251b44c172bc7e7",
+    "Sounds/novelkeys-cream/backspace-press-01.wav": "f2541297d3b5e252feeb8162307e6d87a41cf687d43e51c443a479e1a14f2f4e",
+    "Sounds/novelkeys-cream/backspace-release-01.wav": "1bc07328f2a03f1b9239679243120f0f5b2067566ee0d2c363afcd186401d308",
+    "Sounds/novelkeys-cream/enter-press-01.wav": "18f9235f9136b6281da0ecc6701692db262933c7ba96bd41534e9c4f943864f6",
+    "Sounds/novelkeys-cream/enter-release-01.wav": "ce353cc6e9c08393fbd833719e7a5b03737c3f452b4522c244f10a22e5b933aa",
+    "Sounds/novelkeys-cream/press-01.wav": "fdd3fb13b1b187735546f0adb5bd5b1c257118faf23d5283ab17cbfb75e98938",
+    "Sounds/novelkeys-cream/press-02.wav": "bf67215c3181d09ca2e8fe698d7fda9d0b2294433df9f7bb4305b71ace7ca5e0",
+    "Sounds/novelkeys-cream/press-03.wav": "dc2c4a7cdcaa051b3606346392e316af8d5a9a20c2abec10fda712c6ac345e87",
+    "Sounds/novelkeys-cream/press-04.wav": "45571ce61d1a861c8d56f36110c1ae6d5291be0bd46bc700feee62e7c586f827",
+    "Sounds/novelkeys-cream/press-05.wav": "53fff0e5a994053dabc5d461b410ae9c776af0f718e82956530d4a4008a0dd62",
+    "Sounds/novelkeys-cream/release-01.wav": "dbf45e3ef75e86bc69fe239b3dc875449f2d51564b199629d103f6aa4e6937f1",
+    "Sounds/novelkeys-cream/space-press-01.wav": "647c5e11a27111af9cf81ce18ac1641f40b0a30fcd81ca8eae1eba6122df9204",
+    "Sounds/novelkeys-cream/space-release-01.wav": "341c805eb9b5403575dcec9cbfbacfb20403a1a4642e115553d90f2b35734b44",
+    "Sounds/office/01.wav": "18b1fe67a52910abe33e08b58870a48bc55bc0d38fc4f13d7b3695791851724d",
+    "Sounds/office/02.wav": "e5083024c95f0d2ead8c545a124a3cfc3c19bf28eefa5dccb42d6a4dd1788e1b",
+    "Sounds/office/03.wav": "5adc58841a88cf5896f831ba780ed9af1baede4253f8b1bfc929a6cf4d584b9f",
+    "Sounds/office/04.wav": "d7996b70aa30ff3e2c5eb9ba9eda00454e75d80bf8034f07522d7e0a5064e074",
+    "Sounds/office/05.wav": "8025e999604745dec2648359fab8e47bb7f0c6822190b2c6cd30eea5e37e8da9",
+    "Sounds/office/06.wav": "036c5b68a79e09793d4268bf8db2cdd3a5d3b7a7130b9bd78470d9989b694fca",
+    "Sounds/poppy/01.wav": "c3c61369c9f01c7114bb055e98f5c8a1752c2e8a11bebdbb7a88cd7f1e88d516",
+    "Sounds/poppy/02.wav": "5dc723004a95880b50c9148f05ab7a7f6b9bcf83966853d112756b252596cc0f",
+    "Sounds/poppy/03.wav": "81c243c25efd1f6f8b9abfd03d8b51c2cf6e17aa558bc2e5e8f290768e18e966",
+    "Sounds/poppy/04.wav": "a4fb57f6856ca47409df873886f621494df6fb9aa23be57b216eea261affad96",
+    "Sounds/poppy/05.wav": "56d8392c8bcd1ecde21fb0eadcbec25a0a6a2ebae57d99903cb02621d0d03be0",
+    "Sounds/poppy/06.wav": "7d353a88ca0f1128a77756707469f1a41aefe75982e6dcdd69c70c1bb5db3733",
+    "Sounds/silent/01.wav": "3ed8fc7fc6867d279b73792a31c3fe7390b8dc533973245ba53c2746e09cfc61",
+    "Sounds/silent/02.wav": "4246fde715c9d63755486827ce824790e6d6d8d3f8e9db5e942ea17032738f35",
+    "Sounds/silent/03.wav": "e9049c095f538a7223c858d3aea4fab14b4337d2d2aecb7f7746cb58717abfb4",
+    "Sounds/silent/04.wav": "eb4943de7081694480c1dfd2c0dfd60d6660a9e643edcfb78127efb19947dc0f",
+    "Sounds/silent/05.wav": "e56456422f6bfbf5b5b7b4794d6dbf8e1dacfe1a07a5bd75a8f0b0a160fd874f",
+    "Sounds/silent/06.wav": "e641fe9e623da2a1c62405c21dd9701d6558244df01c329cb930ddda6e52a595",
+    "Sounds/thocky/01.wav": "d3340f8d6a765165ca55f28245db50a76ca32291b7ada23b0a4e31b6deabca45",
+    "Sounds/thocky/02.wav": "14c620d069f5040002f6a4ae93565872b8756e968ba6ac78cd4ed274d98d5397",
+    "Sounds/thocky/03.wav": "ea5d4aebf79bfa1fd067e573846811631aee4834721fe34d80ca6727ffb3c32c",
+    "Sounds/thocky/04.wav": "b15332933ae442d548b1f9971ceb9a0e55cf149f6cb9ed15ec507f8934acdeaa",
+    "Sounds/thocky/05.wav": "1b34df444b183e2051cc002ff51fb53faa7b0dd60ba3c41b19e2e65ca79905f3",
+    "Sounds/thocky/06.wav": "637a8c6499427b0824ec547023fb6f02ffa49c46e2f83fed437e999f24ee740e",
+    "Sounds/topre-unknown/backspace-press-01.wav": "30d84866d92d42d8c5a379e07b62d2896dc240c1b0d9c391bcba9549698bdd98",
+    "Sounds/topre-unknown/backspace-release-01.wav": "d1fc14e4d312046a9af5391a9f1e76e836771cd29729bdd764f0cf8a5fd7445c",
+    "Sounds/topre-unknown/enter-press-01.wav": "8ffad274ac8af200d02acead9de28ddc91768076b0bec30224e74be1eec3af63",
+    "Sounds/topre-unknown/enter-release-01.wav": "79238f2ae133453fa8a416d5e3055232b234970b82976fdfd7833846c9aa1bb2",
+    "Sounds/topre-unknown/press-01.wav": "e887605d74d81fb50311b4cc36f85e696f4d2767911c817740c92faea8d5f020",
+    "Sounds/topre-unknown/press-02.wav": "f37c7bd99d2271de8b9dabad36aa5d80b9683be0d0a05b877f68d204ed368f31",
+    "Sounds/topre-unknown/press-03.wav": "42a0e4c0f77b18339143f5e73640fa8aa11447b5e2dbed18bfe225102b494567",
+    "Sounds/topre-unknown/press-04.wav": "3222bcd1c4c3efe527443baefd022ebd8d1749493e60489721663676b89eaf2e",
+    "Sounds/topre-unknown/press-05.wav": "1a5f3b6373b1b6485a57308aaa31d96bba787f621d75d6865acab9a146d30262",
+    "Sounds/topre-unknown/release-01.wav": "7021500812f3c1c124336aa52933033d901571affd284a595ba3d288e1ea098e",
+    "Sounds/topre-unknown/space-press-01.wav": "9d8c9b05b5bb72606e3c5ccb1e52bdc52338013a2ac6b6894a50482ccb690940",
+    "Sounds/topre-unknown/space-release-01.wav": "dde1cf8915bdc9306764e66e9a1be27ec2e99dd897a7e3d9bb432d5d21c4cfaa",
+    "profiles.json": "d80518368d6bd3e771460717c1adafeee068c53ec837cbccd1f9f7e572eae3f3"
+  },
+  "profiles": [
+    {
+      "packID": "3222385c-d428-4d98-8ce9-1cbc992c3373",
+      "metadata": {
+        "name": "Orochi V2",
+        "brand": "Razer",
+        "author": "Sadiquecat",
+        "supportsKeyUp": true,
+        "category": "mouse"
+      },
+      "contentPath": "mouse/razer/sadiquecat/orochi_v2",
+      "license": {
+        "type": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "archiveSha256": "9946ae073e26853e2256d9f3ca8c49e71c1f309158d4a88d881f62d6689cbbb7",
+      "configSha256": "135f609ef2fdb0d4e824ec3b8192decf4250ab0e92a5664543c52c1c1d561977",
+      "soundSha256": {
+        "1.wav": "5a5268f08ae469622bd5d7eb3ef7ee729d3aa0c31d7479dd70c0f2ce88add8fb",
+        "2.wav": "25148e6e978018276d7897df04b947508d0baea23f58367e1bf9d6ab3d7f47b5",
+        "3.wav": "149322a06c61839615ce47d119879f96537c5afe0eb962637ef704cb2de75886",
+        "4.wav": "5b7b6494ff7570eb493cfd951b89557fce8b543e7275c97fe229d86536be4c2b"
+      },
+      "id": "razer-orochi-v2",
+      "name": "Razer Orochi V2",
+      "subtitle": "Recorded by Sadiquecat",
+      "color": "82A799",
+      "noticePath": "Licenses/Sadiquecat-CC0.txt"
+    }
+  ],
+  "excludedPacks": [
+    {
+      "packID": "230f722e-104a-4ce3-ae60-2bb4d8d9691c",
+      "metadata": {
+        "name": "Unknown",
+        "brand": "Unknown",
+        "author": "pixabay",
+        "supportsKeyUp": true,
+        "category": "mouse"
+      },
+      "contentPath": "mouse/unknown/pixabay/unknown",
+      "license": {
+        "type": "Pixabay Content License",
+        "url": "https://pixabay.com/pl/service/license-summary/"
+      },
+      "archiveSha256": "21990c4cf4ba6cb98049c05244cf702008dcc9e34ac5bdfcda23e58aed5ebd11",
+      "configSha256": "ae74860f062e5ff25ef3c38cb5da287a722ffcb2d9ddead1378b75b7a3e6d527",
+      "soundSha256": {
+        "1.wav": "513562be5cadc5630a30d9881fa07c120c9a7df60b08f5a4a1997b1e4b24223e",
+        "2.wav": "f55a42d95fee2fab8929dae90dd72435858f3f5293a222da848e27279ecbcaca",
+        "3.wav": "49cf5a1aa84e1558ddc1c8345f4050d551da33cbe7ca493fb94370e7d6206baa",
+        "4.wav": "18f4e020733c4743463e9263f1d75f7c1d9dcf889092e58517a33694e4693c88"
+      },
+      "sourceSounds": {
+        "left": {
+          "down": [
+            "1.wav"
+          ],
+          "up": [
+            "2.wav"
+          ]
+        },
+        "right": {
+          "down": [
+            "3.wav"
+          ],
+          "up": [
+            "4.wav"
+          ]
+        }
+      },
+      "sourceFormat": {
+        "channels": 2,
+        "sampleWidthBytes": 2,
+        "sampleRate": 44100
+      },
+      "reason": "Mouse model and original source-item URL are unidentified. Pixabay forbids standalone redistribution; this raw-sample redistribution case is not established as permitted.",
+      "reviewedLicenseSummary": "https://pixabay.com/service/license-summary/"
+    },
+    {
+      "packID": "92996284-89e5-42e7-81e7-5c5c1e25ebf2",
+      "metadata": {
+        "name": "Mamba Elite",
+        "brand": "Razer",
+        "author": "kamillobinski",
+        "supportsKeyUp": true,
+        "category": "mouse"
+      },
+      "contentPath": "mouse/razer/kamillobinski/mamba_elite",
+      "license": {
+        "type": "Proprietary",
+        "url": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/refs/heads/dev/mouse/razer/kamillobinski/mamba_elite/LICENSE"
+      },
+      "archiveSha256": "d6d5db2f988efff3da0b1c003866dcea6692fd08759927a756f30d2f4397cb50",
+      "configSha256": "f453004911a6a695d22bdab427b206c51b110716687d068411d2e0806b6933b5",
+      "soundSha256": {
+        "1.wav": "80404c847f4dc5a5186685675f74d1ba667791cf6fae210a897c098c75dcd43b",
+        "2.wav": "722304c2d652d38edb8841eede1025709f236e6b2febc9c4fe7cd98308657b1b",
+        "3.wav": "f710bf29d390d8035f3405ef61ee2f42da286757f3c7bb68c0745914bb53b75d",
+        "4.wav": "9e2544418a6f685cebce746f2ebb1ef0bcea9fbb5406062f287b2b8359c6c576"
+      },
+      "sourceSounds": {
+        "left": {
+          "down": [
+            "1.wav"
+          ],
+          "up": [
+            "2.wav"
+          ]
+        },
+        "right": {
+          "down": [
+            "3.wav"
+          ],
+          "up": [
+            "4.wav"
+          ]
+        }
+      },
+      "sourceFormat": {
+        "channels": 2,
+        "sampleWidthBytes": 2,
+        "sampleRate": 44100
+      },
+      "reason": "Embedded proprietary license permits use only in the Thock app (dev.kamillobinski.Thock) and prohibits use in other products, redistribution and modification.",
+      "embeddedLicenseSha256": "7a6984a03d7f236723c2e9cd1af0537dd8b3ac58e7b198668feb415a84a17eef"
+    }
+  ]
+}

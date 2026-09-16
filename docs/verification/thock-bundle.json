@@ -1,0 +1,13 @@
+{
+  "profiles": 20,
+  "releaseProfiles": 10,
+  "uniqueKeyboardWAVs": 181,
+  "nativeWAVsIncludingEffects": 186,
+  "websiteWAVsIncludingMouse": 182,
+  "identicalAssetsAndLicensesInBothNativeCopiesAndWebsite": true,
+  "websiteManifestPaths": "Sounds/ remapped to sounds/ for static serving",
+  "sourceManifestSha256": "d80518368d6bd3e771460717c1adafeee068c53ec837cbccd1f9f7e572eae3f3",
+  "licenseSha256": "1603fe1e3aa5011bfc8b3810b1cd8a31ce14c128344db4da1a37fc0bfae71c30",
+  "websiteMatchesBrowserVerifiedStage": true,
+  "websiteFileCount": 193
+}

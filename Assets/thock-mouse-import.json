@@ -1,0 +1,377 @@
+{
+  "schemaVersion": 1,
+  "sourceKind": "thock-mouse-soundpack",
+  "source": {
+    "repository": "kamillobinski/thock-soundpacks",
+    "commit": "213e1443c5005a99d5e51b46e31e17f30e4d752a",
+    "manifestSha256": "4a127fb3e4510ed832f23a0a2f6d009b283bbed25dd634605e69e02dda134a16"
+  },
+  "sourceLock": {
+    "file": "thock-mouse-sources.json",
+    "sha256": "53517eb5c7019b8839346bf67e87c7f7deeb5e9d6d1b63e1d6ab94135826d0ec"
+  },
+  "processing": {
+    "decode": "FFmpeg stereo 44100 Hz PCM16 source to mono 48000 Hz float32 little-endian PCM",
+    "resampler": "libswresample; filter_size=32, phase_shift=10, linear_interp=1, exact_rational=1, dither_method=none",
+    "encode": "mono 48000 Hz signed 16-bit little-endian PCM WAV",
+    "commonGain": 0.4,
+    "commonGainDb": -7.9588,
+    "leadingTrim": "Only consecutive frames whose LEFT AND RIGHT original PCM16 samples are both exactly zero; keep at least 0.5 ms preroll before first nonzero sample in either channel; convert trim to nearest output frame.",
+    "prerollSeconds": 0.0005,
+    "fadeInSeconds": 0.0004,
+    "fadeOutSeconds": 0.004,
+    "fadeCurve": "half cosine",
+    "peakNormalization": false,
+    "compression": false,
+    "noiseGate": false,
+    "equalization": false,
+    "removeDC": false,
+    "normalizationReference": false,
+    "note": "One shared gain and stereo downmix preserve source button/phase amplitude relationships. No loudness normalization or EQ; short fades soften clip boundaries.",
+    "downmix": "Arithmetic channel mean: mono = 0.5 * left + 0.5 * right; same matrix for every phase/button."
+  },
+  "review": {
+    "phaseIdentity": "Publisher config explicitly identifies left/right down/up; no waveform-based phase inference.",
+    "listeningReview": "Pending user audition; format, source identity, processing and output hashes are verified."
+  },
+  "profiles": [
+    {
+      "id": "razer-orochi-v2",
+      "packID": "3222385c-d428-4d98-8ce9-1cbc992c3373",
+      "archive": {
+        "url": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/mouse/razer/sadiquecat/orochi_v2/3222385c-d428-4d98-8ce9-1cbc992c3373.zip",
+        "sha256": "9946ae073e26853e2256d9f3ca8c49e71c1f309158d4a88d881f62d6689cbbb7"
+      },
+      "configSha256": "135f609ef2fdb0d4e824ec3b8192decf4250ab0e92a5664543c52c1c1d561977",
+      "metadata": {
+        "name": "Orochi V2",
+        "brand": "Razer",
+        "author": "Sadiquecat",
+        "supportsKeyUp": true,
+        "category": "mouse"
+      },
+      "license": {
+        "type": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "sourceSounds": {
+        "left": {
+          "down": [
+            "1.wav"
+          ],
+          "up": [
+            "2.wav"
+          ]
+        },
+        "right": {
+          "down": [
+            "3.wav"
+          ],
+          "up": [
+            "4.wav"
+          ]
+        }
+      },
+      "fallback": {
+        "9:3": "left",
+        "reason": "No middle-button recording in this source pack; runtime uses the generic left pair."
+      },
+      "selections": [
+        {
+          "path": "Sounds/razer-orochi-v2/left-press-01.wav",
+          "category": "left",
+          "phase": "press",
+          "sourceFile": "1.wav",
+          "sourceSha256": "5a5268f08ae469622bd5d7eb3ef7ee729d3aa0c31d7479dd70c0f2ce88add8fb",
+          "sha256": "1ec81ce87e071167bfbedf6226f7f9da3ea8adacfeb72fe0d36f92f46f0e8209",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.left.down[0]",
+            "evidence": "Publisher config maps 1.wav explicitly to sounds.left.down[0]."
+          },
+          "sourceMetrics": {
+            "channels": 2,
+            "sampleWidthBytes": 2,
+            "sampleRate": 44100,
+            "frames": 3940,
+            "durationSeconds": 0.089342404,
+            "channelPeaks": [
+              0.543640137,
+              0.520629883
+            ],
+            "monoDownmix": {
+              "frames": 3940,
+              "sampleRate": 44100,
+              "durationSeconds": 0.089342404,
+              "peak": 0.465301514,
+              "rms": 0.030596769,
+              "firstNonzeroMilliseconds": 4.965986,
+              "first20PercentPeakMilliseconds": 5.668934
+            }
+          },
+          "outputMetrics": {
+            "frames": 4076,
+            "sampleRate": 48000,
+            "durationSeconds": 0.084916667,
+            "peak": 0.18371582,
+            "rms": 0.01254934,
+            "firstNonzeroMilliseconds": 0.3125,
+            "first20PercentPeakMilliseconds": 1.229167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/razer-orochi-v2/left-release-01.wav",
+          "category": "left",
+          "phase": "release",
+          "sourceFile": "2.wav",
+          "sourceSha256": "25148e6e978018276d7897df04b947508d0baea23f58367e1bf9d6ab3d7f47b5",
+          "sha256": "417c402736dfd09979f009177cfa46654ced1a03f520d4ceb4e32096445eb655",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.left.up[0]",
+            "evidence": "Publisher config maps 2.wav explicitly to sounds.left.up[0]."
+          },
+          "sourceMetrics": {
+            "channels": 2,
+            "sampleWidthBytes": 2,
+            "sampleRate": 44100,
+            "frames": 3940,
+            "durationSeconds": 0.089342404,
+            "channelPeaks": [
+              0.845245361,
+              0.988555908
+            ],
+            "monoDownmix": {
+              "frames": 3940,
+              "sampleRate": 44100,
+              "durationSeconds": 0.089342404,
+              "peak": 0.825057983,
+              "rms": 0.058431951,
+              "firstNonzeroMilliseconds": 4.965986,
+              "first20PercentPeakMilliseconds": 5.464853
+            }
+          },
+          "outputMetrics": {
+            "frames": 4076,
+            "sampleRate": 48000,
+            "durationSeconds": 0.084916667,
+            "peak": 0.338195801,
+            "rms": 0.023970669,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 1.041667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/razer-orochi-v2/right-press-01.wav",
+          "category": "right",
+          "phase": "press",
+          "sourceFile": "3.wav",
+          "sourceSha256": "149322a06c61839615ce47d119879f96537c5afe0eb962637ef704cb2de75886",
+          "sha256": "775cbc9e2145fae37f48ecc616dc81c3443889287588658ad9a371beeac74ea5",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.right.down[0]",
+            "evidence": "Publisher config maps 3.wav explicitly to sounds.right.down[0]."
+          },
+          "sourceMetrics": {
+            "channels": 2,
+            "sampleWidthBytes": 2,
+            "sampleRate": 44100,
+            "frames": 3937,
+            "durationSeconds": 0.089274376,
+            "channelPeaks": [
+              0.4324646,
+              0.45803833
+            ],
+            "monoDownmix": {
+              "frames": 3937,
+              "sampleRate": 44100,
+              "durationSeconds": 0.089274376,
+              "peak": 0.426544189,
+              "rms": 0.024050782,
+              "firstNonzeroMilliseconds": 5.555556,
+              "first20PercentPeakMilliseconds": 5.986395
+            }
+          },
+          "outputMetrics": {
+            "frames": 4044,
+            "sampleRate": 48000,
+            "durationSeconds": 0.08425,
+            "peak": 0.153900146,
+            "rms": 0.009899922,
+            "firstNonzeroMilliseconds": 0.4375,
+            "first20PercentPeakMilliseconds": 0.9375
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 245,
+            "removedDigitalLeadingFrames44100Hz": 222,
+            "removedLeadingFrames48000Hz": 242,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/razer-orochi-v2/right-release-01.wav",
+          "category": "right",
+          "phase": "release",
+          "sourceFile": "4.wav",
+          "sourceSha256": "5b7b6494ff7570eb493cfd951b89557fce8b543e7275c97fe229d86536be4c2b",
+          "sha256": "7249ac6cdddcec5339ccd025615bb8fd3201f0691f932175d41466117d64c29e",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.right.up[0]",
+            "evidence": "Publisher config maps 4.wav explicitly to sounds.right.up[0]."
+          },
+          "sourceMetrics": {
+            "channels": 2,
+            "sampleWidthBytes": 2,
+            "sampleRate": 44100,
+            "frames": 3937,
+            "durationSeconds": 0.089274376,
+            "channelPeaks": [
+              0.597564697,
+              0.843261719
+            ],
+            "monoDownmix": {
+              "frames": 3937,
+              "sampleRate": 44100,
+              "durationSeconds": 0.089274376,
+              "peak": 0.647201538,
+              "rms": 0.048286087,
+              "firstNonzeroMilliseconds": 4.965986,
+              "first20PercentPeakMilliseconds": 5.646259
+            }
+          },
+          "outputMetrics": {
+            "frames": 4073,
+            "sampleRate": 48000,
+            "durationSeconds": 0.084854167,
+            "peak": 0.266998291,
+            "rms": 0.019806955,
+            "firstNonzeroMilliseconds": 0.3125,
+            "first20PercentPeakMilliseconds": 1.145833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        }
+      ]
+    }
+  ],
+  "excludedPacks": [
+    {
+      "packID": "230f722e-104a-4ce3-ae60-2bb4d8d9691c",
+      "metadata": {
+        "name": "Unknown",
+        "brand": "Unknown",
+        "author": "pixabay",
+        "supportsKeyUp": true,
+        "category": "mouse"
+      },
+      "contentPath": "mouse/unknown/pixabay/unknown",
+      "license": {
+        "type": "Pixabay Content License",
+        "url": "https://pixabay.com/pl/service/license-summary/"
+      },
+      "archiveSha256": "21990c4cf4ba6cb98049c05244cf702008dcc9e34ac5bdfcda23e58aed5ebd11",
+      "configSha256": "ae74860f062e5ff25ef3c38cb5da287a722ffcb2d9ddead1378b75b7a3e6d527",
+      "soundSha256": {
+        "1.wav": "513562be5cadc5630a30d9881fa07c120c9a7df60b08f5a4a1997b1e4b24223e",
+        "2.wav": "f55a42d95fee2fab8929dae90dd72435858f3f5293a222da848e27279ecbcaca",
+        "3.wav": "49cf5a1aa84e1558ddc1c8345f4050d551da33cbe7ca493fb94370e7d6206baa",
+        "4.wav": "18f4e020733c4743463e9263f1d75f7c1d9dcf889092e58517a33694e4693c88"
+      },
+      "sourceSounds": {
+        "left": {
+          "down": [
+            "1.wav"
+          ],
+          "up": [
+            "2.wav"
+          ]
+        },
+        "right": {
+          "down": [
+            "3.wav"
+          ],
+          "up": [
+            "4.wav"
+          ]
+        }
+      },
+      "sourceFormat": {
+        "channels": 2,
+        "sampleWidthBytes": 2,
+        "sampleRate": 44100
+      },
+      "reason": "Mouse model and original source-item URL are unidentified. Pixabay forbids standalone redistribution; this raw-sample redistribution case is not established as permitted.",
+      "reviewedLicenseSummary": "https://pixabay.com/service/license-summary/"
+    },
+    {
+      "packID": "92996284-89e5-42e7-81e7-5c5c1e25ebf2",
+      "metadata": {
+        "name": "Mamba Elite",
+        "brand": "Razer",
+        "author": "kamillobinski",
+        "supportsKeyUp": true,
+        "category": "mouse"
+      },
+      "contentPath": "mouse/razer/kamillobinski/mamba_elite",
+      "license": {
+        "type": "Proprietary",
+        "url": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/refs/heads/dev/mouse/razer/kamillobinski/mamba_elite/LICENSE"
+      },
+      "archiveSha256": "d6d5db2f988efff3da0b1c003866dcea6692fd08759927a756f30d2f4397cb50",
+      "configSha256": "f453004911a6a695d22bdab427b206c51b110716687d068411d2e0806b6933b5",
+      "soundSha256": {
+        "1.wav": "80404c847f4dc5a5186685675f74d1ba667791cf6fae210a897c098c75dcd43b",
+        "2.wav": "722304c2d652d38edb8841eede1025709f236e6b2febc9c4fe7cd98308657b1b",
+        "3.wav": "f710bf29d390d8035f3405ef61ee2f42da286757f3c7bb68c0745914bb53b75d",
+        "4.wav": "9e2544418a6f685cebce746f2ebb1ef0bcea9fbb5406062f287b2b8359c6c576"
+      },
+      "sourceSounds": {
+        "left": {
+          "down": [
+            "1.wav"
+          ],
+          "up": [
+            "2.wav"
+          ]
+        },
+        "right": {
+          "down": [
+            "3.wav"
+          ],
+          "up": [
+            "4.wav"
+          ]
+        }
+      },
+      "sourceFormat": {
+        "channels": 2,
+        "sampleWidthBytes": 2,
+        "sampleRate": 44100
+      },
+      "reason": "Embedded proprietary license permits use only in the Thock app (dev.kamillobinski.Thock) and prohibits use in other products, redistribution and modification.",
+      "embeddedLicenseSha256": "7a6984a03d7f236723c2e9cd1af0537dd8b3ac58e7b198668feb415a84a17eef"
+    }
+  ]
+}

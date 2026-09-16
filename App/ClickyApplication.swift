@@ -148,14 +148,22 @@ import ClickyCore
                     overlays.hideAll()
                 }
             }
-            // Exercise the real output callback at zero typing volume. This is a
-            // software replay, never presented as a physical-key or acoustic test.
-            var silent = SoundSettings(); silent.volume = 0; silent.mouseSound = .none; silent.enterSound = .none
+            // Exercise real down/up scheduling at an inaudible diagnostic gain.
+            // Zero means muted and intentionally suppresses pending releases.
+            // Software replay is not a physical-key or acoustic test.
+            model.diagnosticReplayInProgress = true
+            model.audio.resetHeldInputs()
+            var silent = SoundSettings(); silent.volume = 0.000001; silent.mouseSound = .none; silent.enterSound = .none
+            func strokeCount(_ profileID: String) -> Int {
+                let profile = model.profiles.first { $0.id == profileID } ?? model.profiles.first { $0.id == "thocky" }
+                return profile?.releaseSamples?.isEmpty == false ? 2 : 1
+            }
             model.audio.update(settings:silent,keyOverrides:[:],enabled:true)
             try await Task.sleep(nanoseconds:100_000_000)
             let before = model.audio.diagnostics
             for i in 0..<500 {
                 model.audio.trigger(PhysicalInputEvent(usage:UInt32(4 + i % 26),phase:.down))
+                model.audio.trigger(PhysicalInputEvent(usage:UInt32(4 + i % 26),phase:.up))
                 try await Task.sleep(nanoseconds:10_000_000)
             }
             try await Task.sleep(nanoseconds:200_000_000)
@@ -163,7 +171,7 @@ import ClickyCore
             var modifierReplay: [String:Any] = [:]
             for mode in ModifierSoundMode.allCases {
                 var settings = SoundSettings()
-                settings.volume = 0; settings.mouseVolume = 0; settings.enterVolume = 0
+                settings.volume = 0.000001; settings.mouseVolume = 0.000001; settings.enterVolume = 0.000001
                 settings.enterSound = .ding; settings.modifierSoundMode = mode
                 model.audio.update(settings:settings,keyOverrides:[:],enabled:true)
                 let start = model.audio.diagnostics
@@ -176,15 +184,19 @@ import ClickyCore
                               PhysicalInputEvent(usagePage:9,usage:1,phase:.down),
                               PhysicalInputEvent(usagePage:12,usage:0xE9,phase:.down)] {
                     model.audio.trigger(event)
+                    var up = event; up.phase = .up; model.audio.trigger(up)
                 }
                 let end = model.audio.diagnostics
-                modifierReplay[mode.rawValue] = ["expected":mode == .silent ? 4 : 13,
+                // Nine modifier usages (including Fn), a letter and a consumer
+                // key use the profile; built-in Enter and mouse extras are single.
+                let profilePairs = mode == .silent ? 2 : 11
+                modifierReplay[mode.rawValue] = ["expected": profilePairs * strokeCount(settings.profileID) + 2,
                     "accepted":end.acceptedTriggers-start.acceptedTriggers,
                     "dropped":end.droppedTriggers-start.droppedTriggers]
             }
-            // Verify every recorded bank plays once per down/up pair. The
-            // recording owns its decay; key-up must not replay a whole stroke.
+            // Only banks with verified release recordings add a key-up trigger.
             var profileReplay: [String: Any] = [:]
+            var keyCategoryReplay: [String: Any] = [:]
             for profile in model.profiles {
                 var settings = silent
                 settings.profileID = profile.id
@@ -197,9 +209,47 @@ import ClickyCore
                     try await Task.sleep(nanoseconds: 10_000_000)
                 }
                 let end = model.audio.diagnostics
-                profileReplay[profile.id] = ["pressReleasePairs": 60, "expected": 60,
+                profileReplay[profile.id] = ["pressReleasePairs": 60, "expected": 60 * strokeCount(profile.id),
                     "accepted": end.acceptedTriggers - start.acceptedTriggers,
                     "dropped": end.droppedTriggers - start.droppedTriggers]
+                var categories: [String: Any] = [:]
+                for (keyID, samples) in (profile.keySamples ?? [:]).sorted(by: { $0.key < $1.key }) {
+                    let components = keyID.split(separator: ":")
+                    guard components.count == 2, let page = UInt32(components[0]), let usage = UInt32(components[1]) else { continue }
+                    let beforeCategory = model.audio.diagnostics
+                    for _ in 0..<10 {
+                        model.audio.trigger(PhysicalInputEvent(usagePage: page, usage: usage, phase: .down))
+                        model.audio.trigger(PhysicalInputEvent(usagePage: page, usage: usage, phase: .up))
+                        try await Task.sleep(nanoseconds: 10_000_000)
+                    }
+                    let afterCategory = model.audio.diagnostics
+                    categories[keyID] = ["pressReleasePairs": 10, "expected": samples.releaseSamples?.isEmpty == false ? 20 : 10,
+                        "accepted": afterCategory.acceptedTriggers - beforeCategory.acceptedTriggers,
+                        "dropped": afterCategory.droppedTriggers - beforeCategory.droppedTriggers]
+                }
+                if !categories.isEmpty { keyCategoryReplay[profile.id] = categories }
+            }
+            var mouseReplay: [String: Any] = [:]
+            for profile in model.mouseProfiles {
+                guard let choice = ExtraSound.allCases.first(where: { $0.mouseProfileID == profile.id }) else { continue }
+                var settings = silent; settings.mouseSound = choice; settings.mouseVolume = 0.000001
+                model.audio.update(settings: settings, keyOverrides: [:], enabled: true)
+                var buttons: [String: Any] = [:]
+                for usage: UInt32 in 1...3 {
+                    let keyID = "9:\(usage)"
+                    let samples = profile.keySamples?[keyID] ?? SoundSampleSet(samples: profile.samples, releaseSamples: profile.releaseSamples)
+                    let beforeButton = model.audio.diagnostics
+                    for _ in 0..<10 {
+                        model.audio.trigger(PhysicalInputEvent(usagePage: 9, usage: usage, phase: .down))
+                        model.audio.trigger(PhysicalInputEvent(usagePage: 9, usage: usage, phase: .up))
+                        try await Task.sleep(nanoseconds: 10_000_000)
+                    }
+                    let afterButton = model.audio.diagnostics
+                    buttons[keyID] = ["pressReleasePairs": 10, "expected": samples.releaseSamples?.isEmpty == false ? 20 : 10,
+                        "accepted": afterButton.acceptedTriggers - beforeButton.acceptedTriggers,
+                        "dropped": afterButton.droppedTriggers - beforeButton.droppedTriggers]
+                }
+                mouseReplay[profile.id] = buttons
             }
             model.audio.update(settings:configForDiagnostics(),keyOverrides:[:],enabled:false)
             settingsWindow?.performClose(nil)
@@ -207,18 +257,24 @@ import ClickyCore
             let audioContinuesAfterSettingsClose = model.audio.diagnostics.renderedFrames > after.renderedFrames
             let report: [String:Any] = [
                 "profileCount":model.profiles.count,
-                "recordedSampleCount":model.profiles.reduce(0) { $0 + $1.samples.count },
-                "missingSamples":model.profiles.flatMap(\.samples).filter { !FileManager.default.fileExists(atPath:AppResources.assets.appendingPathComponent($0).path) },
+                "mouseProfileCount":model.mouseProfiles.count,
+                "recordedSampleCount":Set((model.profiles + model.mouseProfiles).flatMap(\.samplePaths)).count,
+                "releaseProfiles":model.profiles.filter { $0.releaseSamples?.isEmpty == false }.map(\.id),
+                "missingSamples":Set((model.profiles + model.mouseProfiles).flatMap(\.samplePaths)).sorted().filter { !FileManager.default.fileExists(atPath:AppResources.assets.appendingPathComponent($0).path) },
                 "audioReady":model.audioReady,
                 "audioStatus":model.audioStatus ?? "ready",
                 "inputMonitoringGranted":model.permissionGranted,
                 "secureInputActive":model.secureInput,
                 "audioContinuesAfterSettingsClose":audioContinuesAfterSettingsClose,
+                "uiPreviewsSuppressedDuringReplay":model.diagnosticReplayInProgress,
                 "modifierReplay":modifierReplay,
                 "profileReplay":profileReplay,
+                "keyCategoryReplay":keyCategoryReplay,
+                "mouseReplay":mouseReplay,
+                "loadedSampleCount":model.audio.diagnostics.sampleCount,
                 "outputs":model.outputs.map { ["id":$0.id,"name":$0.name,"headphones":$0.isHeadphones] as [String:Any] },
                 "os":ProcessInfo.processInfo.operatingSystemVersionString,
-                "audioReplay":["submitted":500,"accepted":after.acceptedTriggers-before.acceptedTriggers,"dropped":after.droppedTriggers-before.droppedTriggers,"renderedFrames":after.renderedFrames-before.renderedFrames,"sampleRate":after.outputSampleRate,"bufferFrames":after.bufferFrameSize,"bufferMilliseconds":after.requestedBufferDuration*1000,"renderBlockFrames":after.renderBlockFrameSize,"renderBlockMilliseconds":Double(after.renderBlockFrameSize)/after.outputSampleRate*1000] as [String:Any],
+                "audioReplay":["submitted":1000,"pressReleasePairs":500,"expected":500 * strokeCount(silent.profileID),"accepted":after.acceptedTriggers-before.acceptedTriggers,"dropped":after.droppedTriggers-before.droppedTriggers,"renderedFrames":after.renderedFrames-before.renderedFrames,"sampleRate":after.outputSampleRate,"bufferFrames":after.bufferFrameSize,"bufferMilliseconds":after.requestedBufferDuration*1000,"renderBlockFrames":after.renderBlockFrameSize,"renderBlockMilliseconds":Double(after.renderBlockFrameSize)/after.outputSampleRate*1000] as [String:Any],
                 "hardwareInputTests":"Require physical typing and permission grant; not simulated by diagnostics."
             ]
             try JSONSerialization.data(withJSONObject:report,options:[.prettyPrinted,.sortedKeys]).write(to:directory.appendingPathComponent("report.json"))

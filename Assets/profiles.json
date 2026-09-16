@@ -208,5 +208,596 @@
       "sectionStart": 49.816,
       "sectionEnd": 55.055
     }
+  },
+  {
+    "id": "alps-skcm-blue",
+    "name": "Alps SKCM Blue",
+    "subtitle": "Recorded by tplai",
+    "color": "D3BB6F",
+    "samples": [
+      "Sounds/alps-skcm-blue/press-01.wav",
+      "Sounds/alps-skcm-blue/press-02.wav",
+      "Sounds/alps-skcm-blue/press-03.wav",
+      "Sounds/alps-skcm-blue/press-04.wav",
+      "Sounds/alps-skcm-blue/press-05.wav"
+    ],
+    "releaseSamples": [
+      "Sounds/alps-skcm-blue/release-01.wav",
+      "Sounds/alps-skcm-blue/release-02.wav"
+    ],
+    "keySamples": {
+      "7:44": {
+        "samples": [
+          "Sounds/alps-skcm-blue/space-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/alps-skcm-blue/space-release-01.wav"
+        ]
+      },
+      "7:40": {
+        "samples": [
+          "Sounds/alps-skcm-blue/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/alps-skcm-blue/enter-release-01.wav"
+        ]
+      },
+      "7:88": {
+        "samples": [
+          "Sounds/alps-skcm-blue/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/alps-skcm-blue/enter-release-01.wav"
+        ]
+      },
+      "7:42": {
+        "samples": [
+          "Sounds/alps-skcm-blue/backspace-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/alps-skcm-blue/backspace-release-01.wav"
+        ]
+      }
+    },
+    "gain": 1.0,
+    "normalizationReference": false,
+    "provenance": {
+      "source": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/alps/tplai/skcm_blue/52722920-07ec-45b4-91cc-6f29cad794d2.zip",
+      "sourceKind": "thock-soundpack",
+      "packID": "52722920-07ec-45b4-91cc-6f29cad794d2",
+      "author": "tplai",
+      "license": "MIT"
+    }
+  },
+  {
+    "id": "drop-holy-panda",
+    "name": "Drop Holy Panda",
+    "subtitle": "Recorded by tplai",
+    "color": "C68B54",
+    "samples": [
+      "Sounds/drop-holy-panda/press-01.wav",
+      "Sounds/drop-holy-panda/press-02.wav",
+      "Sounds/drop-holy-panda/press-03.wav",
+      "Sounds/drop-holy-panda/press-04.wav",
+      "Sounds/drop-holy-panda/press-05.wav"
+    ],
+    "releaseSamples": [
+      "Sounds/drop-holy-panda/release-01.wav"
+    ],
+    "keySamples": {
+      "7:44": {
+        "samples": [
+          "Sounds/drop-holy-panda/space-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/drop-holy-panda/space-release-01.wav"
+        ]
+      },
+      "7:40": {
+        "samples": [
+          "Sounds/drop-holy-panda/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/drop-holy-panda/enter-release-01.wav"
+        ]
+      },
+      "7:88": {
+        "samples": [
+          "Sounds/drop-holy-panda/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/drop-holy-panda/enter-release-01.wav"
+        ]
+      },
+      "7:42": {
+        "samples": [
+          "Sounds/drop-holy-panda/backspace-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/drop-holy-panda/backspace-release-01.wav"
+        ]
+      }
+    },
+    "gain": 1.0,
+    "normalizationReference": false,
+    "provenance": {
+      "source": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/drop/tplai/holy_panda/4da844a6-346e-4361-84fd-5bc142ff975e.zip",
+      "sourceKind": "thock-soundpack",
+      "packID": "4da844a6-346e-4361-84fd-5bc142ff975e",
+      "author": "tplai",
+      "license": "MIT"
+    }
+  },
+  {
+    "id": "durock-alpaca",
+    "name": "Durock Alpaca",
+    "subtitle": "Recorded by tplai",
+    "color": "C493B5",
+    "samples": [
+      "Sounds/durock-alpaca/press-01.wav",
+      "Sounds/durock-alpaca/press-02.wav",
+      "Sounds/durock-alpaca/press-03.wav",
+      "Sounds/durock-alpaca/press-04.wav",
+      "Sounds/durock-alpaca/press-05.wav"
+    ],
+    "releaseSamples": [
+      "Sounds/durock-alpaca/release-01.wav"
+    ],
+    "keySamples": {
+      "7:44": {
+        "samples": [
+          "Sounds/durock-alpaca/space-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/durock-alpaca/space-release-01.wav"
+        ]
+      },
+      "7:40": {
+        "samples": [
+          "Sounds/durock-alpaca/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/durock-alpaca/enter-release-01.wav"
+        ]
+      },
+      "7:88": {
+        "samples": [
+          "Sounds/durock-alpaca/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/durock-alpaca/enter-release-01.wav"
+        ]
+      },
+      "7:42": {
+        "samples": [
+          "Sounds/durock-alpaca/backspace-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/durock-alpaca/backspace-release-01.wav"
+        ]
+      }
+    },
+    "gain": 1.0,
+    "normalizationReference": false,
+    "provenance": {
+      "source": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/durock/tplai/alpaca/23d8cf7b-f99b-49fc-ae84-3f99dc728ad9.zip",
+      "sourceKind": "thock-soundpack",
+      "packID": "23d8cf7b-f99b-49fc-ae84-3f99dc728ad9",
+      "author": "tplai",
+      "license": "MIT"
+    }
+  },
+  {
+    "id": "gateron-ink-black",
+    "name": "Gateron Ink Black",
+    "subtitle": "Recorded by tplai",
+    "color": "82A799",
+    "samples": [
+      "Sounds/gateron-ink-black/press-01.wav",
+      "Sounds/gateron-ink-black/press-02.wav",
+      "Sounds/gateron-ink-black/press-03.wav",
+      "Sounds/gateron-ink-black/press-04.wav",
+      "Sounds/gateron-ink-black/press-05.wav"
+    ],
+    "releaseSamples": [
+      "Sounds/gateron-ink-black/release-01.wav"
+    ],
+    "keySamples": {
+      "7:44": {
+        "samples": [
+          "Sounds/gateron-ink-black/space-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/gateron-ink-black/space-release-01.wav"
+        ]
+      },
+      "7:40": {
+        "samples": [
+          "Sounds/gateron-ink-black/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/gateron-ink-black/enter-release-01.wav"
+        ]
+      },
+      "7:88": {
+        "samples": [
+          "Sounds/gateron-ink-black/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/gateron-ink-black/enter-release-01.wav"
+        ]
+      },
+      "7:42": {
+        "samples": [
+          "Sounds/gateron-ink-black/backspace-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/gateron-ink-black/backspace-release-01.wav"
+        ]
+      }
+    },
+    "gain": 1.0,
+    "normalizationReference": false,
+    "provenance": {
+      "source": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/gateron/tplai/ink_black/b9bfb429-16c6-449f-aa85-5da083696f68.zip",
+      "sourceKind": "thock-soundpack",
+      "packID": "b9bfb429-16c6-449f-aa85-5da083696f68",
+      "author": "tplai",
+      "license": "MIT"
+    }
+  },
+  {
+    "id": "gateron-ink-red",
+    "name": "Gateron Ink Red",
+    "subtitle": "Recorded by tplai",
+    "color": "DA8276",
+    "samples": [
+      "Sounds/gateron-ink-red/press-01.wav",
+      "Sounds/gateron-ink-red/press-02.wav",
+      "Sounds/gateron-ink-red/press-03.wav",
+      "Sounds/gateron-ink-red/press-04.wav",
+      "Sounds/gateron-ink-red/press-05.wav"
+    ],
+    "releaseSamples": [
+      "Sounds/gateron-ink-red/release-01.wav"
+    ],
+    "keySamples": {
+      "7:44": {
+        "samples": [
+          "Sounds/gateron-ink-red/space-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/gateron-ink-red/space-release-01.wav"
+        ]
+      },
+      "7:40": {
+        "samples": [
+          "Sounds/gateron-ink-red/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/gateron-ink-red/enter-release-01.wav"
+        ]
+      },
+      "7:88": {
+        "samples": [
+          "Sounds/gateron-ink-red/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/gateron-ink-red/enter-release-01.wav"
+        ]
+      },
+      "7:42": {
+        "samples": [
+          "Sounds/gateron-ink-red/backspace-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/gateron-ink-red/backspace-release-01.wav"
+        ]
+      }
+    },
+    "gain": 1.0,
+    "normalizationReference": false,
+    "provenance": {
+      "source": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/gateron/tplai/ink_red/631754b0-eafe-4b14-b86e-61842f1f195c.zip",
+      "sourceKind": "thock-soundpack",
+      "packID": "631754b0-eafe-4b14-b86e-61842f1f195c",
+      "author": "tplai",
+      "license": "MIT"
+    }
+  },
+  {
+    "id": "gateron-turquoise-tealios",
+    "name": "Gateron Turquoise Tealios",
+    "subtitle": "Recorded by tplai",
+    "color": "76B6B2",
+    "samples": [
+      "Sounds/gateron-turquoise-tealios/press-01.wav",
+      "Sounds/gateron-turquoise-tealios/press-02.wav",
+      "Sounds/gateron-turquoise-tealios/press-03.wav",
+      "Sounds/gateron-turquoise-tealios/press-04.wav",
+      "Sounds/gateron-turquoise-tealios/press-05.wav"
+    ],
+    "releaseSamples": [
+      "Sounds/gateron-turquoise-tealios/release-01.wav"
+    ],
+    "keySamples": {
+      "7:44": {
+        "samples": [
+          "Sounds/gateron-turquoise-tealios/space-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/gateron-turquoise-tealios/space-release-01.wav"
+        ]
+      },
+      "7:40": {
+        "samples": [
+          "Sounds/gateron-turquoise-tealios/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/gateron-turquoise-tealios/enter-release-01.wav"
+        ]
+      },
+      "7:88": {
+        "samples": [
+          "Sounds/gateron-turquoise-tealios/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/gateron-turquoise-tealios/enter-release-01.wav"
+        ]
+      },
+      "7:42": {
+        "samples": [
+          "Sounds/gateron-turquoise-tealios/backspace-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/gateron-turquoise-tealios/backspace-release-01.wav"
+        ]
+      }
+    },
+    "gain": 1.0,
+    "normalizationReference": false,
+    "provenance": {
+      "source": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/gateron/tplai/turquoise_tealios/c556e214-5d78-4fc1-a7fe-3eb3f53152ba.zip",
+      "sourceKind": "thock-soundpack",
+      "packID": "c556e214-5d78-4fc1-a7fe-3eb3f53152ba",
+      "author": "tplai",
+      "license": "MIT"
+    }
+  },
+  {
+    "id": "kailh-box-navy",
+    "name": "Kailh Box Navy",
+    "subtitle": "Recorded by tplai",
+    "color": "7FA1C3",
+    "samples": [
+      "Sounds/kailh-box-navy/press-01.wav",
+      "Sounds/kailh-box-navy/press-02.wav",
+      "Sounds/kailh-box-navy/press-03.wav",
+      "Sounds/kailh-box-navy/press-04.wav",
+      "Sounds/kailh-box-navy/press-05.wav"
+    ],
+    "releaseSamples": [
+      "Sounds/kailh-box-navy/release-01.wav"
+    ],
+    "keySamples": {
+      "7:44": {
+        "samples": [
+          "Sounds/kailh-box-navy/space-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/kailh-box-navy/space-release-01.wav"
+        ]
+      },
+      "7:40": {
+        "samples": [
+          "Sounds/kailh-box-navy/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/kailh-box-navy/enter-release-01.wav"
+        ]
+      },
+      "7:88": {
+        "samples": [
+          "Sounds/kailh-box-navy/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/kailh-box-navy/enter-release-01.wav"
+        ]
+      },
+      "7:42": {
+        "samples": [
+          "Sounds/kailh-box-navy/backspace-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/kailh-box-navy/backspace-release-01.wav"
+        ]
+      }
+    },
+    "gain": 1.0,
+    "normalizationReference": false,
+    "provenance": {
+      "source": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/kailh/tplai/box_navy/c573d01e-2d20-4844-9286-a9e628ef8f3b.zip",
+      "sourceKind": "thock-soundpack",
+      "packID": "c573d01e-2d20-4844-9286-a9e628ef8f3b",
+      "author": "tplai",
+      "license": "MIT"
+    }
+  },
+  {
+    "id": "novelkeys-cream",
+    "name": "NovelKeys Cream",
+    "subtitle": "Recorded by tplai",
+    "color": "DCCCA0",
+    "samples": [
+      "Sounds/novelkeys-cream/press-01.wav",
+      "Sounds/novelkeys-cream/press-02.wav",
+      "Sounds/novelkeys-cream/press-03.wav",
+      "Sounds/novelkeys-cream/press-04.wav",
+      "Sounds/novelkeys-cream/press-05.wav"
+    ],
+    "releaseSamples": [
+      "Sounds/novelkeys-cream/release-01.wav"
+    ],
+    "keySamples": {
+      "7:44": {
+        "samples": [
+          "Sounds/novelkeys-cream/space-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/novelkeys-cream/space-release-01.wav"
+        ]
+      },
+      "7:40": {
+        "samples": [
+          "Sounds/novelkeys-cream/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/novelkeys-cream/enter-release-01.wav"
+        ]
+      },
+      "7:88": {
+        "samples": [
+          "Sounds/novelkeys-cream/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/novelkeys-cream/enter-release-01.wav"
+        ]
+      },
+      "7:42": {
+        "samples": [
+          "Sounds/novelkeys-cream/backspace-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/novelkeys-cream/backspace-release-01.wav"
+        ]
+      }
+    },
+    "gain": 1.0,
+    "normalizationReference": false,
+    "provenance": {
+      "source": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/novelkeys/tplai/cream/f0cc3d8e-5b1e-4412-a3f0-8a4f70912d0e.zip",
+      "sourceKind": "thock-soundpack",
+      "packID": "f0cc3d8e-5b1e-4412-a3f0-8a4f70912d0e",
+      "author": "tplai",
+      "license": "MIT"
+    }
+  },
+  {
+    "id": "topre-unknown",
+    "name": "Topre Unknown",
+    "subtitle": "Recorded by tplai",
+    "color": "AD9ACE",
+    "samples": [
+      "Sounds/topre-unknown/press-01.wav",
+      "Sounds/topre-unknown/press-02.wav",
+      "Sounds/topre-unknown/press-03.wav",
+      "Sounds/topre-unknown/press-04.wav",
+      "Sounds/topre-unknown/press-05.wav"
+    ],
+    "releaseSamples": [
+      "Sounds/topre-unknown/release-01.wav"
+    ],
+    "keySamples": {
+      "7:44": {
+        "samples": [
+          "Sounds/topre-unknown/space-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/topre-unknown/space-release-01.wav"
+        ]
+      },
+      "7:40": {
+        "samples": [
+          "Sounds/topre-unknown/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/topre-unknown/enter-release-01.wav"
+        ]
+      },
+      "7:88": {
+        "samples": [
+          "Sounds/topre-unknown/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/topre-unknown/enter-release-01.wav"
+        ]
+      },
+      "7:42": {
+        "samples": [
+          "Sounds/topre-unknown/backspace-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/topre-unknown/backspace-release-01.wav"
+        ]
+      }
+    },
+    "gain": 1.0,
+    "normalizationReference": false,
+    "provenance": {
+      "source": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/topre/tplai/unknown/ab2657fe-dc0a-4c75-ab74-81d8f56002b0.zip",
+      "sourceKind": "thock-soundpack",
+      "packID": "ab2657fe-dc0a-4c75-ab74-81d8f56002b0",
+      "author": "tplai",
+      "license": "MIT"
+    }
+  },
+  {
+    "id": "ibm-buckling-spring",
+    "name": "IBM Buckling Spring",
+    "subtitle": "Recorded by tplai",
+    "color": "94A7AD",
+    "samples": [
+      "Sounds/ibm-buckling-spring/press-01.wav",
+      "Sounds/ibm-buckling-spring/press-02.wav",
+      "Sounds/ibm-buckling-spring/press-03.wav",
+      "Sounds/ibm-buckling-spring/press-04.wav",
+      "Sounds/ibm-buckling-spring/press-05.wav"
+    ],
+    "releaseSamples": [
+      "Sounds/ibm-buckling-spring/release-01.wav"
+    ],
+    "keySamples": {
+      "7:44": {
+        "samples": [
+          "Sounds/ibm-buckling-spring/space-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/ibm-buckling-spring/space-release-01.wav"
+        ]
+      },
+      "7:40": {
+        "samples": [
+          "Sounds/ibm-buckling-spring/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/ibm-buckling-spring/enter-release-01.wav"
+        ]
+      },
+      "7:88": {
+        "samples": [
+          "Sounds/ibm-buckling-spring/enter-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/ibm-buckling-spring/enter-release-01.wav"
+        ]
+      },
+      "7:42": {
+        "samples": [
+          "Sounds/ibm-buckling-spring/backspace-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/ibm-buckling-spring/backspace-release-01.wav"
+        ]
+      }
+    },
+    "gain": 1.0,
+    "normalizationReference": false,
+    "provenance": {
+      "source": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/ibm/tplai/buckling_spring/61861d39-1242-41f5-8cf9-5823c472ce28.zip",
+      "sourceKind": "thock-soundpack",
+      "packID": "61861d39-1242-41f5-8cf9-5823c472ce28",
+      "author": "tplai",
+      "license": "MIT"
+    }
   }
 ]

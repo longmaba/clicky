@@ -1,5 +1,219 @@
 # Clicky verification
 
+## Softer releases and 0.2.0 build — 2026-09-16
+
+Recorded keyboard and mouse releases now use **0.7 playback gain** (about
+3.1 dB lower) for physical input and complete previews. Press levels, original
+WAVs, and custom imports retain their previous behavior. Both native version
+sources and the generated Xcode project specify **0.2.0, build 6**.
+
+- **66 core tests passed**, including absolute press/release gain assertions,
+  keyboard normalization, mouse button routing, and preview parity.
+- **27 Python tests passed** with FFmpeg available. Both pinned importers passed
+  `--offline --check`; keyboard and mouse asset checks also passed.
+- **Chromium and WebKit passed** the complete regression suite, including
+  explicit gain checks for generic/special keys, modifiers, mouse buttons and
+  previews. Press gains are unchanged and release gains are multiplied by 0.7.
+  Both browsers reported zero page errors. See
+  [browser results](verification/softer-release-website.json).
+- Six raw-asset auditions cover isolated phases and pairs at 30/100/300 ms
+  holds with two overlapping voices. Release gain is recorded in each timeline;
+  the largest mix peak is 0.62833 with no clipping. The helper now defaults to
+  0.7 release gain; `--release-gain 1` restores the recorded balance for review.
+  See [audition results](verification/softer-release-auditions.json).
+- The signed app and packaged ZIP contain **190 WAVs**, both catalogs and both
+  notices. Signature verification also passed after extracting the ZIP. All
+  **199 website files** match the browser staging directory. See
+  [build and archive results](verification/0.2.0-build.json).
+- The packaged app passed **67 replay checks**, accepting all **3,190 sounds**
+  with zero drops. All 190 samples loaded, and audio continued after Settings
+  closed. See [native results](verification/softer-release-native.json).
+
+The ZIP is built locally at `dist/Clicky-macOS-arm64.zip`. Public download links
+still refer to the available 0.1.4 release until a new GitHub release asset is
+uploaded. The repository's existing main-push workflow deploys GitHub Pages.
+Listening and physical hardware acceptance remain separate from automated checks.
+
+## Recorded mouse press/release sounds — 2026-09-16
+
+Added **Razer Orochi V2** by Sadiquecat (CC0) to the existing mouse sound choices.
+The app and website use distinct recorded left/right presses and releases, with
+the left pair as the documented middle-button fallback. Soft remains the default.
+Mamba Elite's embedded license restricts use to Thock; the unidentified Pixabay
+pack's distribution permission is unresolved. Neither pack is included.
+
+- **65 core tests passed**, including eight new mouse controller/configuration
+  tests. They cover button-specific PCM selection, middle fallback, holds,
+  duplicate/orphan events, simultaneous buttons, sound changes while held,
+  None/zero-volume/reset/suspension, complete cancellable previews, raw mouse
+  volume, and existing configuration/favorite round-trips.
+- **26 Python tests passed** with FFmpeg available, including three mouse import
+  tests and mouse-category audition coverage. Mouse and keyboard import checks
+  passed from the pinned source cache. The previous 186 WAVs and twenty-profile
+  keyboard manifest are unchanged.
+- All **four mouse WAVs passed** source/phase/hash, format, boundary, headroom,
+  and lead-in checks. They are mono PCM16 at 48 kHz, last 84.25–84.92 ms, and
+  peak at 0.33820. Source stereo is averaged to mono with the same processing
+  for all phases. See [mouse asset results](verification/thock-mouse-sound-assets.json).
+- The Release app built with the existing local certificate. Both native
+  resource copies contain all **190 WAVs**, both catalogs, and both sound notices
+  with identical bytes. The website stages 181 keyboard WAVs, four recorded mouse
+  WAVs, and the original Soft click.
+- **Chromium and WebKit passed** the full keyboard/mouse regression suite with
+  zero page errors. Mouse checks cover all three buttons, original Soft first
+  interaction, phase identity, held releases, simultaneous buttons, changing
+  sounds, mute/reset/focus loss, keyboard/touch previews, slow loads/resumes, and
+  unavailable-file fallback. Final 320/1440 px layouts show full model names and
+  no horizontal overflow. WebKit's initial unactivated audio context required a
+  controlled activation before the test's suspension probe; the harness now
+  observes state with bounded waits. See [browser results](verification/thock-mouse-website.json).
+- All **199 staged website files** match the browser-verified output; all staged
+  sound bytes and notices match `Assets`. See [bundle results](verification/thock-mouse-bundle.json).
+- The packaged app passed **67 replay checks** with 3,190 accepted sounds and
+  zero drops. Each mouse button produced 20 sounds from ten down/up pairs, and
+  all 190 samples loaded successfully. Audio continued after Settings closed.
+  See [native results](verification/thock-mouse-native.json). This replay sends
+  software events to the real audio engine; it is not physical mouse testing.
+  An initial run counted two extra UI preview sounds; the diagnostic now
+  suppresses UI auditions during its replay. The [initial report](verification/thock-mouse-native-before-preview-isolation.json)
+  is retained, and normal app previews are unchanged.
+- Isolated press/release and paired auditions cover all four recordings at
+  30/100/300 ms holds, including overlapping voices. The loudest mixed audition
+  peaks at 0.46405 with no clipping; timestamps match the requested holds. See
+  [audition metadata](verification/thock-mouse-auditions.json) and local WAVs in
+  `build/auditions/thock-mouse/`.
+
+Listening, physical mouse/trackpad acceptance, and real sleep/wake remain user
+checks. This update has not been publicly released or deployed.
+
+## Paired Thock catalog import — 2026-09-16
+
+Added ten tplai packs alongside the original ten profiles, using registry commit
+`213e1443c5005a99d5e51b46e31e17f30e4d752a`. All ten new packs have publisher-mapped
+press/up recordings, including Space, Enter/keypad Enter, and Backspace. The
+original profiles, default selection, and all 65 original WAVs are unchanged.
+The original ten remain press-only; their earlier video review is recorded below.
+
+- **57 core tests passed**, including 22 controller integration tests. New
+  coverage checks special-key routing and fallback, per-key profile overrides,
+  saved releases across profile changes, Enter-effect precedence, category
+  previews, and deduplicated sample registration. Tests verify that adding the
+  packs leaves original normalized playback bit-for-bit unchanged and applies
+  one peak-bounded normalization correction to both phases of a stroke.
+- **22 Python tests passed**: 12 extraction/asset/audition tests, five pinned
+  importer tests, and five category audition tests. Both importers passed
+  reproducibility checks using FFmpeg 7.1 and the verified source cache. Missing
+  keypad Enter mappings, wrong source phases, altered hashes, and unverified
+  original-video release cuts are rejected.
+- **Asset checks passed** for 181 keyboard WAVs (140 presses, 41 releases) and
+  five original effects. All use mono PCM16 at 48 kHz with zero boundaries and
+  headroom. Imported stems preserve quiet mechanical lead-ins; publisher config
+  mappings establish phase identity. Their maximum encoded peak is 0.41550.
+  See [asset measurements](verification/thock-sound-assets.json).
+- The locally signed Release app built and passed **64 native replay checks**:
+  3,130 accepted sounds, zero drops, 186 loaded samples, and continuing audio
+  after Settings closed. Sixty strokes per original profile produced 60 sounds;
+  sixty per paired profile produced 120. Ten strokes on each of four mapped
+  keys per paired profile produced 20 sounds. The output callback used 128 frames
+  at 48 kHz. See [native playback](verification/thock-key-release-playback.json).
+- All **42 notch checks passed**, including silent drags, preview counts,
+  interaction cleanup, and unchanged foreground focus. These window-event tests
+  used the default press-only profile; paired previews are covered by controller
+  tests. See [notch results](verification/thock-key-release-notch.json).
+- **Chromium and WebKit passed** the full twenty-profile suite: 26 capability
+  checks, 63 keycaps, and zero page errors each. It covers real catalog pairs,
+  exact category routing, holds, first interaction, slow loading, focus loss,
+  modifiers, simultaneous keys, muted/reset releases, touch, keyboard-activated
+  previews, and silent rotation drags. Desktop and 320/390 px catalog screenshots
+  were reviewed, as were native light/dark Settings screenshots with long names.
+  See [browser results](verification/thock-key-release-website.json).
+- The app's two resource copies and staged website contain identical keyboard
+  audio and the complete Thomas Lai MIT notice. All 193 staged website files
+  match the browser-verified output. Website paths are remapped from `Sounds/`
+  to `sounds/`. See [bundle checks](verification/thock-bundle.json).
+- Generated 34 isolated/pair/fast-typing audition WAVs with timelines covering
+  every imported sample and 30/100/300 ms holds. All 960 paired voice timings
+  match the requested holds; no audition clips. Maximum mixed peak is 0.44620.
+  Metadata is in [audition results](verification/thock-auditions.json); local WAVs
+  are in `build/auditions/thock/`.
+
+This is a local build and staged website update; no public release or deployment
+was performed. Listening review, physical typing on two keyboards, and actual
+sleep/wake acceptance remain user checks. The automated native replays exercise
+software event delivery and rendering, not measured physical key-to-ear latency.
+Browser verification used the repository's standalone Playwright runner because
+the in-app browser connection was unavailable.
+
+## Key-release playback support — 2026-09-15
+
+At this stage, the app and website supported optional, independently timed release
+recordings and complete 100 ms previews. **No production releases had been approved.**
+The supplied video/audio review could not establish a clean authentic release;
+all ten bundled profiles remain press-only. See
+[the source-review findings](verification/release-source-review.md) and
+`Assets/release-review.json` for exact windows, evidence, and limitations.
+
+- All **50 core tests** passed, including 15 controller tests using temporary
+  fixture banks and the real decoder/queue/mixer with offline rendering. Tests
+  cover holds, duplicates, orphan releases, modifiers, two keyboards, saved
+  tuning, effective mute and per-key overrides, imports, preview cancellation,
+  reset, suspension, output rebuild, and bank replacement.
+- A positive paired fixture replay submitted **500 strokes / 1,000 triggers**
+  at simulated 10 ms spacing with releases 30 ms after presses. It had zero
+  dropped triggers or stolen voices and finite, bounded rendered audio.
+- The Release app built successfully. Real-output diagnostics passed 500
+  strokes plus 60 strokes per production profile, with zero drops and continuing
+  audio after Settings closed. Production profiles correctly submitted only
+  their press phase. The output/render block size was 128 frames at 48 kHz.
+  See `verification/key-release-playback.json`.
+- All **42 native notch checks** passed, including preview counts, silent
+  drags, jitter, release/reset, and retained foreground focus. See
+  `verification/key-release-notch.json`.
+- All **9 sound-tool tests** passed. Extraction reproducibility and asset checks
+  passed: 60 presses, zero verified releases, and five original effects. Every
+  existing WAV and `profiles.json` is byte-identical to the prior version.
+- Chromium and WebKit passed the complete website regression suite with the
+  production manifest and separate in-memory paired fixtures. Checks cover
+  physical release timing beyond the animation timer, overlapping holds,
+  modifiers, profile changes, mute/reset, superseded previews, touch, silent
+  drags, missing samples, and delayed audio resume. Test audio is never staged
+  or shipped. One interrupted run lost focus to the native diagnostic window;
+  the final browser runs were isolated from native window activity.
+  See `verification/key-release-website.json` for the combined results and run notes.
+
+The in-app browser connection was unavailable; browser verification used the
+repository's documented standalone regression runner. There was no human
+listening or physical keyboard acceptance check, no new sound-bank publication,
+and no website deployment. Isolated recordings are still needed to enable
+authentic releases in the production profiles.
+
+## Mouse click fixes — 2026-09-14
+
+The Mac app now observes left, right, and middle mouse transitions through its
+listen-only session event tap, covering trackpad tap-to-click. HID mouse input
+is used only when that tap cannot be created, preventing duplicate sounds from
+the two streams. Keyboard HID input and the existing Fn path remain in place.
+
+- All 35 core tests passed, including mouse mapping, source selection,
+  simultaneous buttons, modifier handling, fallback devices, and reset recovery.
+- The Release app was rebuilt with the existing local certificate. Signing and
+  ZIP extraction verification passed. The reopened normal app reported ready
+  audio, Input Monitoring granted, and 128-frame render blocks.
+- Physical mouse/trackpad playback and listening still require a user check.
+  The macOS session stream cannot distinguish the same button held on separate
+  mice; HID fallback retains separate device identities.
+
+The website now plays the original Soft effect on ordinary mouse clicks and
+touch taps. Keyboard rows preserve their 3D transform space, and the decorative
+bottom strip no longer intercepts key clicks; the rotation button stays active.
+Chromium and WebKit passed first-gesture audio, all three mouse buttons, all 63
+on-screen keys, touch taps, mute, silent dragging, duplicate prevention, and
+slow-loading checks, alongside the existing keyboard/profile checks. The live
+Worker's homepage, script, styles, and mouse WAV matched the tested build.
+
+Local reports: `build/website-checks/report.json`,
+`build/website-worker-mouse-check.json`, and `build/mouse-fix-runtime.json`.
+
 ## Local build verification
 
 On 2026-09-13, the Release SwiftPM build completed and produced
@@ -61,7 +275,7 @@ Tests live in the local ClickyCore package; the Xcode app scheme does not duplic
 The `--audio-diagnostics` variant skips UI snapshots and runs only the audio checks.
 The `--notch-diagnostics` variant replays native mouse events through the inactive
 notch panel and saves a focused interaction report and RealityKit snapshots. It
-uses temporary configuration and zero-volume previews, without global input
+uses temporary configuration and near-silent previews, without global input
 injection. It does not substitute for a physical first-drag check.
 
 ## Manual acceptance matrix

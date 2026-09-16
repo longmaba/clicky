@@ -7,8 +7,10 @@ Example:
 
 Decode to FLOAT before adding headroom: Opus transients can exceed 0 dBFS, so
 decoding through an intermediate PCM16 WAV irreversibly clips these recordings.
-The selected intervals are short recorded stroke excerpts, not isolated down/up
-recordings. Their original relative levels, including Silent, are preserved.
+Existing press selections are short recorded stroke excerpts. Optional release
+cuts must be explicitly verified against both the source video and audio in
+Assets/release-review.json. Their original relative levels, including Silent,
+are preserved; waveform peaks alone never establish release identity.
 """
 
 from __future__ import annotations
@@ -186,9 +188,64 @@ def original_effect(name):
     return [v / peak * target for v in samples]
 
 
-def build(source, ffmpeg):
+def load_release_review(path, source, source_digest):
+    """Accept only source-bound, visually corroborated, explicitly approved cuts."""
+    if path is None:
+        return None, {}
+    review = json.loads(path.read_text())
+    if review.get("schemaVersion") != 1:
+        raise ValueError("Unsupported release-review schemaVersion")
+    reviewed_source = review.get("source", {})
+    if reviewed_source.get("file") != source.name or reviewed_source.get("sha256") != source_digest:
+        raise ValueError("Release review does not match the source audio filename/hash")
+    entries = {}
+    profile_ids = {profile[0] for profile in PROFILES}
+    for entry in review.get("profiles", []):
+        identifier = entry.get("id")
+        if identifier not in profile_ids or identifier in entries:
+            raise ValueError(f"Unknown or duplicate release-review profile: {identifier}")
+        status = entry.get("status")
+        if status not in ("verified", "unverified", "unavailable") or not entry.get("evidence", "").strip():
+            raise ValueError(f"Missing review status/evidence for {identifier}")
+        releases = entry.get("releases", [])
+        trims = entry.get("pressTrims", [])
+        if not isinstance(releases, list) or not isinstance(trims, list):
+            raise ValueError(f"Invalid review selections for {identifier}")
+        if status != "verified" and (releases or trims):
+            raise ValueError(f"Unapproved cuts in release review for {identifier}")
+        if status == "verified" and not releases:
+            raise ValueError(f"Verified profile has no release cuts: {identifier}")
+        for selection in releases + trims:
+            video_time = selection.get("videoSeconds")
+            if (not selection.get("evidence", "").strip() or isinstance(video_time, bool)
+                    or not isinstance(video_time, (int, float)) or not math.isfinite(video_time) or video_time < 0):
+                raise ValueError(f"Release/trim needs video time and corroboration: {identifier}")
+        variants = [trim.get("variant") for trim in trims]
+        if len(variants) != len(set(variants)) or any(type(v) is not int or not 1 <= v <= 6 for v in variants):
+            raise ValueError(f"Invalid or duplicate press trim variant: {identifier}")
+        entries[identifier] = entry
+    if any(entry["status"] == "verified" for entry in entries.values()):
+        video_name = reviewed_source.get("videoFile", "")
+        video_hash = reviewed_source.get("videoSha256", "")
+        if not video_name or Path(video_name).name != video_name:
+            raise ValueError("Verified release review requires source video filename")
+        video = source.parent / video_name
+        if not video.is_file() or hashlib.sha256(video.read_bytes()).hexdigest() != video_hash:
+            raise ValueError("Verified release review does not match source video hash")
+    return review, entries
+
+
+def finite_seconds(selection, key):
+    value = selection.get(key)
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
+        raise ValueError(f"Invalid review timestamp: {key}")
+    return value
+
+
+def build(source, ffmpeg, release_review=None):
     decoded = decode(source, ffmpeg)
     source_digest = hashlib.sha256(source.read_bytes()).hexdigest()
+    review, release_entries = load_release_review(release_review, source, source_digest)
     files = {}
     manifests = []
     records = []
@@ -199,6 +256,10 @@ def build(source, ffmpeg):
                     "provenance": {"source": source.name, "sectionStart": section_start, "sectionEnd": section_end}}
         record = {"id": identifier, "sectionStart": section_start, "sectionEnd": section_end,
                   "sourceSectionMetrics": metrics(section), "selections": []}
+        release_entry = release_entries.get(identifier)
+        if release_entry:
+            record["releaseReview"] = release_entry
+        press_trims = {trim["variant"]: trim for trim in (release_entry or {}).get("pressTrims", [])}
         record["selectionReview"] = {
             "revision": "0.1.4", "auditedVariants": [f"{i:02d}" for i in range(1, 7)],
             "reselectedVariants": [f"{i:02d}" for i in RESELECTED_VARIANTS[identifier]],
@@ -213,6 +274,12 @@ def build(source, ffmpeg):
         elif identifier == "office":
             record["selectionReview"]["retainedCharacter"] = "Broad membrane-key body retained; 01/02/05 reselected to bring key texture into the initial attack."
         for index, (start, end) in enumerate(selections, 1):
+            trim = press_trims.get(index)
+            if trim:
+                trimmed_end = finite_seconds(trim, "endSeconds")
+                if not start < trimmed_end <= end:
+                    raise ValueError(f"Press trim must shorten existing selection: {identifier}/{index}")
+                end = trimmed_end
             if not section_start <= start < end <= section_end:
                 raise ValueError(f"Selection outside {identifier} source section")
             selection_start = round(start * SAMPLE_RATE)
@@ -237,6 +304,39 @@ def build(source, ffmpeg):
                     "removedLeadingFrames": trimmed_frames,
                     "removedLeadingMilliseconds": round(trimmed_frames * 1000 / SAMPLE_RATE, 6),
                     "outputAttackFrame": attack - trimmed_frames},
+                "sourceMetrics": metrics(raw), "removedDCOffset": round(dc, 9),
+                "outputMetrics": metrics(rendered), "sha256": hashlib.sha256(payload).hexdigest()})
+            if trim:
+                record["selections"][-1]["verifiedReleaseTrim"] = trim
+        for index, selection in enumerate((release_entry or {}).get("releases", []), 1):
+            start = finite_seconds(selection, "startSeconds")
+            end = finite_seconds(selection, "endSeconds")
+            attack = finite_seconds(selection, "attackSeconds")
+            if not section_start <= start <= attack < end <= section_end:
+                raise ValueError(f"Release outside {identifier} source section or attack outside cut")
+            selection_frame = round(start * SAMPLE_RATE)
+            attack_frame = round(attack * SAMPLE_RATE)
+            start_frame = max(selection_frame, attack_frame - ATTACK_PREROLL_FRAMES)
+            end_frame = round(end * SAMPLE_RATE)
+            raw = decoded[start_frame:end_frame]
+            if len(raw) != end_frame - start_frame or len(raw) < 48 or attack_frame >= end_frame:
+                raise ValueError(f"Incomplete release source for {identifier}")
+            dc = sum(raw) / len(raw)
+            rendered = fades((v - dc) * SOURCE_GAIN for v in raw)
+            path = f"Sounds/{identifier}/release-{index:02d}.wav"
+            payload = wav_bytes(rendered)
+            files[path] = payload
+            if manifest["releaseSamples"] is None:
+                manifest["releaseSamples"] = []
+            manifest["releaseSamples"].append(path)
+            record.setdefault("releaseSelections", []).append({"path": path,
+                "selectionStartSeconds": start, "startSeconds": round(start_frame / SAMPLE_RATE, 9), "endSeconds": end,
+                "startFrame": start_frame, "endFrameExclusive": end_frame,
+                "attackAlignment": {"sourceAttackFrame": attack_frame,
+                    "removedLeadingFrames": start_frame - selection_frame,
+                    "outputAttackFrame": attack_frame - start_frame},
+                "identification": {"status": "verified", "videoSeconds": selection["videoSeconds"],
+                    "evidence": selection["evidence"]},
                 "sourceMetrics": metrics(raw), "removedDCOffset": round(dc, 9),
                 "outputMetrics": metrics(rendered), "sha256": hashlib.sha256(payload).hexdigest()})
         manifests.append(manifest)
@@ -266,6 +366,16 @@ def build(source, ffmpeg):
             "sampleSemantics": "Recorded stroke excerpts; may include the natural release/room tail. Not independently recorded key-down/key-up samples.",
             "sourceLimitations": "Continuous typing recording: subtle overlapping room sound or neighboring release tails may remain. No isolated original key stems are available."},
         "profiles": records, "originalEffects": effects}
+    if review is not None:
+        report["releaseReview"] = {"file": release_review.name,
+            "sha256": hashlib.sha256(release_review.read_bytes()).hexdigest(),
+            "source": review["source"],
+            "supportedProfiles": [m["id"] for m in manifests if m["releaseSamples"]],
+            "policy": "Only explicit verified video-and-audio selections are rendered; all other profiles remain press-only."}
+        if any(manifest["releaseSamples"] for manifest in manifests):
+            report["review"]["sampleSemantics"] = ("Release-enabled profiles use visually corroborated source releases; "
+                "existing press cuts are retained except documented verifiedReleaseTrim boundaries. "
+                "Unsupported profiles remain recorded stroke excerpts and may contain natural release/room tails.")
     files["profiles.json"] = json_bytes(manifests)
     files["extraction.json"] = json_bytes(report)
     return files
@@ -276,6 +386,8 @@ def main():
     parser.add_argument("--source", type=Path, help="Companion .f251.webm (defaults to the project file)")
     parser.add_argument("--ffmpeg", type=Path, default=shutil.which("ffmpeg"), help="FFmpeg executable path")
     parser.add_argument("--output", type=Path, default=PROJECT / "Assets")
+    parser.add_argument("--release-review", type=Path,
+                        help="Reviewed release cuts (defaults to Assets/release-review.json when present)")
     parser.add_argument("--check", action="store_true", help="Rebuild in memory and compare; do not write")
     arguments = parser.parse_args()
     if not arguments.ffmpeg:
@@ -284,7 +396,14 @@ def main():
     source = arguments.source or (matches[0] if len(matches) == 1 else None)
     if source is None or not source.is_file():
         parser.error("Source audio not found; supply --source /path/to/audio.webm")
-    files = build(source, arguments.ffmpeg)
+    release_review = arguments.release_review
+    if release_review is None and (PROJECT / "Assets" / "release-review.json").is_file():
+        release_review = PROJECT / "Assets" / "release-review.json"
+    files = build(source, arguments.ffmpeg, release_review)
+    # This extractor owns the original source-video banks only. Preserve later
+    # soundpack additions so rebuilding the historical source cannot drop them.
+    # Their separate importer verifies their pinned recordings and provenance.
+    preserved_profiles = preserve_additional_profiles(files, arguments.output)
     for relative, content in files.items():
         target = arguments.output / relative
         if arguments.check:
@@ -294,8 +413,23 @@ def main():
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(content)
     action = "Verified" if arguments.check else "Wrote"
-    print(f"{action} 10 profiles × 6 recorded variants, 5 original effects, and 2 manifests.")
+    releases = sum("/release-" in path for path in files)
+    print(f"{action} 10 profiles × 6 press variants, {releases} verified release variants, 5 original effects, and 2 manifests.")
+    if preserved_profiles:
+        print(f"Preserved {preserved_profiles} additional profiles; verify those with scripts/import_thock_sounds.py --check.")
     print(f"Total output: {sum(len(data) for data in files.values()):,} bytes. Listening review remains pending.")
+
+
+def preserve_additional_profiles(files, output):
+    manifest_path = output / "profiles.json"
+    if not manifest_path.is_file():
+        return 0
+    original_ids = {profile[0] for profile in PROFILES}
+    current = json.loads(manifest_path.read_text())
+    additional = [profile for profile in current if profile["id"] not in original_ids]
+    if additional:
+        files["profiles.json"] = json_bytes(json.loads(files["profiles.json"]) + additional)
+    return len(additional)
 
 
 if __name__ == "__main__":

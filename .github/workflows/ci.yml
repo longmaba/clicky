@@ -23,7 +23,11 @@ jobs:
       - name: Compile release app
         run: swift build -c release
       - name: Check prepared sound assets
-        run: python3 scripts/check_sound_assets.py
+        run: |
+          python3 scripts/check_sound_assets.py
+          python3 scripts/check_mouse_sound_assets.py
+      - name: Test sound tools
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
       - name: Check generated Xcode project
         run: |
           python3 scripts/generate_xcode_project.py

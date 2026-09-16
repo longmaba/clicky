@@ -41,7 +41,10 @@ struct NotchPlaygroundView: View {
             HStack {
                 VStack(alignment: .leading, spacing: 3) {
                     Text(model.currentProfile?.name ?? "Thocky").font(.system(size: 15, weight: .semibold, design: .rounded))
-                    Text(model.currentProfile?.subtitle ?? "Find your sound").font(.system(size: 10)).foregroundStyle(.white.opacity(0.45))
+                        .lineLimit(1).minimumScaleFactor(0.85)
+                    Text((model.currentProfile?.releaseSamples?.isEmpty == false ? "Press + release · " : "") + (model.currentProfile?.subtitle ?? "Find your sound"))
+                        .font(.system(size: 10)).foregroundStyle(.white.opacity(0.45)).lineLimit(1)
+                        .help(model.currentProfile?.subtitle ?? "Find your sound")
                 }
                 Spacer()
                 Button { model.previewProfile(model.config.sound.profileID) } label: {
@@ -64,6 +67,9 @@ struct NotchPlaygroundView: View {
                         }
                     }.padding(.horizontal, 17)
                 }.onAppear { proxy.scrollTo(model.config.sound.profileID, anchor: .center) }
+                    .onChange(of: model.config.sound.profileID) { id in
+                        withAnimation { proxy.scrollTo(id, anchor: .center) }
+                    }
             }.padding(.bottom, 15)
         }
         .foregroundStyle(.white.opacity(0.93))
@@ -381,7 +387,7 @@ private struct KeyboardRealityView: NSViewRepresentable {
             guard let model, let view else { return }
             let hit = view.entity(at: point)
             let keyID = hit?.name ?? ""
-            model.previewProfile(model.config.keyOverrides[keyID]?.profileID ?? model.config.sound.profileID)
+            model.previewProfile(model.config.keyOverrides[keyID]?.profileID ?? model.config.sound.profileID, keyID: keyID)
             if showSwitch {
                 for key in keys.values {
                     var down = key.transform; down.translation.y = 0.295

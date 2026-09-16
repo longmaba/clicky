@@ -175,7 +175,7 @@ struct SettingsView: View {
     private var soundPage: some View {
         Group {
             VStack(alignment: .leading, spacing: 13) {
-                sectionHeading("THE COLLECTION", trailing: "10 distinct personalities")
+                sectionHeading("THE COLLECTION", trailing: "\(model.profiles.count) sound profiles")
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
                     ForEach(model.profiles) { profile in
                         ProfileCard(profile: profile, selected: model.config.sound.profileID == profile.id,
@@ -456,7 +456,15 @@ struct SettingsView: View {
                         .disabled(sound.wrappedValue == .none || (sound.wrappedValue == .custom && custom == nil))
                 }
                 Picker("Sound", selection: sound) {
-                    ForEach(ExtraSound.allCases) { item in Text(item == .none && !isMouse ? "Use keyboard profile" : item.title).tag(item) }
+                    ForEach(ExtraSound.allCases.filter { isMouse || $0.mouseProfileID == nil }) { item in
+                        Text(item == .none && !isMouse ? "Use keyboard profile" : item.title).tag(item)
+                    }
+                }
+                if isMouse, let profileID = sound.wrappedValue.mouseProfileID,
+                   let profile = model.mouseProfiles.first(where: { $0.id == profileID }) {
+                    Text(profile.subtitle + " · Press + release").font(.system(size: 11)).foregroundStyle(.secondary)
+                    Text("Left and right buttons have their own recordings. The middle button uses the left click.")
+                        .font(.system(size: 11)).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
                 }
                 sliderRow("Volume", symbol: "speaker.wave.2", value: volume, range: 0...1, suffix: "%")
                     .disabled(sound.wrappedValue == .none)
@@ -622,7 +630,11 @@ private struct ProfileCard: View {
                 }.frame(width: 43, height: 43)
                 VStack(alignment: .leading, spacing: 4) {
                     Text(profile.name).font(.system(size: 13, weight: .semibold)).foregroundStyle(.primary)
+                        .lineLimit(2).fixedSize(horizontal: false, vertical: true)
                     Text(profile.subtitle).font(.system(size: 10)).foregroundStyle(.secondary).lineLimit(1)
+                    if profile.releaseSamples?.isEmpty == false {
+                        Text("Press + release").font(.system(size: 9, weight: .medium)).foregroundStyle(.secondary)
+                    }
                 }
                 Spacer(minLength: 3)
                 Image(systemName: selected ? "checkmark.circle.fill" : "play.circle")
@@ -645,7 +657,8 @@ private struct ProfileCard: View {
             }
         }
         .onDisappear { hoverTask?.cancel() }
-        .accessibilityLabel(profile.name + (selected ? ", selected" : ""))
+        .help(profile.name + " · " + profile.subtitle + (profile.releaseSamples?.isEmpty == false ? " · Press + release" : ""))
+        .accessibilityLabel(profile.name + (profile.releaseSamples?.isEmpty == false ? ", press and release sounds" : "") + (selected ? ", selected" : ""))
     }
 }
 

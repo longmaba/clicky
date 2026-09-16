@@ -1,0 +1,64 @@
+{
+  "profileCount": 1,
+  "sampleCount": 4,
+  "pressSampleCount": 2,
+  "releaseSampleCount": 2,
+  "maximumPeak": 0.338195801,
+  "middleButtonFallback": "Generic left pair; no middle-button recording is claimed",
+  "listeningReview": "Not performed by this checker",
+  "failures": [],
+  "samples": [
+    {
+      "profile": "razer-orochi-v2",
+      "button": "left",
+      "phase": "press",
+      "path": "Sounds/razer-orochi-v2/left-press-01.wav",
+      "frames": 4076,
+      "sampleRate": 48000,
+      "durationSeconds": 0.084916667,
+      "peak": 0.18371582,
+      "rms": 0.01254934,
+      "firstNonzeroMilliseconds": 0.3125,
+      "first20PercentPeakMilliseconds": 1.229167
+    },
+    {
+      "profile": "razer-orochi-v2",
+      "button": "left",
+      "phase": "release",
+      "path": "Sounds/razer-orochi-v2/left-release-01.wav",
+      "frames": 4076,
+      "sampleRate": 48000,
+      "durationSeconds": 0.084916667,
+      "peak": 0.338195801,
+      "rms": 0.023970669,
+      "firstNonzeroMilliseconds": 0.479167,
+      "first20PercentPeakMilliseconds": 1.041667
+    },
+    {
+      "profile": "razer-orochi-v2",
+      "button": "right",
+      "phase": "press",
+      "path": "Sounds/razer-orochi-v2/right-press-01.wav",
+      "frames": 4044,
+      "sampleRate": 48000,
+      "durationSeconds": 0.08425,
+      "peak": 0.153900146,
+      "rms": 0.009899922,
+      "firstNonzeroMilliseconds": 0.4375,
+      "first20PercentPeakMilliseconds": 0.9375
+    },
+    {
+      "profile": "razer-orochi-v2",
+      "button": "right",
+      "phase": "release",
+      "path": "Sounds/razer-orochi-v2/right-release-01.wav",
+      "frames": 4073,
+      "sampleRate": 48000,
+      "durationSeconds": 0.084854167,
+      "peak": 0.266998291,
+      "rms": 0.019806955,
+      "firstNonzeroMilliseconds": 0.3125,
+      "first20PercentPeakMilliseconds": 1.145833
+    }
+  ]
+}

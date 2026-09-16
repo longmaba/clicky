@@ -74,7 +74,7 @@ def main():
         target_settings = {
             "PRODUCT_NAME": "Clicky", "PRODUCT_BUNDLE_IDENTIFIER": "dev.clicky.app",
             "INFOPLIST_FILE": "App/Info.plist", "GENERATE_INFOPLIST_FILE": "NO",
-            "MARKETING_VERSION": "0.1.4", "CURRENT_PROJECT_VERSION": "5",
+            "MARKETING_VERSION": "0.2.0", "CURRENT_PROJECT_VERSION": "6",
             "CODE_SIGNING_ALLOWED": "NO", "ENABLE_USER_SCRIPT_SANDBOXING": "NO",
             "ENABLE_APP_SANDBOX": "NO", "ENABLE_HARDENED_RUNTIME": "YES",
             "COMBINE_HIDPI_IMAGES": "YES", "LD_RUNPATH_SEARCH_PATHS": "$(inherited) @executable_path/../Frameworks",

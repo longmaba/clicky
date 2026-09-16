@@ -1,0 +1,41 @@
+[
+  {
+    "id": "razer-orochi-v2",
+    "name": "Razer Orochi V2",
+    "subtitle": "Recorded by Sadiquecat",
+    "color": "82A799",
+    "samples": [
+      "Sounds/razer-orochi-v2/left-press-01.wav"
+    ],
+    "releaseSamples": [
+      "Sounds/razer-orochi-v2/left-release-01.wav"
+    ],
+    "keySamples": {
+      "9:1": {
+        "samples": [
+          "Sounds/razer-orochi-v2/left-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/razer-orochi-v2/left-release-01.wav"
+        ]
+      },
+      "9:2": {
+        "samples": [
+          "Sounds/razer-orochi-v2/right-press-01.wav"
+        ],
+        "releaseSamples": [
+          "Sounds/razer-orochi-v2/right-release-01.wav"
+        ]
+      }
+    },
+    "gain": 1.0,
+    "normalizationReference": false,
+    "provenance": {
+      "source": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/mouse/razer/sadiquecat/orochi_v2/3222385c-d428-4d98-8ce9-1cbc992c3373.zip",
+      "sourceKind": "thock-mouse-soundpack",
+      "packID": "3222385c-d428-4d98-8ce9-1cbc992c3373",
+      "author": "Sadiquecat",
+      "license": "CC0"
+    }
+  }
+]

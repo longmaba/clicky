@@ -17,6 +17,11 @@ Run the checks relevant to your change:
 swift test --package-path Packages/ClickyCore
 swift build -c release
 python3 scripts/check_sound_assets.py
+python3 scripts/check_mouse_sound_assets.py
+python3 -m unittest discover -s scripts -p 'test_sound_tools.py'
+python3 -m unittest discover -s scripts -p 'test_import_thock_sounds.py'
+python3 -m unittest discover -s scripts -p 'test_import_thock_mouse_sounds.py'
+python3 -m unittest discover -s scripts -p 'test_audition_categories.py'
 python3 scripts/generate_xcode_project.py
 git diff --exit-code -- Clicky.xcodeproj
 ```
@@ -36,7 +41,11 @@ python3 -m http.server 8080 --directory build/website
 
 Open <http://localhost:8080> to check layout, keyboard navigation, sound previews,
 and links. Test at both narrow mobile and desktop widths. The staging script
-copies the ten prepared sound banks into the site; do not add source recordings.
+copies all catalog banks and their referenced press/release WAVs into the site;
+do not add source recordings. The paired packs are reproducible with
+`scripts/import_thock_sounds.py --ffmpeg /path/to/ffmpeg --check`.
+Importer resampling tests need FFmpeg on `PATH`, or
+`CLICKY_TEST_FFMPEG=/path/to/ffmpeg`; those tests report skips when it is unavailable.
 
 For changes to keyboard or audio behavior, the browser regression check runs in
 Chromium and WebKit. With the local server above still running, use a separate
@@ -48,7 +57,8 @@ npm install --prefix /tmp/clicky-browser-checks playwright@1.63.0
 NODE_PATH=/tmp/clicky-browser-checks/node_modules CLICKY_SITE_URL=http://localhost:8080/ node scripts/check_website.cjs
 ```
 
-It checks first-key activation across the page, repeat and button deduplication,
+It checks first-key and first-click activation across the page, all on-screen keys,
+mouse buttons, touch taps, drag rotation, repeat and button deduplication,
 normal text selection, profile changes, muting, focus recovery, mobile key
 feedback, and slow audio loading. Screenshots and a report go to
 `build/website-checks/`. Only use a local server for this development check.

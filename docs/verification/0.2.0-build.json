@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "build": "6",
+  "releaseGain": 0.7,
+  "nativeWAVs": 190,
+  "nativeResourceCopies": 2,
+  "nativeCatalogsAndNoticesMatchAssets": true,
+  "websiteFileCount": 199,
+  "websiteMatchesBrowserStage": true,
+  "archivePath": "dist/Clicky-macOS-arm64.zip",
+  "archiveSHA256": "603a303d71bbd1fe5434b41bddd675067cc734410f02b0d59f37ab07575d5db7",
+  "archiveBytes": 5068031
+}

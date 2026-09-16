@@ -1,0 +1,5237 @@
+{
+  "schemaVersion": 1,
+  "sourceKind": "thock-soundpack",
+  "source": {
+    "repository": "kamillobinski/thock-soundpacks",
+    "commit": "213e1443c5005a99d5e51b46e31e17f30e4d752a",
+    "manifestSha256": "4a127fb3e4510ed832f23a0a2f6d009b283bbed25dd634605e69e02dda134a16"
+  },
+  "sourceLock": {
+    "file": "thock-sources.json",
+    "sha256": "a1c7bc5f75bd37390e62eafcde7885a088b727a247bb8862a4c9af0dc0700fcb"
+  },
+  "processing": {
+    "decode": "FFmpeg first audio stream to mono 48000 Hz float32 little-endian PCM",
+    "resampler": "libswresample; filter_size=32, phase_shift=10, linear_interp=1, exact_rational=1, dither_method=none",
+    "encode": "mono 48000 Hz signed 16-bit little-endian PCM WAV",
+    "commonGain": 0.4,
+    "commonGainDb": -7.9588,
+    "leadingTrim": "Only consecutive exact-zero PCM16 source frames before the first nonzero source frame; retain at least 0.5 ms of source silence; convert trim to nearest output frame. No amplitude threshold.",
+    "prerollSeconds": 0.0005,
+    "fadeInSeconds": 0.0004,
+    "fadeOutSeconds": 0.004,
+    "fadeCurve": "half cosine",
+    "peakNormalization": false,
+    "compression": false,
+    "noiseGate": false,
+    "equalization": false,
+    "removeDC": false,
+    "normalizationReference": false,
+    "note": "One common gain preserves all source down/up and key-category level differences. Short fades soften source clip boundaries; natural mechanical onset and decay remain."
+  },
+  "review": {
+    "phaseIdentity": "Publisher config explicitly separates down/up and key categories; no waveform-based phase inference.",
+    "listeningReview": "Pending user audition; preservation verified against the publisher's source WAVs and phase mappings."
+  },
+  "profiles": [
+    {
+      "id": "alps-skcm-blue",
+      "packID": "52722920-07ec-45b4-91cc-6f29cad794d2",
+      "archive": {
+        "url": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/alps/tplai/skcm_blue/52722920-07ec-45b4-91cc-6f29cad794d2.zip",
+        "sha256": "a0b8b8a2167d77989589ca20471e4988e446f6560c1f004fa77c95f29b72d52e"
+      },
+      "configSha256": "1bd9c2e0e3a718d2d7d7fe2b552ebe2b5d15b20b649a550d0407180f9cd8d73f",
+      "metadata": {
+        "name": "SKCM Blue",
+        "brand": "Alps",
+        "author": "tplai",
+        "supportsKeyUp": true,
+        "category": "keyboard"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/tplai/kbsim/blob/master/LICENSE.md"
+      },
+      "sourceSounds": {
+        "default": {
+          "down": [
+            "1.wav",
+            "2.wav",
+            "3.wav",
+            "4.wav",
+            "5.wav"
+          ],
+          "up": [
+            "101.wav",
+            "102.wav"
+          ]
+        },
+        "space": {
+          "down": [
+            "201.wav"
+          ],
+          "up": [
+            "251.wav"
+          ]
+        },
+        "enter": {
+          "down": [
+            "301.wav"
+          ],
+          "up": [
+            "351.wav"
+          ]
+        },
+        "backspace": {
+          "down": [
+            "401.wav"
+          ],
+          "up": [
+            "451.wav"
+          ]
+        }
+      },
+      "selections": [
+        {
+          "path": "Sounds/alps-skcm-blue/press-01.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "1.wav",
+          "sourceSha256": "c671c69f63948b7e29339a17f171370f92850a3b56ea969db7627bbda3eb32cd",
+          "sha256": "b00b3ec7266cfdaed2036ff16a3f017175e6d955d71cd9d61cbf87d5fa735285",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[0]",
+            "evidence": "Publisher config maps 1.wav explicitly to sounds.default.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3423,
+            "sampleRate": 44100,
+            "durationSeconds": 0.077619048,
+            "peak": 0.459747314,
+            "rms": 0.042477146,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.142857
+          },
+          "outputMetrics": {
+            "frames": 3513,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0731875,
+            "peak": 0.183135986,
+            "rms": 0.017492821,
+            "firstNonzeroMilliseconds": 0.354167,
+            "first20PercentPeakMilliseconds": 2.708333
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/alps-skcm-blue/press-02.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "2.wav",
+          "sourceSha256": "5f47d0f459154fcd4bf84f43994b42b98efeeed229ff2be884f6363bfe8112d8",
+          "sha256": "3f631cdd7b148a4a637e60252d16c1143946e26100e44932a74aa94e0f2feaf8",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[1]",
+            "evidence": "Publisher config maps 2.wav explicitly to sounds.default.down[1]."
+          },
+          "sourceMetrics": {
+            "frames": 3423,
+            "sampleRate": 44100,
+            "durationSeconds": 0.077619048,
+            "peak": 0.500579834,
+            "rms": 0.048612907,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.07483
+          },
+          "outputMetrics": {
+            "frames": 3513,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0731875,
+            "peak": 0.20022583,
+            "rms": 0.020021092,
+            "firstNonzeroMilliseconds": 0.3125,
+            "first20PercentPeakMilliseconds": 2.645833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/alps-skcm-blue/press-03.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "3.wav",
+          "sourceSha256": "73faca7cb603cd7df80deced34dedab5bd29dc1917d4e2c9684486663f2b7fdf",
+          "sha256": "fd4837ca20ddf71ce43ec98c26d09ae4fdb59059f8adfe6e2b1f77bc5cba8abf",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[2]",
+            "evidence": "Publisher config maps 3.wav explicitly to sounds.default.down[2]."
+          },
+          "sourceMetrics": {
+            "frames": 3423,
+            "sampleRate": 44100,
+            "durationSeconds": 0.077619048,
+            "peak": 0.518951416,
+            "rms": 0.049213719,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 10.113379
+          },
+          "outputMetrics": {
+            "frames": 3513,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0731875,
+            "peak": 0.206176758,
+            "rms": 0.020269062,
+            "firstNonzeroMilliseconds": 0.3125,
+            "first20PercentPeakMilliseconds": 5.666667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/alps-skcm-blue/press-04.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "4.wav",
+          "sourceSha256": "8744a2342a889ba5d4055934261811b8b330c425ff10b1fc44add13d4f58251c",
+          "sha256": "9be572bdd7fb4b8a658b9d9a328a7f3cf008ac386eb0dd4e1433d28ab9679a6b",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[3]",
+            "evidence": "Publisher config maps 4.wav explicitly to sounds.default.down[3]."
+          },
+          "sourceMetrics": {
+            "frames": 3423,
+            "sampleRate": 44100,
+            "durationSeconds": 0.077619048,
+            "peak": 0.510406494,
+            "rms": 0.049386148,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 10.181406
+          },
+          "outputMetrics": {
+            "frames": 3513,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0731875,
+            "peak": 0.204162598,
+            "rms": 0.020341396,
+            "firstNonzeroMilliseconds": 0.3125,
+            "first20PercentPeakMilliseconds": 9.0
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/alps-skcm-blue/press-05.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "5.wav",
+          "sourceSha256": "21d1f7b4f946983a1184b98be1ece0ee5262a53aaa7d199aa75132fd548daa60",
+          "sha256": "135a1d16be6dc0e8db41769df0a332b2a1eb62df27145369c8cfe4a1f4fd5ef5",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[4]",
+            "evidence": "Publisher config maps 5.wav explicitly to sounds.default.down[4]."
+          },
+          "sourceMetrics": {
+            "frames": 3423,
+            "sampleRate": 44100,
+            "durationSeconds": 0.077619048,
+            "peak": 0.495269775,
+            "rms": 0.049012231,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.278912
+          },
+          "outputMetrics": {
+            "frames": 3513,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0731875,
+            "peak": 0.198944092,
+            "rms": 0.020186609,
+            "firstNonzeroMilliseconds": 0.3125,
+            "first20PercentPeakMilliseconds": 2.833333
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/alps-skcm-blue/release-01.wav",
+          "category": "default",
+          "phase": "release",
+          "sourceFile": "101.wav",
+          "sourceSha256": "07d8b9fb6ae2ed7093895313088eeb2240e179ed590e5f52196aeb7c05097861",
+          "sha256": "51649ef9e791b1cac116eec556a7a27fe73bbf8195082f46d8a7b8dcae2bbff7",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.up[0]",
+            "evidence": "Publisher config maps 101.wav explicitly to sounds.default.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 5329,
+            "sampleRate": 44100,
+            "durationSeconds": 0.120839002,
+            "peak": 0.094573975,
+            "rms": 0.012994823,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 16.643991
+          },
+          "outputMetrics": {
+            "frames": 5588,
+            "sampleRate": 48000,
+            "durationSeconds": 0.116416667,
+            "peak": 0.03817749,
+            "rms": 0.005295082,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 12.208333
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/alps-skcm-blue/release-02.wav",
+          "category": "default",
+          "phase": "release",
+          "sourceFile": "102.wav",
+          "sourceSha256": "aa3561abc99b6f78a90fed8878789792c98a8f06daeb8c293a69f79aa6551a75",
+          "sha256": "951be9fe7d0d90dac33fbb12f0d094175ecb488790711ec4084cb8ed0bf1a21b",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.up[1]",
+            "evidence": "Publisher config maps 102.wav explicitly to sounds.default.up[1]."
+          },
+          "sourceMetrics": {
+            "frames": 2938,
+            "sampleRate": 44100,
+            "durationSeconds": 0.066621315,
+            "peak": 0.071105957,
+            "rms": 0.013051938,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 12.222222
+          },
+          "outputMetrics": {
+            "frames": 2985,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0621875,
+            "peak": 0.0284729,
+            "rms": 0.005392515,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 7.791667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/alps-skcm-blue/space-press-01.wav",
+          "category": "space",
+          "phase": "press",
+          "sourceFile": "201.wav",
+          "sourceSha256": "9301f507039735530e026a1ce786ef01837cb6a80fbde245ce490f88a155a824",
+          "sha256": "49cdaad73e4b0779506262b7d1f0b2648caea7ca0e7dc089ac1421ac882666d2",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.down[0]",
+            "evidence": "Publisher config maps 201.wav explicitly to sounds.space.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4403,
+            "sampleRate": 44100,
+            "durationSeconds": 0.09984127,
+            "peak": 0.700500488,
+            "rms": 0.064257261,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 19.569161
+          },
+          "outputMetrics": {
+            "frames": 4580,
+            "sampleRate": 48000,
+            "durationSeconds": 0.095416667,
+            "peak": 0.277648926,
+            "rms": 0.026288981,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 15.125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/alps-skcm-blue/space-release-01.wav",
+          "category": "space",
+          "phase": "release",
+          "sourceFile": "251.wav",
+          "sourceSha256": "c6b5f2fa63aaedfe1149eccf569275fbc25b3dd43c8bb1f0265ffa79171c26b4",
+          "sha256": "55bf05b32acd6ba287b53de74f5f5a10b4bd3abb5ae85aad20992bb21da3f6c7",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.up[0]",
+            "evidence": "Publisher config maps 251.wav explicitly to sounds.space.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2896,
+            "sampleRate": 44100,
+            "durationSeconds": 0.065668934,
+            "peak": 0.160949707,
+            "rms": 0.021205026,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 18.231293
+          },
+          "outputMetrics": {
+            "frames": 2940,
+            "sampleRate": 48000,
+            "durationSeconds": 0.06125,
+            "peak": 0.064483643,
+            "rms": 0.008773869,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 13.791667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/alps-skcm-blue/enter-press-01.wav",
+          "category": "enter",
+          "phase": "press",
+          "sourceFile": "301.wav",
+          "sourceSha256": "220b80dbca2baedc32ff2a3d0c9b0eade42de08d13663c0d54bfe78de5aba3ca",
+          "sha256": "7b377255133c7a47165fce8ed3755b5356bda1fe71f97fc16eb780a533d67be0",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.down[0]",
+            "evidence": "Publisher config maps 301.wav explicitly to sounds.enter.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 6371,
+            "sampleRate": 44100,
+            "durationSeconds": 0.14446712,
+            "peak": 0.717010498,
+            "rms": 0.049408985,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 30.272109
+          },
+          "outputMetrics": {
+            "frames": 6722,
+            "sampleRate": 48000,
+            "durationSeconds": 0.140041667,
+            "peak": 0.288146973,
+            "rms": 0.020071003,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 25.833333
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/alps-skcm-blue/enter-release-01.wav",
+          "category": "enter",
+          "phase": "release",
+          "sourceFile": "351.wav",
+          "sourceSha256": "02476eb7dc93f99d01ebc78d85de75c43836bef8d03d869b3f6aae28356021ac",
+          "sha256": "c3b717ef259edbaba06f229448c50cc3a2b74590654e939a861e320cee375a59",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.up[0]",
+            "evidence": "Publisher config maps 351.wav explicitly to sounds.enter.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4490,
+            "sampleRate": 44100,
+            "durationSeconds": 0.101814059,
+            "peak": 0.149536133,
+            "rms": 0.015528332,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 24.399093
+          },
+          "outputMetrics": {
+            "frames": 4675,
+            "sampleRate": 48000,
+            "durationSeconds": 0.097395833,
+            "peak": 0.059570312,
+            "rms": 0.006346435,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 19.958333
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/alps-skcm-blue/backspace-press-01.wav",
+          "category": "backspace",
+          "phase": "press",
+          "sourceFile": "401.wav",
+          "sourceSha256": "08ca7027d7b9b70bf2e6cdb644bbe25bc583a3579a04894bf4814244a60db850",
+          "sha256": "0b1bdda26980e5d302114528ad2fc3fcde70a275eb0b69d23ce70d3265e61a2b",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.down[0]",
+            "evidence": "Publisher config maps 401.wav explicitly to sounds.backspace.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 6032,
+            "sampleRate": 44100,
+            "durationSeconds": 0.136780045,
+            "peak": 0.672821045,
+            "rms": 0.045641402,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 36.371882
+          },
+          "outputMetrics": {
+            "frames": 6353,
+            "sampleRate": 48000,
+            "durationSeconds": 0.132354167,
+            "peak": 0.268859863,
+            "rms": 0.018557215,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 31.9375
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/alps-skcm-blue/backspace-release-01.wav",
+          "category": "backspace",
+          "phase": "release",
+          "sourceFile": "451.wav",
+          "sourceSha256": "a27ddf0bcb6ec6e6ffa96e6bef7f68035437a1a16dc876c01ce88b5051255269",
+          "sha256": "9834c3933a4c85e01aac411c26db69256846baf0bc4a41082d35dcfd4d2ebef6",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.up[0]",
+            "evidence": "Publisher config maps 451.wav explicitly to sounds.backspace.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 5702,
+            "sampleRate": 44100,
+            "durationSeconds": 0.129297052,
+            "peak": 0.245117188,
+            "rms": 0.020530347,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 40.340136
+          },
+          "outputMetrics": {
+            "frames": 5994,
+            "sampleRate": 48000,
+            "durationSeconds": 0.124875,
+            "peak": 0.097717285,
+            "rms": 0.008354833,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 35.895833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "drop-holy-panda",
+      "packID": "4da844a6-346e-4361-84fd-5bc142ff975e",
+      "archive": {
+        "url": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/drop/tplai/holy_panda/4da844a6-346e-4361-84fd-5bc142ff975e.zip",
+        "sha256": "13fb942f7f3cd329cba81d3286fed78fdfb342056fdd401436e023b61bef084b"
+      },
+      "configSha256": "c306563850dcf274fb12126ad64acba8dcd5d21e6c8b433a1a89c2adb22653a3",
+      "metadata": {
+        "name": "Holy Panda",
+        "brand": "Drop",
+        "author": "tplai",
+        "supportsKeyUp": true,
+        "category": "keyboard"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/tplai/kbsim/blob/master/LICENSE.md"
+      },
+      "sourceSounds": {
+        "default": {
+          "down": [
+            "1.wav",
+            "2.wav",
+            "3.wav",
+            "4.wav",
+            "5.wav"
+          ],
+          "up": [
+            "101.wav"
+          ]
+        },
+        "space": {
+          "down": [
+            "201.wav"
+          ],
+          "up": [
+            "251.wav"
+          ]
+        },
+        "enter": {
+          "down": [
+            "301.wav"
+          ],
+          "up": [
+            "351.wav"
+          ]
+        },
+        "backspace": {
+          "down": [
+            "401.wav"
+          ],
+          "up": [
+            "451.wav"
+          ]
+        }
+      },
+      "selections": [
+        {
+          "path": "Sounds/drop-holy-panda/press-01.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "1.wav",
+          "sourceSha256": "65c080bd6b13991ce5d88ca8ab24636a1bd1a94e920c5f2cc876bc0f768716c0",
+          "sha256": "a038a7c93cdcfaae794f5e59fcb5d2da7043ee806b2cf2cda77f9297e5d80010",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[0]",
+            "evidence": "Publisher config maps 1.wav explicitly to sounds.default.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3013,
+            "sampleRate": 44100,
+            "durationSeconds": 0.068321995,
+            "peak": 0.501647949,
+            "rms": 0.043445451,
+            "firstNonzeroMilliseconds": 4.988662,
+            "first20PercentPeakMilliseconds": 15.827664
+          },
+          "outputMetrics": {
+            "frames": 3066,
+            "sampleRate": 48000,
+            "durationSeconds": 0.063875,
+            "peak": 0.199523926,
+            "rms": 0.017971604,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 11.375
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 220,
+            "removedDigitalLeadingFrames44100Hz": 197,
+            "removedLeadingFrames48000Hz": 214,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/drop-holy-panda/press-02.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "2.wav",
+          "sourceSha256": "55a9d4bf51d777c0313cdb34cd8d3b7ddfd2a1e89232d7b8e6f0941234d535a4",
+          "sha256": "89c3c4b21ea268016a755f8b8199bc4617ace26aa37791ccaafc82a7d13f44e2",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[1]",
+            "evidence": "Publisher config maps 2.wav explicitly to sounds.default.down[1]."
+          },
+          "sourceMetrics": {
+            "frames": 3013,
+            "sampleRate": 44100,
+            "durationSeconds": 0.068321995,
+            "peak": 0.505249023,
+            "rms": 0.044333992,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 15.963719
+          },
+          "outputMetrics": {
+            "frames": 3067,
+            "sampleRate": 48000,
+            "durationSeconds": 0.063895833,
+            "peak": 0.20199585,
+            "rms": 0.018335741,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 11.520833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/drop-holy-panda/press-03.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "3.wav",
+          "sourceSha256": "0b6e67d4fd74418362174b8ccaa2cba942dc4c2542be491059219bd75ee7c2d8",
+          "sha256": "c868a4c8deea854b4da34c08ced4e07ee98c2f0f1fbcf16d37ed2b67e9cc2f12",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[2]",
+            "evidence": "Publisher config maps 3.wav explicitly to sounds.default.down[2]."
+          },
+          "sourceMetrics": {
+            "frames": 3013,
+            "sampleRate": 44100,
+            "durationSeconds": 0.068321995,
+            "peak": 0.49810791,
+            "rms": 0.044295067,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 16.077098
+          },
+          "outputMetrics": {
+            "frames": 3067,
+            "sampleRate": 48000,
+            "durationSeconds": 0.063895833,
+            "peak": 0.201965332,
+            "rms": 0.018319795,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 11.645833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/drop-holy-panda/press-04.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "4.wav",
+          "sourceSha256": "46519b56e5b1b2453dc8a73f493e6900ebe400ce7a9897da231833ac547d4bef",
+          "sha256": "cb946bbb68f96b8a26e1e751149ca45f6433252364926acd12985460952e0a03",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[3]",
+            "evidence": "Publisher config maps 4.wav explicitly to sounds.default.down[3]."
+          },
+          "sourceMetrics": {
+            "frames": 3013,
+            "sampleRate": 44100,
+            "durationSeconds": 0.068321995,
+            "peak": 0.504364014,
+            "rms": 0.044377444,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 16.213152
+          },
+          "outputMetrics": {
+            "frames": 3067,
+            "sampleRate": 48000,
+            "durationSeconds": 0.063895833,
+            "peak": 0.201751709,
+            "rms": 0.01835375,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 11.770833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/drop-holy-panda/press-05.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "5.wav",
+          "sourceSha256": "397fe97cb38e785e9f37eac163800fbffd07835552890843c861863eecd5ba66",
+          "sha256": "c3b353a7cac6189956ea896e7c3555e855344d20ea81bbeb730d85b133fdef24",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[4]",
+            "evidence": "Publisher config maps 5.wav explicitly to sounds.default.down[4]."
+          },
+          "sourceMetrics": {
+            "frames": 3013,
+            "sampleRate": 44100,
+            "durationSeconds": 0.068321995,
+            "peak": 0.432952881,
+            "rms": 0.037950869,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 16.349206
+          },
+          "outputMetrics": {
+            "frames": 3067,
+            "sampleRate": 48000,
+            "durationSeconds": 0.063895833,
+            "peak": 0.172393799,
+            "rms": 0.015695928,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 11.916667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/drop-holy-panda/release-01.wav",
+          "category": "default",
+          "phase": "release",
+          "sourceFile": "101.wav",
+          "sourceSha256": "233434854f944a91faf162076443f676b37c3dd5b5339eeff04786c2b2df9436",
+          "sha256": "f1213727e588598042a46cbee270ac53a5e7b61c02e8a2aecaffdefc1520f393",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.up[0]",
+            "evidence": "Publisher config maps 101.wav explicitly to sounds.default.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2321,
+            "sampleRate": 44100,
+            "durationSeconds": 0.052630385,
+            "peak": 0.067749023,
+            "rms": 0.009979822,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.687075
+          },
+          "outputMetrics": {
+            "frames": 2314,
+            "sampleRate": 48000,
+            "durationSeconds": 0.048208333,
+            "peak": 0.02532959,
+            "rms": 0.00415435,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 3.25
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/drop-holy-panda/space-press-01.wav",
+          "category": "space",
+          "phase": "press",
+          "sourceFile": "201.wav",
+          "sourceSha256": "aa512fad5eafda5c482b8df1091925a43f33ada7bbef449cf36f7126cda3bb06",
+          "sha256": "8dda0e1e174dceabc7830f3b2efd2c3a02a12bea630e46992ef252e92e551021",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.down[0]",
+            "evidence": "Publisher config maps 201.wav explicitly to sounds.space.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 12936,
+            "sampleRate": 44100,
+            "durationSeconds": 0.293333333,
+            "peak": 0.562072754,
+            "rms": 0.028166812,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 26.145125
+          },
+          "outputMetrics": {
+            "frames": 13867,
+            "sampleRate": 48000,
+            "durationSeconds": 0.288895833,
+            "peak": 0.225341797,
+            "rms": 0.011352343,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 21.6875
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/drop-holy-panda/space-release-01.wav",
+          "category": "space",
+          "phase": "release",
+          "sourceFile": "251.wav",
+          "sourceSha256": "0d101caef2fe8f8ab35db1017cbd1fda0041e5d828a5e47412e529e6052ee80f",
+          "sha256": "15dd09e17fb4a6946f76e7d02f6802b3b79ae0916b870e24bf603ca37ce1f00d",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.up[0]",
+            "evidence": "Publisher config maps 251.wav explicitly to sounds.space.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 626,
+            "sampleRate": 44100,
+            "durationSeconds": 0.014195011,
+            "peak": 0.185455322,
+            "rms": 0.033459933,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 8.049887
+          },
+          "outputMetrics": {
+            "frames": 469,
+            "sampleRate": 48000,
+            "durationSeconds": 0.009770833,
+            "peak": 0.07409668,
+            "rms": 0.015465302,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 3.625
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/drop-holy-panda/enter-press-01.wav",
+          "category": "enter",
+          "phase": "press",
+          "sourceFile": "301.wav",
+          "sourceSha256": "2ee3cac06eb4db0efac18b4139ad0770b45c571ea8428551f53ce90272fddd1f",
+          "sha256": "2eba5452462921ba1966f3ad64e90a722835ac127cb399ce768331d44274089d",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.down[0]",
+            "evidence": "Publisher config maps 301.wav explicitly to sounds.enter.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2915,
+            "sampleRate": 44100,
+            "durationSeconds": 0.066099773,
+            "peak": 0.663970947,
+            "rms": 0.076794103,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 6.621315
+          },
+          "outputMetrics": {
+            "frames": 2960,
+            "sampleRate": 48000,
+            "durationSeconds": 0.061666667,
+            "peak": 0.26385498,
+            "rms": 0.031797899,
+            "firstNonzeroMilliseconds": 0.5625,
+            "first20PercentPeakMilliseconds": 2.1875
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/drop-holy-panda/enter-release-01.wav",
+          "category": "enter",
+          "phase": "release",
+          "sourceFile": "351.wav",
+          "sourceSha256": "6e1aba4af9adccc119eff8e258afb3d09c187a1750d3e4a1500235cc7a0c56d6",
+          "sha256": "f6a835f85c9afd590e6aaf39a70be479e60b8a79d39ff39b101f809b5cb9e5ee",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.up[0]",
+            "evidence": "Publisher config maps 351.wav explicitly to sounds.enter.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 867,
+            "sampleRate": 44100,
+            "durationSeconds": 0.019659864,
+            "peak": 0.14465332,
+            "rms": 0.024522366,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 5.895692
+          },
+          "outputMetrics": {
+            "frames": 731,
+            "sampleRate": 48000,
+            "durationSeconds": 0.015229167,
+            "peak": 0.057220459,
+            "rms": 0.011048291,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 1.458333
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/drop-holy-panda/backspace-press-01.wav",
+          "category": "backspace",
+          "phase": "press",
+          "sourceFile": "401.wav",
+          "sourceSha256": "9a3354a437668bb3f552eb8e97a4338cdf414bafd7d39e8c4d4ca98cf0d84d80",
+          "sha256": "64699cf665255cd7cd74d9ce7d61fc59ba92da2bd138eaaba19b16249ae81833",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.down[0]",
+            "evidence": "Publisher config maps 401.wav explicitly to sounds.backspace.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3010,
+            "sampleRate": 44100,
+            "durationSeconds": 0.068253968,
+            "peak": 0.637084961,
+            "rms": 0.062878038,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.959184
+          },
+          "outputMetrics": {
+            "frames": 3064,
+            "sampleRate": 48000,
+            "durationSeconds": 0.063833333,
+            "peak": 0.251190186,
+            "rms": 0.026003967,
+            "firstNonzeroMilliseconds": 0.354167,
+            "first20PercentPeakMilliseconds": 3.520833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/drop-holy-panda/backspace-release-01.wav",
+          "category": "backspace",
+          "phase": "release",
+          "sourceFile": "451.wav",
+          "sourceSha256": "deabbb1937fcd3bf6215d61c77833ba156b6f5a800bc78a13d5f8973fc477a85",
+          "sha256": "5ababf8a4d662153c5100ef600a432530c5d327756010ab5cd782f86cd7d0f8c",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.up[0]",
+            "evidence": "Publisher config maps 451.wav explicitly to sounds.backspace.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2171,
+            "sampleRate": 44100,
+            "durationSeconds": 0.049229025,
+            "peak": 0.250335693,
+            "rms": 0.024326151,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 10.15873
+          },
+          "outputMetrics": {
+            "frames": 2150,
+            "sampleRate": 48000,
+            "durationSeconds": 0.044791667,
+            "peak": 0.099914551,
+            "rms": 0.010168882,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 5.708333
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "durock-alpaca",
+      "packID": "23d8cf7b-f99b-49fc-ae84-3f99dc728ad9",
+      "archive": {
+        "url": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/durock/tplai/alpaca/23d8cf7b-f99b-49fc-ae84-3f99dc728ad9.zip",
+        "sha256": "d21aebe0c92767bc61bb5ab26aa0158f0143ef7a804424257a9c8a5ce3b8f19c"
+      },
+      "configSha256": "ca06908675c673a812b39a705be61e95521a56aa21a73f5f431c70cf22e7c7c4",
+      "metadata": {
+        "name": "Alpaca",
+        "brand": "Durock",
+        "author": "tplai",
+        "supportsKeyUp": true,
+        "category": "keyboard"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/tplai/kbsim/blob/master/LICENSE.md"
+      },
+      "sourceSounds": {
+        "default": {
+          "down": [
+            "1.wav",
+            "2.wav",
+            "3.wav",
+            "4.wav",
+            "5.wav"
+          ],
+          "up": [
+            "101.wav"
+          ]
+        },
+        "space": {
+          "down": [
+            "201.wav"
+          ],
+          "up": [
+            "251.wav"
+          ]
+        },
+        "enter": {
+          "down": [
+            "301.wav"
+          ],
+          "up": [
+            "351.wav"
+          ]
+        },
+        "backspace": {
+          "down": [
+            "401.wav"
+          ],
+          "up": [
+            "451.wav"
+          ]
+        }
+      },
+      "selections": [
+        {
+          "path": "Sounds/durock-alpaca/press-01.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "1.wav",
+          "sourceSha256": "99a1ac0d59ee209b5e02eec10ab438ef7689670ce3159813f15feec0b16200f2",
+          "sha256": "43cf759935fe45956e337fa0130d32791ced70f7431fa1110f5dc80e6c827fa5",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[0]",
+            "evidence": "Publisher config maps 1.wav explicitly to sounds.default.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3401,
+            "sampleRate": 44100,
+            "durationSeconds": 0.077120181,
+            "peak": 0.491577148,
+            "rms": 0.036091546,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 6.802721
+          },
+          "outputMetrics": {
+            "frames": 3489,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0726875,
+            "peak": 0.197967529,
+            "rms": 0.014804611,
+            "firstNonzeroMilliseconds": 0.354167,
+            "first20PercentPeakMilliseconds": 2.375
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/durock-alpaca/press-02.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "2.wav",
+          "sourceSha256": "fc931f08ac98ddf2d8abbfc66fd199af603cd0bc704f40478f5cc885de0f3147",
+          "sha256": "260208e7dd7175f536d81443bf2eb11d12b664ce382d0cc2d1acf9c7c27fe432",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[1]",
+            "evidence": "Publisher config maps 2.wav explicitly to sounds.default.down[1]."
+          },
+          "sourceMetrics": {
+            "frames": 3401,
+            "sampleRate": 44100,
+            "durationSeconds": 0.077120181,
+            "peak": 0.500091553,
+            "rms": 0.036299202,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 6.825397
+          },
+          "outputMetrics": {
+            "frames": 3489,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0726875,
+            "peak": 0.201568604,
+            "rms": 0.014899948,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 2.395833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/durock-alpaca/press-03.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "3.wav",
+          "sourceSha256": "24e1ad344ac4c6dffc79c2f0e7e9626a8d693738d2e26bee55b3abdf5d31f956",
+          "sha256": "888f34600ebf7409b97f0a07d1e2a98405679dc3bda75c4c39e1b9a28aa25b7e",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[2]",
+            "evidence": "Publisher config maps 3.wav explicitly to sounds.default.down[2]."
+          },
+          "sourceMetrics": {
+            "frames": 3401,
+            "sampleRate": 44100,
+            "durationSeconds": 0.077120181,
+            "peak": 0.495727539,
+            "rms": 0.035271463,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 6.848073
+          },
+          "outputMetrics": {
+            "frames": 3489,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0726875,
+            "peak": 0.197631836,
+            "rms": 0.01449078,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 2.416667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/durock-alpaca/press-04.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "4.wav",
+          "sourceSha256": "badf3cfd664f21f70f3938882fa88a66b89d7ec77f85d0eae941bdf558cf04b9",
+          "sha256": "efaa67ccc26fd7f74fe3f5a8ba9b428c725a4ffbe4e4db4de74d0afe3a96ad49",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[3]",
+            "evidence": "Publisher config maps 4.wav explicitly to sounds.default.down[3]."
+          },
+          "sourceMetrics": {
+            "frames": 3401,
+            "sampleRate": 44100,
+            "durationSeconds": 0.077120181,
+            "peak": 0.498443604,
+            "rms": 0.036160752,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 6.870748
+          },
+          "outputMetrics": {
+            "frames": 3489,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0726875,
+            "peak": 0.197967529,
+            "rms": 0.014868562,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 2.4375
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/durock-alpaca/press-05.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "5.wav",
+          "sourceSha256": "d5b8670e40789205461e15adca0feed0fb7e9188c308e791d2445031e2899b7d",
+          "sha256": "14adade9937e78df638f67828a1e1fa2a4cf2d8df1fcf6b724266015627330b9",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[4]",
+            "evidence": "Publisher config maps 5.wav explicitly to sounds.default.down[4]."
+          },
+          "sourceMetrics": {
+            "frames": 3401,
+            "sampleRate": 44100,
+            "durationSeconds": 0.077120181,
+            "peak": 0.504608154,
+            "rms": 0.036772863,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 6.893424
+          },
+          "outputMetrics": {
+            "frames": 3489,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0726875,
+            "peak": 0.200042725,
+            "rms": 0.015126857,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 2.458333
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/durock-alpaca/release-01.wav",
+          "category": "default",
+          "phase": "release",
+          "sourceFile": "101.wav",
+          "sourceSha256": "8bec5be7fcabddf98d956a8021afd00c7d62570747ad194771cce65c238b0786",
+          "sha256": "c3d7c8829e0731b145df0af79379f34795e0f046831c76fc758c061bc696bd6e",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.up[0]",
+            "evidence": "Publisher config maps 101.wav explicitly to sounds.default.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2855,
+            "sampleRate": 44100,
+            "durationSeconds": 0.064739229,
+            "peak": 0.274871826,
+            "rms": 0.027659445,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 6.349206
+          },
+          "outputMetrics": {
+            "frames": 2895,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0603125,
+            "peak": 0.109985352,
+            "rms": 0.011417577,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 1.916667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/durock-alpaca/space-press-01.wav",
+          "category": "space",
+          "phase": "press",
+          "sourceFile": "201.wav",
+          "sourceSha256": "c87f5df1f52d9ea9d1cc356075ee7a596cb32f8f193088c450afdbfb2e6c52cd",
+          "sha256": "f811ffe8da6dae5e6d63873ce5a487bba98a531968492d7e3f796fd55871d995",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.down[0]",
+            "evidence": "Publisher config maps 201.wav explicitly to sounds.space.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4033,
+            "sampleRate": 44100,
+            "durationSeconds": 0.091451247,
+            "peak": 0.988555908,
+            "rms": 0.061912703,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 14.716553
+          },
+          "outputMetrics": {
+            "frames": 4177,
+            "sampleRate": 48000,
+            "durationSeconds": 0.087020833,
+            "peak": 0.394622803,
+            "rms": 0.025370135,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 10.291667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/durock-alpaca/space-release-01.wav",
+          "category": "space",
+          "phase": "release",
+          "sourceFile": "251.wav",
+          "sourceSha256": "409b6502d70aa098f98ba74b1e51b7eea6b3f2f0d4cd09a75cd9f53708695ce4",
+          "sha256": "5888cb1e0c322928909ab2bd9a801ccefd72f692296417e46d5e860d3728407b",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.up[0]",
+            "evidence": "Publisher config maps 251.wav explicitly to sounds.space.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2881,
+            "sampleRate": 44100,
+            "durationSeconds": 0.065328798,
+            "peak": 0.586608887,
+            "rms": 0.043533635,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 8.29932
+          },
+          "outputMetrics": {
+            "frames": 2923,
+            "sampleRate": 48000,
+            "durationSeconds": 0.060895833,
+            "peak": 0.235107422,
+            "rms": 0.017988722,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 3.854167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/durock-alpaca/enter-press-01.wav",
+          "category": "enter",
+          "phase": "press",
+          "sourceFile": "301.wav",
+          "sourceSha256": "9face908837b8f02464e5532370fd999a6c592a543f8c2b0f3f46264573d74ab",
+          "sha256": "9dc00149f837e86e513adba3ca0bad0553e9781503a59030279b356c35fcfcc7",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.down[0]",
+            "evidence": "Publisher config maps 301.wav explicitly to sounds.enter.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3846,
+            "sampleRate": 44100,
+            "durationSeconds": 0.087210884,
+            "peak": 0.988555908,
+            "rms": 0.053240546,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 18.571429
+          },
+          "outputMetrics": {
+            "frames": 3974,
+            "sampleRate": 48000,
+            "durationSeconds": 0.082791667,
+            "peak": 0.396118164,
+            "rms": 0.021654555,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 14.125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/durock-alpaca/enter-release-01.wav",
+          "category": "enter",
+          "phase": "release",
+          "sourceFile": "351.wav",
+          "sourceSha256": "53ea8628ead64957fffc70a7d3e4cf8e50a26d2c3982864ac810e4449f4c0c4e",
+          "sha256": "f5c72c2d6efab1b478ba70cba43dfa94e0eeec59a77dcb54afa53eaf4124bfaf",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.up[0]",
+            "evidence": "Publisher config maps 351.wav explicitly to sounds.enter.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3354,
+            "sampleRate": 44100,
+            "durationSeconds": 0.076054422,
+            "peak": 0.437835693,
+            "rms": 0.030951085,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 11.133787
+          },
+          "outputMetrics": {
+            "frames": 3438,
+            "sampleRate": 48000,
+            "durationSeconds": 0.071625,
+            "peak": 0.176513672,
+            "rms": 0.012735968,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 6.6875
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/durock-alpaca/backspace-press-01.wav",
+          "category": "backspace",
+          "phase": "press",
+          "sourceFile": "401.wav",
+          "sourceSha256": "5683b3be0609f0aed0ca98c22783a550f2d6cb4b1b3299d697ae8e34d75fc4c3",
+          "sha256": "1b73d6f027c9eda0d97220d62a0851d1c1cd9615e7ec77116631f608670509c8",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.down[0]",
+            "evidence": "Publisher config maps 401.wav explicitly to sounds.backspace.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4140,
+            "sampleRate": 44100,
+            "durationSeconds": 0.093877551,
+            "peak": 0.988555908,
+            "rms": 0.066188595,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 20.453515
+          },
+          "outputMetrics": {
+            "frames": 4294,
+            "sampleRate": 48000,
+            "durationSeconds": 0.089458333,
+            "peak": 0.394927979,
+            "rms": 0.027116102,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 16.020833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/durock-alpaca/backspace-release-01.wav",
+          "category": "backspace",
+          "phase": "release",
+          "sourceFile": "451.wav",
+          "sourceSha256": "a09f01196b8c908015acb3d680fb773adf1efe53ce79502454512e3318f765bb",
+          "sha256": "2fe756a6c67962e5cb7cd035794c70bacf139d7bba8701272d78a0aff532b6dc",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.up[0]",
+            "evidence": "Publisher config maps 451.wav explicitly to sounds.backspace.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2614,
+            "sampleRate": 44100,
+            "durationSeconds": 0.059274376,
+            "peak": 0.276641846,
+            "rms": 0.031558225,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 9.206349
+          },
+          "outputMetrics": {
+            "frames": 2633,
+            "sampleRate": 48000,
+            "durationSeconds": 0.054854167,
+            "peak": 0.112701416,
+            "rms": 0.012660288,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 4.770833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "gateron-ink-black",
+      "packID": "b9bfb429-16c6-449f-aa85-5da083696f68",
+      "archive": {
+        "url": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/gateron/tplai/ink_black/b9bfb429-16c6-449f-aa85-5da083696f68.zip",
+        "sha256": "1ddc515b9e37f0a01f289b51622ae0d352728ccb4e9e8b71d2f82e76ff666036"
+      },
+      "configSha256": "7bf2a05fee6859df14b28069c2ffae9188902448413f2bc39d4faa007d262380",
+      "metadata": {
+        "name": "Ink Black",
+        "brand": "Gateron",
+        "author": "tplai",
+        "supportsKeyUp": true,
+        "category": "keyboard"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/tplai/kbsim/blob/master/LICENSE.md"
+      },
+      "sourceSounds": {
+        "default": {
+          "down": [
+            "1.wav",
+            "2.wav",
+            "3.wav",
+            "4.wav",
+            "5.wav"
+          ],
+          "up": [
+            "101.wav"
+          ]
+        },
+        "space": {
+          "down": [
+            "201.wav"
+          ],
+          "up": [
+            "251.wav"
+          ]
+        },
+        "enter": {
+          "down": [
+            "301.wav"
+          ],
+          "up": [
+            "351.wav"
+          ]
+        },
+        "backspace": {
+          "down": [
+            "401.wav"
+          ],
+          "up": [
+            "451.wav"
+          ]
+        }
+      },
+      "selections": [
+        {
+          "path": "Sounds/gateron-ink-black/press-01.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "1.wav",
+          "sourceSha256": "6c260bd761c55d2c42e38c17557165545db944b5e3e68858d50cfe160f8b4b35",
+          "sha256": "29251d0413f26628d02a9161bb86c845c547c7c91320a3c2b11498fb9ee88739",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[0]",
+            "evidence": "Publisher config maps 1.wav explicitly to sounds.default.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2886,
+            "sampleRate": 44100,
+            "durationSeconds": 0.065442177,
+            "peak": 0.522918701,
+            "rms": 0.032777342,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.256236
+          },
+          "outputMetrics": {
+            "frames": 2929,
+            "sampleRate": 48000,
+            "durationSeconds": 0.061020833,
+            "peak": 0.214233398,
+            "rms": 0.013575711,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 2.8125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-black/press-02.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "2.wav",
+          "sourceSha256": "1c1a45deb6d6ca58e497f0007d392b234cf8b5be475735cd83a3708748e4450a",
+          "sha256": "bb28d636a4f5c36b1a73eeee23337f8bd23cee666da40857bba9afa0ce283346",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[1]",
+            "evidence": "Publisher config maps 2.wav explicitly to sounds.default.down[1]."
+          },
+          "sourceMetrics": {
+            "frames": 2886,
+            "sampleRate": 44100,
+            "durationSeconds": 0.065442177,
+            "peak": 0.5128479,
+            "rms": 0.033970105,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.278912
+          },
+          "outputMetrics": {
+            "frames": 2929,
+            "sampleRate": 48000,
+            "durationSeconds": 0.061020833,
+            "peak": 0.214324951,
+            "rms": 0.01407013,
+            "firstNonzeroMilliseconds": 0.354167,
+            "first20PercentPeakMilliseconds": 2.833333
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-black/press-03.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "3.wav",
+          "sourceSha256": "dbd7fa5054b92e9b9c866746c12875c11dbec06eb575dc927446809b6bc08ff9",
+          "sha256": "a70dc059d219827dab894681532397cd8b6b14aaf1c95c681125516f0fd72210",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[2]",
+            "evidence": "Publisher config maps 3.wav explicitly to sounds.default.down[2]."
+          },
+          "sourceMetrics": {
+            "frames": 2886,
+            "sampleRate": 44100,
+            "durationSeconds": 0.065442177,
+            "peak": 0.50012207,
+            "rms": 0.033936032,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.301587
+          },
+          "outputMetrics": {
+            "frames": 2929,
+            "sampleRate": 48000,
+            "durationSeconds": 0.061020833,
+            "peak": 0.208129883,
+            "rms": 0.014056027,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 2.854167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-black/press-04.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "4.wav",
+          "sourceSha256": "dbd7fa5054b92e9b9c866746c12875c11dbec06eb575dc927446809b6bc08ff9",
+          "sha256": "a70dc059d219827dab894681532397cd8b6b14aaf1c95c681125516f0fd72210",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[3]",
+            "evidence": "Publisher config maps 4.wav explicitly to sounds.default.down[3]."
+          },
+          "sourceMetrics": {
+            "frames": 2886,
+            "sampleRate": 44100,
+            "durationSeconds": 0.065442177,
+            "peak": 0.50012207,
+            "rms": 0.033936032,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.301587
+          },
+          "outputMetrics": {
+            "frames": 2929,
+            "sampleRate": 48000,
+            "durationSeconds": 0.061020833,
+            "peak": 0.208129883,
+            "rms": 0.014056027,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 2.854167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-black/press-05.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "5.wav",
+          "sourceSha256": "cc96ef24fa638b006426b70f276e69e6550afad46d157dcfd99947f6c98f2339",
+          "sha256": "f986184928d1a3feb8db52fc7c20731e08d12fdaea889f347bc4e89aa0571fa5",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[4]",
+            "evidence": "Publisher config maps 5.wav explicitly to sounds.default.down[4]."
+          },
+          "sourceMetrics": {
+            "frames": 2886,
+            "sampleRate": 44100,
+            "durationSeconds": 0.065442177,
+            "peak": 0.493682861,
+            "rms": 0.033934588,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.369615
+          },
+          "outputMetrics": {
+            "frames": 2929,
+            "sampleRate": 48000,
+            "durationSeconds": 0.061020833,
+            "peak": 0.197662354,
+            "rms": 0.014055447,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 2.916667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-black/release-01.wav",
+          "category": "default",
+          "phase": "release",
+          "sourceFile": "101.wav",
+          "sourceSha256": "09c9302868404e48caec8a572ee2fa8c1f348b83594ce69ddeba7e9ba07949ab",
+          "sha256": "21881a16de3be06ec520197d1d2e4f93a124dc1ee3b45a9026cab3f639860027",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.up[0]",
+            "evidence": "Publisher config maps 101.wav explicitly to sounds.default.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2780,
+            "sampleRate": 44100,
+            "durationSeconds": 0.063038549,
+            "peak": 0.255371094,
+            "rms": 0.021901823,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 6.122449
+          },
+          "outputMetrics": {
+            "frames": 2813,
+            "sampleRate": 48000,
+            "durationSeconds": 0.058604167,
+            "peak": 0.10458374,
+            "rms": 0.009084508,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 1.6875
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-black/space-press-01.wav",
+          "category": "space",
+          "phase": "press",
+          "sourceFile": "201.wav",
+          "sourceSha256": "fa0f42fd1e5c815707868f8115299bd157c560f2ac6fb182930ecd235d2673e0",
+          "sha256": "03fc38deea596d3769924b14679abbcc07c6547a2202aa3281c064421b947c71",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.down[0]",
+            "evidence": "Publisher config maps 201.wav explicitly to sounds.space.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2871,
+            "sampleRate": 44100,
+            "durationSeconds": 0.065102041,
+            "peak": 0.763397217,
+            "rms": 0.056201574,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 8.571429
+          },
+          "outputMetrics": {
+            "frames": 2912,
+            "sampleRate": 48000,
+            "durationSeconds": 0.060666667,
+            "peak": 0.305297852,
+            "rms": 0.023284012,
+            "firstNonzeroMilliseconds": 0.333333,
+            "first20PercentPeakMilliseconds": 4.125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-black/space-release-01.wav",
+          "category": "space",
+          "phase": "release",
+          "sourceFile": "251.wav",
+          "sourceSha256": "5d41c808d74233f30806f4f85fa85e9cee6de8879901f5b2d7d0629202c4b82a",
+          "sha256": "25e93d6c64b1eb052700cc16cd81c49673af0974812247507ea0f8eaaee2838d",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.up[0]",
+            "evidence": "Publisher config maps 251.wav explicitly to sounds.space.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2841,
+            "sampleRate": 44100,
+            "durationSeconds": 0.064421769,
+            "peak": 0.227172852,
+            "rms": 0.018586492,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 9.455782
+          },
+          "outputMetrics": {
+            "frames": 2880,
+            "sampleRate": 48000,
+            "durationSeconds": 0.06,
+            "peak": 0.092834473,
+            "rms": 0.007700279,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 5.020833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-black/enter-press-01.wav",
+          "category": "enter",
+          "phase": "press",
+          "sourceFile": "301.wav",
+          "sourceSha256": "c71b822541eb763bd2aad516e66712b2f12f5561780bf486923872067ca17251",
+          "sha256": "32c5077873289d2fa48ee2568357ad6fdbe4019984ac3babbd812daa6591029d",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.down[0]",
+            "evidence": "Publisher config maps 301.wav explicitly to sounds.enter.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2946,
+            "sampleRate": 44100,
+            "durationSeconds": 0.066802721,
+            "peak": 0.338409424,
+            "rms": 0.021456204,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 20.204082
+          },
+          "outputMetrics": {
+            "frames": 2994,
+            "sampleRate": 48000,
+            "durationSeconds": 0.062375,
+            "peak": 0.135681152,
+            "rms": 0.008880856,
+            "firstNonzeroMilliseconds": 0.541667,
+            "first20PercentPeakMilliseconds": 15.770833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-black/enter-release-01.wav",
+          "category": "enter",
+          "phase": "release",
+          "sourceFile": "351.wav",
+          "sourceSha256": "e1c0d7b328546fa10ba4dbc328d61ec0acc3692c10cbadb0eba87ecb92ce456b",
+          "sha256": "004e235681e1510d5a7a1242b3651e8ffbd86c51bd4545d3042a91ba2956b16d",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.up[0]",
+            "evidence": "Publisher config maps 351.wav explicitly to sounds.enter.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3265,
+            "sampleRate": 44100,
+            "durationSeconds": 0.074036281,
+            "peak": 0.02645874,
+            "rms": 0.003432627,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 12.44898
+          },
+          "outputMetrics": {
+            "frames": 3341,
+            "sampleRate": 48000,
+            "durationSeconds": 0.069604167,
+            "peak": 0.0105896,
+            "rms": 0.001413694,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 8.0
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-black/backspace-press-01.wav",
+          "category": "backspace",
+          "phase": "press",
+          "sourceFile": "401.wav",
+          "sourceSha256": "d987faf591fb3d23abbef245dcd0f4ecff82e09e447579b198f82c9bf24bc47f",
+          "sha256": "2b3583dc5f15efbd61c40aca578e5aacd14ab7b1b7686a9b9fd2f0f5b9dbe90f",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.down[0]",
+            "evidence": "Publisher config maps 401.wav explicitly to sounds.backspace.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3212,
+            "sampleRate": 44100,
+            "durationSeconds": 0.072834467,
+            "peak": 0.228851318,
+            "rms": 0.023930213,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 17.709751
+          },
+          "outputMetrics": {
+            "frames": 3284,
+            "sampleRate": 48000,
+            "durationSeconds": 0.068416667,
+            "peak": 0.091186523,
+            "rms": 0.009875157,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 13.270833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-black/backspace-release-01.wav",
+          "category": "backspace",
+          "phase": "release",
+          "sourceFile": "451.wav",
+          "sourceSha256": "8afe627dfa3773e312d719f59a23283ff58ac1f4db6e3352dc268d1e7d3eee59",
+          "sha256": "70d82ea931f98f3d9b0f4622e8a966a016347401359ea826386b8370a8019570",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.up[0]",
+            "evidence": "Publisher config maps 451.wav explicitly to sounds.backspace.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3488,
+            "sampleRate": 44100,
+            "durationSeconds": 0.079092971,
+            "peak": 0.10836792,
+            "rms": 0.010734998,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 43.015873
+          },
+          "outputMetrics": {
+            "frames": 3584,
+            "sampleRate": 48000,
+            "durationSeconds": 0.074666667,
+            "peak": 0.043731689,
+            "rms": 0.0044162,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 38.583333
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "gateron-ink-red",
+      "packID": "631754b0-eafe-4b14-b86e-61842f1f195c",
+      "archive": {
+        "url": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/gateron/tplai/ink_red/631754b0-eafe-4b14-b86e-61842f1f195c.zip",
+        "sha256": "68060f985ef6db9767922354a98d05ee15453581685fd6ab81c1f37c4143c6af"
+      },
+      "configSha256": "74618c0e27e18734b80202b84edd7c9246561270cc0181a9172c0b762a0584f4",
+      "metadata": {
+        "name": "Ink Red",
+        "brand": "Gateron",
+        "author": "tplai",
+        "supportsKeyUp": true,
+        "category": "keyboard"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/tplai/kbsim/blob/master/LICENSE.md"
+      },
+      "sourceSounds": {
+        "default": {
+          "down": [
+            "1.wav",
+            "2.wav",
+            "3.wav",
+            "4.wav",
+            "5.wav"
+          ],
+          "up": [
+            "101.wav"
+          ]
+        },
+        "space": {
+          "down": [
+            "201.wav"
+          ],
+          "up": [
+            "251.wav"
+          ]
+        },
+        "enter": {
+          "down": [
+            "301.wav"
+          ],
+          "up": [
+            "351.wav"
+          ]
+        },
+        "backspace": {
+          "down": [
+            "401.wav"
+          ],
+          "up": [
+            "451.wav"
+          ]
+        }
+      },
+      "selections": [
+        {
+          "path": "Sounds/gateron-ink-red/press-01.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "1.wav",
+          "sourceSha256": "88d0c6577a26ac660b218e121284e58a01a48a2c4e1726781c7760f59218dd00",
+          "sha256": "bbadfcd15acb12a6a733114e9b0c2cb497f744de74c436dca509a73dd6ec8917",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[0]",
+            "evidence": "Publisher config maps 1.wav explicitly to sounds.default.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4051,
+            "sampleRate": 44100,
+            "durationSeconds": 0.09185941,
+            "peak": 0.523773193,
+            "rms": 0.028939989,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.120181
+          },
+          "outputMetrics": {
+            "frames": 4197,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0874375,
+            "peak": 0.208343506,
+            "rms": 0.011864476,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 2.6875
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-red/press-02.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "2.wav",
+          "sourceSha256": "a26913406d7e7023d4fc32528b2c5d9a23ca672a9ca5b0be1ebbaa51d7346b84",
+          "sha256": "b7446197e63fe4753ed435b07ed96c4fd39e95b2e35c0a1039c4a1fef640ca52",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[1]",
+            "evidence": "Publisher config maps 2.wav explicitly to sounds.default.down[1]."
+          },
+          "sourceMetrics": {
+            "frames": 4051,
+            "sampleRate": 44100,
+            "durationSeconds": 0.09185941,
+            "peak": 0.511383057,
+            "rms": 0.029044223,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.07483
+          },
+          "outputMetrics": {
+            "frames": 4197,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0874375,
+            "peak": 0.204742432,
+            "rms": 0.011907376,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 2.645833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-red/press-03.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "3.wav",
+          "sourceSha256": "981f07e27017e741867e231c9233a08a65e7c0e00cbf8b4fc248c4759e3a6125",
+          "sha256": "0c206015da86764608e2a05d034a2ea99e34dccf5943e2348100441f0f104c7f",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[2]",
+            "evidence": "Publisher config maps 3.wav explicitly to sounds.default.down[2]."
+          },
+          "sourceMetrics": {
+            "frames": 4051,
+            "sampleRate": 44100,
+            "durationSeconds": 0.09185941,
+            "peak": 0.483001709,
+            "rms": 0.029058232,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.097506
+          },
+          "outputMetrics": {
+            "frames": 4197,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0874375,
+            "peak": 0.198120117,
+            "rms": 0.011913148,
+            "firstNonzeroMilliseconds": 0.354167,
+            "first20PercentPeakMilliseconds": 2.666667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-red/press-04.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "4.wav",
+          "sourceSha256": "27767e73f7037bd446ba1b31d3e96e819cb0c469b57d8be7331cabfee3b0d715",
+          "sha256": "8015637c208a993cb99e5a9fc1eb26d60fe4d6181e6ce5d1dc238a92fd7cdff6",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[3]",
+            "evidence": "Publisher config maps 4.wav explicitly to sounds.default.down[3]."
+          },
+          "sourceMetrics": {
+            "frames": 4051,
+            "sampleRate": 44100,
+            "durationSeconds": 0.09185941,
+            "peak": 0.501159668,
+            "rms": 0.030643702,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.256236
+          },
+          "outputMetrics": {
+            "frames": 4197,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0874375,
+            "peak": 0.20135498,
+            "rms": 0.012563038,
+            "firstNonzeroMilliseconds": 0.333333,
+            "first20PercentPeakMilliseconds": 2.8125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-red/press-05.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "5.wav",
+          "sourceSha256": "cb698f0bc1cfc0af1cf656046fda194ef2b8ad26591972be031efdb16dcd571e",
+          "sha256": "06759b53a9328af5d07f154bb458f2a4d7377063f2d211329e2a13273b6ac725",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[4]",
+            "evidence": "Publisher config maps 5.wav explicitly to sounds.default.down[4]."
+          },
+          "sourceMetrics": {
+            "frames": 4051,
+            "sampleRate": 44100,
+            "durationSeconds": 0.09185941,
+            "peak": 0.499755859,
+            "rms": 0.030838604,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.210884
+          },
+          "outputMetrics": {
+            "frames": 4197,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0874375,
+            "peak": 0.200714111,
+            "rms": 0.012643088,
+            "firstNonzeroMilliseconds": 0.354167,
+            "first20PercentPeakMilliseconds": 2.770833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-red/release-01.wav",
+          "category": "default",
+          "phase": "release",
+          "sourceFile": "101.wav",
+          "sourceSha256": "8c696d019d843fd505140eb4572ae7485922538aad71b18deaca52ee6cc26374",
+          "sha256": "e758ee9b800461208bb2f94049092a3b69e216af1058234b8b5a9a19260d30ec",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.up[0]",
+            "evidence": "Publisher config maps 101.wav explicitly to sounds.default.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2776,
+            "sampleRate": 44100,
+            "durationSeconds": 0.062947846,
+            "peak": 0.189605713,
+            "rms": 0.012694916,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 11.564626
+          },
+          "outputMetrics": {
+            "frames": 2809,
+            "sampleRate": 48000,
+            "durationSeconds": 0.058520833,
+            "peak": 0.077026367,
+            "rms": 0.0052636,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 7.125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-red/space-press-01.wav",
+          "category": "space",
+          "phase": "press",
+          "sourceFile": "201.wav",
+          "sourceSha256": "f55564e63a9e8c60ed791661fe6d83ff03a8f1b3ff5ebed947f577cb4873aaba",
+          "sha256": "bbe13429454a82a48ee2ff54d87f826635e9b7faa56535de1f46e213b865df8b",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.down[0]",
+            "evidence": "Publisher config maps 201.wav explicitly to sounds.space.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4042,
+            "sampleRate": 44100,
+            "durationSeconds": 0.091655329,
+            "peak": 0.697021484,
+            "rms": 0.045601252,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 37.165533
+          },
+          "outputMetrics": {
+            "frames": 4187,
+            "sampleRate": 48000,
+            "durationSeconds": 0.087229167,
+            "peak": 0.278686523,
+            "rms": 0.018692276,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 32.729167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-red/space-release-01.wav",
+          "category": "space",
+          "phase": "release",
+          "sourceFile": "251.wav",
+          "sourceSha256": "29b4229d5c4c095fe72f5fe15fb2d90af8a9ad6d7d3c6fb0b5e1d51b64b03a73",
+          "sha256": "cb224108185844b285a001760ea05792657ebc15be731f250e245f5e91ea1e55",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.up[0]",
+            "evidence": "Publisher config maps 251.wav explicitly to sounds.space.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2415,
+            "sampleRate": 44100,
+            "durationSeconds": 0.054761905,
+            "peak": 0.116394043,
+            "rms": 0.012764249,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 15.170068
+          },
+          "outputMetrics": {
+            "frames": 2416,
+            "sampleRate": 48000,
+            "durationSeconds": 0.050333333,
+            "peak": 0.046051025,
+            "rms": 0.005322591,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 10.729167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-red/enter-press-01.wav",
+          "category": "enter",
+          "phase": "press",
+          "sourceFile": "301.wav",
+          "sourceSha256": "601353525bd4dd6174202ed6735973edd35dbcc1b2955affd70fa47e637d2f49",
+          "sha256": "6570419357a430499d423c43c035e76f7d846be170b61e894749a8bacd67cda6",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.down[0]",
+            "evidence": "Publisher config maps 301.wav explicitly to sounds.enter.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 5118,
+            "sampleRate": 44100,
+            "durationSeconds": 0.116054422,
+            "peak": 0.490539551,
+            "rms": 0.033245645,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 14.78458
+          },
+          "outputMetrics": {
+            "frames": 5358,
+            "sampleRate": 48000,
+            "durationSeconds": 0.111625,
+            "peak": 0.193756104,
+            "rms": 0.013558953,
+            "firstNonzeroMilliseconds": 0.375,
+            "first20PercentPeakMilliseconds": 10.354167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-red/enter-release-01.wav",
+          "category": "enter",
+          "phase": "release",
+          "sourceFile": "351.wav",
+          "sourceSha256": "843805e8ab0cd287dab4ca9242b3de87765c8c43fa505563fc63a12c6b5d3a26",
+          "sha256": "599d3b1291ef157992d289f352064886abd70ccc515f6b4bb8512ecfb6ebb6d7",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.up[0]",
+            "evidence": "Publisher config maps 351.wav explicitly to sounds.enter.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2616,
+            "sampleRate": 44100,
+            "durationSeconds": 0.059319728,
+            "peak": 0.08996582,
+            "rms": 0.009523269,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 9.115646
+          },
+          "outputMetrics": {
+            "frames": 2635,
+            "sampleRate": 48000,
+            "durationSeconds": 0.054895833,
+            "peak": 0.0362854,
+            "rms": 0.003955305,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 4.6875
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-red/backspace-press-01.wav",
+          "category": "backspace",
+          "phase": "press",
+          "sourceFile": "401.wav",
+          "sourceSha256": "4254ad5d62b8ca852570cf179c06ef27113c7047daaf89d87545b1f2faaeaa5d",
+          "sha256": "cc0c7e00ccfa2118b229b00ae1305a35891d000fa3493d796d3f8162a40bc042",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.down[0]",
+            "evidence": "Publisher config maps 401.wav explicitly to sounds.backspace.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3240,
+            "sampleRate": 44100,
+            "durationSeconds": 0.073469388,
+            "peak": 0.619384766,
+            "rms": 0.041527013,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 15.034014
+          },
+          "outputMetrics": {
+            "frames": 3314,
+            "sampleRate": 48000,
+            "durationSeconds": 0.069041667,
+            "peak": 0.241485596,
+            "rms": 0.017133876,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 10.604167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-ink-red/backspace-release-01.wav",
+          "category": "backspace",
+          "phase": "release",
+          "sourceFile": "451.wav",
+          "sourceSha256": "de05f2de3a359019b2db7b7ea8652473ed57a6b26db3364bd03bf903c140f405",
+          "sha256": "3823d4a624a72c61892fb1c4e8ca7b95009f088deb13f902cd137ab2f0d2b718",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.up[0]",
+            "evidence": "Publisher config maps 451.wav explicitly to sounds.backspace.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2314,
+            "sampleRate": 44100,
+            "durationSeconds": 0.052471655,
+            "peak": 0.081268311,
+            "rms": 0.00742233,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 5.510204
+          },
+          "outputMetrics": {
+            "frames": 2306,
+            "sampleRate": 48000,
+            "durationSeconds": 0.048041667,
+            "peak": 0.03225708,
+            "rms": 0.003101076,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 1.0625
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "gateron-turquoise-tealios",
+      "packID": "c556e214-5d78-4fc1-a7fe-3eb3f53152ba",
+      "archive": {
+        "url": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/gateron/tplai/turquoise_tealios/c556e214-5d78-4fc1-a7fe-3eb3f53152ba.zip",
+        "sha256": "1ab190c566f7703aa62c256f745106ef1757ac3c76386ae87fb09b787884556d"
+      },
+      "configSha256": "f1daba163947632f99e7670ceeb8ef2b5f5e12107de97f6061b8cfa6ea12808d",
+      "metadata": {
+        "name": "Turquoise Tealios",
+        "brand": "Gateron",
+        "author": "tplai",
+        "supportsKeyUp": true,
+        "category": "keyboard"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/tplai/kbsim/blob/master/LICENSE.md"
+      },
+      "sourceSounds": {
+        "default": {
+          "down": [
+            "1.wav",
+            "2.wav",
+            "3.wav",
+            "4.wav",
+            "5.wav"
+          ],
+          "up": [
+            "101.wav"
+          ]
+        },
+        "space": {
+          "down": [
+            "201.wav"
+          ],
+          "up": [
+            "251.wav"
+          ]
+        },
+        "enter": {
+          "down": [
+            "301.wav"
+          ],
+          "up": [
+            "351.wav"
+          ]
+        },
+        "backspace": {
+          "down": [
+            "401.wav"
+          ],
+          "up": [
+            "451.wav"
+          ]
+        }
+      },
+      "selections": [
+        {
+          "path": "Sounds/gateron-turquoise-tealios/press-01.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "1.wav",
+          "sourceSha256": "2e97b4171364b5cb2589168ee5680e6a9ddf599799e8d96d7b0b971290b9832f",
+          "sha256": "561dc96d86fd13133387aa5614887d49541ba0be4d5589612628fdf4302ccd5c",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[0]",
+            "evidence": "Publisher config maps 1.wav explicitly to sounds.default.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3895,
+            "sampleRate": 44100,
+            "durationSeconds": 0.088321995,
+            "peak": 0.527648926,
+            "rms": 0.029935149,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 9.705215
+          },
+          "outputMetrics": {
+            "frames": 4027,
+            "sampleRate": 48000,
+            "durationSeconds": 0.083895833,
+            "peak": 0.208618164,
+            "rms": 0.012282201,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 5.270833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-turquoise-tealios/press-02.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "2.wav",
+          "sourceSha256": "6e88b3d8289ff159d2b2b5dbc12084ef8f0ec5d8adf2060f2c1fa30e9d561ada",
+          "sha256": "38da4fd16addf3267ab7cd9b7ebe9915975eae4f62d494b104b925c248c34b9a",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[1]",
+            "evidence": "Publisher config maps 2.wav explicitly to sounds.default.down[1]."
+          },
+          "sourceMetrics": {
+            "frames": 3895,
+            "sampleRate": 44100,
+            "durationSeconds": 0.088321995,
+            "peak": 0.498321533,
+            "rms": 0.029424464,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 9.750567
+          },
+          "outputMetrics": {
+            "frames": 4027,
+            "sampleRate": 48000,
+            "durationSeconds": 0.083895833,
+            "peak": 0.198760986,
+            "rms": 0.012072514,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 5.3125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-turquoise-tealios/press-03.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "3.wav",
+          "sourceSha256": "ed153eba97783bc5f2faea0ffb29c265f61553a78a09fa51ce7ba2ad4a6d68e1",
+          "sha256": "0be4708d50b66dc59a9a199ff90b70ec5ec399ecdc29c9ccf9baf6ef30f3a64d",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[2]",
+            "evidence": "Publisher config maps 3.wav explicitly to sounds.default.down[2]."
+          },
+          "sourceMetrics": {
+            "frames": 3895,
+            "sampleRate": 44100,
+            "durationSeconds": 0.088321995,
+            "peak": 0.518829346,
+            "rms": 0.030296796,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 9.818594
+          },
+          "outputMetrics": {
+            "frames": 4027,
+            "sampleRate": 48000,
+            "durationSeconds": 0.083895833,
+            "peak": 0.204833984,
+            "rms": 0.012429331,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 5.375
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-turquoise-tealios/press-04.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "4.wav",
+          "sourceSha256": "0ffb4ce9214e7611ddfc2d9bc3ea9fc504ebdaf2f89522f696092ae49269928a",
+          "sha256": "4e6aad93c3ff1843337ddbd74f6d1013cc32ed25c785b7722fe5de824a3b48c5",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[3]",
+            "evidence": "Publisher config maps 4.wav explicitly to sounds.default.down[3]."
+          },
+          "sourceMetrics": {
+            "frames": 3895,
+            "sampleRate": 44100,
+            "durationSeconds": 0.088321995,
+            "peak": 0.350372314,
+            "rms": 0.020391016,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 9.886621
+          },
+          "outputMetrics": {
+            "frames": 4027,
+            "sampleRate": 48000,
+            "durationSeconds": 0.083895833,
+            "peak": 0.140106201,
+            "rms": 0.008365015,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 5.4375
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-turquoise-tealios/press-05.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "5.wav",
+          "sourceSha256": "378897c59b5dfd70618cec57a4fd2374503dfb705db4aa03ce0476f6ca5e638c",
+          "sha256": "bb4d0e40845591e90ed2df3e9390b695fbe496231be9b21cb199f5a9a80ce5bd",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[4]",
+            "evidence": "Publisher config maps 5.wav explicitly to sounds.default.down[4]."
+          },
+          "sourceMetrics": {
+            "frames": 3895,
+            "sampleRate": 44100,
+            "durationSeconds": 0.088321995,
+            "peak": 0.365509033,
+            "rms": 0.021696005,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 9.931973
+          },
+          "outputMetrics": {
+            "frames": 4027,
+            "sampleRate": 48000,
+            "durationSeconds": 0.083895833,
+            "peak": 0.146942139,
+            "rms": 0.008902453,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 5.479167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-turquoise-tealios/release-01.wav",
+          "category": "default",
+          "phase": "release",
+          "sourceFile": "101.wav",
+          "sourceSha256": "89264483bedcb5665957dc1070edb5bd124a1f7dd4721f3128f141d8440efc5b",
+          "sha256": "feea3d96450d0726afaed9903dce529e5898012096f684df8a175d442931192c",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.up[0]",
+            "evidence": "Publisher config maps 101.wav explicitly to sounds.default.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2118,
+            "sampleRate": 44100,
+            "durationSeconds": 0.048027211,
+            "peak": 0.109100342,
+            "rms": 0.009443997,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 12.176871
+          },
+          "outputMetrics": {
+            "frames": 2093,
+            "sampleRate": 48000,
+            "durationSeconds": 0.043604167,
+            "peak": 0.043395996,
+            "rms": 0.003951596,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 7.75
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-turquoise-tealios/space-press-01.wav",
+          "category": "space",
+          "phase": "press",
+          "sourceFile": "201.wav",
+          "sourceSha256": "996a89457b1735a33d0c3d4cb810356c96ba4cc13d5dec53727f49b563cdef57",
+          "sha256": "89a9d24ff25439450a916ebd0676b84d028daa3c1f62983e9271151c9f2259e5",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.down[0]",
+            "evidence": "Publisher config maps 201.wav explicitly to sounds.space.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2882,
+            "sampleRate": 44100,
+            "durationSeconds": 0.065351474,
+            "peak": 0.315612793,
+            "rms": 0.025764708,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 10.997732
+          },
+          "outputMetrics": {
+            "frames": 2924,
+            "sampleRate": 48000,
+            "durationSeconds": 0.060916667,
+            "peak": 0.126159668,
+            "rms": 0.010670628,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 6.5625
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-turquoise-tealios/space-release-01.wav",
+          "category": "space",
+          "phase": "release",
+          "sourceFile": "251.wav",
+          "sourceSha256": "e9ea60b873f2c7edf1902d20a5296591a7535c6a36b5bb0a33c4ae777e42eeb1",
+          "sha256": "b5b85dcf4b628095cf11f3d6761401dc14f6cf5002a3b41ec1a82a537636020b",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.up[0]",
+            "evidence": "Publisher config maps 251.wav explicitly to sounds.space.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 1049,
+            "sampleRate": 44100,
+            "durationSeconds": 0.023786848,
+            "peak": 0.101806641,
+            "rms": 0.01294508,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 5.782313
+          },
+          "outputMetrics": {
+            "frames": 929,
+            "sampleRate": 48000,
+            "durationSeconds": 0.019354167,
+            "peak": 0.040435791,
+            "rms": 0.005729244,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 1.270833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-turquoise-tealios/enter-press-01.wav",
+          "category": "enter",
+          "phase": "press",
+          "sourceFile": "301.wav",
+          "sourceSha256": "265e22e6a17b7560f7127b19418c7036cfa6c028ad38f487d3f21912c202f6b4",
+          "sha256": "2bf16d93cae04a21566d98a6589c1eb6a70fa512b33464a887c3b98725090948",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.down[0]",
+            "evidence": "Publisher config maps 301.wav explicitly to sounds.enter.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3459,
+            "sampleRate": 44100,
+            "durationSeconds": 0.078435374,
+            "peak": 0.484466553,
+            "rms": 0.031970007,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.732426
+          },
+          "outputMetrics": {
+            "frames": 3552,
+            "sampleRate": 48000,
+            "durationSeconds": 0.074,
+            "peak": 0.189666748,
+            "rms": 0.013161739,
+            "firstNonzeroMilliseconds": 0.291667,
+            "first20PercentPeakMilliseconds": 3.291667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-turquoise-tealios/enter-release-01.wav",
+          "category": "enter",
+          "phase": "release",
+          "sourceFile": "351.wav",
+          "sourceSha256": "d003228da9c5164df4c0ec272d70d0497d1d7ead896b18177f01f409dcb42bbc",
+          "sha256": "641bd18673c1a1427bc27537d14cf3d860e5209c93617063bace642a2a5f1440",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.up[0]",
+            "evidence": "Publisher config maps 351.wav explicitly to sounds.enter.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 1487,
+            "sampleRate": 44100,
+            "durationSeconds": 0.033718821,
+            "peak": 0.207489014,
+            "rms": 0.031611415,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.573696
+          },
+          "outputMetrics": {
+            "frames": 1406,
+            "sampleRate": 48000,
+            "durationSeconds": 0.029291667,
+            "peak": 0.086853027,
+            "rms": 0.013552604,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 3.145833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-turquoise-tealios/backspace-press-01.wav",
+          "category": "backspace",
+          "phase": "press",
+          "sourceFile": "401.wav",
+          "sourceSha256": "d641c3b3f14a453cf15bbca4d65a17e9bbef3d071e0d18f85b59e17fa95bb0fa",
+          "sha256": "b89ba8e14daff544a971052b62f1f567f663f5ecdb79613eb1e3c7734ba15b14",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.down[0]",
+            "evidence": "Publisher config maps 401.wav explicitly to sounds.backspace.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3195,
+            "sampleRate": 44100,
+            "durationSeconds": 0.07244898,
+            "peak": 0.37701416,
+            "rms": 0.02892572,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 16.938776
+          },
+          "outputMetrics": {
+            "frames": 3265,
+            "sampleRate": 48000,
+            "durationSeconds": 0.068020833,
+            "peak": 0.152404785,
+            "rms": 0.01193775,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 12.5
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/gateron-turquoise-tealios/backspace-release-01.wav",
+          "category": "backspace",
+          "phase": "release",
+          "sourceFile": "451.wav",
+          "sourceSha256": "728c3f26416158939bf04583a4447d9bffad228663b9f337e90f9e03e9f43c27",
+          "sha256": "26ecdad0da3eab14daeb1b5cf3f16850b6068975947507ce6133effe7b537946",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.up[0]",
+            "evidence": "Publisher config maps 451.wav explicitly to sounds.backspace.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2235,
+            "sampleRate": 44100,
+            "durationSeconds": 0.050680272,
+            "peak": 0.121520996,
+            "rms": 0.012260318,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 10.589569
+          },
+          "outputMetrics": {
+            "frames": 2220,
+            "sampleRate": 48000,
+            "durationSeconds": 0.04625,
+            "peak": 0.048217773,
+            "rms": 0.005132043,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 6.166667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "kailh-box-navy",
+      "packID": "c573d01e-2d20-4844-9286-a9e628ef8f3b",
+      "archive": {
+        "url": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/kailh/tplai/box_navy/c573d01e-2d20-4844-9286-a9e628ef8f3b.zip",
+        "sha256": "c1f97620a04344e2c32ab0ec769ef7452ec9119c479d30811b1c3c5c00411618"
+      },
+      "configSha256": "33f2288ab1de1692967e719ce06f9635efb129693a57d3073071313405ed683d",
+      "metadata": {
+        "name": "Box Navy",
+        "brand": "Kailh",
+        "author": "tplai",
+        "supportsKeyUp": true,
+        "category": "keyboard"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/tplai/kbsim/blob/master/LICENSE.md"
+      },
+      "sourceSounds": {
+        "default": {
+          "down": [
+            "1.wav",
+            "2.wav",
+            "3.wav",
+            "4.wav",
+            "5.wav"
+          ],
+          "up": [
+            "101.wav"
+          ]
+        },
+        "space": {
+          "down": [
+            "201.wav"
+          ],
+          "up": [
+            "251.wav"
+          ]
+        },
+        "enter": {
+          "down": [
+            "301.wav"
+          ],
+          "up": [
+            "351.wav"
+          ]
+        },
+        "backspace": {
+          "down": [
+            "401.wav"
+          ],
+          "up": [
+            "451.wav"
+          ]
+        }
+      },
+      "selections": [
+        {
+          "path": "Sounds/kailh-box-navy/press-01.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "1.wav",
+          "sourceSha256": "430c4f706fdbcad7af8cca81068a1c879dc0642f99eaeb83a394f9644e305ea7",
+          "sha256": "1fa361653e3fab9f5a7326fafd1daba93eb8eae47f5f9d230d79e5e25f1a5188",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[0]",
+            "evidence": "Publisher config maps 1.wav explicitly to sounds.default.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3230,
+            "sampleRate": 44100,
+            "durationSeconds": 0.07324263,
+            "peak": 0.50378418,
+            "rms": 0.046171596,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 12.086168
+          },
+          "outputMetrics": {
+            "frames": 3303,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0688125,
+            "peak": 0.198059082,
+            "rms": 0.019045719,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 7.645833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/kailh-box-navy/press-02.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "2.wav",
+          "sourceSha256": "669faf1c756f8907f8fadb6d6fc44c982f73923cacc1da42d0a8ef7f7181a696",
+          "sha256": "5ce7b1972b2c6d2e1a33bc000ae8741b12508bff2a889ace7adf26be5c54d24c",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[1]",
+            "evidence": "Publisher config maps 2.wav explicitly to sounds.default.down[1]."
+          },
+          "sourceMetrics": {
+            "frames": 3230,
+            "sampleRate": 44100,
+            "durationSeconds": 0.07324263,
+            "peak": 0.527679443,
+            "rms": 0.046496153,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 12.176871
+          },
+          "outputMetrics": {
+            "frames": 3303,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0688125,
+            "peak": 0.19317627,
+            "rms": 0.019181494,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 7.729167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/kailh-box-navy/press-03.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "3.wav",
+          "sourceSha256": "ddeb62b0d4535fa934fe6ae0569d4a8783c684b52b8f18ef6b830699fff7f83b",
+          "sha256": "2d6bcbd58c18fae28331857354c20ea3aa604cb1c436c1cf97198a22b14da429",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[2]",
+            "evidence": "Publisher config maps 3.wav explicitly to sounds.default.down[2]."
+          },
+          "sourceMetrics": {
+            "frames": 3230,
+            "sampleRate": 44100,
+            "durationSeconds": 0.07324263,
+            "peak": 0.457794189,
+            "rms": 0.046137559,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 12.244898
+          },
+          "outputMetrics": {
+            "frames": 3303,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0688125,
+            "peak": 0.197601318,
+            "rms": 0.019034101,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 7.8125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/kailh-box-navy/press-04.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "4.wav",
+          "sourceSha256": "5f1fb8e5003d8394bcd5d528d258dad17a1960fb15f90a564128ccafd6420a30",
+          "sha256": "dfc545762d7872083009bd3e100e4f5db059d2a279673b380664b86d46bfef7e",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[3]",
+            "evidence": "Publisher config maps 4.wav explicitly to sounds.default.down[3]."
+          },
+          "sourceMetrics": {
+            "frames": 3230,
+            "sampleRate": 44100,
+            "durationSeconds": 0.07324263,
+            "peak": 0.510345459,
+            "rms": 0.047581322,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 12.335601
+          },
+          "outputMetrics": {
+            "frames": 3303,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0688125,
+            "peak": 0.195068359,
+            "rms": 0.019631513,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 7.895833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/kailh-box-navy/press-05.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "5.wav",
+          "sourceSha256": "e07a9b65aada80286204ebc60d883ca97424427c4f49e0fa4139ca99aef4009f",
+          "sha256": "dc73104a010b0989958fd634fa7f8f1701a13e831cb0f13cadeff3a5779c1fb5",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[4]",
+            "evidence": "Publisher config maps 5.wav explicitly to sounds.default.down[4]."
+          },
+          "sourceMetrics": {
+            "frames": 3230,
+            "sampleRate": 44100,
+            "durationSeconds": 0.07324263,
+            "peak": 0.491790771,
+            "rms": 0.04157925,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 12.426304
+          },
+          "outputMetrics": {
+            "frames": 3303,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0688125,
+            "peak": 0.195739746,
+            "rms": 0.017152246,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 7.979167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/kailh-box-navy/release-01.wav",
+          "category": "default",
+          "phase": "release",
+          "sourceFile": "101.wav",
+          "sourceSha256": "0aa23212266f844ce002c0dad925dbfb84ed9bfa399fe42d21a76a19640520ae",
+          "sha256": "5e2e57f370a65fd4c466701e7812749ac304f0a258d41e6addb3fb5271d633e1",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.up[0]",
+            "evidence": "Publisher config maps 101.wav explicitly to sounds.default.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2994,
+            "sampleRate": 44100,
+            "durationSeconds": 0.067891156,
+            "peak": 0.513275146,
+            "rms": 0.04729436,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 6.371882
+          },
+          "outputMetrics": {
+            "frames": 3046,
+            "sampleRate": 48000,
+            "durationSeconds": 0.063458333,
+            "peak": 0.197174072,
+            "rms": 0.019560575,
+            "firstNonzeroMilliseconds": 0.291667,
+            "first20PercentPeakMilliseconds": 1.979167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/kailh-box-navy/space-press-01.wav",
+          "category": "space",
+          "phase": "press",
+          "sourceFile": "201.wav",
+          "sourceSha256": "b1544b6f60f154b86671fcf5fc666dceb96a2bf96df1dfcc0dd99e10ab4f9255",
+          "sha256": "4733da49e19a26851d1757fa657c1f732079192c4381695e1bfb24b4f9bc935c",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.down[0]",
+            "evidence": "Publisher config maps 201.wav explicitly to sounds.space.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4707,
+            "sampleRate": 44100,
+            "durationSeconds": 0.106734694,
+            "peak": 0.988555908,
+            "rms": 0.098234828,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 20.113379
+          },
+          "outputMetrics": {
+            "frames": 4911,
+            "sampleRate": 48000,
+            "durationSeconds": 0.1023125,
+            "peak": 0.400726318,
+            "rms": 0.040090191,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 15.6875
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/kailh-box-navy/space-release-01.wav",
+          "category": "space",
+          "phase": "release",
+          "sourceFile": "251.wav",
+          "sourceSha256": "b5cb436faad1563e429139ef978c92440a48ec6f813161ca419fb38cc8466b78",
+          "sha256": "9282a8d4fbec0374004f1259a82ce2162bcaf35844fd2c68e352908479bb0f8d",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.up[0]",
+            "evidence": "Publisher config maps 251.wav explicitly to sounds.space.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4171,
+            "sampleRate": 44100,
+            "durationSeconds": 0.094580499,
+            "peak": 0.988555908,
+            "rms": 0.107259367,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 39.319728
+          },
+          "outputMetrics": {
+            "frames": 4327,
+            "sampleRate": 48000,
+            "durationSeconds": 0.090145833,
+            "peak": 0.39553833,
+            "rms": 0.043863758,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 34.875
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/kailh-box-navy/enter-press-01.wav",
+          "category": "enter",
+          "phase": "press",
+          "sourceFile": "301.wav",
+          "sourceSha256": "df70e1062f3221ed7fa2f7ff0742c26c4be051c9722689a9695ef762354830fb",
+          "sha256": "66f43c97c7df498d8f4c418b42855ace991e85e58948c75221faa115109af326",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.down[0]",
+            "evidence": "Publisher config maps 301.wav explicitly to sounds.enter.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3178,
+            "sampleRate": 44100,
+            "durationSeconds": 0.072063492,
+            "peak": 0.988555908,
+            "rms": 0.113804223,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.936508
+          },
+          "outputMetrics": {
+            "frames": 3247,
+            "sampleRate": 48000,
+            "durationSeconds": 0.067645833,
+            "peak": 0.41015625,
+            "rms": 0.046965511,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 3.5
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/kailh-box-navy/enter-release-01.wav",
+          "category": "enter",
+          "phase": "release",
+          "sourceFile": "351.wav",
+          "sourceSha256": "d6d12e0b57caa9612a1d232255d3f62aff8e93453f4953560c192f218a4e07f1",
+          "sha256": "50087cc4659dd9a0c2e138c8165a6854f303fc969d1aab564f61cc3e0064e59a",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.up[0]",
+            "evidence": "Publisher config maps 351.wav explicitly to sounds.enter.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2880,
+            "sampleRate": 44100,
+            "durationSeconds": 0.065306122,
+            "peak": 0.988555908,
+            "rms": 0.147671549,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.936508
+          },
+          "outputMetrics": {
+            "frames": 2922,
+            "sampleRate": 48000,
+            "durationSeconds": 0.060875,
+            "peak": 0.396453857,
+            "rms": 0.061163716,
+            "firstNonzeroMilliseconds": 0.3125,
+            "first20PercentPeakMilliseconds": 3.5
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/kailh-box-navy/backspace-press-01.wav",
+          "category": "backspace",
+          "phase": "press",
+          "sourceFile": "401.wav",
+          "sourceSha256": "14635f2fdb4b848c64acbc58935e7078413011706865cfbb5fd99d2637f4c979",
+          "sha256": "e5846d52d4fb63f571856b8bf3544d991f95e4aacf659852196f191aa0472ae2",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.down[0]",
+            "evidence": "Publisher config maps 401.wav explicitly to sounds.backspace.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4831,
+            "sampleRate": 44100,
+            "durationSeconds": 0.109546485,
+            "peak": 0.988555908,
+            "rms": 0.08013448,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 16.145125
+          },
+          "outputMetrics": {
+            "frames": 5046,
+            "sampleRate": 48000,
+            "durationSeconds": 0.105125,
+            "peak": 0.409301758,
+            "rms": 0.032704417,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 11.708333
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/kailh-box-navy/backspace-release-01.wav",
+          "category": "backspace",
+          "phase": "release",
+          "sourceFile": "451.wav",
+          "sourceSha256": "9b708ddbd10edd79c75039adc4706e135cb095c09b9f17a8861c520436eee9e1",
+          "sha256": "b7c2b96cbce6b631a75b4346b608a542dd703b4ff808e16d1a48dfff6d6f933a",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.up[0]",
+            "evidence": "Publisher config maps 451.wav explicitly to sounds.backspace.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 8068,
+            "sampleRate": 44100,
+            "durationSeconds": 0.182947846,
+            "peak": 0.988555908,
+            "rms": 0.067892476,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 6.349206
+          },
+          "outputMetrics": {
+            "frames": 8569,
+            "sampleRate": 48000,
+            "durationSeconds": 0.178520833,
+            "peak": 0.392425537,
+            "rms": 0.027488741,
+            "firstNonzeroMilliseconds": 0.375,
+            "first20PercentPeakMilliseconds": 1.895833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "novelkeys-cream",
+      "packID": "f0cc3d8e-5b1e-4412-a3f0-8a4f70912d0e",
+      "archive": {
+        "url": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/novelkeys/tplai/cream/f0cc3d8e-5b1e-4412-a3f0-8a4f70912d0e.zip",
+        "sha256": "d5b666c469e4b13aa3f7ef9d58cd1550522d756ee4f5a5d627e0f2bd3cbd7f67"
+      },
+      "configSha256": "b76497d4820441d2a4e1b4167e404635f0150edb38750b128b5683455004940a",
+      "metadata": {
+        "name": "Cream",
+        "brand": "NovelKeys",
+        "author": "tplai",
+        "supportsKeyUp": true,
+        "category": "keyboard"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/tplai/kbsim/blob/master/LICENSE.md"
+      },
+      "sourceSounds": {
+        "default": {
+          "down": [
+            "1.wav",
+            "2.wav",
+            "3.wav",
+            "4.wav",
+            "5.wav"
+          ],
+          "up": [
+            "101.wav"
+          ]
+        },
+        "space": {
+          "down": [
+            "201.wav"
+          ],
+          "up": [
+            "251.wav"
+          ]
+        },
+        "enter": {
+          "down": [
+            "301.wav"
+          ],
+          "up": [
+            "351.wav"
+          ]
+        },
+        "backspace": {
+          "down": [
+            "401.wav"
+          ],
+          "up": [
+            "451.wav"
+          ]
+        }
+      },
+      "selections": [
+        {
+          "path": "Sounds/novelkeys-cream/press-01.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "1.wav",
+          "sourceSha256": "975b1c0444a6d2d527fb387d532c91f31d80a2b43123fb3f990f0a001e179ca0",
+          "sha256": "fdd3fb13b1b187735546f0adb5bd5b1c257118faf23d5283ab17cbfb75e98938",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[0]",
+            "evidence": "Publisher config maps 1.wav explicitly to sounds.default.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3153,
+            "sampleRate": 44100,
+            "durationSeconds": 0.071496599,
+            "peak": 0.513153076,
+            "rms": 0.038871103,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.346939
+          },
+          "outputMetrics": {
+            "frames": 3219,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0670625,
+            "peak": 0.203125,
+            "rms": 0.016050255,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 2.916667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/novelkeys-cream/press-02.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "2.wav",
+          "sourceSha256": "916de52fca52d690321be9cfd580e3e2d993dbad24e054f96e8ff5da6f95e8d4",
+          "sha256": "bf67215c3181d09ca2e8fe698d7fda9d0b2294433df9f7bb4305b71ace7ca5e0",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[1]",
+            "evidence": "Publisher config maps 2.wav explicitly to sounds.default.down[1]."
+          },
+          "sourceMetrics": {
+            "frames": 3153,
+            "sampleRate": 44100,
+            "durationSeconds": 0.071496599,
+            "peak": 0.503845215,
+            "rms": 0.038906059,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.39229
+          },
+          "outputMetrics": {
+            "frames": 3219,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0670625,
+            "peak": 0.201690674,
+            "rms": 0.016064727,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 2.9375
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/novelkeys-cream/press-03.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "3.wav",
+          "sourceSha256": "730e0c655bca15cd6b2bd275fce0d39f878cc593d7edd0b99f938750f26f2002",
+          "sha256": "dc2c4a7cdcaa051b3606346392e316af8d5a9a20c2abec10fda712c6ac345e87",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[2]",
+            "evidence": "Publisher config maps 3.wav explicitly to sounds.default.down[2]."
+          },
+          "sourceMetrics": {
+            "frames": 3153,
+            "sampleRate": 44100,
+            "durationSeconds": 0.071496599,
+            "peak": 0.495117188,
+            "rms": 0.037759109,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.414966
+          },
+          "outputMetrics": {
+            "frames": 3219,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0670625,
+            "peak": 0.200500488,
+            "rms": 0.01559082,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 2.979167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/novelkeys-cream/press-04.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "4.wav",
+          "sourceSha256": "9656be17ae9816e3f6b823357766461b1a4912b9e73291feba37887e61a17b72",
+          "sha256": "45571ce61d1a861c8d56f36110c1ae6d5291be0bd46bc700feee62e7c586f827",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[3]",
+            "evidence": "Publisher config maps 4.wav explicitly to sounds.default.down[3]."
+          },
+          "sourceMetrics": {
+            "frames": 3153,
+            "sampleRate": 44100,
+            "durationSeconds": 0.071496599,
+            "peak": 0.503387451,
+            "rms": 0.039229508,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.437642
+          },
+          "outputMetrics": {
+            "frames": 3219,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0670625,
+            "peak": 0.201416016,
+            "rms": 0.016197959,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 3.0
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/novelkeys-cream/press-05.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "5.wav",
+          "sourceSha256": "4c9c03f393a540afb6ebe332f61abc659cdea0f3eddbb37c2dab58ce3cdfe590",
+          "sha256": "53fff0e5a994053dabc5d461b410ae9c776af0f718e82956530d4a4008a0dd62",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[4]",
+            "evidence": "Publisher config maps 5.wav explicitly to sounds.default.down[4]."
+          },
+          "sourceMetrics": {
+            "frames": 3153,
+            "sampleRate": 44100,
+            "durationSeconds": 0.071496599,
+            "peak": 0.49899292,
+            "rms": 0.039578934,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.460317
+          },
+          "outputMetrics": {
+            "frames": 3219,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0670625,
+            "peak": 0.201843262,
+            "rms": 0.016341044,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 3.020833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/novelkeys-cream/release-01.wav",
+          "category": "default",
+          "phase": "release",
+          "sourceFile": "101.wav",
+          "sourceSha256": "1fe12fb030292eab8ffdc4de89f6f7899f6c5805b2ca30c7fa28dfa7a947c3d0",
+          "sha256": "dbf45e3ef75e86bc69fe239b3dc875449f2d51564b199629d103f6aa4e6937f1",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.up[0]",
+            "evidence": "Publisher config maps 101.wav explicitly to sounds.default.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2880,
+            "sampleRate": 44100,
+            "durationSeconds": 0.065306122,
+            "peak": 0.390594482,
+            "rms": 0.032043904,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 17.573696
+          },
+          "outputMetrics": {
+            "frames": 2922,
+            "sampleRate": 48000,
+            "durationSeconds": 0.060875,
+            "peak": 0.154541016,
+            "rms": 0.013265956,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 13.125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/novelkeys-cream/space-press-01.wav",
+          "category": "space",
+          "phase": "press",
+          "sourceFile": "201.wav",
+          "sourceSha256": "2de0e977f1c1a0147560a87c57d112116b66a50179d973c41364da430fce9e3d",
+          "sha256": "647c5e11a27111af9cf81ce18ac1641f40b0a30fcd81ca8eae1eba6122df9204",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.down[0]",
+            "evidence": "Publisher config maps 201.wav explicitly to sounds.space.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3029,
+            "sampleRate": 44100,
+            "durationSeconds": 0.068684807,
+            "peak": 0.988555908,
+            "rms": 0.078904515,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 10.340136
+          },
+          "outputMetrics": {
+            "frames": 3084,
+            "sampleRate": 48000,
+            "durationSeconds": 0.06425,
+            "peak": 0.407165527,
+            "rms": 0.032611319,
+            "firstNonzeroMilliseconds": 0.333333,
+            "first20PercentPeakMilliseconds": 5.895833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/novelkeys-cream/space-release-01.wav",
+          "category": "space",
+          "phase": "release",
+          "sourceFile": "251.wav",
+          "sourceSha256": "7f5ddf7d7e4c0a7f684f281f5dcba2842c3e205e59095b8a2dd5d242f23bafde",
+          "sha256": "341c805eb9b5403575dcec9cbfbacfb20403a1a4642e115553d90f2b35734b44",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.up[0]",
+            "evidence": "Publisher config maps 251.wav explicitly to sounds.space.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3164,
+            "sampleRate": 44100,
+            "durationSeconds": 0.071746032,
+            "peak": 0.699035645,
+            "rms": 0.053668577,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 6.689342
+          },
+          "outputMetrics": {
+            "frames": 3231,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0673125,
+            "peak": 0.2734375,
+            "rms": 0.022160473,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 2.25
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/novelkeys-cream/enter-press-01.wav",
+          "category": "enter",
+          "phase": "press",
+          "sourceFile": "301.wav",
+          "sourceSha256": "27c31dfbe05522a8afae9b1dcf08e32d4f444beafd4c04b4104e83063935c3c2",
+          "sha256": "18f9235f9136b6281da0ecc6701692db262933c7ba96bd41534e9c4f943864f6",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.down[0]",
+            "evidence": "Publisher config maps 301.wav explicitly to sounds.enter.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3393,
+            "sampleRate": 44100,
+            "durationSeconds": 0.076938776,
+            "peak": 0.988555908,
+            "rms": 0.083181279,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 8.77551
+          },
+          "outputMetrics": {
+            "frames": 3481,
+            "sampleRate": 48000,
+            "durationSeconds": 0.072520833,
+            "peak": 0.393310547,
+            "rms": 0.034268075,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 4.333333
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/novelkeys-cream/enter-release-01.wav",
+          "category": "enter",
+          "phase": "release",
+          "sourceFile": "351.wav",
+          "sourceSha256": "a8bec0819708779b01eb695468926ad1fdf90522faf49d9e2fe4373bbfc8c101",
+          "sha256": "ce353cc6e9c08393fbd833719e7a5b03737c3f452b4522c244f10a22e5b933aa",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.up[0]",
+            "evidence": "Publisher config maps 351.wav explicitly to sounds.enter.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3259,
+            "sampleRate": 44100,
+            "durationSeconds": 0.073900227,
+            "peak": 0.082397461,
+            "rms": 0.009070618,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 12.471655
+          },
+          "outputMetrics": {
+            "frames": 3335,
+            "sampleRate": 48000,
+            "durationSeconds": 0.069479167,
+            "peak": 0.033325195,
+            "rms": 0.003740963,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 8.041667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/novelkeys-cream/backspace-press-01.wav",
+          "category": "backspace",
+          "phase": "press",
+          "sourceFile": "401.wav",
+          "sourceSha256": "504647e9cec842d92c5d9d801f4f17efe9dd3dc92709168bfeef89f571f19794",
+          "sha256": "f2541297d3b5e252feeb8162307e6d87a41cf687d43e51c443a479e1a14f2f4e",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.down[0]",
+            "evidence": "Publisher config maps 401.wav explicitly to sounds.backspace.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4485,
+            "sampleRate": 44100,
+            "durationSeconds": 0.10170068,
+            "peak": 0.988555908,
+            "rms": 0.057290995,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 35.011338
+          },
+          "outputMetrics": {
+            "frames": 4669,
+            "sampleRate": 48000,
+            "durationSeconds": 0.097270833,
+            "peak": 0.403930664,
+            "rms": 0.02342413,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 30.583333
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/novelkeys-cream/backspace-release-01.wav",
+          "category": "backspace",
+          "phase": "release",
+          "sourceFile": "451.wav",
+          "sourceSha256": "148e4171f607e68c46a485ffa8b7294c8169bd1496abb65bf269cada28539faa",
+          "sha256": "1bc07328f2a03f1b9239679243120f0f5b2067566ee0d2c363afcd186401d308",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.up[0]",
+            "evidence": "Publisher config maps 451.wav explicitly to sounds.backspace.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2960,
+            "sampleRate": 44100,
+            "durationSeconds": 0.067120181,
+            "peak": 0.441467285,
+            "rms": 0.032146301,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 14.671202
+          },
+          "outputMetrics": {
+            "frames": 3009,
+            "sampleRate": 48000,
+            "durationSeconds": 0.0626875,
+            "peak": 0.17666626,
+            "rms": 0.013301337,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 10.229167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "topre-unknown",
+      "packID": "ab2657fe-dc0a-4c75-ab74-81d8f56002b0",
+      "archive": {
+        "url": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/topre/tplai/unknown/ab2657fe-dc0a-4c75-ab74-81d8f56002b0.zip",
+        "sha256": "c374c6d04e376fd12af566a6b279f1f693e6e2ce31b447240b45014693ce9a32"
+      },
+      "configSha256": "184aaa5e024cb3bfbdf6519ed5e7146c436a7a466fedcafab74ac4be80b740c0",
+      "metadata": {
+        "name": "Unknown",
+        "brand": "Topre",
+        "author": "tplai",
+        "supportsKeyUp": true,
+        "category": "keyboard"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/tplai/kbsim/blob/master/LICENSE.md"
+      },
+      "sourceSounds": {
+        "default": {
+          "down": [
+            "1.wav",
+            "2.wav",
+            "3.wav",
+            "4.wav",
+            "5.wav"
+          ],
+          "up": [
+            "101.wav"
+          ]
+        },
+        "space": {
+          "down": [
+            "201.wav"
+          ],
+          "up": [
+            "251.wav"
+          ]
+        },
+        "enter": {
+          "down": [
+            "301.wav"
+          ],
+          "up": [
+            "351.wav"
+          ]
+        },
+        "backspace": {
+          "down": [
+            "401.wav"
+          ],
+          "up": [
+            "451.wav"
+          ]
+        }
+      },
+      "selections": [
+        {
+          "path": "Sounds/topre-unknown/press-01.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "1.wav",
+          "sourceSha256": "a21408b9a5d06009fe079b9885b046e773032e2367833ac293ad47c81407d7cb",
+          "sha256": "e887605d74d81fb50311b4cc36f85e696f4d2767911c817740c92faea8d5f020",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[0]",
+            "evidence": "Publisher config maps 1.wav explicitly to sounds.default.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 5922,
+            "sampleRate": 44100,
+            "durationSeconds": 0.134285714,
+            "peak": 0.502380371,
+            "rms": 0.065477787,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 30.249433
+          },
+          "outputMetrics": {
+            "frames": 6233,
+            "sampleRate": 48000,
+            "durationSeconds": 0.129854167,
+            "peak": 0.200683594,
+            "rms": 0.026622507,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 25.8125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/topre-unknown/press-02.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "2.wav",
+          "sourceSha256": "3b970719641bcc0eb06d86568415ada297beb302c78834c9b333dce8d16bc44a",
+          "sha256": "f37c7bd99d2271de8b9dabad36aa5d80b9683be0d0a05b877f68d204ed368f31",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[1]",
+            "evidence": "Publisher config maps 2.wav explicitly to sounds.default.down[1]."
+          },
+          "sourceMetrics": {
+            "frames": 5922,
+            "sampleRate": 44100,
+            "durationSeconds": 0.134285714,
+            "peak": 0.500061035,
+            "rms": 0.066861363,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 30.566893
+          },
+          "outputMetrics": {
+            "frames": 6233,
+            "sampleRate": 48000,
+            "durationSeconds": 0.129854167,
+            "peak": 0.200378418,
+            "rms": 0.027180964,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 26.125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/topre-unknown/press-03.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "3.wav",
+          "sourceSha256": "eb2340f6bd27068f9be2dcdcc43a84448a0f75c2611c4c532262eb7e1094f0cc",
+          "sha256": "42a0e4c0f77b18339143f5e73640fa8aa11447b5e2dbed18bfe225102b494567",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[2]",
+            "evidence": "Publisher config maps 3.wav explicitly to sounds.default.down[2]."
+          },
+          "sourceMetrics": {
+            "frames": 5922,
+            "sampleRate": 44100,
+            "durationSeconds": 0.134285714,
+            "peak": 0.543426514,
+            "rms": 0.068748242,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 30.884354
+          },
+          "outputMetrics": {
+            "frames": 6233,
+            "sampleRate": 48000,
+            "durationSeconds": 0.129854167,
+            "peak": 0.216522217,
+            "rms": 0.027950603,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 26.4375
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/topre-unknown/press-04.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "4.wav",
+          "sourceSha256": "4471e33e63238b4909933acfa51b9dd7400f946d33d27d36948a2e5d6e28e7de",
+          "sha256": "3222bcd1c4c3efe527443baefd022ebd8d1749493e60489721663676b89eaf2e",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[3]",
+            "evidence": "Publisher config maps 4.wav explicitly to sounds.default.down[3]."
+          },
+          "sourceMetrics": {
+            "frames": 5922,
+            "sampleRate": 44100,
+            "durationSeconds": 0.134285714,
+            "peak": 0.468261719,
+            "rms": 0.06706357,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 30.997732
+          },
+          "outputMetrics": {
+            "frames": 6233,
+            "sampleRate": 48000,
+            "durationSeconds": 0.129854167,
+            "peak": 0.187225342,
+            "rms": 0.027267315,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 26.5625
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/topre-unknown/press-05.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "5.wav",
+          "sourceSha256": "4f87b2677959d473df5a308240ea436e81b33de025ab7fa4ab150cf41a9a0b69",
+          "sha256": "1a5f3b6373b1b6485a57308aaa31d96bba787f621d75d6865acab9a146d30262",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[4]",
+            "evidence": "Publisher config maps 5.wav explicitly to sounds.default.down[4]."
+          },
+          "sourceMetrics": {
+            "frames": 5922,
+            "sampleRate": 44100,
+            "durationSeconds": 0.134285714,
+            "peak": 0.49710083,
+            "rms": 0.064458157,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 31.451247
+          },
+          "outputMetrics": {
+            "frames": 6233,
+            "sampleRate": 48000,
+            "durationSeconds": 0.129854167,
+            "peak": 0.198791504,
+            "rms": 0.026212291,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 27.0
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/topre-unknown/release-01.wav",
+          "category": "default",
+          "phase": "release",
+          "sourceFile": "101.wav",
+          "sourceSha256": "fdae3c40c4f98d973602ce9a9fe4178d3071c2111ccf9c37a959b15449504a47",
+          "sha256": "7021500812f3c1c124336aa52933033d901571affd284a595ba3d288e1ea098e",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.up[0]",
+            "evidence": "Publisher config maps 101.wav explicitly to sounds.default.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3305,
+            "sampleRate": 44100,
+            "durationSeconds": 0.074943311,
+            "peak": 0.988555908,
+            "rms": 0.101653693,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 7.913832
+          },
+          "outputMetrics": {
+            "frames": 3385,
+            "sampleRate": 48000,
+            "durationSeconds": 0.070520833,
+            "peak": 0.395233154,
+            "rms": 0.041754654,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 3.479167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/topre-unknown/space-press-01.wav",
+          "category": "space",
+          "phase": "press",
+          "sourceFile": "201.wav",
+          "sourceSha256": "960bf24d545c6ad230ca2f4c80e3845a54b4ec37a90e02e3de2b57cb29270352",
+          "sha256": "9d8c9b05b5bb72606e3c5ccb1e52bdc52338013a2ac6b6894a50482ccb690940",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.down[0]",
+            "evidence": "Publisher config maps 201.wav explicitly to sounds.space.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2948,
+            "sampleRate": 44100,
+            "durationSeconds": 0.066848073,
+            "peak": 0.988555908,
+            "rms": 0.119669293,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 18.095238
+          },
+          "outputMetrics": {
+            "frames": 2996,
+            "sampleRate": 48000,
+            "durationSeconds": 0.062416667,
+            "peak": 0.395874023,
+            "rms": 0.040973204,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 13.666667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/topre-unknown/space-release-01.wav",
+          "category": "space",
+          "phase": "release",
+          "sourceFile": "251.wav",
+          "sourceSha256": "4bb964915005915f6a3bd947002beabe808a1529a7103d493c16faebc80965fa",
+          "sha256": "dde1cf8915bdc9306764e66e9a1be27ec2e99dd897a7e3d9bb432d5d21c4cfaa",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.up[0]",
+            "evidence": "Publisher config maps 251.wav explicitly to sounds.space.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2808,
+            "sampleRate": 44100,
+            "durationSeconds": 0.063673469,
+            "peak": 0.988555908,
+            "rms": 0.135502299,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 12.040816
+          },
+          "outputMetrics": {
+            "frames": 2844,
+            "sampleRate": 48000,
+            "durationSeconds": 0.05925,
+            "peak": 0.415496826,
+            "rms": 0.056168379,
+            "firstNonzeroMilliseconds": 0.458333,
+            "first20PercentPeakMilliseconds": 7.666667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/topre-unknown/enter-press-01.wav",
+          "category": "enter",
+          "phase": "press",
+          "sourceFile": "301.wav",
+          "sourceSha256": "1cd98fcd228b7cd90c96cedee3bcd9b25fd4b76d0d2e8ee70a1d70c85ced5656",
+          "sha256": "8ffad274ac8af200d02acead9de28ddc91768076b0bec30224e74be1eec3af63",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.down[0]",
+            "evidence": "Publisher config maps 301.wav explicitly to sounds.enter.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4475,
+            "sampleRate": 44100,
+            "durationSeconds": 0.101473923,
+            "peak": 0.988555908,
+            "rms": 0.128531597,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 19.886621
+          },
+          "outputMetrics": {
+            "frames": 4658,
+            "sampleRate": 48000,
+            "durationSeconds": 0.097041667,
+            "peak": 0.397460938,
+            "rms": 0.05255088,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 15.4375
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/topre-unknown/enter-release-01.wav",
+          "category": "enter",
+          "phase": "release",
+          "sourceFile": "351.wav",
+          "sourceSha256": "6b0b12fe017d3e86c0774ba5da7250b799b07c90ae2b2c7ee5d01dc339e694cc",
+          "sha256": "79238f2ae133453fa8a416d5e3055232b234970b82976fdfd7833846c9aa1bb2",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.up[0]",
+            "evidence": "Publisher config maps 351.wav explicitly to sounds.enter.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2683,
+            "sampleRate": 44100,
+            "durationSeconds": 0.060839002,
+            "peak": 0.988555908,
+            "rms": 0.079966671,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 6.190476
+          },
+          "outputMetrics": {
+            "frames": 2708,
+            "sampleRate": 48000,
+            "durationSeconds": 0.056416667,
+            "peak": 0.393218994,
+            "rms": 0.033176804,
+            "firstNonzeroMilliseconds": 0.3125,
+            "first20PercentPeakMilliseconds": 1.75
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/topre-unknown/backspace-press-01.wav",
+          "category": "backspace",
+          "phase": "press",
+          "sourceFile": "401.wav",
+          "sourceSha256": "2c68297a39277b9532dac7db1567b4a15e36d63a6e801e7cabbd2c423ba4b91c",
+          "sha256": "30d84866d92d42d8c5a379e07b62d2896dc240c1b0d9c391bcba9549698bdd98",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.down[0]",
+            "evidence": "Publisher config maps 401.wav explicitly to sounds.backspace.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4728,
+            "sampleRate": 44100,
+            "durationSeconds": 0.107210884,
+            "peak": 0.988555908,
+            "rms": 0.078181837,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 18.798186
+          },
+          "outputMetrics": {
+            "frames": 4934,
+            "sampleRate": 48000,
+            "durationSeconds": 0.102791667,
+            "peak": 0.394012451,
+            "rms": 0.031877073,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 14.354167
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/topre-unknown/backspace-release-01.wav",
+          "category": "backspace",
+          "phase": "release",
+          "sourceFile": "451.wav",
+          "sourceSha256": "a21aabcbac936c00e168654d3bfc73e502896797da0748e009e1181347bf62bd",
+          "sha256": "d1fc14e4d312046a9af5391a9f1e76e836771cd29729bdd764f0cf8a5fd7445c",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.up[0]",
+            "evidence": "Publisher config maps 451.wav explicitly to sounds.backspace.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3634,
+            "sampleRate": 44100,
+            "durationSeconds": 0.082403628,
+            "peak": 0.988555908,
+            "rms": 0.105314246,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 16.213152
+          },
+          "outputMetrics": {
+            "frames": 3743,
+            "sampleRate": 48000,
+            "durationSeconds": 0.077979167,
+            "peak": 0.411315918,
+            "rms": 0.043278308,
+            "firstNonzeroMilliseconds": 0.5,
+            "first20PercentPeakMilliseconds": 11.770833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "ibm-buckling-spring",
+      "packID": "61861d39-1242-41f5-8cf9-5823c472ce28",
+      "archive": {
+        "url": "https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/keyboard/ibm/tplai/buckling_spring/61861d39-1242-41f5-8cf9-5823c472ce28.zip",
+        "sha256": "ed11e534aee8a0818874cf9ed301a3ef3ee152da6c539a7287e699228a9fedc9"
+      },
+      "configSha256": "27eeb24c765083cbcc96f21063b4230b98de9108bc55c85d3696bdbaa6837182",
+      "metadata": {
+        "name": "Buckling Spring",
+        "brand": "IBM",
+        "author": "tplai",
+        "supportsKeyUp": true,
+        "category": "keyboard"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/tplai/kbsim/blob/master/LICENSE.md"
+      },
+      "sourceSounds": {
+        "default": {
+          "down": [
+            "1.wav",
+            "2.wav",
+            "3.wav",
+            "4.wav",
+            "5.wav"
+          ],
+          "up": [
+            "101.wav"
+          ]
+        },
+        "space": {
+          "down": [
+            "201.wav"
+          ],
+          "up": [
+            "251.wav"
+          ]
+        },
+        "enter": {
+          "down": [
+            "301.wav"
+          ],
+          "up": [
+            "351.wav"
+          ]
+        },
+        "backspace": {
+          "down": [
+            "401.wav"
+          ],
+          "up": [
+            "451.wav"
+          ]
+        }
+      },
+      "selections": [
+        {
+          "path": "Sounds/ibm-buckling-spring/press-01.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "1.wav",
+          "sourceSha256": "314ccfe47478c411b17c6c0aadcda3dff4b812997dbb7d2e1944397b361407e6",
+          "sha256": "908e886e1df606dcd8f61b150c7cc3b9c336fa209c68b9b78341ac447bdb2709",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[0]",
+            "evidence": "Publisher config maps 1.wav explicitly to sounds.default.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 5872,
+            "sampleRate": 44100,
+            "durationSeconds": 0.133151927,
+            "peak": 0.499938965,
+            "rms": 0.048427976,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 17.482993
+          },
+          "outputMetrics": {
+            "frames": 6179,
+            "sampleRate": 48000,
+            "durationSeconds": 0.128729167,
+            "peak": 0.198516846,
+            "rms": 0.019700508,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 13.0625
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/ibm-buckling-spring/press-02.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "2.wav",
+          "sourceSha256": "7d165654289081b3c60e55fd9035b160babf20752b7c4144abecb8d1c7842fbf",
+          "sha256": "94cc308c60c23a87e2d4c38805507bce72a02156f30f9773e2540ed233bf2dc7",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[1]",
+            "evidence": "Publisher config maps 2.wav explicitly to sounds.default.down[1]."
+          },
+          "sourceMetrics": {
+            "frames": 5872,
+            "sampleRate": 44100,
+            "durationSeconds": 0.133151927,
+            "peak": 0.385040283,
+            "rms": 0.039245931,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 17.346939
+          },
+          "outputMetrics": {
+            "frames": 6179,
+            "sampleRate": 48000,
+            "durationSeconds": 0.128729167,
+            "peak": 0.157653809,
+            "rms": 0.015965216,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 13.125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/ibm-buckling-spring/press-03.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "3.wav",
+          "sourceSha256": "75c7542953e24235c5e53b3e286e7e851637d4af149aee52ccbaf6433d954b64",
+          "sha256": "655e404c65471ca0a6116161a98ce961cfb47b13531bf6fb533e0cd880955d87",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[2]",
+            "evidence": "Publisher config maps 3.wav explicitly to sounds.default.down[2]."
+          },
+          "sourceMetrics": {
+            "frames": 5872,
+            "sampleRate": 44100,
+            "durationSeconds": 0.133151927,
+            "peak": 0.523132324,
+            "rms": 0.048801531,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 17.777778
+          },
+          "outputMetrics": {
+            "frames": 6179,
+            "sampleRate": 48000,
+            "durationSeconds": 0.128729167,
+            "peak": 0.210479736,
+            "rms": 0.019852496,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 13.333333
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/ibm-buckling-spring/press-04.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "4.wav",
+          "sourceSha256": "f1fa7070536021add8c074f446a498be80b2d778ab524fdfcc2150e03b95f725",
+          "sha256": "04628efa3c8d21767bfe8e84512a80c5ee9e89f3bba4084f282d98ded474075e",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[3]",
+            "evidence": "Publisher config maps 4.wav explicitly to sounds.default.down[3]."
+          },
+          "sourceMetrics": {
+            "frames": 5872,
+            "sampleRate": 44100,
+            "durationSeconds": 0.133151927,
+            "peak": 0.489471436,
+            "rms": 0.049171584,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 17.936508
+          },
+          "outputMetrics": {
+            "frames": 6179,
+            "sampleRate": 48000,
+            "durationSeconds": 0.128729167,
+            "peak": 0.193359375,
+            "rms": 0.020002846,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 13.5
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/ibm-buckling-spring/press-05.wav",
+          "category": "default",
+          "phase": "press",
+          "sourceFile": "5.wav",
+          "sourceSha256": "beb4840cdbf765aa3b837635886f80b85bbbf62b4f3131c95c7e740cbda307aa",
+          "sha256": "3d805cf28cd51b3da94e4ef4378856cb21d827592d0775ed0ecf1c8af754d299",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.down[4]",
+            "evidence": "Publisher config maps 5.wav explicitly to sounds.default.down[4]."
+          },
+          "sourceMetrics": {
+            "frames": 5872,
+            "sampleRate": 44100,
+            "durationSeconds": 0.133151927,
+            "peak": 0.539093018,
+            "rms": 0.050033275,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 18.095238
+          },
+          "outputMetrics": {
+            "frames": 6179,
+            "sampleRate": 48000,
+            "durationSeconds": 0.128729167,
+            "peak": 0.217590332,
+            "rms": 0.020353618,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 13.645833
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/ibm-buckling-spring/release-01.wav",
+          "category": "default",
+          "phase": "release",
+          "sourceFile": "101.wav",
+          "sourceSha256": "550f65da05bfea55a10c804fb9cdd472d971d2d99a002dac2c2e36eae82a5e64",
+          "sha256": "aa4682aae4b40b30deb7158d59d12c7ddc4790969ffa9d3eed1dfe1eba4c6664",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.default.up[0]",
+            "evidence": "Publisher config maps 101.wav explicitly to sounds.default.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4777,
+            "sampleRate": 44100,
+            "durationSeconds": 0.108321995,
+            "peak": 0.343536377,
+            "rms": 0.031633142,
+            "firstNonzeroMilliseconds": 26.326531,
+            "first20PercentPeakMilliseconds": 38.61678
+          },
+          "outputMetrics": {
+            "frames": 3961,
+            "sampleRate": 48000,
+            "durationSeconds": 0.082520833,
+            "peak": 0.133911133,
+            "rms": 0.014490897,
+            "firstNonzeroMilliseconds": 2.729167,
+            "first20PercentPeakMilliseconds": 12.8125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 1161,
+            "removedDigitalLeadingFrames44100Hz": 1138,
+            "removedLeadingFrames48000Hz": 1239,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/ibm-buckling-spring/space-press-01.wav",
+          "category": "space",
+          "phase": "press",
+          "sourceFile": "201.wav",
+          "sourceSha256": "d932a700ab8c3dd38c24ac8f3579767feabc4bfe7db659a07fc73ee80aacc08a",
+          "sha256": "0ac7b7f8c48927980de4629abb35567d09d966199be6f49399d6568311b8ce40",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.down[0]",
+            "evidence": "Publisher config maps 201.wav explicitly to sounds.space.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 6359,
+            "sampleRate": 44100,
+            "durationSeconds": 0.144195011,
+            "peak": 0.463470459,
+            "rms": 0.042726661,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 8.253968
+          },
+          "outputMetrics": {
+            "frames": 6709,
+            "sampleRate": 48000,
+            "durationSeconds": 0.139770833,
+            "peak": 0.185699463,
+            "rms": 0.017358694,
+            "firstNonzeroMilliseconds": 0.3125,
+            "first20PercentPeakMilliseconds": 3.8125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/ibm-buckling-spring/space-release-01.wav",
+          "category": "space",
+          "phase": "release",
+          "sourceFile": "251.wav",
+          "sourceSha256": "d555a0813ff18729d441777ddfa800aa5736d3c05e65e6f5e53f4e649fcd01e8",
+          "sha256": "c15ae72283f24dfe0722f4781d22423819de40de149991cc7c96e226fd113313",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.space.up[0]",
+            "evidence": "Publisher config maps 251.wav explicitly to sounds.space.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4793,
+            "sampleRate": 44100,
+            "durationSeconds": 0.108684807,
+            "peak": 0.57321167,
+            "rms": 0.053409475,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 22.44898
+          },
+          "outputMetrics": {
+            "frames": 5004,
+            "sampleRate": 48000,
+            "durationSeconds": 0.10425,
+            "peak": 0.229736328,
+            "rms": 0.021809764,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 18.0
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/ibm-buckling-spring/enter-press-01.wav",
+          "category": "enter",
+          "phase": "press",
+          "sourceFile": "301.wav",
+          "sourceSha256": "23490cb82cde40c3ccc2cac233c2c10382d8c14fe708ab8ea1488954812d0200",
+          "sha256": "fd194a343d9ae44c9419e991ae545e7ecac3ade039d5ca6e420e337c72c2483f",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.down[0]",
+            "evidence": "Publisher config maps 301.wav explicitly to sounds.enter.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4107,
+            "sampleRate": 44100,
+            "durationSeconds": 0.093129252,
+            "peak": 0.557312012,
+            "rms": 0.061403839,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 31.451247
+          },
+          "outputMetrics": {
+            "frames": 4258,
+            "sampleRate": 48000,
+            "durationSeconds": 0.088708333,
+            "peak": 0.229034424,
+            "rms": 0.025155643,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 27.0
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/ibm-buckling-spring/enter-release-01.wav",
+          "category": "enter",
+          "phase": "release",
+          "sourceFile": "351.wav",
+          "sourceSha256": "32b321e683ffd6bae3b48ef34d836c8851fda60ca8c2f1137cb9a7a986d4ffc0",
+          "sha256": "798ff24e4ef0dcaa833f3bc60a920f468ee811335d9f1134b6163138987813cb",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.enter.up[0]",
+            "evidence": "Publisher config maps 351.wav explicitly to sounds.enter.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 3293,
+            "sampleRate": 44100,
+            "durationSeconds": 0.074671202,
+            "peak": 0.381011963,
+            "rms": 0.046993982,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 23.446712
+          },
+          "outputMetrics": {
+            "frames": 3372,
+            "sampleRate": 48000,
+            "durationSeconds": 0.07025,
+            "peak": 0.153198242,
+            "rms": 0.019346053,
+            "firstNonzeroMilliseconds": 0.479167,
+            "first20PercentPeakMilliseconds": 19.0
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/ibm-buckling-spring/backspace-press-01.wav",
+          "category": "backspace",
+          "phase": "press",
+          "sourceFile": "401.wav",
+          "sourceSha256": "f3431c04e7d086d57c2af99e192751cff79434b040beda1adbde2800fbecd81a",
+          "sha256": "5ec786404b4f9c7f820a0dc51ae78afaee88a3f0f507963538f43a16787fc11e",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.down[0]",
+            "evidence": "Publisher config maps 401.wav explicitly to sounds.backspace.down[0]."
+          },
+          "sourceMetrics": {
+            "frames": 4997,
+            "sampleRate": 44100,
+            "durationSeconds": 0.113310658,
+            "peak": 0.596405029,
+            "rms": 0.054921841,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 21.950113
+          },
+          "outputMetrics": {
+            "frames": 5226,
+            "sampleRate": 48000,
+            "durationSeconds": 0.108875,
+            "peak": 0.245666504,
+            "rms": 0.022407427,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 19.041667
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        },
+        {
+          "path": "Sounds/ibm-buckling-spring/backspace-release-01.wav",
+          "category": "backspace",
+          "phase": "release",
+          "sourceFile": "451.wav",
+          "sourceSha256": "d54c4b3d7f1c24597c8b2ecca1bbe6f9d268dc36cc258536d2add17a24949ed3",
+          "sha256": "e5a39dedbb64434e52b4141ca37675f5c5abcc6352ac5f363da653ea3de483c8",
+          "identification": {
+            "status": "verified",
+            "method": "source-config",
+            "configPointer": "sounds.backspace.up[0]",
+            "evidence": "Publisher config maps 451.wav explicitly to sounds.backspace.up[0]."
+          },
+          "sourceMetrics": {
+            "frames": 2942,
+            "sampleRate": 44100,
+            "durationSeconds": 0.066712018,
+            "peak": 0.247802734,
+            "rms": 0.033592615,
+            "firstNonzeroMilliseconds": 4.965986,
+            "first20PercentPeakMilliseconds": 28.253968
+          },
+          "outputMetrics": {
+            "frames": 2990,
+            "sampleRate": 48000,
+            "durationSeconds": 0.062291667,
+            "peak": 0.101715088,
+            "rms": 0.013857798,
+            "firstNonzeroMilliseconds": 0.520833,
+            "first20PercentPeakMilliseconds": 23.8125
+          },
+          "processing": {
+            "firstSourceNonzeroFrame": 219,
+            "removedDigitalLeadingFrames44100Hz": 196,
+            "removedLeadingFrames48000Hz": 213,
+            "commonGain": 0.4
+          }
+        }
+      ]
+    }
+  ]
+}

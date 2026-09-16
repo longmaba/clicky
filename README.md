@@ -1,7 +1,7 @@
 # Clicky
 
 Make every keystroke feel good. Clicky is a native, offline Mac app that adds
-mechanical keyboard sounds to your typing, with ten sound profiles, soft
+mechanical keyboard sounds to your typing, with twenty sound profiles, soft
 modifiers, sound tuning, and an interactive 3D notch keyboard.
 
 [Website & sound playground](https://longmaba.github.io/clicky/) ·
@@ -28,7 +28,7 @@ keeps playing when Settings closes.
 
 ## What it does
 
-- Ten sound profiles with six cleaned stroke variants each, plus custom imports.
+- Twenty sound profiles, including ten with separate press and release recordings, plus custom imports.
 - Adjustable tone, pitch, volume, stereo positioning, and per-key overrides.
 - Soft modifier sounds so shortcuts feel balanced, with six favorite presets.
 - Optional keyboard, keystroke, combo, and bezel visualizers, and a draggable 3D keyboard.
@@ -100,15 +100,43 @@ Global capture observes physical input for sound/visual feedback. Typed strings
 are not saved or sent to a service. Secure Event Input pauses background feedback,
 including when enabled by password fields or terminal applications. Some keyboard
 firmware does not expose a separate Fn event; Touch ID/power are not ordinary keys.
+Mouse sounds follow macOS left, right, and middle button events, including
+trackpad tap-to-click. When that event stream is unavailable, supported raw HID
+mouse buttons remain a fallback.
 
 ## Sounds and controls
 
-The ten recorded banks are **Thocky, Marbly, Silent, Poppy, Clicky, Bubble Wrap,
-Clacky, Creamy, Deep Thock, and Office**, with six variants each. Volume, tone,
+The original ten banks are **Thocky, Marbly, Silent, Poppy, Clicky, Bubble Wrap,
+Clacky, Creamy, Deep Thock, and Office**, with six press variants each.
+
+Ten additional packs by **tplai**, imported from
+[thock-soundpacks](https://github.com/kamillobinski/thock-soundpacks), provide
+separate press and release recordings: **Alps SKCM Blue, Drop Holy Panda,
+Durock Alpaca, Gateron Ink Black, Gateron Ink Red, Gateron Turquoise Tealios,
+Kailh Box Navy, NovelKeys Cream, Topre Unknown, and IBM Buckling Spring**.
+They also include distinct Space, Enter, and Backspace recordings.
+
+Volume, tone,
 pitch, stereo width, variation, normalization, per-key overrides, and favorites
 are adjustable. Mouse and Enter effects include original Soft, Crisp, Hard, Ding,
 and Typewriter sounds. WAV, AIFF, MP3, and M4A imports up to 15 seconds can provide
 custom press sounds and optional separately supplied release sounds.
+
+**Extra Sounds → Mouse clicks → Razer Orochi V2** adds recorded button-down/up
+sounds by Sadiquecat (CC0), alongside the original mouse options. Left and right
+buttons have distinct recordings; middle click uses the left pair. Releases play
+on physical button-up, and previews use a 100 ms hold. The website's **Mouse sound**
+selector offers the same pack. Soft remains the default.
+
+The app and website play a supported profile's release on physical key-up,
+including modifiers; previews play a complete stroke with a 100 ms hold.
+Release playback is automatic and needs no setting. The original ten banks
+remain press-only: their supplied continuous recording did not yield a
+confidently identified isolated release in the
+[source review](docs/verification/release-source-review.md).
+
+Recorded keyboard and mouse releases play about 3 dB softer (70% gain), including
+previews. Press levels and custom imports keep their configured volume.
 
 **Modifier sounds** offers Soft (25% of normal modifier volume), Silent, and Full.
 Soft is the default for Command, Shift, Option, Control and Fn, on either side of
@@ -128,7 +156,7 @@ by a future Windows implementation.
 
 ## Source audio and reproducibility
 
-The supplied MP4 contains video only. The app's audio was extracted from its
+The supplied MP4 contains video only. The original ten banks were extracted from its
 companion file:
 
 `Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f251.webm`
@@ -139,11 +167,24 @@ not independently recorded press/release stems. Silent retains its quiet source
 character. The five extra effects and the amber keycap icon are original
 procedurally generated assets. Source media is not copied into the app bundle.
 
+The ten paired packs are pinned to registry revision
+`213e1443c5005a99d5e51b46e31e17f30e4d752a` in `Assets/thock-sources.json`.
+`Assets/thock-import.json` records each publisher down/up mapping, source/output
+hash, and processing step. A common gain, resampling, digital-silence trimming,
+and short edge fades preserve each pack's recorded phase balance. Original
+profiles and their normalization reference remain unchanged. The packs' MIT
+license is included in the app and website; see [sound credits](THIRD_PARTY_NOTICES.md).
+
 ```sh
 python3 scripts/extract_sounds.py --ffmpeg /path/to/ffmpeg
 python3 scripts/extract_sounds.py --ffmpeg /path/to/ffmpeg --check
+python3 scripts/import_thock_sounds.py --ffmpeg /path/to/ffmpeg --check
+python3 scripts/import_thock_mouse_sounds.py --ffmpeg /path/to/ffmpeg --check
 python3 scripts/check_sound_assets.py
+python3 scripts/check_mouse_sound_assets.py
 python3 scripts/audition_sounds.py --output /tmp/clicky-audition.wav --play
+python3 scripts/audition_sounds.py --profile novelkeys-cream --category all --hold 0.03 --hold 0.1 --hold 0.3
+python3 scripts/audition_sounds.py --mouse --category all --hold 0.03 --hold 0.1 --hold 0.3
 swift scripts/create_icon.swift Assets/AppIcon.icns
 ```
 
@@ -164,9 +205,11 @@ physical typing or replace permission/hardware tests. Asset format, edge, headro
 and reproducibility checks passed during creation. Human listening and real hardware
 verification remain necessary; see `docs/TESTING.md` for the manual matrix.
 
-`check_sound_assets.py` also detects sharp secondary impacts inside recorded
-strokes, with separate analysis for Silent/Office's rounded bodies. The 0.1.4
-review covers all 60 recorded variants and five generated effects. Typewriter's
+`check_sound_assets.py` checks all 181 keyboard WAVs and five generated effects.
+It validates the new packs' publisher phase mappings and hashes, and detects
+sharp secondary impacts in original stroke excerpts, with separate analysis
+for Silent/Office's rounded bodies. The 0.1.4 review covers the original 60
+variants and five generated effects. Typewriter's
 mechanical return is an intentional part of that optional Enter effect.
 
 The notch diagnostic replays mouse events through Clicky's own inactive panel,
@@ -186,8 +229,10 @@ python3 -m http.server 8080 --directory build/website
 
 Open `http://localhost:8080`. Typing anywhere on the page plays the selected
 profile and shows a key effect by default; no toggle or input focus is required.
-Samples preload silently, and the first keypress unlocks browser audio. Volume
-0 mutes sound. The optional typing field is cleared when the page loses focus,
+Ordinary left, right, and middle mouse clicks play the bundled Soft effect.
+On-screen keys play the selected keyboard profile; dragging rotates the keyboard.
+Samples preload silently, and the first keypress or click unlocks browser audio.
+Volume 0 mutes both keyboard and mouse sound. The optional typing field is cleared when the page loses focus,
 and no typed text is collected or stored.
 `website/config.js` holds the repository, release, and donation links. The
 GitHub Pages workflow publishes the prepared site on changes to `main`; repository

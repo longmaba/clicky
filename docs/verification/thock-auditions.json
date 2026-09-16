@@ -1,0 +1,723 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-09-16",
+  "artifactStorage": "Generated WAVs and timelines remain untracked in build/auditions/thock. This document preserves their measured metadata.",
+  "sourceIndexSha256": "5c76fdf498c38e447bde778d348f66c241e0c0cb09152b88e2171e24ddf7d242",
+  "sourceLockSha256": "a1c7bc5f75bd37390e62eafcde7885a088b727a247bb8862a4c9af0dc0700fcb",
+  "sourceImportSha256": "c247ebd3bdec8ec75b1487cdde6c8103a813393df1fbd9adc9e57ede9b5ea2a0",
+  "generation": {
+    "tool": "scripts/audition_sounds.py:build_audition",
+    "category": "all",
+    "gapSeconds": 0.22,
+    "sampleRate": 48000,
+    "pairHoldSeconds": [
+      0.03,
+      0.1,
+      0.3
+    ],
+    "fastTypingIntervalSeconds": 0.07,
+    "fastTypingVoices": 2,
+    "fastTypingGain": 0.5
+  },
+  "verification": {
+    "artifactCount": 34,
+    "uniqueSourceSamplesCovered": 121,
+    "pairedVoiceTimingsChecked": 960,
+    "maximumPCMAbsolutePeak": 0.44619751,
+    "maximumPeakDbFS": -7.009457,
+    "clippedArtifacts": 0,
+    "format": "mono PCM16 48000 Hz",
+    "checks": [
+      "WAV and timeline SHA256",
+      "Encoded peak and duration",
+      "Timeline event and unique-source counts",
+      "All four source key categories",
+      "Release timing at each requested hold",
+      "All 121 imported source samples covered"
+    ]
+  },
+  "source": "Assets/thock-sources.json",
+  "sourceProfileIDs": [
+    "alps-skcm-blue",
+    "drop-holy-panda",
+    "durock-alpaca",
+    "gateron-ink-black",
+    "gateron-ink-red",
+    "gateron-turquoise-tealios",
+    "kailh-box-navy",
+    "novelkeys-cream",
+    "topre-unknown",
+    "ibm-buckling-spring"
+  ],
+  "categories": [
+    "default",
+    "space",
+    "enter",
+    "backspace"
+  ],
+  "listeningReview": "Not performed; these generated artifacts support user listening review.",
+  "artifacts": [
+    {
+      "wav": "build/auditions/thock/alps-skcm-blue-press-all-categories.wav",
+      "timeline": "build/auditions/thock/alps-skcm-blue-press-all-categories.json",
+      "profileIDs": [
+        "alps-skcm-blue"
+      ],
+      "phase": "press",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 5.39375,
+      "peak": 0.288146973,
+      "eventCount": 8,
+      "uniqueSourceSampleCount": 8,
+      "sha256": "f5e9a1b23a7bae8b1eda2327210ad1bfccf27a13341f33b7e051d70ae1de573b",
+      "timelineSha256": "81184829398996a7acab55aff3cec2dde17942e720ef0c1041ce9b657312941a"
+    },
+    {
+      "wav": "build/auditions/thock/alps-skcm-blue-release-all-categories.wav",
+      "timeline": "build/auditions/thock/alps-skcm-blue-release-all-categories.json",
+      "profileIDs": [
+        "alps-skcm-blue"
+      ],
+      "phase": "release",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 4.462125,
+      "peak": 0.097717285,
+      "eventCount": 5,
+      "uniqueSourceSampleCount": 5,
+      "sha256": "b534fa28d189ea9d7d85a44c3733d89fb28b1fa76d476ded12cf332ae23ae27b",
+      "timelineSha256": "e8f13b64e1c22fad664415eeae8feb5c918a210c24916a652cef46d2b4c44b3e"
+    },
+    {
+      "wav": "build/auditions/thock/alps-skcm-blue-pair-all-categories.wav",
+      "timeline": "build/auditions/thock/alps-skcm-blue-pair-all-categories.json",
+      "profileIDs": [
+        "alps-skcm-blue"
+      ],
+      "phase": "pair",
+      "holdSeconds": [
+        0.03,
+        0.1,
+        0.3
+      ],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 13.90825,
+      "peak": 0.294250488,
+      "eventCount": 48,
+      "uniqueSourceSampleCount": 13,
+      "sha256": "c6c600a3723ccdfaabcbf88fb160958824156ca331abbdba554269c868b498c6",
+      "timelineSha256": "fa7522ee3bb0f91a3a3a1cfc999aaeb0402c9a7ec062531e779698b84c409d6b"
+    },
+    {
+      "wav": "build/auditions/thock/drop-holy-panda-press-all-categories.wav",
+      "timeline": "build/auditions/thock/drop-holy-panda-press-all-categories.json",
+      "profileIDs": [
+        "drop-holy-panda"
+      ],
+      "phase": "press",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 5.393854,
+      "peak": 0.26385498,
+      "eventCount": 8,
+      "uniqueSourceSampleCount": 8,
+      "sha256": "33bfe369daa7e9a9ae48ffcd74b74ff6538c1d2be69c0c2d973eaf67867b1064",
+      "timelineSha256": "dea80b7cf47900a04e4b4e15ed3c4ede402ac634bd5c318a06c369f117058f62"
+    },
+    {
+      "wav": "build/auditions/thock/drop-holy-panda-release-all-categories.wav",
+      "timeline": "build/auditions/thock/drop-holy-panda-release-all-categories.json",
+      "profileIDs": [
+        "drop-holy-panda"
+      ],
+      "phase": "release",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 3.898,
+      "peak": 0.099914551,
+      "eventCount": 4,
+      "uniqueSourceSampleCount": 4,
+      "sha256": "0c858861a1a52d39b0558021598bce45ae7a28c006d80eba1a9d4647edb0cb20",
+      "timelineSha256": "f2dd3b1a5d9df8af1bda9794779339ab3896ecf49d0a542b42b08c844ea1572f"
+    },
+    {
+      "wav": "build/auditions/thock/drop-holy-panda-pair-all-categories.wav",
+      "timeline": "build/auditions/thock/drop-holy-panda-pair-all-categories.json",
+      "profileIDs": [
+        "drop-holy-panda"
+      ],
+      "phase": "pair",
+      "holdSeconds": [
+        0.03,
+        0.1,
+        0.3
+      ],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 12.997188,
+      "peak": 0.26385498,
+      "eventCount": 48,
+      "uniqueSourceSampleCount": 12,
+      "sha256": "726d8be567ed65502ef7c3d678c5ce89cab3b17ddd5acf1fed9300a3df1fc9d1",
+      "timelineSha256": "acf556cdcd83682677a6bacaab84819e1e2184c1be9b792eb46c6151b156e49b"
+    },
+    {
+      "wav": "build/auditions/thock/durock-alpaca-press-all-categories.wav",
+      "timeline": "build/auditions/thock/durock-alpaca-press-all-categories.json",
+      "profileIDs": [
+        "durock-alpaca"
+      ],
+      "phase": "press",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 5.282708,
+      "peak": 0.396118164,
+      "eventCount": 8,
+      "uniqueSourceSampleCount": 8,
+      "sha256": "6b582a641d144f7cf13fb1360723fc6258ba21b19854b02c0cea5092f76f6b4d",
+      "timelineSha256": "743727d6ef099d507bbcafa4b6c8e7bedf8b66cd2eb66adb08c2994a58eb9335"
+    },
+    {
+      "wav": "build/auditions/thock/durock-alpaca-release-all-categories.wav",
+      "timeline": "build/auditions/thock/durock-alpaca-release-all-categories.json",
+      "profileIDs": [
+        "durock-alpaca"
+      ],
+      "phase": "release",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 4.027687,
+      "peak": 0.235107422,
+      "eventCount": 4,
+      "uniqueSourceSampleCount": 4,
+      "sha256": "d012ee7587d6078b3b8f67ba97beea0eeb4154f5626dbb44942be2603f186583",
+      "timelineSha256": "39141beefafb70b755634d4a0d1901e6e16b36462794497d2c2027d1482c7d85"
+    },
+    {
+      "wav": "build/auditions/thock/durock-alpaca-pair-all-categories.wav",
+      "timeline": "build/auditions/thock/durock-alpaca-pair-all-categories.json",
+      "profileIDs": [
+        "durock-alpaca"
+      ],
+      "phase": "pair",
+      "holdSeconds": [
+        0.03,
+        0.1,
+        0.3
+      ],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 13.091417,
+      "peak": 0.396118164,
+      "eventCount": 48,
+      "uniqueSourceSampleCount": 12,
+      "sha256": "d2709b3fec644c74b7e79b2aeb56ad27181286353bda121d3674836ccddf7ba1",
+      "timelineSha256": "57186f26a4cb9d8f63ab59b3deaa3f814e3810d81aa3dc8dbcb80221726dcc80"
+    },
+    {
+      "wav": "build/auditions/thock/gateron-ink-black-press-all-categories.wav",
+      "timeline": "build/auditions/thock/gateron-ink-black-press-all-categories.json",
+      "profileIDs": [
+        "gateron-ink-black"
+      ],
+      "phase": "press",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 5.156562,
+      "peak": 0.305297852,
+      "eventCount": 8,
+      "uniqueSourceSampleCount": 8,
+      "sha256": "82b1bc99c43413d52a8d2ea0ccdbb2e27deab41022ef88425c4bc4e72ee9b6bd",
+      "timelineSha256": "241e00153e64197b5c1d87e00a66861bf7d994ea3d7d1eacb5cc5a5e09f4a683"
+    },
+    {
+      "wav": "build/auditions/thock/gateron-ink-black-release-all-categories.wav",
+      "timeline": "build/auditions/thock/gateron-ink-black-release-all-categories.json",
+      "profileIDs": [
+        "gateron-ink-black"
+      ],
+      "phase": "release",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 4.042875,
+      "peak": 0.10458374,
+      "eventCount": 4,
+      "uniqueSourceSampleCount": 4,
+      "sha256": "5182922e3b974bcb2ba5d0cf2de9fac7ea6efa1a775684946bd821e97d032ef2",
+      "timelineSha256": "011b1bf1a450b60295897bce73fc1e9edf06df1dccca9937663ea9775c80abb5"
+    },
+    {
+      "wav": "build/auditions/thock/gateron-ink-black-pair-all-categories.wav",
+      "timeline": "build/auditions/thock/gateron-ink-black-pair-all-categories.json",
+      "profileIDs": [
+        "gateron-ink-black"
+      ],
+      "phase": "pair",
+      "holdSeconds": [
+        0.03,
+        0.1,
+        0.3
+      ],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 13.111875,
+      "peak": 0.305297852,
+      "eventCount": 48,
+      "uniqueSourceSampleCount": 12,
+      "sha256": "b8d9b710446c18d2bac33f6315bb1e10748e4cc0efd8e692212165390355c704",
+      "timelineSha256": "8c752d24bc2e8b09d4ae294abd0fa703b4a26259c7337c891cc771085fc4b881"
+    },
+    {
+      "wav": "build/auditions/thock/gateron-ink-red-press-all-categories.wav",
+      "timeline": "build/auditions/thock/gateron-ink-red-press-all-categories.json",
+      "profileIDs": [
+        "gateron-ink-red"
+      ],
+      "phase": "press",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 5.365083,
+      "peak": 0.278686523,
+      "eventCount": 8,
+      "uniqueSourceSampleCount": 8,
+      "sha256": "c96511358d220a96f7f832171f5126919d1fbbc08308554b2f18e8d16bc0eab3",
+      "timelineSha256": "09b901a76253ce0823b9019a0b8a967307e2272ef70bf88631f8158e5e5eceba"
+    },
+    {
+      "wav": "build/auditions/thock/gateron-ink-red-release-all-categories.wav",
+      "timeline": "build/auditions/thock/gateron-ink-red-release-all-categories.json",
+      "profileIDs": [
+        "gateron-ink-red"
+      ],
+      "phase": "release",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 3.991792,
+      "peak": 0.077026367,
+      "eventCount": 4,
+      "uniqueSourceSampleCount": 4,
+      "sha256": "eb192a9e0b6178a5a896515332ada865ba9e81592b81b45a533010264442587f",
+      "timelineSha256": "a6850948944faf7292e8b1a28753ba1de9a85af7a4fbdc48b29f1a2e2a084e3e"
+    },
+    {
+      "wav": "build/auditions/thock/gateron-ink-red-pair-all-categories.wav",
+      "timeline": "build/auditions/thock/gateron-ink-red-pair-all-categories.json",
+      "profileIDs": [
+        "gateron-ink-red"
+      ],
+      "phase": "pair",
+      "holdSeconds": [
+        0.03,
+        0.1,
+        0.3
+      ],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 12.99125,
+      "peak": 0.279388428,
+      "eventCount": 48,
+      "uniqueSourceSampleCount": 12,
+      "sha256": "80fc52db6bb491af00cd77c6e6f3ecf0c8177824de3602952908521d0c79a2f6",
+      "timelineSha256": "bf64da27a08a4421c7976cb3aa03aa41fbae576d40f66be16f2e8de5787d3cea"
+    },
+    {
+      "wav": "build/auditions/thock/gateron-turquoise-tealios-press-all-categories.wav",
+      "timeline": "build/auditions/thock/gateron-turquoise-tealios-press-all-categories.json",
+      "profileIDs": [
+        "gateron-turquoise-tealios"
+      ],
+      "phase": "press",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 5.282417,
+      "peak": 0.208618164,
+      "eventCount": 8,
+      "uniqueSourceSampleCount": 8,
+      "sha256": "f06ffa07f203daf9f9c229d932424b1523ccd8ef8c127196ca35e4cd6f7efe3e",
+      "timelineSha256": "e4ece34e9c618b8be6821d80cde3c4bb3b2402fbbcb829ef35aa109685ab81ba"
+    },
+    {
+      "wav": "build/auditions/thock/gateron-turquoise-tealios-release-all-categories.wav",
+      "timeline": "build/auditions/thock/gateron-turquoise-tealios-release-all-categories.json",
+      "profileIDs": [
+        "gateron-turquoise-tealios"
+      ],
+      "phase": "release",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 3.9185,
+      "peak": 0.086853027,
+      "eventCount": 4,
+      "uniqueSourceSampleCount": 4,
+      "sha256": "516d9d65dd4c8146eaa6f4e18efe8176abfef2ffd0434a5123a4999b8212af84",
+      "timelineSha256": "8cd2015082265ed4ccaad1c6e36675cd7f25b47b445b138272792f399d2b0e5d"
+    },
+    {
+      "wav": "build/auditions/thock/gateron-turquoise-tealios-pair-all-categories.wav",
+      "timeline": "build/auditions/thock/gateron-turquoise-tealios-pair-all-categories.json",
+      "profileIDs": [
+        "gateron-turquoise-tealios"
+      ],
+      "phase": "pair",
+      "holdSeconds": [
+        0.03,
+        0.1,
+        0.3
+      ],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 12.636479,
+      "peak": 0.208618164,
+      "eventCount": 48,
+      "uniqueSourceSampleCount": 12,
+      "sha256": "645a1dfd16f870de7a44643d93d3fc13e1603df27464ad1a0b3347cc75323fc9",
+      "timelineSha256": "34cb094b231e764570b0aa12a1b45a3e2626d4d62a16ce9763fa00d252ce0514"
+    },
+    {
+      "wav": "build/auditions/thock/kailh-box-navy-press-all-categories.wav",
+      "timeline": "build/auditions/thock/kailh-box-navy-press-all-categories.json",
+      "profileIDs": [
+        "kailh-box-navy"
+      ],
+      "phase": "press",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 5.279146,
+      "peak": 0.41015625,
+      "eventCount": 8,
+      "uniqueSourceSampleCount": 8,
+      "sha256": "518129095d5be17941a2613f01bf3f8e271607b23af8148de52a270c88be3478",
+      "timelineSha256": "c45965da8a089629fcf549be5f115650b07266e8821a3389aed22846e42d99a7"
+    },
+    {
+      "wav": "build/auditions/thock/kailh-box-navy-release-all-categories.wav",
+      "timeline": "build/auditions/thock/kailh-box-navy-release-all-categories.json",
+      "profileIDs": [
+        "kailh-box-navy"
+      ],
+      "phase": "release",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 4.173,
+      "peak": 0.396453857,
+      "eventCount": 4,
+      "uniqueSourceSampleCount": 4,
+      "sha256": "2e628b9d08843796202a38f1716b643afc76c1c98f0af9997742d0d9ad8a8bda",
+      "timelineSha256": "6ed7122c55259e7135ec9e871a579fcefc1109ad724169de30d85d45398d66b9"
+    },
+    {
+      "wav": "build/auditions/thock/kailh-box-navy-pair-all-categories.wav",
+      "timeline": "build/auditions/thock/kailh-box-navy-pair-all-categories.json",
+      "profileIDs": [
+        "kailh-box-navy"
+      ],
+      "phase": "pair",
+      "holdSeconds": [
+        0.03,
+        0.1,
+        0.3
+      ],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 13.5605,
+      "peak": 0.419708252,
+      "eventCount": 48,
+      "uniqueSourceSampleCount": 12,
+      "sha256": "10fc8d92c8e7058868a6731a72188104a29509cacef9efb9b2f6bf16c8db8479",
+      "timelineSha256": "520074fead4b3e6c14b97104468527d9fdada6acf4273982724161ce198a2ebd"
+    },
+    {
+      "wav": "build/auditions/thock/novelkeys-cream-press-all-categories.wav",
+      "timeline": "build/auditions/thock/novelkeys-cream-press-all-categories.json",
+      "profileIDs": [
+        "novelkeys-cream"
+      ],
+      "phase": "press",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 5.229354,
+      "peak": 0.407165527,
+      "eventCount": 8,
+      "uniqueSourceSampleCount": 8,
+      "sha256": "c0870fa536dd33edaa9f47138464062e26162bb54055ba6036e48185725eb5c6",
+      "timelineSha256": "656270e6d8e457f8bf9c210fae5f1bd5f63fe6a439787276f25a3c746f77c16c"
+    },
+    {
+      "wav": "build/auditions/thock/novelkeys-cream-release-all-categories.wav",
+      "timeline": "build/auditions/thock/novelkeys-cream-release-all-categories.json",
+      "profileIDs": [
+        "novelkeys-cream"
+      ],
+      "phase": "release",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 4.040354,
+      "peak": 0.2734375,
+      "eventCount": 4,
+      "uniqueSourceSampleCount": 4,
+      "sha256": "3249835bf0e3b072eb59bdd40a4cb9eaa36635efb6ca57180b4f39a4a66de152",
+      "timelineSha256": "a88064b0f0af75f10e2335df8713416234a452896e8771fc4b6cf66d8761c500"
+    },
+    {
+      "wav": "build/auditions/thock/novelkeys-cream-pair-all-categories.wav",
+      "timeline": "build/auditions/thock/novelkeys-cream-pair-all-categories.json",
+      "profileIDs": [
+        "novelkeys-cream"
+      ],
+      "phase": "pair",
+      "holdSeconds": [
+        0.03,
+        0.1,
+        0.3
+      ],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 13.136146,
+      "peak": 0.407165527,
+      "eventCount": 48,
+      "uniqueSourceSampleCount": 12,
+      "sha256": "5d6e11407fe1ad5c6ca87fe0f7aadf2350dcfff03cca1095b2dbe95300d213d5",
+      "timelineSha256": "92749b1d5cab89bc75120bb8b06fdce68ae181f4351ee9525b156ea5f9964ffd"
+    },
+    {
+      "wav": "build/auditions/thock/topre-unknown-press-all-categories.wav",
+      "timeline": "build/auditions/thock/topre-unknown-press-all-categories.json",
+      "profileIDs": [
+        "topre-unknown"
+      ],
+      "phase": "press",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 5.571521,
+      "peak": 0.397460938,
+      "eventCount": 8,
+      "uniqueSourceSampleCount": 8,
+      "sha256": "073a859c1565c54e910e747d71dc1e60813d3d106dd2b4481dacb07024522bd9",
+      "timelineSha256": "7cdc5c5b1b975f8034151924fa0bb77f6f34d5c916315da0c3d667ca8298f834"
+    },
+    {
+      "wav": "build/auditions/thock/topre-unknown-release-all-categories.wav",
+      "timeline": "build/auditions/thock/topre-unknown-release-all-categories.json",
+      "profileIDs": [
+        "topre-unknown"
+      ],
+      "phase": "release",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 4.044167,
+      "peak": 0.415496826,
+      "eventCount": 4,
+      "uniqueSourceSampleCount": 4,
+      "sha256": "a655059eff72d6c7ead7a3666638f9882e3a772a679dc26e68f1e5f4f98a14af",
+      "timelineSha256": "29234f98cc1479e1c124ccbc31d99131f656933c444d04bdba38fb113d97e140"
+    },
+    {
+      "wav": "build/auditions/thock/topre-unknown-pair-all-categories.wav",
+      "timeline": "build/auditions/thock/topre-unknown-pair-all-categories.json",
+      "profileIDs": [
+        "topre-unknown"
+      ],
+      "phase": "pair",
+      "holdSeconds": [
+        0.03,
+        0.1,
+        0.3
+      ],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 13.416042,
+      "peak": 0.44619751,
+      "eventCount": 48,
+      "uniqueSourceSampleCount": 12,
+      "sha256": "28dad5cb36d345e91c6b5a65cdf900c14a2cda57b83afaf8ae13051b44ae07f3",
+      "timelineSha256": "f2be537142d46e63120cf4b82987e23b2ea796570e73197a5f5aa373c3eeacf2"
+    },
+    {
+      "wav": "build/auditions/thock/ibm-buckling-spring-press-all-categories.wav",
+      "timeline": "build/auditions/thock/ibm-buckling-spring-press-all-categories.json",
+      "profileIDs": [
+        "ibm-buckling-spring"
+      ],
+      "phase": "press",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 5.641,
+      "peak": 0.245666504,
+      "eventCount": 8,
+      "uniqueSourceSampleCount": 8,
+      "sha256": "b6b3f5ce39a42fa59afe8513893f8a9595cd77c79d0513a083e6c18245f8e968",
+      "timelineSha256": "2f0c2f48fc4fba429cbc265916c8b7d0fa338b40091156ad7128b843dfe53a9a"
+    },
+    {
+      "wav": "build/auditions/thock/ibm-buckling-spring-release-all-categories.wav",
+      "timeline": "build/auditions/thock/ibm-buckling-spring-release-all-categories.json",
+      "profileIDs": [
+        "ibm-buckling-spring"
+      ],
+      "phase": "release",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 4.099312,
+      "peak": 0.229736328,
+      "eventCount": 4,
+      "uniqueSourceSampleCount": 4,
+      "sha256": "7a79f2da9756926a2d8c0bee4e386396d107eaea8f71486cda7cbf6b9539a824",
+      "timelineSha256": "52bb7681ba8779197859189f4fef6381ac93ea91cf23136ee1f433fea416dfdf"
+    },
+    {
+      "wav": "build/auditions/thock/ibm-buckling-spring-pair-all-categories.wav",
+      "timeline": "build/auditions/thock/ibm-buckling-spring-pair-all-categories.json",
+      "profileIDs": [
+        "ibm-buckling-spring"
+      ],
+      "phase": "pair",
+      "holdSeconds": [
+        0.03,
+        0.1,
+        0.3
+      ],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 13.671333,
+      "peak": 0.245666504,
+      "eventCount": 48,
+      "uniqueSourceSampleCount": 12,
+      "sha256": "8771b57df44dfedd40de3b58978ac4525ca9c6e3ec7d73d635abc69686eaf00c",
+      "timelineSha256": "8bdad3d494b5e1ad45d2f6c7ba68f129115f4bf6935fa116c387d5e473186381"
+    },
+    {
+      "wav": "build/auditions/thock/all-profiles-press.wav",
+      "timeline": "build/auditions/thock/all-profiles-press.json",
+      "profileIDs": [
+        "alps-skcm-blue",
+        "drop-holy-panda",
+        "durock-alpaca",
+        "gateron-ink-black",
+        "gateron-ink-red",
+        "gateron-turquoise-tealios",
+        "kailh-box-navy",
+        "novelkeys-cream",
+        "topre-unknown",
+        "ibm-buckling-spring"
+      ],
+      "phase": "press",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 50.895396,
+      "peak": 0.41015625,
+      "eventCount": 80,
+      "uniqueSourceSampleCount": 80,
+      "sha256": "a11604aca6b64e80357262b2db0bef2fb2e809eab938504e3465a26ad0e431be",
+      "timelineSha256": "61771047a639e16db5438421fb4d9198b11637666d593fbb432a527c7255c968"
+    },
+    {
+      "wav": "build/auditions/thock/all-profiles-release.wav",
+      "timeline": "build/auditions/thock/all-profiles-release.json",
+      "profileIDs": [
+        "alps-skcm-blue",
+        "drop-holy-panda",
+        "durock-alpaca",
+        "gateron-ink-black",
+        "gateron-ink-red",
+        "gateron-turquoise-tealios",
+        "kailh-box-navy",
+        "novelkeys-cream",
+        "topre-unknown",
+        "ibm-buckling-spring"
+      ],
+      "phase": "release",
+      "holdSeconds": [],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 37.997813,
+      "peak": 0.415496826,
+      "eventCount": 41,
+      "uniqueSourceSampleCount": 41,
+      "sha256": "042e75622f3f1d5d650b111b80bc57502e0c4356fc2573fd368c56bf54a8085f",
+      "timelineSha256": "16e6c7af85e23fc28746971a90e3f516b43638f09519cb9a59c9eda772e76059"
+    },
+    {
+      "wav": "build/auditions/thock/all-profiles-pairs-30-100-300ms.wav",
+      "timeline": "build/auditions/thock/all-profiles-pairs-30-100-300ms.json",
+      "profileIDs": [
+        "alps-skcm-blue",
+        "drop-holy-panda",
+        "durock-alpaca",
+        "gateron-ink-black",
+        "gateron-ink-red",
+        "gateron-turquoise-tealios",
+        "kailh-box-navy",
+        "novelkeys-cream",
+        "topre-unknown",
+        "ibm-buckling-spring"
+      ],
+      "phase": "pair",
+      "holdSeconds": [
+        0.03,
+        0.1,
+        0.3
+      ],
+      "voices": 1,
+      "gain": 1.0,
+      "durationSeconds": 129.820479,
+      "peak": 0.44619751,
+      "eventCount": 480,
+      "uniqueSourceSampleCount": 121,
+      "sha256": "dd92e0fdc85b6a5ec2f43ccb5cae2d9bd7bdf18d31712b5c4e1df1d09626386d",
+      "timelineSha256": "1eda06d9abffc5fa59eec8d7dc1f4ff4297e2c40d6211a54a94ba536c7e82237"
+    },
+    {
+      "wav": "build/auditions/thock/all-profiles-fast-simultaneous.wav",
+      "timeline": "build/auditions/thock/all-profiles-fast-simultaneous.json",
+      "profileIDs": [
+        "alps-skcm-blue",
+        "drop-holy-panda",
+        "durock-alpaca",
+        "gateron-ink-black",
+        "gateron-ink-red",
+        "gateron-turquoise-tealios",
+        "kailh-box-navy",
+        "novelkeys-cream",
+        "topre-unknown",
+        "ibm-buckling-spring"
+      ],
+      "phase": "pair",
+      "holdSeconds": [
+        0.03,
+        0.1,
+        0.3
+      ],
+      "voices": 2,
+      "gain": 0.5,
+      "durationSeconds": 54.915625,
+      "peak": 0.44619751,
+      "eventCount": 960,
+      "uniqueSourceSampleCount": 121,
+      "sha256": "fe5bbf08390c50c67084240a28a9ee54cfcdd6d778ed065a56c6b78df0a73d21",
+      "timelineSha256": "ea74aa33e455de916be3d1af72109820ff664dcb65ce1532f3bf50bafc628671"
+    }
+  ]
+}

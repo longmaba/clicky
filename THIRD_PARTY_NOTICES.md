@@ -6,9 +6,9 @@ documentation, original keycap icon, and original generated effects in
 recordings described below. Clicky is an independent project and is not
 affiliated with Keeby.
 
-## Recorded keyboard sounds
+## Original ten recorded keyboard profiles
 
-The ten banks in `Assets/Sounds/` (excluding `Extras`) contain edited excerpts
+The ten profiles listed below in `Assets/Sounds/` contain edited excerpts
 from **Thock vs Creamy vs Marbly vs Clack | Best Sound Profile? Ultimate Keyboard
 Sound Test**, video ID `Gzko0BoULdw`:
 
@@ -30,6 +30,48 @@ The full source video and audio are not included in the repository or releases.
 hash, selected intervals, processing, and output hashes.
 [`Assets/profiles.json`](Assets/profiles.json) maps the excerpts to runtime
 profiles. The website previews use the same prepared WAV files.
+
+## Paired keyboard packs by tplai
+
+The following ten additional profiles contain recordings by **tplai (Thomas Lai)**:
+Alps SKCM Blue, Drop Holy Panda, Durock Alpaca, Gateron Ink Black, Gateron Ink Red,
+Gateron Turquoise Tealios, Kailh Box Navy, NovelKeys Cream, Topre Unknown, and
+IBM Buckling Spring. Their generic, Space, Enter, and Backspace down/up WAVs are
+imported from [kamillobinski/thock-soundpacks](https://github.com/kamillobinski/thock-soundpacks/tree/213e1443c5005a99d5e51b46e31e17f30e4d752a).
+
+Each selected archive declares **MIT** in its `config.json`. The complete
+[Thomas Lai MIT notice](Assets/Licenses/kbsim-MIT.txt), including
+`Copyright (c) Thomas Lai`, is retained from
+[tplai/kbsim](https://github.com/tplai/kbsim/blob/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/LICENSE.md).
+It is bundled with the Mac app and linked from the website footer.
+
+[`Assets/thock-sources.json`](Assets/thock-sources.json) pins the registry commit,
+archive/config/WAV hashes, and processing parameters.
+[`Assets/thock-import.json`](Assets/thock-import.json) preserves the publisher's
+phase/category mappings, license metadata, and per-output provenance. Prepared
+WAVs use one common gain, resampling to 48 kHz, trimming only digital leading
+silence, and short boundary fades. The app and website distribute identical
+prepared audio. No other keyboard packs are included.
+
+## Razer Orochi V2 mouse recordings
+
+Four mouse WAVs in `Assets/Sounds/razer-orochi-v2/` come from **Sadiquecat**'s
+Razer Orochi V2 pack in the same pinned Thock catalog. Its publisher config
+declares **CC0 1.0 Universal** and separately maps left/right button-down/up.
+The [source and CC0 notice](Assets/Licenses/Sadiquecat-CC0.txt) is bundled with
+the app and linked from the website. The mouse model identifies the recording.
+
+[`Assets/thock-mouse-sources.json`](Assets/thock-mouse-sources.json) locks the
+archive, config, source WAVs, and processing. Output provenance and middle-button
+fallback are in [`Assets/thock-mouse-import.json`](Assets/thock-mouse-import.json).
+Clicky averages the stereo channels to mono, resamples to 48 kHz, applies one
+shared gain and boundary fades, and trims only digital leading silence.
+
+The catalog's **Mamba Elite** pack is excluded because its embedded proprietary
+license restricts use to Thock and forbids redistribution and modification.
+The **Unknown / Pixabay** pack is also excluded: the source item is unidentified,
+and permission for distributing its individual WAVs has not been established.
+The source lock records the reviewed identities, hashes, and reasons.
 
 ## Original effects and development tools
 

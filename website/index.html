@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#f6f3eb" />
     <meta
       name="description"
-      content="A little more joy in every keystroke. Clicky is an open-source Mac app that gives your keyboard a sound of its own. Ten profiles, thoughtful controls, completely offline."
+      content="A little more joy in every keystroke. Clicky is an open-source Mac app that gives your keyboard a sound of its own. Original profiles and real switch recordings, thoughtful controls, completely offline."
     />
     <meta
       property="og:title"
@@ -17,15 +17,15 @@
       content="Your keyboard. A whole new feeling. An open-source sound companion for your Mac."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://longmaba.github.io/clicky/" />
+    <meta property="og:url" content="https://clicky.longmaba.workers.dev/" />
     <meta
       property="og:image"
-      content="https://longmaba.github.io/clicky/social.png"
+      content="https://clicky.longmaba.workers.dev/social.png"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="canonical" href="https://longmaba.github.io/clicky/" />
+    <link rel="canonical" href="https://clicky.longmaba.workers.dev/" />
     <title>Clicky — Make every keystroke feel good.</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
@@ -148,7 +148,7 @@
         </div>
         <div class="hero-footnote">
           <span class="hero-typing-hint"
-            ><kbd aria-hidden="true">A</kbd> Type anywhere on this page.</span
+            ><kbd aria-hidden="true">A</kbd> Type or click anywhere on this page.</span
           ><a href="#playground"
             >Find your sound <span aria-hidden="true">↓</span></a
           ><span>No account. No subscription.</span>
@@ -165,7 +165,7 @@
           <div class="heading-row">
             <h2 id="sound-title">Find your happy <em>click.</em></h2>
             <p>
-              Deep and mellow. Bright and playful.<br />Ten personalities. One
+              Deep and mellow. Bright and playful.<br /> Many personalities. One
               keyboard.
             </p>
           </div>
@@ -192,15 +192,17 @@
               </div>
               <div class="sound-title">
                 <span class="sound-number"
-                  >PROFILE <span id="profile-number">01</span> / 10</span
+                  >PROFILE <span id="profile-number">01</span> / <span data-profile-count>…</span></span
                 >
                 <h3 class="active-profile-name">Thocky</h3>
                 <p id="profile-subtitle">Warm, rounded knocks</p>
+                <span class="phase-badge" id="profile-phases">Press sound</span>
               </div>
               <button
                 type="button"
                 class="play-button"
                 id="preview-button"
+                disabled
                 aria-label="Preview Thocky sound"
               >
                 <svg
@@ -240,8 +242,19 @@
               placeholder="Type here, or anywhere on this page…"
             ></textarea>
             <p class="playground-note" id="audio-status" role="status">
-              Type anywhere to hear your sound. Set volume to 0% to mute.
+              Type to hear your keyboard sound, or click for a soft mouse click. Set volume to 0% to mute.
             </p>
+            <div class="mouse-controls">
+              <div class="mouse-sound-row">
+                <label for="mouse-sound">Mouse sound</label>
+                <select id="mouse-sound">
+                  <option value="soft">Soft</option>
+                  <option value="none">None</option>
+                </select>
+                <button id="mouse-preview" type="button" aria-label="Preview Soft mouse sound">Preview</button>
+              </div>
+              <p class="playground-note" id="mouse-status" role="status">Soft click on button down.</p>
+            </div>
             <p class="privacy-note">
               <svg
                 width="13"
@@ -423,6 +436,8 @@
           href="https://github.com/longmaba/clicky/blob/main/THIRD_PARTY_NOTICES.md"
           data-attribution
           >Sound credits</a
+        ><a href="./licenses/kbsim-MIT.txt">Switch sound license</a
+        ><a href="./licenses/Sadiquecat-CC0.txt">Mouse sound license</a
         ><button type="button" data-donate>
           Donate <span aria-hidden="true">♡</span>
         </button>

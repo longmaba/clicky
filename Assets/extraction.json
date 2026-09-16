@@ -237,6 +237,19 @@
           "sha256": "637a8c6499427b0824ec547023fb6f02ffa49c46e2f83fed437e999f24ee740e"
         }
       ],
+      "releaseReview": {
+        "id": "thocky",
+        "status": "unavailable",
+        "evidence": "Angled overhead view: finger lifts alternate with other fingers descending. The reviewed tail continues typing; small intervening audio transients cannot be assigned uniquely to key release.",
+        "reviewedVideoWindowsSeconds": [
+          [
+            5.373,
+            6.043
+          ]
+        ],
+        "releases": [],
+        "pressTrims": []
+      },
       "selectionReview": {
         "revision": "0.1.4",
         "auditedVariants": [
@@ -465,6 +478,23 @@
           "sha256": "2d9fee6baa679b9bc6527f773f7a33ef7f36e23db36a498b7251b44c172bc7e7"
         }
       ],
+      "releaseReview": {
+        "id": "marbly",
+        "status": "unavailable",
+        "evidence": "Fingertips obscure key travel. Interior and tail sequences show overlapping left/right activity; soft audio events between the major attacks have no unambiguous isolated release movement.",
+        "reviewedVideoWindowsSeconds": [
+          [
+            11.379,
+            12.049
+          ],
+          [
+            6.35,
+            6.75
+          ]
+        ],
+        "releases": [],
+        "pressTrims": []
+      },
       "selectionReview": {
         "revision": "0.1.4",
         "auditedVariants": [
@@ -691,6 +721,19 @@
           "sha256": "e641fe9e623da2a1c62405c21dd9701d6558244df01c329cb930ddda6e52a595"
         }
       ],
+      "releaseReview": {
+        "id": "silent",
+        "status": "unavailable",
+        "evidence": "Low-level broad audio bodies overlap continuous finger motion. The reviewed ending has no isolated press-hold-release demonstration, and release versus contact/room sound remains unresolved.",
+        "reviewedVideoWindowsSeconds": [
+          [
+            15.7,
+            16.37
+          ]
+        ],
+        "releases": [],
+        "pressTrims": []
+      },
       "selectionReview": {
         "revision": "0.1.4",
         "auditedVariants": [
@@ -915,6 +958,19 @@
           "sha256": "7d353a88ca0f1128a77756707469f1a41aefe75982e6dcdd69c70c1bb5db3733"
         }
       ],
+      "releaseReview": {
+        "id": "poppy",
+        "status": "unavailable",
+        "evidence": "Both hands continue alternating movements through the reviewed ending. Candidate smaller transients coincide with multiple finger movements, without a separable isolated release.",
+        "reviewedVideoWindowsSeconds": [
+          [
+            20.855,
+            21.525
+          ]
+        ],
+        "releases": [],
+        "pressTrims": []
+      },
       "selectionReview": {
         "revision": "0.1.4",
         "auditedVariants": [
@@ -1142,6 +1198,23 @@
           "sha256": "a8619ccd04a4d5489e7f97b3e1711b3f6eaf4b2d632240b6c5dc4ad0665f30e2"
         }
       ],
+      "releaseReview": {
+        "id": "clicky",
+        "status": "unavailable",
+        "evidence": "Several sharp events occur during closely spaced movements. Neither the interior detail nor ending establishes which click belongs to switch release rather than a neighboring press or switch mechanism.",
+        "reviewedVideoWindowsSeconds": [
+          [
+            26.36,
+            27.03
+          ],
+          [
+            26.0,
+            26.37
+          ]
+        ],
+        "releases": [],
+        "pressTrims": []
+      },
       "selectionReview": {
         "revision": "0.1.4",
         "auditedVariants": [
@@ -1370,6 +1443,19 @@
           "sha256": "c58ed36d3787d5802ef299f996a245c2ae34a4fa5bf06b0304f7e3bc15291b14"
         }
       ],
+      "releaseReview": {
+        "id": "bubble-wrap",
+        "status": "unavailable",
+        "evidence": "Angled view and curled fingers hide key travel during overlapping typing. The reviewed ending supplies no single visible release with a clean independent transient.",
+        "reviewedVideoWindowsSeconds": [
+          [
+            31.766,
+            32.436
+          ]
+        ],
+        "releases": [],
+        "pressTrims": []
+      },
       "selectionReview": {
         "revision": "0.1.4",
         "auditedVariants": [
@@ -1600,6 +1686,23 @@
           "sha256": "264b79df532479308d0a8841103cfd0077614c893c1fbcd2609fef75ad276252"
         }
       ],
+      "releaseReview": {
+        "id": "clacky",
+        "status": "unavailable",
+        "evidence": "Sharp major attacks are visible in the envelope, but smaller inter-attack events in the interior detail cannot be tied uniquely to one finger lifting. Both hands remain active in the ending.",
+        "reviewedVideoWindowsSeconds": [
+          [
+            37.505,
+            38.175
+          ],
+          [
+            33.72,
+            34.03
+          ]
+        ],
+        "releases": [],
+        "pressTrims": []
+      },
       "selectionReview": {
         "revision": "0.1.4",
         "auditedVariants": [
@@ -1826,6 +1929,23 @@
           "sha256": "58f8c1c7e1258a471e11ea730d69fdb1168c92187a901b41f0a75df80f03e96a"
         }
       ],
+      "releaseReview": {
+        "id": "creamy",
+        "status": "unavailable",
+        "evidence": "Fingertips obscure travel on the dark keycaps. Interior detail and ending combine finger lifts with other key movements and broad audio tails; a clean independent release is not established.",
+        "reviewedVideoWindowsSeconds": [
+          [
+            43.928,
+            44.598
+          ],
+          [
+            44.13,
+            44.5
+          ]
+        ],
+        "releases": [],
+        "pressTrims": []
+      },
       "selectionReview": {
         "revision": "0.1.4",
         "auditedVariants": [
@@ -2054,6 +2174,23 @@
           "sha256": "b45b7766dc4b19f17b5a04c1ff46648b2bdbbd975cbdb8bdb924b125c327dcb4"
         }
       ],
+      "releaseReview": {
+        "id": "deep-thock",
+        "status": "unavailable",
+        "evidence": "The more distant view makes individual key travel hard to resolve. Quieter interior gaps and the ending retain low-level overlapping audio and finger movement, with no verified isolated release.",
+        "reviewedVideoWindowsSeconds": [
+          [
+            49.116,
+            49.786
+          ],
+          [
+            45.2,
+            45.6
+          ]
+        ],
+        "releases": [],
+        "pressTrims": []
+      },
       "selectionReview": {
         "revision": "0.1.4",
         "auditedVariants": [
@@ -2283,6 +2420,19 @@
           "sha256": "036c5b68a79e09793d4268bf8db2cdd3a5d3b7a7130b9bd78470d9989b694fca"
         }
       ],
+      "releaseReview": {
+        "id": "office",
+        "status": "unavailable",
+        "evidence": "Fingers remain curled over the keys through the final frames. The quieter tail has multiple small sounds, but no visibly isolated release can be assigned to a clean recording interval.",
+        "reviewedVideoWindowsSeconds": [
+          [
+            54.355,
+            55.025
+          ]
+        ],
+        "releases": [],
+        "pressTrims": []
+      },
       "selectionReview": {
         "revision": "0.1.4",
         "auditedVariants": [
@@ -2377,5 +2527,17 @@
       },
       "sha256": "42404a7984d3354ac1d3a9eb42daea92fbc4b399a6a17bd0c1118768035457a4"
     }
-  ]
+  ],
+  "releaseReview": {
+    "file": "release-review.json",
+    "sha256": "724f0d08a1a86a4332e1113f8f4343aae2ee33b3e54334a61a1b860be01a19fe",
+    "source": {
+      "file": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f251.webm",
+      "sha256": "e0dd06e9997f3a87aa527e6c2c215a8d8319508f1059437f54407540a9e3656a",
+      "videoFile": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f399.mp4",
+      "videoSha256": "7bf74ae1ca7e10f3cc70e1210e3e655d72989d6f2671b5c3e1db2bfc705d1b81"
+    },
+    "supportedProfiles": [],
+    "policy": "Only explicit verified video-and-audio selections are rendered; all other profiles remain press-only."
+  }
 }

@@ -1,0 +1,15 @@
+Razer Orochi V2 mouse sound recordings
+
+Recording author: Sadiquecat
+License declared by the publisher's soundpack config: CC0 1.0 Universal
+https://creativecommons.org/publicdomain/zero/1.0/
+Legal code: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+Pinned source archive: https://raw.githubusercontent.com/kamillobinski/thock-soundpacks/213e1443c5005a99d5e51b46e31e17f30e4d752a/mouse/razer/sadiquecat/orochi_v2/3222385c-d428-4d98-8ce9-1cbc992c3373.zip
+Archive SHA-256: 9946ae073e26853e2256d9f3ca8c49e71c1f309158d4a88d881f62d6689cbbb7
+Publisher config SHA-256: 135f609ef2fdb0d4e824ec3b8192decf4250ab0e92a5664543c52c1c1d561977
+
+Clicky converts the stereo source to mono 48 kHz, applies common gain
+and short boundary fades, and removes only exact digital leading silence.
+The publisher explicitly identifies left/right button-down/up recordings.
+The mouse model identifies the recording; no manufacturer endorsement is implied.

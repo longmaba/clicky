@@ -64,8 +64,8 @@ import pathlib, plistlib, sys
 with open('App/Info.plist', 'rb') as source:
     info = plistlib.load(source)
 replacements = {'$(EXECUTABLE_NAME)': 'Clicky', '$(PRODUCT_BUNDLE_IDENTIFIER)': 'dev.clicky.app',
-                '$(PRODUCT_NAME)': 'Clicky', '$(MARKETING_VERSION)': '0.1.4',
-                '$(CURRENT_PROJECT_VERSION)': '5', '$(MACOSX_DEPLOYMENT_TARGET)': '13.0'}
+                '$(PRODUCT_NAME)': 'Clicky', '$(MARKETING_VERSION)': '0.2.0',
+                '$(CURRENT_PROJECT_VERSION)': '6', '$(MACOSX_DEPLOYMENT_TARGET)': '13.0'}
 info = {key: replacements.get(value, value) if isinstance(value, str) else value for key, value in info.items()}
 with open(sys.argv[1], 'wb') as output:
     plistlib.dump(info, output, sort_keys=False)

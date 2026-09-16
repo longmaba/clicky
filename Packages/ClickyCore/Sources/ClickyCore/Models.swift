@@ -32,9 +32,17 @@ public struct PhysicalInputEvent: Sendable, Codable, Equatable {
 
 public struct SampleProvenance: Sendable, Codable, Equatable {
     public var source: String
-    public var sectionStart: Double
-    public var sectionEnd: Double
-    public init(source: String, sectionStart: Double, sectionEnd: Double) { self.source = source; self.sectionStart = sectionStart; self.sectionEnd = sectionEnd }
+    public var sectionStart: Double?
+    public var sectionEnd: Double?
+    public init(source: String, sectionStart: Double? = nil, sectionEnd: Double? = nil) { self.source = source; self.sectionStart = sectionStart; self.sectionEnd = sectionEnd }
+}
+
+public struct SoundSampleSet: Sendable, Codable, Equatable {
+    public var samples: [String]
+    public var releaseSamples: [String]?
+    public init(samples: [String], releaseSamples: [String]? = nil) {
+        self.samples = samples; self.releaseSamples = releaseSamples
+    }
 }
 
 public struct SoundProfileManifest: Sendable, Codable, Identifiable, Equatable {
@@ -44,18 +52,29 @@ public struct SoundProfileManifest: Sendable, Codable, Identifiable, Equatable {
     public var color: String
     public var samples: [String]
     public var releaseSamples: [String]?
+    public var keySamples: [String: SoundSampleSet]?
     public var gain: Float
     public var provenance: SampleProvenance?
-    public init(id: String, name: String, subtitle: String = "", color: String = "E99244", samples: [String] = [], releaseSamples: [String]? = nil, gain: Float = 1, provenance: SampleProvenance? = nil) {
+    /// Omitted for legacy profiles; catalog additions can preserve that corpus's
+    /// normalization target without changing the loudness of existing profiles.
+    public var normalizationReference: Bool?
+    public var samplePaths: [String] {
+        Array(Set(samples + (releaseSamples ?? []) + (keySamples ?? [:]).values.flatMap { $0.samples + ($0.releaseSamples ?? []) })).sorted()
+    }
+    public init(id: String, name: String, subtitle: String = "", color: String = "E99244", samples: [String] = [], releaseSamples: [String]? = nil, keySamples: [String: SoundSampleSet]? = nil, gain: Float = 1, provenance: SampleProvenance? = nil, normalizationReference: Bool? = nil) {
         self.id = id; self.name = name; self.subtitle = subtitle; self.color = color
-        self.samples = samples; self.releaseSamples = releaseSamples; self.gain = gain; self.provenance = provenance
+        self.samples = samples; self.releaseSamples = releaseSamples; self.keySamples = keySamples
+        self.gain = gain; self.provenance = provenance; self.normalizationReference = normalizationReference
     }
 }
 
 public enum ExtraSound: String, Sendable, Codable, CaseIterable, Identifiable {
     case none, soft, crisp, hard, ding, typewriter, custom
+    case razerOrochiV2 = "razer-orochi-v2"
+    public static let bundledSamples: [ExtraSound] = [.soft, .crisp, .hard, .ding, .typewriter]
     public var id: String { rawValue }
-    public var title: String { rawValue.capitalized }
+    public var title: String { self == .razerOrochiV2 ? "Razer Orochi V2" : rawValue.capitalized }
+    public var mouseProfileID: String? { self == .razerOrochiV2 ? rawValue : nil }
 }
 
 public struct ImportedSound: Sendable, Codable, Equatable {

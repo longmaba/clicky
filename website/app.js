@@ -4,77 +4,27 @@
   const config = window.CLICKY_CONFIG || {};
   const repository =
     config.repositoryUrl || "https://github.com/longmaba/clicky";
-  const profiles = [
-    {
-      id: "thocky",
-      name: "Thocky",
-      subtitle: "Warm, rounded knocks",
-      color: "#C68B54",
-    },
-    {
-      id: "marbly",
-      name: "Marbly",
-      subtitle: "Smooth, glassy resonance",
-      color: "#AD9ACE",
-    },
-    {
-      id: "silent",
-      name: "Silent",
-      subtitle: "A soft, quiet touch",
-      color: "#94A7AD",
-    },
-    {
-      id: "poppy",
-      name: "Poppy",
-      subtitle: "Bright little pops",
-      color: "#E8A05B",
-    },
-    {
-      id: "clicky",
-      name: "Clicky",
-      subtitle: "Crisp, tactile clicks",
-      color: "#D3BB6F",
-    },
-    {
-      id: "bubble-wrap",
-      name: "Bubble Wrap",
-      subtitle: "Playful, hollow pops",
-      color: "#C493B5",
-    },
-    {
-      id: "clacky",
-      name: "Clacky",
-      subtitle: "Sharp, lively taps",
-      color: "#DA8276",
-    },
-    {
-      id: "creamy",
-      name: "Creamy",
-      subtitle: "Soft, buttery texture",
-      color: "#DCCCA0",
-    },
-    {
-      id: "deep-thock",
-      name: "Deep Thock",
-      subtitle: "Low, resonant knocks",
-      color: "#82A799",
-    },
-    {
-      id: "office",
-      name: "Office",
-      subtitle: "Familiar everyday typing",
-      color: "#7FA1C3",
-    },
-  ];
+  const profiles = [];
+  // Match the native app's softer key and mouse release impacts (about -3 dB).
+  const releaseGain = 0.7;
+  const keyUsages = {
+    Space: "7:44",
+    Enter: "7:40",
+    NumpadEnter: "7:88",
+    Backspace: "7:42",
+  };
   const $ = (selector) => document.querySelector(selector);
   const $$ = (selector) => [...document.querySelectorAll(selector)];
   const status = $("#audio-status");
   const preview = $("#preview-button");
+  const mouseChoice = $("#mouse-sound");
+  const mousePreview = $("#mouse-preview");
+  const mouseStatus = $("#mouse-status");
   const typingField = $("#typing-field");
   const keyboard = $("#keyboard");
   const orbit = $("#keyboard-orbit");
   const workbench = $(".sound-workbench");
-  let activeProfile = profiles[0];
+  let activeProfile;
   let context;
   let gain;
   let playbackSession = 0;
@@ -82,7 +32,16 @@
   let feedbackTimer;
   let sampleNumber = 0;
   let pulseTimer;
+  let previewReleaseTimer;
+  let manifestRequest;
+  let mouseManifestRequest;
+  let mouseSampleNumber = 0;
   let lastAudioAttempt = 0;
+  const soundBanks = new Map();
+  // Physical holds outlive the short keycap animation and retain their original sound.
+  const heldKeys = new Map();
+  const heldMouseButtons = new Map();
+  const mouseBanks = new Map();
   const buffers = new Map();
   const decodedBuffers = new Map();
   const activeVoices = new Set();
@@ -137,37 +96,48 @@
   });
   donateDialog.addEventListener("close", () => donateTrigger?.focus());
 
-  profiles.forEach((profile, index) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "profile-button";
-    button.dataset.profile = profile.id;
-    button.setAttribute("aria-pressed", String(index === 0));
-    const swatch = document.createElement("span");
-    swatch.className = "profile-swatch";
-    swatch.style.background = profile.color;
-    swatch.setAttribute("aria-hidden", "true");
-    const label = document.createElement("span");
-    label.textContent = profile.name;
-    const check = document.createElement("span");
-    check.className = "profile-check";
-    check.setAttribute("aria-hidden", "true");
-    check.textContent = index === 0 ? "✓" : "";
-    button.append(swatch, label, check);
-    button.addEventListener("click", () => selectProfile(profile, index));
-    $("#profile-list").append(button);
-  });
+  function renderProfiles() {
+    profiles.forEach((profile, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "profile-button";
+      button.dataset.profile = profile.id;
+      button.setAttribute("aria-pressed", String(index === 0));
+      const swatch = document.createElement("span");
+      swatch.className = "profile-swatch";
+      swatch.style.background = profile.color;
+      swatch.setAttribute("aria-hidden", "true");
+      const label = document.createElement("span");
+      label.className = "profile-label";
+      label.textContent = profile.name;
+      if (profile.releaseSamples?.length) {
+        const phases = document.createElement("small");
+        phases.textContent = "Press + release";
+        label.append(phases);
+      }
+      const check = document.createElement("span");
+      check.className = "profile-check";
+      check.setAttribute("aria-hidden", "true");
+      check.textContent = index === 0 ? "✓" : "";
+      button.append(swatch, label, check);
+      button.addEventListener("click", () => selectProfile(profile, index));
+      $("#profile-list").append(button);
+    });
+    $$("[data-profile-count]").forEach((label) => { label.textContent = profiles.length; });
+  }
 
   async function selectProfile(profile, index) {
     activeProfile = profile;
-    playbackSession++;
-    lastAudioAttempt++;
+    cancelPreview();
+    pendingKeyAttempt++;
     sampleNumber = 0;
     document.documentElement.style.setProperty("--accent", profile.color);
     $$(".active-profile-name").forEach((label) => {
       label.textContent = profile.name;
     });
     $("#profile-subtitle").textContent = profile.subtitle;
+    $("#profile-phases").textContent = profile.releaseSamples?.length
+      ? "Press + release" : "Press sound";
     $("#profile-number").textContent = String(index + 1).padStart(2, "0");
     preview.setAttribute("aria-label", `Preview ${profile.name} sound`);
     $$(".profile-button").forEach((button) => {
@@ -186,6 +156,9 @@
         window.AudioContext || window.webkitAudioContext;
       if (!AudioContextClass) throw new Error("unsupported");
       context = new AudioContextClass({ latencyHint: "interactive" });
+      context.addEventListener("statechange", () => {
+        if (context.state !== "running") resetPendingPlayback();
+      });
       gain = context.createGain();
       gain.gain.value = Number($("#volume").value) / 100;
       const limiter = context.createDynamicsCompressor();
@@ -201,15 +174,133 @@
     return context;
   }
 
-  async function loadSample(profile, number = 1) {
-    const key = `${profile.id}/${number}`;
+  function phaseBank(entry, calibration) {
+    if (!Array.isArray(entry.samples) || !entry.samples.length ||
+        (entry.releaseSamples != null && !Array.isArray(entry.releaseSamples)))
+      throw new Error("invalid-manifest");
+    return { samples: entry.samples, releaseSamples: entry.releaseSamples || [], calibration };
+  }
+
+  async function loadProfiles() {
+    if (!manifestRequest) {
+      manifestRequest = (async () => {
+        const response = await fetch("./profiles.json", { cache: "force-cache" });
+        if (!response.ok) throw new Error("missing-manifest");
+        const entries = await response.json();
+        if (!Array.isArray(entries) || !entries.length) throw new Error("invalid-manifest");
+        for (const entry of entries) {
+          const calibration = 2 * (Number.isFinite(entry.gain) ? entry.gain : 1);
+          const bank = phaseBank(entry, calibration);
+          bank.keySamples = Object.fromEntries(Object.entries(entry.keySamples || {}).map(
+            ([usage, sounds]) => [usage, phaseBank(sounds, calibration)],
+          ));
+          soundBanks.set(entry.id, bank);
+        }
+        profiles.splice(0, profiles.length, ...entries.map((entry) => ({
+          ...entry, color: `#${entry.color.replace(/^#/, "")}`,
+        })));
+      })();
+      manifestRequest.catch(() => { manifestRequest = undefined; });
+    }
+    await manifestRequest;
+  }
+
+  function bankForCode(profile, code) {
+    const bank = profile && soundBanks.get(profile.id);
+    return bank?.keySamples[keyUsages[code]] || bank;
+  }
+
+  async function loadMouseProfiles() {
+    if (!mouseManifestRequest) {
+      mouseManifestRequest = (async () => {
+        const response = await fetch("./mouse-profiles.json", { cache: "force-cache" });
+        if (!response.ok) throw new Error("missing-mouse-manifest");
+        const entries = await response.json();
+        if (!Array.isArray(entries)) throw new Error("invalid-mouse-manifest");
+        for (const entry of entries) {
+          // At the demo's default 40% volume this matches native mouse volume 25%.
+          const calibration = 0.625 * (Number.isFinite(entry.gain) ? entry.gain : 1);
+          const bank = phaseBank(entry, calibration);
+          bank.keySamples = Object.fromEntries(Object.entries(entry.keySamples || {}).map(
+            ([usage, sounds]) => [usage, phaseBank(sounds, calibration)],
+          ));
+          mouseBanks.set(entry.id, bank);
+          if (![...mouseChoice.options].some((option) => option.value === entry.id)) {
+            const option = document.createElement("option");
+            option.value = entry.id;
+            option.textContent = entry.name;
+            mouseChoice.insertBefore(option, mouseChoice.querySelector('[value="none"]'));
+          }
+        }
+      })();
+      mouseManifestRequest.catch(() => { mouseManifestRequest = undefined; });
+    }
+    await mouseManifestRequest;
+  }
+
+  function mouseBank(button = 0) {
+    if (mouseChoice.value === "none") return;
+    if (mouseChoice.value === "soft")
+      return { samples: ["mouse/soft"], releaseSamples: [], calibration: 0.625 };
+    const bank = mouseBanks.get(mouseChoice.value);
+    const usage = { 0: "9:1", 2: "9:2", 1: "9:3" }[button];
+    return bank?.keySamples[usage] || bank;
+  }
+
+  async function prepareMouseSound() {
+    const selected = mouseChoice.value;
+    const name = mouseChoice.selectedOptions[0].textContent;
+    mousePreview.disabled = selected === "none";
+    mousePreview.setAttribute("aria-label", `Preview ${name} mouse sound`);
+    if (selected === "none") {
+      mouseStatus.textContent = "Mouse sounds are off.";
+      return;
+    }
+    mouseStatus.textContent = `Preparing ${name}…`;
+    try {
+      if (selected === "soft") await loadAudioSample("mouse/soft", "./sounds/extras/soft.wav");
+      else await loadBank(mouseBanks.get(selected));
+      if (selected === mouseChoice.value)
+        mouseStatus.textContent = `${name} ready. ${selected === "soft" ? "Plays on button down." : "Press + release. Distinct left and right clicks; middle uses the left recording."}`;
+    } catch (_) {
+      if (selected === mouseChoice.value)
+        mouseStatus.textContent = "This mouse sound could not load. Choose another sound or try again.";
+    }
+  }
+
+  mouseChoice.addEventListener("change", () => {
+    cancelPreview();
+    pendingKeyAttempt++;
+    mouseSampleNumber = 0;
+    if (mouseChoice.value === "none") heldMouseButtons.clear();
+    prepareMouseSound();
+  });
+
+  async function profileBank(profile, code) {
+    await loadProfiles();
+    const bank = bankForCode(profile, code);
+    if (!bank) throw new Error("missing-profile");
+    return bank;
+  }
+
+  function loadBank(bank) {
+    const paths = new Set([bank, ...Object.values(bank.keySamples || {})].flatMap(
+      (sounds) => [...sounds.samples, ...sounds.releaseSamples],
+    ));
+    return Promise.all([...paths].map((path) => loadAudioSample(path, `./${path}`)));
+  }
+
+  function readySample(paths, index) {
+    if (!paths.length) return;
+    return decodedBuffers.get(paths[index % paths.length]) ||
+      decodedBuffers.get(paths[0]);
+  }
+
+  async function loadAudioSample(key, path) {
     if (!buffers.has(key)) {
       const pending = (async () => {
         const audio = await audioContext(false);
-        const response = await fetch(
-          `./sounds/${profile.id}/${String(number).padStart(2, "0")}.wav`,
-          { cache: "force-cache" },
-        );
+        const response = await fetch(path, { cache: "force-cache" });
         if (!response.ok) throw new Error("missing-sample");
         const buffer = await audio.decodeAudioData(
           await response.arrayBuffer(),
@@ -227,11 +318,12 @@
     status.textContent =
       error.message === "unsupported"
         ? "Your browser does not support this audio playground. You can still explore Clicky on GitHub."
-        : "Audio previews are unavailable in this copy of the site. The Mac app includes all ten profiles.";
+        : "Audio previews are unavailable in this copy of the site. The Mac app includes the complete sound library.";
   }
 
-  function playBuffer(buffer, modifier = false) {
-    if (!context || context.state !== "running" || document.hidden) return;
+  function playBuffer(buffer, modifier = false, calibration = 2) {
+    if (!buffer || !context || context.state !== "running" || document.hidden ||
+        Number($("#volume").value) === 0) return false;
     if (activeVoices.size >= 24) {
       const oldest = activeVoices.values().next().value;
       activeVoices.delete(oldest);
@@ -243,7 +335,7 @@
     const voiceGain = context.createGain();
     // Match the native app's +6.02 dB keyboard calibration while retaining
     // each recording's relative level, including the quieter Silent profile.
-    voiceGain.gain.value = 2 * (modifier ? 0.25 : 1);
+    voiceGain.gain.value = calibration * (modifier ? 0.25 : 1);
     source.connect(voiceGain);
     voiceGain.connect(gain);
     source.onended = () => {
@@ -253,6 +345,11 @@
     };
     activeVoices.add(source);
     source.start();
+    return true;
+  }
+
+  function playReleaseBuffer(buffer, modifier = false, calibration = 2) {
+    return playBuffer(buffer, modifier, calibration * releaseGain);
   }
 
   function pulse() {
@@ -266,35 +363,58 @@
     );
   }
 
-  async function playSample(profile = activeProfile, modifier = false) {
-    const attempt = ++lastAudioAttempt;
+  function cancelPreview() {
+    lastAudioAttempt++;
+    clearTimeout(previewReleaseTimer);
+    previewReleaseTimer = undefined;
+  }
+
+  function resetPendingPlayback() {
+    playbackSession++;
+    pendingKeyAttempt++;
+    heldKeys.clear();
+    heldMouseButtons.clear();
+    cancelPreview();
+  }
+
+  async function playSample(profile = activeProfile, code) {
+    cancelPreview();
+    if (!profile) return;
+    const modifier = /^(Shift|Control|Alt|Meta|Fn)/.test(code || "");
+    const attempt = lastAudioAttempt;
     const session = playbackSession;
     if (Number($("#volume").value) === 0) {
       status.textContent = "Sound is muted. Raise Volume to hear your keys.";
       return;
     }
     try {
+      // Resume within the activation before waiting for network work.
       const audio = await audioContext();
-      const buffer = await loadSample(profile, 1);
-      // A slow initial fetch should never release a burst of queued keystrokes.
+      const bank = await profileBank(profile, code);
+      await loadBank(bank);
       if (
-        attempt !== lastAudioAttempt ||
-        session !== playbackSession ||
-        document.hidden ||
-        profile !== activeProfile ||
-        audio.state !== "running"
-      )
-        return;
-      playBuffer(buffer, modifier);
+        attempt !== lastAudioAttempt || session !== playbackSession ||
+        document.hidden || !document.hasFocus() ||
+        profile !== activeProfile || audio.state !== "running"
+      ) return;
+      if (!playBuffer(readySample(bank.samples, 0), modifier, bank.calibration)) return;
+      const release = readySample(bank.releaseSamples, 0);
+      if (release) {
+        previewReleaseTimer = setTimeout(() => {
+          previewReleaseTimer = undefined;
+          if (attempt === lastAudioAttempt && session === playbackSession)
+            playReleaseBuffer(release, modifier, bank.calibration);
+        }, 100);
+      }
       status.textContent = `${profile.name} · ${profile.subtitle.toLowerCase()}. Type anywhere on this page.`;
     } catch (error) {
-      audioError(error);
+      if (attempt === lastAudioAttempt) audioError(error);
     }
   }
 
   preview.addEventListener("click", async () => {
     preview.disabled = true;
-    status.textContent = `Loading ${activeProfile.name}…`;
+    status.textContent = `Loading ${activeProfile?.name || "sound profiles"}…`;
     animateKey("KeyA");
     try {
       await playSample();
@@ -303,11 +423,39 @@
     }
   });
 
+  mousePreview.addEventListener("click", async () => {
+    cancelPreview();
+    const selected = mouseChoice.value;
+    if (selected === "none" || Number($("#volume").value) === 0) return;
+    const attempt = lastAudioAttempt;
+    const session = playbackSession;
+    mousePreview.disabled = true;
+    try {
+      const audio = await audioContext();
+      if (selected === "soft") await loadAudioSample("mouse/soft", "./sounds/extras/soft.wav");
+      else await loadBank(mouseBanks.get(selected));
+      const bank = mouseBank();
+      if (attempt !== lastAudioAttempt || session !== playbackSession ||
+          selected !== mouseChoice.value || document.hidden || !document.hasFocus() ||
+          audio.state !== "running") return;
+      if (!playBuffer(readySample(bank.samples, 0), false, bank.calibration)) return;
+      const release = readySample(bank.releaseSamples, 0);
+      if (release) previewReleaseTimer = setTimeout(() => {
+        previewReleaseTimer = undefined;
+        if (attempt === lastAudioAttempt && session === playbackSession)
+          playReleaseBuffer(release, false, bank.calibration);
+      }, 100);
+    } catch (_) {
+      mouseStatus.textContent = "This mouse sound could not load. Choose another sound or try again.";
+    } finally {
+      mousePreview.disabled = mouseChoice.value === "none";
+    }
+  });
+
   $("#volume").addEventListener("input", (event) => {
     const value = Number(event.target.value);
     if (value === 0) {
-      playbackSession++;
-      lastAudioAttempt++;
+      resetPendingPlayback();
     }
     updateTypingStatus();
     status.textContent =
@@ -329,50 +477,63 @@
   async function prepareProfile(profile = activeProfile) {
     status.textContent = `Preparing ${profile.name}… Key effects are already on.`;
     try {
-      await Promise.all(
-        Array.from({ length: 6 }, (_, index) => loadSample(profile, index + 1)),
-      );
+      const bank = await profileBank(profile);
+      await Promise.all([
+        loadBank(bank),
+        loadAudioSample("mouse/soft", "./sounds/extras/soft.wav"),
+      ]);
       if (profile !== activeProfile) return;
       updateTypingStatus();
       status.textContent =
-        "Type anywhere on this page. Set Volume to 0 to mute. If Clicky is running, mute the app while trying the demo.";
+        "Type anywhere on this page. Choose a mouse sound below. Set Volume to 0 to mute. If Clicky is running, mute the app while trying the demo.";
     } catch (error) {
       if (profile === activeProfile) audioError(error);
     }
   }
 
-  function playTypingStroke(code) {
-    lastAudioAttempt++;
+  function playTypingStroke(code, held) {
+    const bank = bankForCode(activeProfile, code);
+    const index = sampleNumber++;
+    const modifier = /^(Shift|Control|Alt|Meta|Fn)/.test(code);
+    const buffer = bank && readySample(bank.samples, index);
+    const release = bank && readySample(bank.releaseSamples, index);
+    playReadyBuffer(buffer, modifier, bank?.calibration ?? 2, {
+      current: () => heldKeys.get(code) === held,
+      started: () => {
+        // A skipped press must never acquire a release when a download finishes.
+        if (release) held.release = { buffer: release, modifier, calibration: bank.calibration };
+      },
+    });
+  }
+
+  function playReadyBuffer(buffer, modifier = false, calibration = 2, stroke) {
+    cancelPreview();
     if (Number($("#volume").value) === 0) return;
     const profile = activeProfile;
-    const number = (sampleNumber++ % 6) + 1;
-    const buffer =
-      decodedBuffers.get(`${profile.id}/${number}`) ||
-      decodedBuffers.get(`${profile.id}/1`);
     const session = playbackSession;
     const attempt = ++pendingKeyAttempt;
     const started = performance.now();
-    const modifier = /^(Shift|Control|Alt|Meta|Fn)/.test(code);
+    const play = () => {
+      if (stroke && !stroke.current()) return;
+      if (playBuffer(buffer, modifier, calibration)) stroke?.started();
+    };
     // Resume in the physical event handler, including the first key on the page.
     // Never queue keystrokes behind downloads or an autoplay permission prompt.
     const resumed = audioContext();
     if (context?.state === "running" && buffer) {
-      playBuffer(buffer, modifier);
+      play();
+      resumed.catch(audioError);
       return;
     }
     resumed
       .then(() => {
         if (
-          !buffer ||
-          attempt !== pendingKeyAttempt ||
-          session !== playbackSession ||
-          profile !== activeProfile ||
-          document.hidden ||
-          !document.hasFocus() ||
+          !buffer || attempt !== pendingKeyAttempt ||
+          session !== playbackSession || profile !== activeProfile ||
+          document.hidden || !document.hasFocus() ||
           performance.now() - started > 120
-        )
-          return;
-        playBuffer(buffer, modifier);
+        ) return;
+        play();
       })
       .catch(audioError);
   }
@@ -384,7 +545,7 @@
       !event.ctrlKey &&
       !event.metaKey &&
       event.target instanceof Element &&
-      event.target.matches("#preview-button, .keycap")
+      event.target.matches("#preview-button, #mouse-preview, .keycap")
     );
   }
 
@@ -398,15 +559,77 @@
         if (event.repeat) event.preventDefault();
         return;
       }
-      if (event.repeat || !event.code || event.code === "Unidentified") return;
+      if (event.repeat || !event.code || event.code === "Unidentified" ||
+          heldKeys.has(event.code)) return;
+      const held = { release: undefined };
+      heldKeys.set(event.code, held);
       animateKey(event.code);
-      playTypingStroke(event.code);
+      playTypingStroke(event.code, held);
       // No preventDefault, value inspection, input/change listeners, or text history.
       // Browser shortcuts, selection, composition, and form controls stay native.
     },
     true,
   );
-  document.addEventListener("keyup", (event) => releaseKey(event.code), true);
+  document.addEventListener("keyup", (event) => {
+    if (!event.isTrusted) return;
+    const held = heldKeys.get(event.code);
+    heldKeys.delete(event.code);
+    releaseKey(event.code);
+    if (held?.release) {
+      const { buffer, modifier, calibration } = held.release;
+      playReleaseBuffer(buffer, modifier, calibration);
+    }
+  }, true);
+
+  // Unlock output at the first pointer activation, before its mouse/click handler.
+  // This never starts a sound, including on controls and rotation drags.
+  document.addEventListener("pointerdown", (event) => {
+    if (event.isTrusted && !document.hidden && Number($("#volume").value) > 0)
+      audioContext().catch(audioError);
+  }, true);
+
+  document.addEventListener(
+    "mousedown",
+    (event) => {
+      if (
+        !event.isTrusted ||
+        document.hidden ||
+        ![0, 1, 2].includes(event.button)
+      )
+        return;
+      // These controls own their audio or mute it. Preserve their native behavior
+      // and let the 3D keyboard distinguish a key click from a rotation drag.
+      if (
+        event.target instanceof Element &&
+        event.target.closest("#keyboard, #preview-button, #volume, .mouse-controls")
+      )
+        return;
+      if (heldMouseButtons.has(event.button)) return;
+      const held = {};
+      heldMouseButtons.set(event.button, held);
+      const selected = mouseChoice.value;
+      const bank = mouseBank(event.button);
+      if (!bank) return;
+      const index = mouseSampleNumber++;
+      const release = readySample(bank.releaseSamples, index);
+      playReadyBuffer(readySample(bank.samples, index), false, bank.calibration, {
+        // A press-only click can finish during the first audio resume, as it
+        // did before paired packs. Paired clicks must still be held when down starts.
+        current: () => (!bank.releaseSamples.length || heldMouseButtons.get(event.button) === held) && mouseChoice.value === selected,
+        started: () => {
+          if (release) held.release = { buffer: release, calibration: bank.calibration };
+        },
+      });
+    },
+    true,
+  );
+  document.addEventListener("mouseup", (event) => {
+    if (!event.isTrusted) return;
+    const held = heldMouseButtons.get(event.button);
+    heldMouseButtons.delete(event.button);
+    if (held?.release && mouseChoice.value !== "none")
+      playReleaseBuffer(held.release.buffer, false, held.release.calibration);
+  }, true);
 
   const rows = [
     [
@@ -506,7 +729,7 @@
         // Pointer interactions are resolved after drag detection; keyboard activation remains native.
         if (event.detail === 0) {
           animateKey(code);
-          playSample(activeProfile, /^(Shift|Control|Alt|Meta|Fn)/.test(code));
+          playSample(activeProfile, code);
         }
       });
       button.addEventListener("keydown", (event) => {
@@ -637,7 +860,7 @@
     if (!cancelled && !drag.moved && drag.key) {
       const code = drag.key.dataset.code;
       animateKey(code);
-      playSample(activeProfile, /^(Shift|Control|Alt|Meta|Fn)/.test(code));
+      playSample(activeProfile, code);
     } else drag.key?.classList.remove("is-pressed");
     if (keyboard.hasPointerCapture(event.pointerId))
       keyboard.releasePointerCapture(event.pointerId);
@@ -658,9 +881,8 @@
   });
 
   function pausePage() {
-    playbackSession++;
-    pendingKeyAttempt++;
-    lastAudioAttempt++;
+    resetPendingPlayback();
+    if (drag) finishDrag({ pointerId: drag.pointer }, true);
     typingField.value = "";
     clearKeys();
     clearTimeout(pulseTimer);
@@ -682,5 +904,13 @@
   });
   window.addEventListener("blur", pausePage);
   window.addEventListener("pagehide", pausePage);
-  prepareProfile();
+  loadProfiles().then(async () => {
+    renderProfiles();
+    await selectProfile(profiles[0], 0);
+    preview.disabled = false;
+  }).catch(audioError);
+  loadMouseProfiles().then(prepareMouseSound).catch(() => {
+    // The original Soft click remains available if catalog metadata cannot load.
+    prepareMouseSound();
+  });
 })();

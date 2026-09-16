@@ -114,11 +114,27 @@ enum AudioMixParameters {
 struct AudioReleaseTracker<Payload> {
     private struct Key: Hashable { let device: UInt64; let page: UInt32; let usage: UInt32 }
     private var pending: [Key: Payload] = [:]
+    private var held: [Key: PhysicalInputEvent] = [:]
+    mutating func beginPress(for event: PhysicalInputEvent) -> Bool {
+        let key = Key(device: event.deviceID, page: event.usagePage, usage: event.usage)
+        guard held[key] == nil else { return false }
+        held[key] = event
+        return true
+    }
     mutating func remember(_ payload: Payload?, for event: PhysicalInputEvent) {
-        pending[Key(device: event.deviceID, page: event.usagePage, usage: event.usage)] = payload
+        let key = Key(device: event.deviceID, page: event.usagePage, usage: event.usage)
+        held[key] = event; pending[key] = payload
     }
     mutating func release(for event: PhysicalInputEvent) -> Payload? {
-        pending.removeValue(forKey: Key(device: event.deviceID, page: event.usagePage, usage: event.usage))
+        let key = Key(device: event.deviceID, page: event.usagePage, usage: event.usage)
+        held.removeValue(forKey: key)
+        return pending.removeValue(forKey: key)
     }
-    mutating func reset() { pending.removeAll(keepingCapacity: true) }
+    mutating func removeReleases(where shouldRemove: (PhysicalInputEvent, Payload) -> Bool) {
+        pending = pending.filter { key, payload in
+            guard let event = held[key] else { return false }
+            return !shouldRemove(event, payload)
+        }
+    }
+    mutating func reset() { pending.removeAll(keepingCapacity: true); held.removeAll(keepingCapacity: true) }
 }

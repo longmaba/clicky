@@ -1,5 +1,28 @@
 import Foundation
 
+/// Selects one mouse stream so a hardware click observed by both HID and the
+/// window server produces only one transition. Session events also include
+/// trackpad tap-to-click, which is not guaranteed to expose a HID button value.
+public struct MouseInputRouter {
+    public static let sessionDeviceID = UInt64.max - 1
+    private let sessionEventTapAvailable: Bool
+
+    public init(sessionEventTapAvailable: Bool = false) {
+        self.sessionEventTapAvailable = sessionEventTapAvailable
+    }
+
+    public func hidEvent(_ event: PhysicalInputEvent) -> PhysicalInputEvent? {
+        guard !sessionEventTapAvailable, event.usagePage == 9, (1...3).contains(event.usage) else { return nil }
+        return event
+    }
+
+    public func sessionEvent(buttonNumber: Int64, phase: InputPhase, timestamp: Double) -> PhysicalInputEvent? {
+        guard sessionEventTapAvailable, (0...2).contains(buttonNumber) else { return nil }
+        return PhysicalInputEvent(usagePage: 9, usage: UInt32(buttonNumber + 1),
+                                  deviceID: Self.sessionDeviceID, phase: phase, timestamp: timestamp)
+    }
+}
+
 public struct InputNormalizer {
     private struct HeldKey: Hashable { var device: UInt64; var page: UInt32; var usage: UInt32 }
     private var held: Set<HeldKey> = []

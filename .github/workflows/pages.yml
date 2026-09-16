@@ -7,6 +7,8 @@ on:
       - website/**
       - Assets/Sounds/**
       - Assets/profiles.json
+      - Assets/mouse-profiles.json
+      - Assets/Licenses/**
       - scripts/prepare_website.py
       - .github/workflows/pages.yml
   workflow_dispatch:

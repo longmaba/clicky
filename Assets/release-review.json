@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "file": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f251.webm",
+    "sha256": "e0dd06e9997f3a87aa527e6c2c215a8d8319508f1059437f54407540a9e3656a",
+    "videoFile": "Thock vs Creamy vs Marbly vs Clack ｜ Best Sound Profile？ Ultimate Keyboard Sound Test [Gzko0BoULdw].f399.mp4",
+    "videoSha256": "7bf74ae1ca7e10f3cc70e1210e3e655d72989d6f2671b5c3e1db2bfc705d1b81"
+  },
+  "review": {
+    "date": "2026-09-15",
+    "method": "Full-source mono 48 kHz float audio envelope inspection; source video overview; targeted frame sequences from each profile ending and five additional detailed windows with 1 ms RMS envelopes. Every other decoded source frame inspected in detailed sheets (29.97 fps sampling of 59.94 fps source).",
+    "outcome": "No release samples verified. unavailable means this review did not establish an eligible cut; it does not prove that no release exists in the source.",
+    "limitations": [
+      "Review is targeted, not an exhaustive frame-by-frame classification of all keystrokes.",
+      "No physical down/up event timestamps or isolated source stems are available.",
+      "There was no human listening review in this session.",
+      "Waveform peaks were not treated as proof of release; existing press selections were not reclassified."
+    ],
+    "nextRecording": "For each profile, record a single key press, hold for at least 0.5 seconds, release, then leave at least 0.5 seconds of quiet before repeating. Keep other keys still and key travel visible; retain original audio levels and redistribution permission."
+  },
+  "profiles": [
+    {
+      "id": "thocky",
+      "status": "unavailable",
+      "evidence": "Angled overhead view: finger lifts alternate with other fingers descending. The reviewed tail continues typing; small intervening audio transients cannot be assigned uniquely to key release.",
+      "reviewedVideoWindowsSeconds": [
+        [
+          5.373,
+          6.043
+        ]
+      ],
+      "releases": [],
+      "pressTrims": []
+    },
+    {
+      "id": "marbly",
+      "status": "unavailable",
+      "evidence": "Fingertips obscure key travel. Interior and tail sequences show overlapping left/right activity; soft audio events between the major attacks have no unambiguous isolated release movement.",
+      "reviewedVideoWindowsSeconds": [
+        [
+          11.379,
+          12.049
+        ],
+        [
+          6.35,
+          6.75
+        ]
+      ],
+      "releases": [],
+      "pressTrims": []
+    },
+    {
+      "id": "silent",
+      "status": "unavailable",
+      "evidence": "Low-level broad audio bodies overlap continuous finger motion. The reviewed ending has no isolated press-hold-release demonstration, and release versus contact/room sound remains unresolved.",
+      "reviewedVideoWindowsSeconds": [
+        [
+          15.7,
+          16.37
+        ]
+      ],
+      "releases": [],
+      "pressTrims": []
+    },
+    {
+      "id": "poppy",
+      "status": "unavailable",
+      "evidence": "Both hands continue alternating movements through the reviewed ending. Candidate smaller transients coincide with multiple finger movements, without a separable isolated release.",
+      "reviewedVideoWindowsSeconds": [
+        [
+          20.855,
+          21.525
+        ]
+      ],
+      "releases": [],
+      "pressTrims": []
+    },
+    {
+      "id": "clicky",
+      "status": "unavailable",
+      "evidence": "Several sharp events occur during closely spaced movements. Neither the interior detail nor ending establishes which click belongs to switch release rather than a neighboring press or switch mechanism.",
+      "reviewedVideoWindowsSeconds": [
+        [
+          26.36,
+          27.03
+        ],
+        [
+          26.0,
+          26.37
+        ]
+      ],
+      "releases": [],
+      "pressTrims": []
+    },
+    {
+      "id": "bubble-wrap",
+      "status": "unavailable",
+      "evidence": "Angled view and curled fingers hide key travel during overlapping typing. The reviewed ending supplies no single visible release with a clean independent transient.",
+      "reviewedVideoWindowsSeconds": [
+        [
+          31.766,
+          32.436
+        ]
+      ],
+      "releases": [],
+      "pressTrims": []
+    },
+    {
+      "id": "clacky",
+      "status": "unavailable",
+      "evidence": "Sharp major attacks are visible in the envelope, but smaller inter-attack events in the interior detail cannot be tied uniquely to one finger lifting. Both hands remain active in the ending.",
+      "reviewedVideoWindowsSeconds": [
+        [
+          37.505,
+          38.175
+        ],
+        [
+          33.72,
+          34.03
+        ]
+      ],
+      "releases": [],
+      "pressTrims": []
+    },
+    {
+      "id": "creamy",
+      "status": "unavailable",
+      "evidence": "Fingertips obscure travel on the dark keycaps. Interior detail and ending combine finger lifts with other key movements and broad audio tails; a clean independent release is not established.",
+      "reviewedVideoWindowsSeconds": [
+        [
+          43.928,
+          44.598
+        ],
+        [
+          44.13,
+          44.5
+        ]
+      ],
+      "releases": [],
+      "pressTrims": []
+    },
+    {
+      "id": "deep-thock",
+      "status": "unavailable",
+      "evidence": "The more distant view makes individual key travel hard to resolve. Quieter interior gaps and the ending retain low-level overlapping audio and finger movement, with no verified isolated release.",
+      "reviewedVideoWindowsSeconds": [
+        [
+          49.116,
+          49.786
+        ],
+        [
+          45.2,
+          45.6
+        ]
+      ],
+      "releases": [],
+      "pressTrims": []
+    },
+    {
+      "id": "office",
+      "status": "unavailable",
+      "evidence": "Fingers remain curled over the keys through the final frames. The quieter tail has multiple small sounds, but no visibly isolated release can be assigned to a clean recording interval.",
+      "reviewedVideoWindowsSeconds": [
+        [
+          54.355,
+          55.025
+        ]
+      ],
+      "releases": [],
+      "pressTrims": []
+    }
+  ]
+}

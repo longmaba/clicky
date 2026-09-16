@@ -5,7 +5,8 @@ import IOKit.hid
 import IOKit.hidsystem
 import ClickyCore
 
-/// Observes physical HID transitions. It never asks macOS for characters or text.
+/// Observes physical keyboard HID transitions and macOS mouse button events.
+/// It never asks macOS for characters or text.
 final class InputService {
     var onEvent: ((PhysicalInputEvent) -> Void)?
     var onReset: (() -> Void)?
@@ -17,6 +18,7 @@ final class InputService {
     private var tap: CFMachPort?
     private var tapSource: CFRunLoopSource?
     private var normalizer = InputNormalizer()
+    private var mouseInput = MouseInputRouter()
     private var paused = false
     private var desiredRunning = false
     private var desiredPaused = false
@@ -71,19 +73,22 @@ final class InputService {
         IOHIDManagerRegisterDeviceRemovalCallback(hid, { context, _, _, device in
             guard let context else { return }
             let service = Unmanaged<InputService>.fromOpaque(context).takeUnretainedValue()
-            service.normalizer.remove(deviceID: service.deviceID(device)); service.onReset?()
+            service.normalizer.remove(deviceID: service.deviceID(device))
+            service.normalizer.remove(deviceID: MouseInputRouter.sessionDeviceID)
+            service.onReset?()
         }, context)
         IOHIDManagerScheduleWithRunLoop(hid, loop, CFRunLoopMode.defaultMode.rawValue)
         let result = IOHIDManagerOpen(hid, IOOptionBits(kIOHIDOptionsTypeNone))
         if result != kIOReturnSuccess { onError?("Input Monitoring is unavailable. Grant access in System Settings, then reopen Clicky if needed.") }
         else { onError?(nil) }
-        installFnTap(context: context, loop: loop)
+        installEventTap(context: context, loop: loop)
         CFRunLoopRun()
         if let tap { CGEvent.tapEnable(tap: tap, enable: false); CFMachPortInvalidate(tap) }
         if let tapSource { CFRunLoopRemoveSource(loop, tapSource, .defaultMode) }
         IOHIDManagerUnscheduleFromRunLoop(hid, loop, CFRunLoopMode.defaultMode.rawValue)
         IOHIDManagerClose(hid, IOOptionBits(kIOHIDOptionsTypeNone))
-        manager = nil; tap = nil; tapSource = nil; normalizer.reset()
+        manager = nil; tap = nil; tapSource = nil; normalizer.reset(); fallbackFnDown = false
+        mouseInput = MouseInputRouter()
         finishWorker()
     }
     private func receive(_ value: IOHIDValue) {
@@ -97,6 +102,7 @@ final class InputService {
         let phase: InputPhase = IOHIDValueGetIntegerValue(value) == 0 ? .up : .down
         let id = page == 7 && usage == 255 ? UInt64.max : deviceID(IOHIDElementGetDevice(element))
         let event = PhysicalInputEvent(usagePage: page, usage: usage, deviceID: id, phase: phase, timestamp: timestamp)
+        if page == 9 && mouseInput.hidEvent(event) == nil { return }
         if let event = normalizer.process(event) { onEvent?(event) }
     }
     private func deviceID(_ device: IOHIDDevice) -> UInt64 {
@@ -104,22 +110,50 @@ final class InputService {
         IORegistryEntryGetRegistryEntryID(IOHIDDeviceGetService(device), &id)
         return id
     }
-    private func installFnTap(context: UnsafeMutableRawPointer, loop: CFRunLoop) {
-        let mask = CGEventMask(1) << CGEventType.flagsChanged.rawValue
+    private func installEventTap(context: UnsafeMutableRawPointer, loop: CFRunLoop) {
+        let types: [CGEventType] = [.flagsChanged, .leftMouseDown, .leftMouseUp,
+                                    .rightMouseDown, .rightMouseUp, .otherMouseDown, .otherMouseUp]
+        let mask = types.reduce(CGEventMask(0)) { $0 | (CGEventMask(1) << $1.rawValue) }
         tap = CGEvent.tapCreate(tap: .cgSessionEventTap, place: .headInsertEventTap, options: .listenOnly, eventsOfInterest: mask, callback: { _, type, event, context in
             guard let context else { return Unmanaged.passUnretained(event) }
             let service = Unmanaged<InputService>.fromOpaque(context).takeUnretainedValue()
             if type == .tapDisabledByTimeout || type == .tapDisabledByUserInput {
+                // An interrupted tap may miss releases; do not leave buttons held.
+                service.resetInputState()
                 if let tap = service.tap { CGEvent.tapEnable(tap: tap, enable: true) }
             } else if type == .flagsChanged && event.getIntegerValueField(.keyboardEventKeycode) == 0x3F {
                 service.receiveFn(event)
+            } else {
+                service.receiveMouse(type, event)
             }
             return Unmanaged.passUnretained(event)
         }, userInfo: context)
         if let tap {
-            tapSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, tap, 0)
-            CFRunLoopAddSource(loop, tapSource, .defaultMode); CGEvent.tapEnable(tap: tap, enable: true)
+            guard let source = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, tap, 0) else {
+                CFMachPortInvalidate(tap); self.tap = nil; return
+            }
+            tapSource = source
+            mouseInput = MouseInputRouter(sessionEventTapAvailable: true)
+            CFRunLoopAddSource(loop, source, .defaultMode); CGEvent.tapEnable(tap: tap, enable: true)
         }
+    }
+    private func receiveMouse(_ type: CGEventType, _ event: CGEvent) {
+        guard !paused else { return }
+        let buttonNumber: Int64
+        let phase: InputPhase
+        switch type {
+        case .leftMouseDown: buttonNumber = 0; phase = .down
+        case .leftMouseUp: buttonNumber = 0; phase = .up
+        case .rightMouseDown: buttonNumber = 1; phase = .down
+        case .rightMouseUp: buttonNumber = 1; phase = .up
+        case .otherMouseDown: buttonNumber = event.getIntegerValueField(.mouseEventButtonNumber); phase = .down
+        case .otherMouseUp: buttonNumber = event.getIntegerValueField(.mouseEventButtonNumber); phase = .up
+        default: return
+        }
+        guard let raw = mouseInput.sessionEvent(buttonNumber: buttonNumber, phase: phase,
+                                                timestamp: ProcessInfo.processInfo.systemUptime),
+              let normalized = normalizer.process(raw) else { return }
+        onEvent?(normalized)
     }
     private func receiveFn(_ event: CGEvent) {
         guard !paused else { return }
@@ -135,10 +169,11 @@ final class InputService {
         stateLock.lock(); desiredPaused = value; stateLock.unlock()
         perform { [weak self] in
             guard let self, self.paused != value else { return }
-            self.paused = value; self.normalizer.reset(); self.fallbackFnDown = false; self.onReset?()
+            self.paused = value; self.resetInputState()
         }
     }
-    func reset() { perform { [weak self] in self?.normalizer.reset(); self?.fallbackFnDown = false; self?.onReset?() } }
+    private func resetInputState() { normalizer.reset(); fallbackFnDown = false; onReset?() }
+    func reset() { perform { [weak self] in self?.resetInputState() } }
     private func perform(_ block: @escaping () -> Void) {
         stateLock.lock(); let loop = runLoop; stateLock.unlock()
         if let loop { CFRunLoopPerformBlock(loop, CFRunLoopMode.defaultMode.rawValue, block); CFRunLoopWakeUp(loop) }

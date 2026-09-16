@@ -1,0 +1,56 @@
+{
+  "releaseGain": 0.7,
+  "releaseGainDecibels": -3.0980391997148637,
+  "pressGain": 1,
+  "humanListeningReview": "Pending",
+  "auditions": [
+    {
+      "catalog": "keyboard",
+      "phase": "press",
+      "path": "build/auditions/softer-release/keyboard-press.wav",
+      "eventCount": 140,
+      "peak": 0.47003173828125,
+      "sha256": "7fc46c699c8632fbf04d69bdf0b42bb48e1977894d01d7fbe35f878789cea604"
+    },
+    {
+      "catalog": "keyboard",
+      "phase": "release",
+      "path": "build/auditions/softer-release/keyboard-release.wav",
+      "eventCount": 41,
+      "peak": 0.29083251953125,
+      "sha256": "2b4fe4bddafa263d123bf15450361fbbc3ea22ec8286c912dd6bdfe059568166"
+    },
+    {
+      "catalog": "keyboard",
+      "phase": "pair",
+      "path": "build/auditions/softer-release/keyboard-pair.wav",
+      "eventCount": 1320,
+      "peak": 0.628326416015625,
+      "sha256": "00c1eb42801a47ed2289d4e6e866683d4617c41baea07da3d1a12da271fab4c5"
+    },
+    {
+      "catalog": "mouse",
+      "phase": "press",
+      "path": "build/auditions/softer-release/mouse-press.wav",
+      "eventCount": 2,
+      "peak": 0.1837158203125,
+      "sha256": "c5e12fdb5be37b07d09dd30a881be7cb5b8ea81cded5ead8c267c412b05c8a73"
+    },
+    {
+      "catalog": "mouse",
+      "phase": "release",
+      "path": "build/auditions/softer-release/mouse-release.wav",
+      "eventCount": 2,
+      "peak": 0.236724853515625,
+      "sha256": "50d4d5cde1f187194ca5615fa2e29cbc41d68ab1b3db32150a359248dcd82aa3"
+    },
+    {
+      "catalog": "mouse",
+      "phase": "pair",
+      "path": "build/auditions/softer-release/mouse-pair.wav",
+      "eventCount": 24,
+      "peak": 0.3675537109375,
+      "sha256": "2833ad8dd87cd0321a650b218684fd8997e23b3641df5133cac4582855ccce32"
+    }
+  ]
+}

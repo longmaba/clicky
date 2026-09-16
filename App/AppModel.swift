@@ -52,6 +52,7 @@ private final class InputRouter {
 @MainActor final class AppModel: ObservableObject {
     @Published var config: AppConfiguration
     let profiles: [SoundProfileManifest]
+    let mouseProfiles: [SoundProfileManifest]
     @Published var outputs: [AudioOutputDevice] = []
     @Published var permissionGranted = false
     @Published var secureInput = false
@@ -63,6 +64,8 @@ private final class InputRouter {
     @Published var isRecordingShortcut = false
     @Published var settingsTab = "sound"
     @Published var audioReady = false
+    // Keep Settings/menu hover auditions out of opt-in playback replay counters.
+    var diagnosticReplayInProgress = false
     var currentProfile: SoundProfileManifest? { profiles.first { $0.id == config.sound.profileID } }
     var onShowSettings: (() -> Void)?
     var onConfigurationChanged: (() -> Void)?
@@ -105,6 +108,9 @@ private final class InputRouter {
         do {
             profiles = try JSONDecoder().decode([SoundProfileManifest].self,from:Data(contentsOf:AppResources.assets.appendingPathComponent("profiles.json")))
         } catch { profiles = []; initialNotice = "The bundled sounds could not be loaded: \(error.localizedDescription)" }
+        do {
+            mouseProfiles = try JSONDecoder().decode([SoundProfileManifest].self, from: Data(contentsOf: AppResources.assets.appendingPathComponent("mouse-profiles.json")))
+        } catch { mouseProfiles = []; initialNotice = "The bundled mouse sounds could not be loaded: \(error.localizedDescription)" }
         notice = initialNotice
         router = InputRouter(audio:audio)
         wireServices()
@@ -122,10 +128,10 @@ private final class InputRouter {
             }
             observeWorkspace()
         }
-        let profiles = self.profiles, assets = AppResources.assets, imports = importsURL, audio = self.audio
+        let profiles = self.profiles, mouseProfiles = self.mouseProfiles, assets = AppResources.assets, imports = importsURL, audio = self.audio
         DispatchQueue.global(qos:.userInitiated).async { [weak self] in
             do {
-                try audio.load(profiles:profiles,assetsURL:assets,importsURL:imports)
+                try audio.load(profiles: profiles, mouseProfiles: mouseProfiles, assetsURL: assets, importsURL: imports)
                 Task { @MainActor in
                     guard let self else { return }; self.audioReady = true; self.applyAudioSettings(); self.refreshDevices()
                 }
@@ -208,8 +214,14 @@ private final class InputRouter {
 
     func toggleEnabled() { config.enabled.toggle() }
     func selectProfile(_ id: String) { config.sound.profileID = id }
-    func previewProfile(_ id: String) { audio.preview(profileID:id) }
-    func previewExtra(_ sound: ExtraSound, forMouse: Bool = true) { audio.previewExtra(sound, forEnter:!forMouse) }
+    func previewProfile(_ id: String, keyID: String? = nil) {
+        guard !diagnosticReplayInProgress else { return }
+        audio.preview(profileID: id, keyID: keyID)
+    }
+    func previewExtra(_ sound: ExtraSound, forMouse: Bool = true) {
+        guard !diagnosticReplayInProgress else { return }
+        audio.previewExtra(sound, forEnter:!forMouse)
+    }
     func requestInputPermission() {
         _ = InputService.requestPermission(); pollSystemState()
         if !permissionGranted { openInputSettings() }

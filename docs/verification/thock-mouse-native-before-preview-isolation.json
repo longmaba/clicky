@@ -1,0 +1,476 @@
+{
+  "audioContinuesAfterSettingsClose" : true,
+  "audioReady" : true,
+  "audioReplay" : {
+    "accepted" : 502,
+    "bufferFrames" : 128,
+    "bufferMilliseconds" : 2.6666666666666665,
+    "dropped" : 0,
+    "expected" : 500,
+    "pressReleasePairs" : 500,
+    "renderBlockFrames" : 128,
+    "renderBlockMilliseconds" : 2.6666666666666665,
+    "renderedFrames" : 291072,
+    "sampleRate" : 48000,
+    "submitted" : 1000
+  },
+  "audioStatus" : "ready",
+  "hardwareInputTests" : "Require physical typing and permission grant; not simulated by diagnostics.",
+  "inputMonitoringGranted" : true,
+  "keyCategoryReplay" : {
+    "alps-skcm-blue" : {
+      "7:40" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:42" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:44" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:88" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      }
+    },
+    "drop-holy-panda" : {
+      "7:40" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:42" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:44" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:88" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      }
+    },
+    "durock-alpaca" : {
+      "7:40" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:42" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:44" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:88" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      }
+    },
+    "gateron-ink-black" : {
+      "7:40" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:42" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:44" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:88" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      }
+    },
+    "gateron-ink-red" : {
+      "7:40" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:42" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:44" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:88" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      }
+    },
+    "gateron-turquoise-tealios" : {
+      "7:40" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:42" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:44" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:88" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      }
+    },
+    "ibm-buckling-spring" : {
+      "7:40" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:42" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:44" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:88" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      }
+    },
+    "kailh-box-navy" : {
+      "7:40" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:42" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:44" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:88" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      }
+    },
+    "novelkeys-cream" : {
+      "7:40" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:42" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:44" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:88" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      }
+    },
+    "topre-unknown" : {
+      "7:40" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:42" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:44" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "7:88" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      }
+    }
+  },
+  "loadedSampleCount" : 190,
+  "missingSamples" : [
+
+  ],
+  "modifierReplay" : {
+    "full" : {
+      "accepted" : 13,
+      "dropped" : 0,
+      "expected" : 13
+    },
+    "silent" : {
+      "accepted" : 4,
+      "dropped" : 0,
+      "expected" : 4
+    },
+    "soft" : {
+      "accepted" : 13,
+      "dropped" : 0,
+      "expected" : 13
+    }
+  },
+  "mouseProfileCount" : 1,
+  "mouseReplay" : {
+    "razer-orochi-v2" : {
+      "9:1" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "9:2" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      },
+      "9:3" : {
+        "accepted" : 20,
+        "dropped" : 0,
+        "expected" : 20,
+        "pressReleasePairs" : 10
+      }
+    }
+  },
+  "os" : "Version 26.6.2 (Build 25G83)",
+  "outputs" : [
+    {
+      "headphones" : false,
+      "id" : "BuiltInSpeakerDevice",
+      "name" : "MacBook Pro Speakers"
+    },
+    {
+      "headphones" : false,
+      "id" : "MSLoopbackDriverDevice_UID",
+      "name" : "Microsoft Teams Audio"
+    }
+  ],
+  "profileCount" : 20,
+  "profileReplay" : {
+    "alps-skcm-blue" : {
+      "accepted" : 120,
+      "dropped" : 0,
+      "expected" : 120,
+      "pressReleasePairs" : 60
+    },
+    "bubble-wrap" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "clacky" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "clicky" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "creamy" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "deep-thock" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "drop-holy-panda" : {
+      "accepted" : 120,
+      "dropped" : 0,
+      "expected" : 120,
+      "pressReleasePairs" : 60
+    },
+    "durock-alpaca" : {
+      "accepted" : 120,
+      "dropped" : 0,
+      "expected" : 120,
+      "pressReleasePairs" : 60
+    },
+    "gateron-ink-black" : {
+      "accepted" : 120,
+      "dropped" : 0,
+      "expected" : 120,
+      "pressReleasePairs" : 60
+    },
+    "gateron-ink-red" : {
+      "accepted" : 120,
+      "dropped" : 0,
+      "expected" : 120,
+      "pressReleasePairs" : 60
+    },
+    "gateron-turquoise-tealios" : {
+      "accepted" : 120,
+      "dropped" : 0,
+      "expected" : 120,
+      "pressReleasePairs" : 60
+    },
+    "ibm-buckling-spring" : {
+      "accepted" : 120,
+      "dropped" : 0,
+      "expected" : 120,
+      "pressReleasePairs" : 60
+    },
+    "kailh-box-navy" : {
+      "accepted" : 120,
+      "dropped" : 0,
+      "expected" : 120,
+      "pressReleasePairs" : 60
+    },
+    "marbly" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "novelkeys-cream" : {
+      "accepted" : 120,
+      "dropped" : 0,
+      "expected" : 120,
+      "pressReleasePairs" : 60
+    },
+    "office" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "poppy" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "silent" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "thocky" : {
+      "accepted" : 60,
+      "dropped" : 0,
+      "expected" : 60,
+      "pressReleasePairs" : 60
+    },
+    "topre-unknown" : {
+      "accepted" : 120,
+      "dropped" : 0,
+      "expected" : 120,
+      "pressReleasePairs" : 60
+    }
+  },
+  "recordedSampleCount" : 185,
+  "releaseProfiles" : [
+    "alps-skcm-blue",
+    "drop-holy-panda",
+    "durock-alpaca",
+    "gateron-ink-black",
+    "gateron-ink-red",
+    "gateron-turquoise-tealios",
+    "kailh-box-navy",
+    "novelkeys-cream",
+    "topre-unknown",
+    "ibm-buckling-spring"
+  ],
+  "secureInputActive" : false
+}

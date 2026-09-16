@@ -37,6 +37,7 @@ private final class MenuCommand: NSObject {
         for profile in model.profiles {
             let row = add(profiles,profile.name,symbol:"square.fill",preview:{ [weak model] in model?.previewProfile(profile.id) }) { [weak model] in model?.selectProfile(profile.id) }
             row.state = profile.id == model.config.sound.profileID ? .on : .off
+            row.toolTip = profile.subtitle + (profile.releaseSamples?.isEmpty == false ? " · Press + release" : "")
         }
         let favorites = submenu(menu,"Favorites",symbol:"star")
         if model.config.favorites.isEmpty { let empty = NSMenuItem(title:"Save your favorite sound",action:nil,keyEquivalent:""); empty.isEnabled = false; favorites.addItem(empty) }
@@ -46,9 +47,10 @@ private final class MenuCommand: NSObject {
         save.isEnabled = model.config.favorites.count < 6
         add(menu,"Sound…",symbol:"slider.horizontal.3") { [weak self] in self?.settings("sound") }
         let mouse = submenu(menu,"Mouse clicks",symbol:"computermouse")
-        for choice in [ExtraSound.none,.soft,.crisp,.hard,.custom] {
+        for choice in [ExtraSound.none,.soft,.crisp,.hard,.razerOrochiV2,.custom] {
             let row = add(mouse,choice.title,preview: { [weak model] in model?.previewExtra(choice) }) { [weak model] in model?.config.sound.mouseSound = choice }
             row.state = model.config.sound.mouseSound == choice ? .on : .off
+            if choice.mouseProfileID != nil { row.toolTip = "Recorded left and right clicks · Press + release" }
             row.isEnabled = choice != .custom || model.config.sound.customMouse != nil
         }
         let enter = submenu(menu,"Enter sound",symbol:"return")

@@ -17,7 +17,7 @@ enum NotchDiagnostics {
             }
             guard model.audioReady else { throw Failure("Audio unavailable for click-preview checks") }
             var silent = model.config.sound
-            silent.volume = 0
+            silent.volume = 0.000001
             model.audio.update(settings: silent, keyOverrides: [:], enabled: false)
             model.config.visualizer.hideInFullscreen = false
             NSApp.deactivate()
@@ -45,18 +45,23 @@ enum NotchDiagnostics {
                 }
                 func count() -> UInt64 { model.audio.diagnostics.acceptedTriggers }
 
+                let profile = model.profiles.first { $0.id == model.config.sound.profileID }
+                let expectedPreview: UInt64 = profile?.releaseSamples?.isEmpty == false ? 2 : 1
+                measurements["\(label).expectedPreviewTriggers"] = expectedPreview
                 let beforeClick = count()
                 try send(.leftMouseDown, center)
                 checks["\(label).firstDownCaptured"] = surface.isInteracting
                 try send(.leftMouseUp, center)
-                checks["\(label).clickPreviewsOnce"] = count() - beforeClick == 1
+                try await Task.sleep(nanoseconds: 150_000_000)
+                checks["\(label).clickPreviewsOnce"] = count() - beforeClick == expectedPreview
 
                 let beforeJitter = count()
                 let jitterYaw = host.yaw
                 try send(.leftMouseDown, center)
                 try send(.leftMouseDragged, NSPoint(x: center.x + 1, y: center.y + 1))
                 try send(.leftMouseUp, NSPoint(x: center.x + 1, y: center.y + 1))
-                checks["\(label).smallJitterRemainsClick"] = count() - beforeJitter == 1 && host.yaw == jitterYaw
+                try await Task.sleep(nanoseconds: 150_000_000)
+                checks["\(label).smallJitterRemainsClick"] = count() - beforeJitter == expectedPreview && host.yaw == jitterYaw
 
                 let beforeDrag = count()
                 let initialYaw = host.yaw, initialPitch = host.pitch
