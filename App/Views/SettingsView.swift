@@ -172,16 +172,38 @@ struct SettingsView: View {
         }.padding(16).frame(maxWidth: .infinity, alignment: .leading).background(.quaternary, in: RoundedRectangle(cornerRadius: 12))
     }
 
+    private func profileGroupSection(_ group: SoundProfileGroup) -> some View {
+        VStack(alignment: .leading, spacing: 9) {
+            HStack(spacing: 7) {
+                Text(group.title.uppercased())
+                    .font(.system(size: 10, weight: .semibold))
+                    .tracking(1.2)
+                    .foregroundStyle(group.isBrand ? Color.clickyAmber : Color.secondary)
+                Text(String(group.profiles.count))
+                    .font(.system(size: 9, weight: .medium))
+                    .foregroundStyle(.tertiary)
+                    .padding(.horizontal, 5)
+                    .padding(.vertical, 1)
+                    .background(Color.primary.opacity(0.06), in: Capsule())
+                Spacer()
+            }
+            LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
+                ForEach(group.profiles) { profile in
+                    ProfileCard(profile: profile,
+                                title: group.isBrand ? profile.modelName : profile.name,
+                                selected: model.config.sound.profileID == profile.id,
+                                select: { model.selectProfile(profile.id) },
+                                preview: { model.previewProfile(profile.id) })
+                }
+            }
+        }
+    }
+
     private var soundPage: some View {
         Group {
             VStack(alignment: .leading, spacing: 13) {
-                sectionHeading("THE COLLECTION", trailing: "\(model.profiles.count) sound profiles")
-                LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
-                    ForEach(model.profiles) { profile in
-                        ProfileCard(profile: profile, selected: model.config.sound.profileID == profile.id,
-                                    select: { model.selectProfile(profile.id) }, preview: { model.previewProfile(profile.id) })
-                    }
-                }
+                sectionHeading("THE COLLECTION", trailing: "\(model.profiles.count) sound profiles · \(model.profileGroups.filter(\.isBrand).count) switch brands")
+                ForEach(model.profileGroups) { group in profileGroupSection(group) }
                 Text("Hover to audition · Click to make it yours").font(.system(size: 11)).foregroundStyle(.tertiary)
             }
             ClickyCard {
@@ -307,7 +329,11 @@ struct SettingsView: View {
                     }
                     Picker("Sound profile", selection: keyProfileBinding) {
                         Text("Use global profile").tag("")
-                        ForEach(model.profiles) { profile in Text(profile.name).tag(profile.id) }
+                        ForEach(model.profileGroups) { group in
+                            Section(group.title) {
+                                ForEach(group.profiles) { profile in Text(profile.name).tag(profile.id) }
+                            }
+                        }
                     }
                     keyOverrideSlider("Volume", keyPath: \.volume, global: model.config.sound.volume, range: 0...1, suffix: "%")
                     keyOverrideSlider("Tone", keyPath: \.tone, global: model.config.sound.tone, range: -1...1, suffix: "")
@@ -616,26 +642,34 @@ struct ClickyCard<Content: View>: View {
 
 private struct ProfileCard: View {
     var profile: SoundProfileManifest
+    /// The brand heading above the card already names the manufacturer.
+    var title: String
     var selected: Bool
     var select: () -> Void
     var preview: () -> Void
     @State private var hovered = false
     @State private var hoverTask: Task<Void, Never>?
+    private var swatch: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10).fill(Color(clickyHex: profile.color).opacity(selected ? 0.23 : 0.13))
+            Image(systemName: "waveform").font(.system(size: 20, weight: .medium)).foregroundStyle(Color(clickyHex: profile.color))
+        }.frame(width: 43, height: 43)
+    }
+    private var caption: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(verbatim: title).font(.system(size: 13, weight: .semibold)).foregroundStyle(.primary)
+                .lineLimit(2).fixedSize(horizontal: false, vertical: true)
+            Text(profile.subtitle).font(.system(size: 10)).foregroundStyle(.secondary).lineLimit(1)
+            if profile.releaseSamples?.isEmpty == false {
+                Text("Press + release").font(.system(size: 9, weight: .medium)).foregroundStyle(.secondary)
+            }
+        }
+    }
     var body: some View {
         Button(action: select) {
             HStack(spacing: 12) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 10).fill(Color(clickyHex: profile.color).opacity(selected ? 0.23 : 0.13))
-                    Image(systemName: "waveform").font(.system(size: 20, weight: .medium)).foregroundStyle(Color(clickyHex: profile.color))
-                }.frame(width: 43, height: 43)
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(profile.name).font(.system(size: 13, weight: .semibold)).foregroundStyle(.primary)
-                        .lineLimit(2).fixedSize(horizontal: false, vertical: true)
-                    Text(profile.subtitle).font(.system(size: 10)).foregroundStyle(.secondary).lineLimit(1)
-                    if profile.releaseSamples?.isEmpty == false {
-                        Text("Press + release").font(.system(size: 9, weight: .medium)).foregroundStyle(.secondary)
-                    }
-                }
+                swatch
+                caption
                 Spacer(minLength: 3)
                 Image(systemName: selected ? "checkmark.circle.fill" : "play.circle")
                     .font(.system(size: 17)).foregroundStyle(selected ? Color.clickyAmber : Color.secondary.opacity(hovered ? 0.8 : 0.3))

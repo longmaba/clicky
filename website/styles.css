@@ -634,6 +634,28 @@ h2 em {
   gap: 9px;
   align-content: start;
 }
+.profile-group {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 6px 0 0;
+  font-size: 10px;
+  font-weight: 620;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.profile-group:first-child {
+  margin-top: 0;
+}
+.profile-group span {
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.05);
+  font-size: 9px;
+  letter-spacing: 0.04em;
+}
 .profile-button {
   min-width: 0;
   display: flex;

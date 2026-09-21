@@ -81,6 +81,7 @@ class ImportTests(unittest.TestCase):
         self.assertEqual(profiles[0], self.originals[0])
         self.assertEqual(files["Sounds/Extras/test.wav"], self.old_audio)
         paired = profiles[1]
+        self.assertEqual(paired["brand"], self.metadata["brand"])
         self.assertEqual(len(paired["samples"]), 1)
         self.assertEqual(len(paired["releaseSamples"]), 2)
         self.assertEqual(paired["keySamples"]["7:40"], paired["keySamples"]["7:88"])
@@ -122,6 +123,14 @@ class ImportTests(unittest.TestCase):
         broken["sounds"]["default"]["up"] = []
         with self.assertRaisesRegex(ValueError, "Missing or duplicate"):
             importer.validate_config(broken, self.lock["profiles"][0])
+
+    def test_pack_without_a_brand_is_rejected(self):
+        unbranded = copy.deepcopy(self.config)
+        del unbranded["metadata"]["brand"]
+        entry = copy.deepcopy(self.lock["profiles"][0])
+        entry["metadata"] = unbranded["metadata"]
+        with self.assertRaisesRegex(ValueError, "no switch brand"):
+            importer.validate_config(unbranded, entry)
 
     def test_safe_zip_read_never_extracts_paths_or_accepts_duplicates(self):
         payload = io.BytesIO()

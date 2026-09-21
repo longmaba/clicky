@@ -48,6 +48,9 @@ public struct SoundSampleSet: Sendable, Codable, Equatable {
 public struct SoundProfileManifest: Sendable, Codable, Identifiable, Equatable {
     public var id: String
     public var name: String
+    /// The switch manufacturer, as named by the recording's publisher. Absent
+    /// for the original character profiles, which are not a single switch.
+    public var brand: String?
     public var subtitle: String
     public var color: String
     public var samples: [String]
@@ -58,13 +61,49 @@ public struct SoundProfileManifest: Sendable, Codable, Identifiable, Equatable {
     /// Omitted for legacy profiles; catalog additions can preserve that corpus's
     /// normalization target without changing the loudness of existing profiles.
     public var normalizationReference: Bool?
+    /// The switch name without its brand prefix, for display under a brand
+    /// heading. Unbranded profiles keep their full name.
+    public var modelName: String {
+        guard let brand, name.hasPrefix(brand + " ") else { return name }
+        return String(name.dropFirst(brand.count + 1))
+    }
     public var samplePaths: [String] {
         Array(Set(samples + (releaseSamples ?? []) + (keySamples ?? [:]).values.flatMap { $0.samples + ($0.releaseSamples ?? []) })).sorted()
     }
-    public init(id: String, name: String, subtitle: String = "", color: String = "E99244", samples: [String] = [], releaseSamples: [String]? = nil, keySamples: [String: SoundSampleSet]? = nil, gain: Float = 1, provenance: SampleProvenance? = nil, normalizationReference: Bool? = nil) {
-        self.id = id; self.name = name; self.subtitle = subtitle; self.color = color
+    public init(id: String, name: String, brand: String? = nil, subtitle: String = "", color: String = "E99244", samples: [String] = [], releaseSamples: [String]? = nil, keySamples: [String: SoundSampleSet]? = nil, gain: Float = 1, provenance: SampleProvenance? = nil, normalizationReference: Bool? = nil) {
+        self.id = id; self.name = name; self.brand = brand; self.subtitle = subtitle; self.color = color
         self.samples = samples; self.releaseSamples = releaseSamples; self.keySamples = keySamples
         self.gain = gain; self.provenance = provenance; self.normalizationReference = normalizationReference
+    }
+}
+
+public struct SoundProfileGroup: Sendable, Identifiable, Equatable {
+    public var title: String
+    public var profiles: [SoundProfileManifest]
+    /// True when the title is a switch manufacturer rather than the catalog's
+    /// own character profiles.
+    public var isBrand: Bool
+    public var id: String { title }
+    public init(title: String, profiles: [SoundProfileManifest], isBrand: Bool = true) {
+        self.title = title; self.profiles = profiles; self.isBrand = isBrand
+    }
+}
+
+public extension Array where Element == SoundProfileManifest {
+    /// Group recorded switches under their manufacturer, alphabetically, after
+    /// the unbranded character profiles. Catalog order is kept inside a group.
+    func groupedByBrand(unbrandedTitle: String = "Signature") -> [SoundProfileGroup] {
+        var order: [String] = []
+        var members: [String: [SoundProfileManifest]] = [:]
+        for profile in self {
+            let brand = profile.brand?.trimmingCharacters(in: .whitespaces) ?? ""
+            let title = brand.isEmpty ? unbrandedTitle : brand
+            if members[title] == nil { order.append(title) }
+            members[title, default: []].append(profile)
+        }
+        let brands = order.filter { $0 != unbrandedTitle }.sorted { $0.localizedCaseInsensitiveCompare($1) == .orderedAscending }
+        let titles = (order.contains(unbrandedTitle) ? [unbrandedTitle] : []) + brands
+        return titles.map { SoundProfileGroup(title: $0, profiles: members[$0] ?? [], isBrand: $0 != unbrandedTitle) }
     }
 }
 

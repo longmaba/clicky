@@ -5,6 +5,7 @@
   const repository =
     config.repositoryUrl || "https://github.com/longmaba/clicky";
   const profiles = [];
+  const SIGNATURE_GROUP = "Signature";
   // Match the native app's softer key and mouse release impacts (about -3 dB).
   const releaseGain = 0.7;
   const keyUsages = {
@@ -96,32 +97,74 @@
   });
   donateDialog.addEventListener("close", () => donateTrigger?.focus());
 
-  function renderProfiles() {
-    profiles.forEach((profile, index) => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "profile-button";
-      button.dataset.profile = profile.id;
-      button.setAttribute("aria-pressed", String(index === 0));
-      const swatch = document.createElement("span");
-      swatch.className = "profile-swatch";
-      swatch.style.background = profile.color;
-      swatch.setAttribute("aria-hidden", "true");
-      const label = document.createElement("span");
-      label.className = "profile-label";
-      label.textContent = profile.name;
-      if (profile.releaseSamples?.length) {
-        const phases = document.createElement("small");
-        phases.textContent = "Press + release";
-        label.append(phases);
+  // Recorded switches sit under their manufacturer, alphabetically, after the
+  // catalog's own character profiles. Catalog order is kept inside a group.
+  function profileGroups() {
+    const order = [];
+    const members = new Map();
+    profiles.forEach((profile) => {
+      const title = (profile.brand || "").trim() || SIGNATURE_GROUP;
+      if (!members.has(title)) {
+        order.push(title);
+        members.set(title, []);
       }
-      const check = document.createElement("span");
-      check.className = "profile-check";
-      check.setAttribute("aria-hidden", "true");
-      check.textContent = index === 0 ? "✓" : "";
-      button.append(swatch, label, check);
-      button.addEventListener("click", () => selectProfile(profile, index));
-      $("#profile-list").append(button);
+      members.get(title).push(profile);
+    });
+    const brands = order
+      .filter((title) => title !== SIGNATURE_GROUP)
+      .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }));
+    const titles = (members.has(SIGNATURE_GROUP) ? [SIGNATURE_GROUP] : []).concat(brands);
+    return titles.map((title) => ({
+      title,
+      isBrand: title !== SIGNATURE_GROUP,
+      profiles: members.get(title),
+    }));
+  }
+
+  // The brand heading above a card already names the manufacturer.
+  function modelName(profile) {
+    const brand = (profile.brand || "").trim();
+    return brand && profile.name.startsWith(`${brand} `)
+      ? profile.name.slice(brand.length + 1) : profile.name;
+  }
+
+  function renderProfiles() {
+    profileGroups().forEach((group) => {
+      const heading = document.createElement("h3");
+      heading.className = "profile-group";
+      heading.textContent = group.title;
+      const count = document.createElement("span");
+      count.textContent = group.profiles.length;
+      heading.append(count);
+      $("#profile-list").append(heading);
+      group.profiles.forEach((profile) => {
+        const index = profiles.indexOf(profile);
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "profile-button";
+        button.dataset.profile = profile.id;
+        button.setAttribute("aria-pressed", String(index === 0));
+        button.setAttribute("aria-label", `${profile.name}, ${group.title}`);
+        const swatch = document.createElement("span");
+        swatch.className = "profile-swatch";
+        swatch.style.background = profile.color;
+        swatch.setAttribute("aria-hidden", "true");
+        const label = document.createElement("span");
+        label.className = "profile-label";
+        label.textContent = group.isBrand ? modelName(profile) : profile.name;
+        if (profile.releaseSamples?.length) {
+          const phases = document.createElement("small");
+          phases.textContent = "Press + release";
+          label.append(phases);
+        }
+        const check = document.createElement("span");
+        check.className = "profile-check";
+        check.setAttribute("aria-hidden", "true");
+        check.textContent = index === 0 ? "✓" : "";
+        button.append(swatch, label, check);
+        button.addEventListener("click", () => selectProfile(profile, index));
+        $("#profile-list").append(button);
+      });
     });
     $$("[data-profile-count]").forEach((label) => { label.textContent = profiles.length; });
   }
