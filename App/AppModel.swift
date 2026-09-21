@@ -67,6 +67,7 @@ private final class InputRouter {
     // Keep Settings/menu hover auditions out of opt-in playback replay counters.
     var diagnosticReplayInProgress = false
     var currentProfile: SoundProfileManifest? { profiles.first { $0.id == config.sound.profileID } }
+    lazy var profileGroups: [SoundProfileGroup] = profiles.groupedByBrand()
     var onShowSettings: (() -> Void)?
     var onConfigurationChanged: (() -> Void)?
     var onInputEvent: ((PhysicalInputEvent) -> Void)?

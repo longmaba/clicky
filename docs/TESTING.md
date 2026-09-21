@@ -608,3 +608,53 @@ while retaining visual feedback.
 Desktop/mobile screenshots were inspected. Results are in
 `verification/website-pagewide.json`. These are browser/software checks, not
 manual listening or measured key-to-ear latency. The native app is unchanged.
+
+
+## Switch profiles grouped by brand (2026-09-16)
+
+Recorded profiles now carry the switch manufacturer from their pinned publisher
+metadata, and both the Settings collection and the website playground list them
+under brand headings (Signature first, then Alps, Drop, Durock, Gateron, IBM,
+Kailh, NovelKeys, Topre). Cards under a brand heading drop the repeated brand
+from their name; the full name stays in help text, accessibility labels, and the
+selected-profile display. The original character profiles have no brand and keep
+their catalog order.
+
+- All 69 core tests pass, including new grouping tests: brand order and catalog
+  order inside a group, a blank brand treated as unbranded, brand-prefix
+  stripping, and every bundled recorded profile matching its locked publisher
+  brand while original profiles carry none.
+- The Release app builds and signs; the generated Xcode project is unchanged.
+- The sound asset checks (140 presses, 41 verified releases, five effects) and the
+  mouse asset check pass. `test_import_thock_sounds.py` covers the new manifest
+  field and rejects a pack whose config has no brand; its resampling test still
+  reports a skip without FFmpeg, which was unavailable on this machine, so
+  `import_thock_sounds.py --check` was not rerun here.
+- `scripts/check_website.cjs` passed in Chromium and WebKit against the staged
+  site, and the rendered list was inspected: nine headings, correct per-group
+  counts, and every profile in exactly one group.
+
+Structured local results: `verification/profile-brands.json`.
+
+
+## Menu bar switches grouped by brand (2026-09-16)
+
+The status menu's Switches submenu now uses the same groups as Settings: a grey
+section header per brand, model names without the repeated brand, and a swatch
+tinted with the profile color. Section headers are native on macOS 14 and later;
+macOS 13 gets a disabled row styled to match. Tooltips keep the full name,
+subtitle, and press/release note.
+
+`Clicky --menu-report <file>` builds the real status menu through its delegate
+and writes its structure, so the menu can be checked without opening it on
+screen. From the built app: nine headers in Settings order (Signature, Alps,
+Drop, Durock, Gateron, IBM, Kailh, NovelKeys, Topre), all twenty profiles under a
+header, brand rows carrying only the model name, and exactly one checked row
+(Poppy, the selected profile).
+
+The Release app builds and signs, and the generated Xcode project is unchanged.
+The menu itself was not screenshotted: this terminal has neither assistive access
+nor screen recording permission, so no on-screen capture of the open menu was
+possible here.
+
+Structured local results: `verification/menu-brands.json`.

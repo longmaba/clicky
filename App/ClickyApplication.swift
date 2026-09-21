@@ -31,6 +31,12 @@ import ClickyCore
             }
             return
         }
+        if let i = args.firstIndex(of:"--menu-report"), args.count > i+1 {
+            let url = URL(fileURLWithPath:args[i+1])
+            let snapshot = ["items":menuBar.diagnosticSnapshot()]
+            try? JSONSerialization.data(withJSONObject:snapshot,options:[.prettyPrinted,.sortedKeys]).write(to:url)
+            NSApp.terminate(nil); return
+        }
         if !model.permissionGranted || args.contains("--settings") || diagnosticDirectory != nil { showSettings() }
         if let diagnosticDirectory { Task { await runDiagnostics(at:diagnosticDirectory) } }
         if let i = args.firstIndex(of:"--audio-report"), args.count > i+1 {

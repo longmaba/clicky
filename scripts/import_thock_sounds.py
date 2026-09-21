@@ -128,6 +128,9 @@ def validate_config(config, entry):
         raise ValueError(f"Source config metadata changed: {entry['id']}")
     if config.get("license", {}).get("type") != "MIT" or config["metadata"].get("supportsKeyUp") is not True:
         raise ValueError(f"Source is not an approved paired MIT pack: {entry['id']}")
+    # The catalog groups switches under the publisher's own manufacturer name.
+    if not isinstance(config["metadata"].get("brand"), str) or not config["metadata"]["brand"].strip():
+        raise ValueError(f"Source config has no switch brand: {entry['id']}")
     if set(config.get("sounds", {})) != {"default", *KEY_CATEGORIES}:
         raise ValueError(f"Unexpected source key categories: {entry['id']}")
     for category, phases in config["sounds"].items():
@@ -180,7 +183,8 @@ def build(lock_path, original_assets, cache, ffmpeg, offline=False):
             record = {"id": entry["id"], "packID": entry["packID"], "archive": {"url": url, "sha256": entry["archiveSha256"]},
                       "configSha256": entry["configSha256"], "metadata": config["metadata"], "license": config["license"],
                       "sourceSounds": config["sounds"], "selections": []}
-            manifest = {"id": entry["id"], "name": entry["name"], "subtitle": entry["subtitle"], "color": entry["color"],
+            manifest = {"id": entry["id"], "name": entry["name"], "brand": config["metadata"]["brand"],
+                        "subtitle": entry["subtitle"], "color": entry["color"],
                         "samples": [], "releaseSamples": [], "keySamples": {}, "gain": 1.0, "normalizationReference": False,
                         "provenance": {"source": url, "sourceKind": "thock-soundpack", "packID": entry["packID"], "author": "tplai", "license": "MIT"}}
             for category in ("default", *KEY_CATEGORIES):

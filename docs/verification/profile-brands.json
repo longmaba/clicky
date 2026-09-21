@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "file": "Assets/thock-sources.json",
+    "field": "profiles[].metadata.brand",
+    "registryCommit": "213e1443c5005a99d5e51b46e31e17f30e4d752a"
+  },
+  "checks": {
+    "everyRecordedSwitchHasItsPublisherBrand": true,
+    "originalProfilesHaveNoBrand": true,
+    "preservedOriginalManifestBytesUnchanged": true,
+    "everyProfileAppearsInExactlyOneGroup": true
+  },
+  "groups": [
+    {
+      "title": "Signature",
+      "isBrand": false,
+      "profiles": [
+        "thocky",
+        "marbly",
+        "silent",
+        "poppy",
+        "clicky",
+        "bubble-wrap",
+        "clacky",
+        "creamy",
+        "deep-thock",
+        "office"
+      ]
+    },
+    {
+      "title": "Alps",
+      "isBrand": true,
+      "profiles": [
+        "alps-skcm-blue"
+      ]
+    },
+    {
+      "title": "Drop",
+      "isBrand": true,
+      "profiles": [
+        "drop-holy-panda"
+      ]
+    },
+    {
+      "title": "Durock",
+      "isBrand": true,
+      "profiles": [
+        "durock-alpaca"
+      ]
+    },
+    {
+      "title": "Gateron",
+      "isBrand": true,
+      "profiles": [
+        "gateron-ink-black",
+        "gateron-ink-red",
+        "gateron-turquoise-tealios"
+      ]
+    },
+    {
+      "title": "IBM",
+      "isBrand": true,
+      "profiles": [
+        "ibm-buckling-spring"
+      ]
+    },
+    {
+      "title": "Kailh",
+      "isBrand": true,
+      "profiles": [
+        "kailh-box-navy"
+      ]
+    },
+    {
+      "title": "NovelKeys",
+      "isBrand": true,
+      "profiles": [
+        "novelkeys-cream"
+      ]
+    },
+    {
+      "title": "Topre",
+      "isBrand": true,
+      "profiles": [
+        "topre-unknown"
+      ]
+    }
+  ]
+}

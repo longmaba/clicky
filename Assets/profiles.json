@@ -212,6 +212,7 @@
   {
     "id": "alps-skcm-blue",
     "name": "Alps SKCM Blue",
+    "brand": "Alps",
     "subtitle": "Recorded by tplai",
     "color": "D3BB6F",
     "samples": [
@@ -272,6 +273,7 @@
   {
     "id": "drop-holy-panda",
     "name": "Drop Holy Panda",
+    "brand": "Drop",
     "subtitle": "Recorded by tplai",
     "color": "C68B54",
     "samples": [
@@ -331,6 +333,7 @@
   {
     "id": "durock-alpaca",
     "name": "Durock Alpaca",
+    "brand": "Durock",
     "subtitle": "Recorded by tplai",
     "color": "C493B5",
     "samples": [
@@ -390,6 +393,7 @@
   {
     "id": "gateron-ink-black",
     "name": "Gateron Ink Black",
+    "brand": "Gateron",
     "subtitle": "Recorded by tplai",
     "color": "82A799",
     "samples": [
@@ -449,6 +453,7 @@
   {
     "id": "gateron-ink-red",
     "name": "Gateron Ink Red",
+    "brand": "Gateron",
     "subtitle": "Recorded by tplai",
     "color": "DA8276",
     "samples": [
@@ -508,6 +513,7 @@
   {
     "id": "gateron-turquoise-tealios",
     "name": "Gateron Turquoise Tealios",
+    "brand": "Gateron",
     "subtitle": "Recorded by tplai",
     "color": "76B6B2",
     "samples": [
@@ -567,6 +573,7 @@
   {
     "id": "kailh-box-navy",
     "name": "Kailh Box Navy",
+    "brand": "Kailh",
     "subtitle": "Recorded by tplai",
     "color": "7FA1C3",
     "samples": [
@@ -626,6 +633,7 @@
   {
     "id": "novelkeys-cream",
     "name": "NovelKeys Cream",
+    "brand": "NovelKeys",
     "subtitle": "Recorded by tplai",
     "color": "DCCCA0",
     "samples": [
@@ -685,6 +693,7 @@
   {
     "id": "topre-unknown",
     "name": "Topre Unknown",
+    "brand": "Topre",
     "subtitle": "Recorded by tplai",
     "color": "AD9ACE",
     "samples": [
@@ -744,6 +753,7 @@
   {
     "id": "ibm-buckling-spring",
     "name": "IBM Buckling Spring",
+    "brand": "IBM",
     "subtitle": "Recorded by tplai",
     "color": "94A7AD",
     "samples": [

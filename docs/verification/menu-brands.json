@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "source": "dist/Clicky.app --menu-report (real NSMenu construction)",
+  "menu": "Status item · Switches submenu",
+  "checks": {
+    "everyProfileSitsUnderAHeader": true,
+    "headerOrderMatchesSettings": true,
+    "brandRowsDropTheirBrandPrefix": true,
+    "exactlyOneRowIsChecked": true
+  },
+  "selected": "Poppy",
+  "groups": [
+    {
+      "title": "Signature",
+      "items": [
+        "Thocky",
+        "Marbly",
+        "Silent",
+        "Poppy",
+        "Clicky",
+        "Bubble Wrap",
+        "Clacky",
+        "Creamy",
+        "Deep Thock",
+        "Office"
+      ]
+    },
+    {
+      "title": "Alps",
+      "items": [
+        "SKCM Blue"
+      ]
+    },
+    {
+      "title": "Drop",
+      "items": [
+        "Holy Panda"
+      ]
+    },
+    {
+      "title": "Durock",
+      "items": [
+        "Alpaca"
+      ]
+    },
+    {
+      "title": "Gateron",
+      "items": [
+        "Ink Black",
+        "Ink Red",
+        "Turquoise Tealios"
+      ]
+    },
+    {
+      "title": "IBM",
+      "items": [
+        "Buckling Spring"
+      ]
+    },
+    {
+      "title": "Kailh",
+      "items": [
+        "Box Navy"
+      ]
+    },
+    {
+      "title": "NovelKeys",
+      "items": [
+        "Cream"
+      ]
+    },
+    {
+      "title": "Topre",
+      "items": [
+        "Unknown"
+      ]
+    }
+  ]
+}

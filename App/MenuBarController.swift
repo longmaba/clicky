@@ -34,10 +34,16 @@ private final class MenuCommand: NSObject {
         add(menu,model.config.enabled ? "Mute sounds" : "Enable sounds",symbol:model.config.enabled ? "speaker.slash" : "speaker.wave.2") { [weak model] in model?.toggleEnabled() }
         menu.addItem(.separator())
         let profiles = submenu(menu,"Switches",symbol:"keyboard")
-        for profile in model.profiles {
-            let row = add(profiles,profile.name,symbol:"square.fill",preview:{ [weak model] in model?.previewProfile(profile.id) }) { [weak model] in model?.selectProfile(profile.id) }
-            row.state = profile.id == model.config.sound.profileID ? .on : .off
-            row.toolTip = profile.subtitle + (profile.releaseSamples?.isEmpty == false ? " · Press + release" : "")
+        for group in model.profileGroups {
+            header(profiles,group.title)
+            for profile in group.profiles {
+                // The brand header above already names the manufacturer.
+                let row = add(profiles,group.isBrand ? profile.modelName : profile.name,symbol:"square.fill",
+                              tint:NSColor(Color(clickyHex:profile.color)),
+                              preview:{ [weak model] in model?.previewProfile(profile.id) }) { [weak model] in model?.selectProfile(profile.id) }
+                row.state = profile.id == model.config.sound.profileID ? .on : .off
+                row.toolTip = profile.name + " · " + profile.subtitle + (profile.releaseSamples?.isEmpty == false ? " · Press + release" : "")
+            }
         }
         let favorites = submenu(menu,"Favorites",symbol:"star")
         if model.config.favorites.isEmpty { let empty = NSMenuItem(title:"Save your favorite sound",action:nil,keyEquivalent:""); empty.isEnabled = false; favorites.addItem(empty) }
@@ -78,16 +84,47 @@ private final class MenuCommand: NSObject {
         let settings = add(menu,"Settings…",symbol:"gearshape") { [weak model] in model?.showSettings() }; settings.keyEquivalent = ","
         let quit = add(menu,"Quit Clicky",symbol:"power") { NSApp.terminate(nil) }; quit.keyEquivalent = "q"
     }
+    /// Build the real status menu and describe it, so its structure can be
+    /// checked without opening a menu on screen.
+    func diagnosticSnapshot() -> [[String: Any]] {
+        guard let menu = item?.menu else { return [] }
+        menuWillOpen(menu); defer { menuDidClose(menu) }
+        return describe(menu)
+    }
+    private func describe(_ menu: NSMenu) -> [[String: Any]] {
+        menu.items.map { row in
+            var entry: [String: Any] = ["title":row.title,"isHeader":isHeader(row),"state":row.state == .on ? "on" : "off"]
+            if let child = row.submenu { entry["items"] = describe(child) }
+            return entry
+        }
+    }
+    private func isHeader(_ row: NSMenuItem) -> Bool {
+        if #available(macOS 14, *) { return row.isSectionHeader }
+        return row.action == nil && row.submenu == nil && row.view == nil && !row.isEnabled && row.attributedTitle != nil
+    }
     func menu(_ menu: NSMenu, willHighlight item: NSMenuItem?) {
         guard item !== lastPreview else { return }; lastPreview = item
         (item?.representedObject as? MenuCommand)?.preview?()
     }
     func menuDidClose(_ menu: NSMenu) { lastPreview = nil }
-    @discardableResult private func add(_ menu: NSMenu,_ title: String,symbol: String? = nil,preview: (() -> Void)? = nil,run: @escaping () -> Void) -> NSMenuItem {
+    @discardableResult private func add(_ menu: NSMenu,_ title: String,symbol: String? = nil,tint: NSColor? = nil,preview: (() -> Void)? = nil,run: @escaping () -> Void) -> NSMenuItem {
         let row = NSMenuItem(title:title,action:#selector(invoke(_:)),keyEquivalent:"")
         row.target = self; row.representedObject = MenuCommand(preview:preview,run:run)
-        if let symbol { row.image = NSImage(systemSymbolName:symbol,accessibilityDescription:nil) }
+        if let symbol {
+            let image = NSImage(systemSymbolName:symbol,accessibilityDescription:nil)
+            row.image = tint.map { image?.withSymbolConfiguration(.init(paletteColors:[$0])) } ?? image
+        }
         menu.addItem(row); return row
+    }
+    /// Grey group label above a run of items. Section headers are macOS 14+;
+    /// earlier systems get a disabled row styled the same way.
+    private func header(_ menu: NSMenu,_ title: String) {
+        if #available(macOS 14, *) { menu.addItem(.sectionHeader(title:title)); return }
+        let row = NSMenuItem(title:title,action:nil,keyEquivalent:"")
+        row.attributedTitle = NSAttributedString(string:title,attributes:[
+            .font:NSFont.systemFont(ofSize:NSFont.smallSystemFontSize,weight:.semibold),
+            .foregroundColor:NSColor.secondaryLabelColor])
+        row.isEnabled = false; menu.addItem(row)
     }
     private func submenu(_ menu: NSMenu,_ title: String,symbol: String) -> NSMenu {
         let row = NSMenuItem(title:title,action:nil,keyEquivalent:""); row.image = NSImage(systemSymbolName:symbol,accessibilityDescription:nil)

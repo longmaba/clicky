@@ -29,6 +29,7 @@ keeps playing when Settings closes.
 ## What it does
 
 - Twenty sound profiles, including ten with separate press and release recordings, plus custom imports.
+- Recorded switches are grouped by manufacturer (Alps, Drop, Durock, Gateron, IBM, Kailh, NovelKeys, Topre).
 - Adjustable tone, pitch, volume, stereo positioning, and per-key overrides.
 - Soft modifier sounds so shortcuts feel balanced, with six favorite presets.
 - Optional keyboard, keystroke, combo, and bezel visualizers, and a draggable 3D keyboard.
@@ -170,7 +171,8 @@ procedurally generated assets. Source media is not copied into the app bundle.
 The ten paired packs are pinned to registry revision
 `213e1443c5005a99d5e51b46e31e17f30e4d752a` in `Assets/thock-sources.json`.
 `Assets/thock-import.json` records each publisher down/up mapping, source/output
-hash, and processing step. A common gain, resampling, digital-silence trimming,
+hash, and processing step. Each pack's `brand` comes from that pinned publisher
+metadata and groups the switch in the app and on the website. A common gain, resampling, digital-silence trimming,
 and short edge fades preserve each pack's recorded phase balance. Original
 profiles and their normalization reference remain unchanged. The packs' MIT
 license is included in the app and website; see [sound credits](THIRD_PARTY_NOTICES.md).
